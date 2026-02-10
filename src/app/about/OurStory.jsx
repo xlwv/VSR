@@ -124,7 +124,7 @@ const [openPopup, setOpenPopup] = useState(false);
         </div>
         {/* MOBILE */}
         <div className="md:hidden">
-          <div className="relative w-full h-[240px] rounded-[20px] overflow-hidden mb-6"><Image src="/assets/ourstory.png" alt="Our Story" fill priority />
+          <div className="relative w-full h-[240px] rounded-[20px] overflow-hidden mb-6"><Image src="/assets/ourstory.webp" alt="Our Story" fill priority />
           </div>
           <h2 className="text-[20px] tracking-[0.2em] text-gray-700 mb-2">OUR STORY</h2>
           <div className="mb-4">
