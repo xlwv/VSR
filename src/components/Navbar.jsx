@@ -1,0 +1,125 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Logo from "../../public/assets/SVG/logo.svg";
+
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "About Us", href: "/about" },
+    { name: "Programs", href: "/programs" },
+    { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
+  return (
+    <>
+      {/* ===== HEADER ===== */}
+      <header className="fixed top-0 z-50 w-full bg-white shadow-sm">
+        <div className="container flex items-center justify-between">
+
+          {/* Logo */}
+          <Link href="/">
+          <div className="flex items-center">
+            <Image src={Logo} alt="VSR Vriksha Logo" width={150} height={50} />
+          </div>
+          </Link>
+
+          {/* Desktop Navigation (UNCHANGED) */}
+          <nav className="hidden md:flex items-center gap-8 font-medium text-gray-600 nav-menu">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="hover:text-primary transition-colors">
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Call Button (DESKTOP ONLY) */}
+          <div className="hidden md:block">
+          <a href="tel:+918431004444" className="call-btn">
+            +91 84310 04444
+          </a>
+        </div>
+
+
+          {/* Hamburger (MOBILE ONLY) */}
+          <button
+            onClick={() => setOpen(true)}
+            className="md:hidden"
+            aria-label="Open menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/SVG" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+          </svg>
+
+          </button>
+        </div>
+      </header>
+
+      {/* ===== MOBILE OVERLAY (BLUR) ===== */}
+      <div
+        className={`
+          fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px]
+          transition-opacity duration-500
+          ${open ? "opacity-100 visible" : "opacity-0 invisible"}
+          md:hidden
+        `}
+        onClick={() => setOpen(false)}
+      />
+
+      {/* ===== MOBILE SLIDER ===== */}
+      <div
+        className={`
+          fixed top-0 right-0 z-50 h-full w-[80%] max-w-sm bg-white shadow-xl
+          transform transition-transform duration-500 ease-in-out
+          ${open ? "translate-x-0" : "translate-x-full"}
+          md:hidden
+        `}
+      >
+        {/* Close button */}
+        <div className="flex justify-end p-4">
+          <button onClick={() => setOpen(false)}>
+            <svg
+              xmlns="http://www.w3.org/2000/SVG"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile Nav Links */}
+        <nav className="flex flex-col items-center gap-6 mt-10 font-medium">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className={`transition-colors
+                ${pathname === link.href
+                  ? "text-[var(--brand-brown)]"
+                  : "text-gray-700"
+                }
+              `}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;

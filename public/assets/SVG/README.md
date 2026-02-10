@@ -1,0 +1,1 @@
+This is a Folder for directly using svg as components as jsx, it is more efficient as there will be no clarity loss and lesser space.
