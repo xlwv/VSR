@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
+import PopupForm from "@/components/PopupForm";
 const CONTENT = [
   {
     p1: "Our mental & physical well-being is under constant stress from the impact of modern-day lifestyles. The negative energy and health issues build up and eventually lead to severe disorders.",
@@ -22,6 +22,7 @@ export default function OurStory() {
   const wrapperRef = useRef(null);
   const [active, setActive] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
+const [openPopup, setOpenPopup] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -103,13 +104,13 @@ export default function OurStory() {
   );
 
   return (
-    <div ref={wrapperRef} className="h-[300vh]">
-      <section className="sticky top-0 max-w-7xl mx-auto px-6 md:px-16 py-8 md:py-24 min-h-screen flex flex-col justify-center">
+    <div ref={wrapperRef} className="h-[150vh]">
+      <section className="sticky top-0 max-w-7xl mx-auto px-6 md:px-16 py-8 md:py-24  flex flex-col justify-center">
         {/* DESKTOP */}
         <div className="hidden md:flex items-center gap-16 overflow-hidden">
           <div className="flex-shrink-0">
             <div className="relative w-[500px] h-[353px] rounded-[24px] overflow-hidden">
-              <Image src="/assets/ourstory.png" alt="Our Story" fill priority />
+              <Image src="/assets/ourstory.webp" alt="Our Story" fill priority />
             </div>
           </div>
           <div className="max-w-xl overflow-hidden">
@@ -127,7 +128,7 @@ export default function OurStory() {
           </div>
           <h2 className="text-[20px] tracking-[0.2em] text-gray-700 mb-2">OUR STORY</h2>
           <div className="mb-4">
-            <Image src="/assets/stick.png" alt="" width={160} height={10} />
+            <Image src="/assets/SVG/below-right.svg" alt="" width={160} height={10} />
           </div>
           <div className="w-full overflow-hidden">
             {renderSlides(true)}
@@ -136,7 +137,14 @@ export default function OurStory() {
         </div>
         <div className="text-center mt-12">
           <p className="text-gray-500 mb-6">Awaken self-healing through the blend of science and timeless knowledge.</p>
-          <button className="bg-[#a44a1f] text-white px-8 py-3 rounded-full hover:bg-[#8a3d19] transition-colors">BOOK YOUR STAY</button>
+   <button onClick={() => setOpenPopup(true)} className="bg-[#a44a1f] text-white px-8 py-3 rounded-full hover:bg-[#8a3d19] transition-colors">
+        BOOK YOUR STAY
+      </button>
+
+      <PopupForm
+        isOpen={openPopup}
+        onClose={() => setOpenPopup(false)}
+      />
         </div>
       </section>
     </div>

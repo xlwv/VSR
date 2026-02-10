@@ -4,7 +4,7 @@ export default function HolisticTreatments({ mainTitle, Description, sections = 
   return (
     <section
       className="relative w-full md:h-full bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/assets/holisticbg.png')" }}
+      style={{ backgroundImage: "url('/assets/holisticbg.webp')" }}
     >
       <div className="container mx-auto px-6 py-16">
 

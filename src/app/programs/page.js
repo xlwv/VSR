@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import PageBanner from "@/components/PageBanner";
 import WellnessIntro from "./WellnessIntro";
 import HealthPackage from "@/components/HealthPackage";
@@ -8,7 +7,6 @@ import "../globals.css";
 export default function Page() {
   return (
     <main>
-      <Navbar />
       <div className="pt-[70px]">
         <PageBanner
   title="Programs"
@@ -64,7 +62,7 @@ to your needs."
   description="Whether you’re dealing with arthritis, migraines, or muscular pain, our treatments aim to reduce inflammation, alleviate discomfort, and boost immunity."
   benefits={["Reduces pain naturally","Decreases inflammation","Enhances immunity",]}
   includes={["Ginger Pack","Mustard Pack","Epsom Salt Pack","Neutral immersion bath with Epsom salt","Alternate hot and cold application / Potli massage"]}
-  image="/assets/pain.jpg"
+  image="/assets/pain.webp"
   reverse={false}
 />
     </main>

@@ -5,7 +5,7 @@ import Amenities from "./Amenities";
 import HolisticTreatments from "@/components/HolisticTreatments";
 import Rejuvenation from "@/components/Rejuvenation";
 import LocationHighlights from "./LocationHighlights";
-
+import PopupForm from "@/components/PopupForm";
 export default function Page() {
   return (
     <main>
@@ -26,7 +26,7 @@ export default function Page() {
         {/* IMAGE */}
         <div className="relative w-full md:w-1/2 min-h-[320px] md:min-h-[520px]">
           <Image
-            src="/assets/mission_vision.png"
+            src="/assets/mission_vision.webp"
             alt="Girl silhouette with nature"
             fill
             priority
@@ -62,7 +62,7 @@ export default function Page() {
               Vision
             </h2>
             <Image
-              src="/assets/SVG/below-gray.svg"
+              src="/assets/SVG/below-right.svg"
               alt=""
               width={139}
               height={20}
@@ -105,6 +105,8 @@ export default function Page() {
 />
 <Rejuvenation/>
 <LocationHighlights/>
+
+<PopupForm/>
     </main>
   );
 }
