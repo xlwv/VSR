@@ -13,21 +13,21 @@ const HeroAbout = () => {
             <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div >
                 <h3 className="text-3xl home-stat">3000+</h3>
-                <p className="text-[#646464]">Clients Served</p>
+                <p className="text-[#646464] para">Clients Served</p>
             </div>
             <div>
                 <h3 className="text-3xl home-stat">84000+</h3>
-                <p className="text-[#646464]">Trophies Delivered</p>
+                <p className="text-[#646464] para">Trophies Delivered</p>
             </div>
             </div>
             <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div>
                 <h3 className="text-3xl home-stat">70+</h3>
-                <p className="text-[#646464]">Ailments Cured</p>
+                <p className="text-[#646464] para">Ailments Cured</p>
             </div>
             <div>
                 <h3 className="text-3xl home-stat">200+</h3>
-                <p className="text-[#646464]">Global Clientele</p>
+                <p className="text-[#646464] para">Global Clientele</p>
             </div>
             </div>
         </section>
@@ -60,10 +60,10 @@ const HeroAbout = () => {
 
             {/* Description Paragraphs */}
             <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p>
+              <p className="para">
                 VSR Vriksha, a unit of Vangala Sanjeeva Reddy Foundation, is an integrated residential wellness center with all facilities and latest equipment that offers holistic health care services in Naturopathy, Physiotherapy, Yoga, and Meditation.
               </p>
-              <p>
+              <p className="para">
                 We firmly believe in the healing power of nature and provide personalized care to help guests achieve a harmonious balance between mind, body, and spirit. The therapies, meals, and daily routine are carefully curated to promote natural healing and rejuvenation, enabling guests to emerge healed and revitalized.
               </p>
             </div>
@@ -127,4 +127,3 @@ const HeroAbout = () => {
     };
 
 export default HeroAbout;
-

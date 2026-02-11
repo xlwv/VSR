@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-// 1. Create a sub-component to handle the "HeroAbout-style" video logic for each card
+// 1. Sub-component for Video Logic
 const VideoCard = ({ videoUrl, thumbnail }) => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
@@ -16,7 +16,6 @@ const VideoCard = ({ videoUrl, thumbnail }) => {
             className="relative w-full h-full cursor-pointer group"
             onClick={() => setVideoLoaded(true)}
           >
-            {/* Thumbnail Image */}
             <Image 
               src={thumbnail}
               alt="Testimonial Thumbnail"
@@ -24,10 +23,8 @@ const VideoCard = ({ videoUrl, thumbnail }) => {
               className="object-cover"
               priority
             />
-            
             {/* Dark Overlay on Hover */}
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
-            
             {/* Play Button */}
             <div className="absolute inset-0 flex items-center yt justify-center">
               <Image src="/assets/SVG/youtube.svg" height={40} width={60} alt="Play Video" />
@@ -54,42 +51,9 @@ const VideoCard = ({ videoUrl, thumbnail }) => {
 
 // 2. Main Component
 const HeroTestimonial = ({ 
+  title = "What Our Clients Think About Us",
   description = "The results and our client testimonials speak volumes of our efforts in paving the way towards an illustrious legacy",
-  testimonials = [
-    {
-      name: "Mr. Raj Kapoor | Customer Testimonial",
-      thumbnail: "https://img.youtube.com/vi/BxkXBSAeG_8/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/BxkXBSAeG_8",
-    },
-    {
-        name: "Mr. Vangala Sanjeeva Reddy, Chairperson",
-        thumbnail: "https://img.youtube.com/vi/jxcP8N35RvY/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/jxcP8N35RvY?si=VN9a24UO0wgSWAmP",
-    },
-    {
-        name: "Manyam Pichi Reddy | Customer Testimonal",
-        thumbnail: "https://img.youtube.com/vi/jH16xGuXPDY/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY?si=t2htVG8PvSAAFlNB",
-    },
-    {
-        name: "Manyam Pichi Reddy | Customer Testimonal",
-        thumbnail: "https://img.youtube.com/vi/jH16xGuXPDY/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY?si=t2htVG8PvSAAFlNB",
-    },{
-        name: "Manyam Pichi Reddy | Customer Testimonal",
-        thumbnail: "https://img.youtube.com/vi/jH16xGuXPDY/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY?si=t2htVG8PvSAAFlNB",
-    },{
-        name: "Manyam Pichi Reddy | Customer Testimonal",
-        thumbnail: "https://img.youtube.com/vi/jH16xGuXPDY/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY?si=t2htVG8PvSAAFlNB",
-    },{
-        name: "Manyam Pichi Reddy | Customer Testimonal",
-        thumbnail: "https://img.youtube.com/vi/jH16xGuXPDY/maxresdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY?si=t2htVG8PvSAAFlNB",
-    },
-    // Add more testimonial objects here if needed
-  ]
+  testimonials = []
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -110,13 +74,17 @@ const HeroTestimonial = ({
     (currentIndex + 1) * testimonialsPerView
   );
 
+  // If no testimonials are passed, you might want to hide the section or show a placeholder
+  if (!testimonials || testimonials.length === 0) return null;
+
   return (
-    <section className="py-16 md:py-24 ">
+    <section className="py-16 md:py-24 bg-[#FAF5F3]"> {/* Added a light bg for contrast */}
       <div className="container">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 text-[#9c3f1a]">
-            What Our Clients Think About Us          </h2>
+            {title}
+          </h2>
           
           {/* Underline SVG */}
           <div className="flex justify-center mb-6">
@@ -129,7 +97,7 @@ const HeroTestimonial = ({
             />
           </div>
 
-          <p className="max-w-3xl mx-auto text-lg">
+          <p className="max-w-3xl mx-auto para text-gray-600">
             {description}
           </p>
         </div>
@@ -142,9 +110,9 @@ const HeroTestimonial = ({
                 videoUrl={testimonial.videoUrl} 
                 thumbnail={testimonial.thumbnail} 
               />
-              {/* Optional: Add client name below video */}
+              {/* Client name */}
               {testimonial.name && (
-                <h4 className={`text-center text-lg font-medium `}>
+                <h4 className="text-center text-lg font-medium text-gray-800">
                   {testimonial.name}
                 </h4>
               )}
@@ -158,7 +126,7 @@ const HeroTestimonial = ({
             {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className="w-12 h-12 rounded-full bg-[#9c3f1a] hover:bg-[#7f3214] flex items-center justify-center transition-colors"
+              className="w-12 h-12 rounded-full bg-[#9c3f1a] hover:bg-[#7f3214] flex items-center justify-center transition-colors shadow-lg"
               aria-label="Previous testimonials"
             >
               <svg 
@@ -177,10 +145,10 @@ const HeroTestimonial = ({
                 <button
                   key={idx}
                   onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     idx === currentIndex 
                       ? 'w-8 bg-[#9c3f1a]' 
-                      : 'w-2 bg-[#7f3214]'
+                      : 'w-2 bg-gray-300 hover:bg-[#9c3f1a]/50'
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -190,7 +158,7 @@ const HeroTestimonial = ({
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="w-12 h-12 rounded-full bg-[#9c3f1a] hover:bg-[#7f3214] flex items-center justify-center transition-colors"
+              className="w-12 h-12 rounded-full bg-[#9c3f1a] hover:bg-[#7f3214] flex items-center justify-center transition-colors shadow-lg"
               aria-label="Next testimonials"
             >
               <svg 

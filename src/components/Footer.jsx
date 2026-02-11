@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Left Column - Logo and Description */}
         <div className="space-y-4">
           <h2 className="text-2xl font-serif font-bold">VSR Vriksha</h2>
-          <p className="text-sm leading-relaxed opacity-90">
+          <p className="para opacity-90">
             A center for naturopathic treatment of myriad ailments. 
             Experience the healing power of nature amidst the pristine environs.
           </p>
@@ -51,36 +51,49 @@ const Footer = () => {
         {/* Middle Column - Quick Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick links</h3>
+          
           <ul className="space-y-2">
             <li>
-              <Link href="/about" className="text-sm hover:text-orange-200 transition-colors">
+              <Link href="/about" className="opacity-90 hover:text-orange-200 transition-colors">
+<p>
                 About Us
-              </Link>
+              </p>
+</Link>
             </li>
             <li>
-              <Link href="/programs" className="text-sm hover:text-orange-200 transition-colors">
+              <Link href="/programs" className="opacity-90 hover:text-orange-200 transition-colors">
+<p>
                 Programs
-              </Link>
+              </p>
+</Link>
             </li>
             <li>
-              <Link href="/services" className="text-sm hover:text-orange-200 transition-colors">
+              <Link href="/services" className="opacity-90 hover:text-orange-200 transition-colors">
+<p>
                 Services
-              </Link>
+              </p>
+</Link>
             </li>
             <li>
-              <Link href="/gallery" className="text-sm hover:text-orange-200 transition-colors">
+              <Link href="/gallery" className="opacity-90 hover:text-orange-200 transition-colors">
+<p>
                 Gallery
-              </Link>
+              </p>
+</Link>
             </li>
             <li>
-              <Link href="/blogs" className="text-sm hover:text-orange-200 transition-colors">
+              <Link href="/blogs" className="opacity-90 hover:text-orange-200 transition-colors">
+<p>
                 Blogs
-              </Link>
+              </p>
+</Link>
             </li>
             <li>
-              <Link href="/contact" className="text-sm hover:text-orange-200 transition-colors">
+              <Link href="/contact" className="opacity-90 hover:text-orange-200 transition-colors">
+<p>
                 Contact Us
-              </Link>
+              </p>
+</Link>
             </li>
           </ul>
         </div>
@@ -93,7 +106,7 @@ const Footer = () => {
             {/* Address */}
             <div className="flex gap-3">
               <FaLocationDot className="w-5 h-5 mt-1 flex-shrink-0" />
-              <p className="text-sm">
+              <p className="para">
                 Irish Valley, Dharmaram Village, Near Bits Pilani campus, 
                 Keesara Mandal, Medchal District, Shamirpet, Telangana - 501301
               </p>
@@ -102,14 +115,16 @@ const Footer = () => {
             {/* Phone Numbers */}
             <div className="flex gap-3">
               <FaPhone className="w-5 h-5 flex-shrink-0" />
-              <div className="text-sm">
-                <a href="tel:+918431004444" className="hover:text-orange-200 transition-colors">
+              <div className="text-sm"><p>
+                <a href="tel:+918431004444" className="opacity-90 hover:text-orange-200 transition-colors">
                   +91 84310 04444
-                </a>
+                </a></p>
                 {" | "}
-                <a href="tel:+918905004444" className="hover:text-orange-200 transition-colors">
+                <p>
+                <a href="tel:+918905004444" className="opacity-90 hover:text-orange-200 transition-colors">
                   +91 89050 04444
                 </a>
+                </p>
               </div>
             </div>
 
@@ -118,7 +133,7 @@ const Footer = () => {
               <FaEnvelope className="w-5 h-5 flex-shrink-0" />
               <a 
                 href="mailto:contact@vsrvriksha.com" 
-                className="text-sm hover:text-orange-200 transition-colors"
+                className="opacity-90 hover:text-orange-200 transition-colors"
               >
                 contact@vsrvriksha.com
               </a>
@@ -130,12 +145,14 @@ const Footer = () => {
       {/* Bottom Bar - Copyright */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-sm opacity-80">
-            © Copyright 2025 All Rights Reserved
+          <p className="para opacity-80">
+            © Copyright 2026 All Rights Reserved
           </p>
-          <Link href="/privacy" className="text-sm hover:text-orange-200 transition-colors">
+          <Link href="/privacy" className="opacity-90 hover:text-orange-200 transition-colors">
+<p>
             Privacy Policy
-          </Link>
+          </p>
+</Link>
         </div>
       </div>
     </footer>

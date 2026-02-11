@@ -50,7 +50,7 @@ export default function HealthPackage({
     {title}
   </h2>
 </div>
-<p className="text-[18px] md:text-[15px] text-[#404041] leading-relaxed lg:max-w-[520px]" style={{ fontFamily: '"Swis721 BT", sans-serif' }}>
+<p className="para text-[#404041] lg:max-w-[520px]" style={{ fontFamily: '"Swis721 BT", sans-serif' }}>
   {description}
 </p>
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">

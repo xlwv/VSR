@@ -5,13 +5,13 @@ import { useState } from "react";
 
 const amenities = [
   { title: "12 acres across 50 acres of farmland", icon: "/assets/clubhouse.png" },
-  { title: "Tranquil residential nature cure centre", icon: "/assets/clubhouse.png" },
-  { title: "Latest equipment for treatment", icon: "/assets/clubhouse.png" },
-  { title: "Traditional yoga and meditation hall", icon: "/assets/clubhouse.png" },
-  { title: "Personalized care customized treatment", icon: "/assets/clubhouse.png" },
-  { title: "Stay in super-deluxe rooms", icon: "/assets/clubhouse.png" },
-  { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/clubhouse.png" },
-  { title: "Swimming pool", icon: "/assets/clubhouse.png" },
+  { title: "Tranquil residential nature cure centre", icon: "/assets/house.png" },
+  { title: "Latest equipment for treatment", icon: "/assets/treatment.png" },
+  { title: "Traditional yoga and meditation hall", icon: "/assets/yoga.png" },
+  { title: "Personalized care customized treatment", icon: "/assets/care.png" },
+  { title: "Stay in super-deluxe rooms", icon: "/assets/stay.png" },
+  { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/organic.png" },
+  { title: "Swimming pool", icon: "/assets/pool.png" },
     { title: "Personalized care customized treatment", icon: "/assets/clubhouse.png" },
   { title: "Stay in super-deluxe rooms", icon: "/assets/clubhouse.png" },
   { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/clubhouse.png" },
@@ -26,7 +26,7 @@ export default function Amenities() {
         <h2 className="text-3xl md:text-4xl font-serif mb-2">
           A Serene Retreat For A Wholesome Experience
         </h2>
-       <p className="text-[18px] text-[#404041] mt-8 mb-4">Relish the Boundless Amenities</p>
+       <p className="para text-[#404041] mt-8 mb-4">Relish the Boundless Amenities</p>
 <Image
   src="/assets/SVG/below.svg"
   alt="Decorative line"
@@ -34,14 +34,14 @@ export default function Amenities() {
   height={60}
   className="mx-auto"
  />
-       <div
+     <div
   className={`
     grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-14
-    transition-all duration-500 mt-8
-    ${expanded ? "max-h-[1000px]" : "max-h-[380px]"}
-    overflow-y-scroll hide-scroll
+    transition-all duration-500 mt-8 overflow-hidden
+    ${expanded ? "max-h-[2000px]" : "max-h-[380px]"}
   `}
 >
+
           {amenities.map((item, i) => (
             <div key={i} className="flex flex-col items-center">
               <div className="w-[88px] h-[88px]  flex items-center justify-center">
@@ -52,7 +52,7 @@ export default function Amenities() {
                   height={112}
                 />
               </div>
-              <p className="mt-4 text-[18] text-gray-600 max-w-[310px]">
+              <p className="mt-4 para text-gray-600 max-w-[310px]">
                 {item.title}
               </p>
             </div>

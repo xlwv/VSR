@@ -19,7 +19,7 @@ const HeroBanner = () => {
           {/* Location */}
           <div className="flex items-center gap-3 mb-8">
             <FaLocationDot className="w-5 h-5 mt-1 flex-shrink-0" />
-            <p className="text-white text-lg">
+            <p className="text-white para">
               Hyderabad
             </p>
           </div>

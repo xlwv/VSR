@@ -28,21 +28,22 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/">
           <div className="flex items-center">
-            <Image src={Logo} alt="VSR Vriksha Logo" width={150} height={50} />
+            <Image src={Logo} alt="VSR Vriksha Logo" style={{ minWidth: "160px" }}  width={150} height={50} />
           </div>
           </Link>
 
           {/* Desktop Navigation (UNCHANGED) */}
-          <nav className="hidden md:flex items-center gap-8 font-medium text-gray-600 nav-menu">
+          <nav className="hidden lg:flex items-center gap-8 font-medium text-gray-600 nav-menu">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-primary transition-colors">
-                {link.name}
+              
+              <Link key={link.href} href={link.href} className="hover:text-primary transition-colors text-[16px]">
+              <p>  {link.name} </p>
               </Link>
             ))}
           </nav>
 
           {/* Call Button (DESKTOP ONLY) */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
           <a href="tel:+918431004444" className="call-btn">
             +91 84310 04444
           </a>
@@ -52,7 +53,7 @@ const Navbar = () => {
           {/* Hamburger (MOBILE ONLY) */}
           <button
             onClick={() => setOpen(true)}
-            className="md:hidden"
+            className="lg:hidden"
             aria-label="Open menu"
           >
             <svg xmlns="http://www.w3.org/2000/SVG" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
