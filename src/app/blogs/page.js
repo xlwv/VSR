@@ -5,7 +5,7 @@ import PageBanner from "@/components/PageBanner";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { blogData } from "./blogsData";
+import blogData from "./blogsData.json";
 
 export default function BlogPage() {
   useEffect(() => {
