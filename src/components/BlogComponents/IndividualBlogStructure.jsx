@@ -30,9 +30,8 @@ const IndividualBlogStructure = ({ data }) => {
         </h1>
 
         {/* ===== INTRO SECTION ===== */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-[420px_1fr] gap-8 md:gap-12 mb-12 md:mb-16 items-start"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-[420px_1fr] gap-8 md:gap-12 mb-12 md:mb-16 items-start">
+          
           {/* Image */}
           <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl">
             <Image
@@ -46,9 +45,11 @@ const IndividualBlogStructure = ({ data }) => {
 
           {/* Intro Text + Back Button */}
           <div>
-            <p className="font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]">
-              {data.intro}
-            </p>
+            <p
+              className="font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]"
+              style={{ whiteSpace: "pre-line" }}
+              dangerouslySetInnerHTML={{ __html: data.intro }}
+            />
 
             <div className="mt-4 flex justify-end">
               <Link
@@ -73,23 +74,19 @@ const IndividualBlogStructure = ({ data }) => {
 
         {/* ===== CONTENT SECTIONS ===== */}
         <div className="space-y-10 md:space-y-14">
-        
-        
-          {data.sections.map((section, index) => (
-            <div
-              key={index}
-            >
+          {data.sections.map((section) => (
+            <div key={section.heading}>
+
               <h2 className="font-heading text-[22px] sm:text-[26px] md:text-[35px] leading-tight mb-4 md:mb-6">
                 {section.heading}
               </h2>
 
               {section.paragraphs.map((para, pIndex) => (
                 <p
-                  key={pIndex}
+                  key={`${section.heading}-${pIndex}`}
                   className="mb-5 font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]"
-                >
-                  {para}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: para }}
+                />
               ))}
             </div>
           ))}
