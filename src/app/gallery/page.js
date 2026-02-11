@@ -11,6 +11,7 @@ export default function Page() {
   ];
   return (
     <main>
+      <div className="pt-[70px]">
       <PageBanner
         title="Gallery"
         breadcrumbs={[
@@ -24,6 +25,7 @@ export default function Page() {
         description=""
         images={galleryData}
       />
+      </div>
     </main>
   );
 }
