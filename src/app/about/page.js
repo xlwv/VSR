@@ -110,7 +110,7 @@ export default function Page() {
                 className="mt-2 mb-6"
               />
 
-              <p className="para text-[#555] mb-14">
+              <p className="text-[16px] leading-[28px] text-[#555] mb-14">
                 To provide a complete rejuvenation and healing experience with
                 the most innovative methods and advanced technology.
               </p>
@@ -124,7 +124,7 @@ export default function Page() {
                 className="mt-2 mb-6"
               />
 
-              <p className="para text-[#555]">
+              <p className="text-[16px] leading-[28px] text-[#555]">
                 To be Telangana's first nature cure centre of its kind,
                 providing exceptional service.
               </p>

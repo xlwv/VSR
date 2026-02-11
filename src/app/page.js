@@ -5,6 +5,7 @@ import HeroTestimonial from "../Hero/HeroTestimonial";
 import HolisticTreatments from "@/components/HolisticTreatments";
 import Gallery from "@/components/Gallery";
 import ScrollStory from "@/components/ScrollStory";
+import Image from "next/image";
 export default function Page() {
   const galleryData = [
     { src: "/assets/gallery-1.webp", alt: "Wellness Center Interior" },
@@ -134,11 +135,34 @@ export default function Page() {
           },          
         ]}
       />
-      <Gallery 
-        title="Photo Gallery"
-        description="Take a break and rediscover your connection with nature as you heal yourself"
-        images={galleryData}
-      />
+      <section className="pt-16 md:py-24 bg-white">
+        <div className="container">
+          {/* Title and Description */}
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 text-black">
+              Photo Gallery
+            </h2>
+            
+            {/* Decorative SVG Divider */}
+            <div className="flex justify-center my-4">
+              <Image 
+                src="/assets/SVG/below.svg" 
+                alt="decoration"
+                width={150}
+                height={20}
+                className="w-32 md:w-40 opacity-80"
+              />
+            </div>
+
+            <p className="text-[#646464] font-swis para max-w-2xl mx-auto px-4">
+              Take a break and rediscover your connection with nature as you heal yourself
+            </p>
+          </div>
+        </div>
+        
+        {/* Gallery Component */}
+        <Gallery images={galleryData} />
+      </section>
       <HeroTestimonial 
         title="Doctor Videos"
         description="The results and our client testimonials speak volumes of our efforts in paving the way towards an illustrious legacy"

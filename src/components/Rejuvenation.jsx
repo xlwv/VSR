@@ -1,15 +1,21 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import PopupForm from "./PopupForm";
 
 const images = [
-  { src: "/assets/circle2.jpg", className: "col-start-4 row-start-1 -translate-y-12" },
-  { src: "/assets/circle1.jpg", className: "col-start-2 row-start-1 -translate-y-4" },
-  { src: "/assets/circle6.jpg", className: "col-start-1 row-start-2 -translate-x-16" },
-  { src: "/assets/circle3.jpg", className: "col-start-5 row-start-2 translate-x-16" },
-  { src: "/assets/circle4.jpg", className: "col-start-4 row-start-3 translate-y-6" },
-  { src: "/assets/circle5.jpg", className: "col-start-2 row-start-3 -translate-y-6" },
+  { src: "/assets/circle2.webp", className: "col-start-4 row-start-1 -translate-y-12" },
+  { src: "/assets/circle1.webp", className: "col-start-2 row-start-1 -translate-y-4" },
+  { src: "/assets/circle6.webp", className: "col-start-1 row-start-2 -translate-x-16" },
+  { src: "/assets/circle3.webp", className: "col-start-5 row-start-2 translate-x-16" },
+  { src: "/assets/circle4.webp", className: "col-start-4 row-start-3 translate-y-6" },
+  { src: "/assets/circle5.webp", className: "col-start-2 row-start-3 -translate-y-6" },
 ];
 
 export default function RejuvenationGrid() {
+  const [openPopup, setOpenPopup] = useState(false);
+
   return (
     <section className="relative min-h-[900px] bg-gradient-to-b from-white to-[#f4e4db] flex items-center justify-center overflow-hidden">
       <div className="relative max-w-7xl w-full px-6">
@@ -20,10 +26,14 @@ export default function RejuvenationGrid() {
             Step into a journey that redefines <br /> Rejuvenation.
           </h2>
 
-          <button className="pointer-events-auto mt-6 px-7 py-2.5 rounded-full bg-[#9c3f22] text-white text-sm tracking-wide hover:opacity-90 transition">
+          <button
+            onClick={() => setOpenPopup(true)}
+            className="pointer-events-auto mt-6 px-7 py-2.5 rounded-full bg-[#9c3f22] text-white text-sm tracking-wide hover:opacity-90 transition"
+          >
             BOOK YOUR STAY
           </button>
         </div>
+
         <div className="hidden lg:grid grid-cols-5 grid-rows-3 gap-10">
           {images.map((img, i) => (
             <div
@@ -34,9 +44,9 @@ export default function RejuvenationGrid() {
             </div>
           ))}
         </div>
-        {/* MOBILE*/}
-        <div className="lg:hidden flex flex-col items-center text-center space-y-6">
 
+        {/* MOBILE */}
+        <div className="lg:hidden flex flex-col items-center text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-serif text-[#0F1E3A] leading-snug">
             Step into a journey that redefines <br /> Rejuvenation.
           </h2>
@@ -51,10 +61,20 @@ export default function RejuvenationGrid() {
               </div>
             ))}
           </div>
-          <button className="mt-4 px-6 py-2 rounded-full bg-[#9c3f22] text-white text-sm tracking-wide hover:opacity-90 transition">
+
+          <button
+            onClick={() => setOpenPopup(true)}
+            className="mt-4 px-6 py-2 rounded-full bg-[#9c3f22] text-white text-sm tracking-wide hover:opacity-90 transition"
+          >
             BOOK YOUR STAY
           </button>
         </div>
+
+        {/* POPUP FORM (ONLY ONCE) */}
+        <PopupForm
+          isOpen={openPopup}
+          onClose={() => setOpenPopup(false)}
+        />
       </div>
     </section>
   );

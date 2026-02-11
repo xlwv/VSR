@@ -29,7 +29,7 @@ export default function HealthPackage({
     </ul>
   );
   return (
-<section className="w-full bg-white pt-4 pb-2">
+<section className="w-full bg-white pt-4 pb-18">
       <div className={`max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row items-center gap-6 md:gap-12 ${reverse ? "lg:flex-row-reverse" : ""}`}>  
         <div className="w-full lg:w-[520px] flex justify-center">
           <Image
@@ -55,11 +55,11 @@ export default function HealthPackage({
 </p>
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
             <div>
-              <h3 className="text-base font-serif mb-3 md:mb-4 text-gray-900">Benefits</h3>
+              <h3 className="text-[24px] font-serif mb-3 md:mb-4 text-gray-900">Benefits</h3>
               {renderList(benefits)}
             </div>
             <div>
-              <h3 className="text-base font-serif mb-3 md:mb-4 text-gray-900">Includes</h3>
+              <h3 className="text-[24px] font-serif mb-3 md:mb-4 text-gray-900">Includes</h3>
               {renderList(includes)}
             </div>
           </div>

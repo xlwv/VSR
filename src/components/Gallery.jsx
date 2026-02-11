@@ -12,13 +12,8 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const Gallery = ({ 
-  title = "Photo Gallery", 
-  description = "Take a break and rediscover your connection with nature as you heal yourself",
-  images = [] 
-}) => {
+const Gallery = ({ images = [] }) => {
   const containerRef = useRef(null);
-  const titleRef = useRef(null);
   const imagesRef = useRef([]);
 
   useEffect(() => {
@@ -38,20 +33,6 @@ const Gallery = ({
 
     // 2. GSAP Animations
     const ctx = gsap.context(() => {
-      // Animate Title & Subtitle
-      if (titleRef.current) {
-        gsap.from(titleRef.current, {
-          y: 50,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          },
-        });
-      }
-
       // Stagger Animate Images
       // Filter out null refs in case images array is smaller than ref array
       const validImageRefs = imagesRef.current.filter(el => el !== null);
@@ -83,29 +64,6 @@ const Gallery = ({
     <section ref={containerRef} className="py-16 md:py-24 bg-white">
       <div className="container">
         
-        {/* Header Section */}
-        <div ref={titleRef} className="text-center mb-12 space-y-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 text-black">
-            {title}
-          </h2>
-          
-          {/* Decorative Floral Divider */}
-          <div className="flex justify-center my-4">
-            <Image 
-                src="/assets/SVG/below.svg" 
-                alt="decoration"
-                width={150}
-                height={20}
-                className="w-32 md:w-40 opacity-80"
-                style={{ filter: 'hue-rotate(340deg)' }} 
-            />
-          </div>
-
-          <p className="text-[#646464] font-swis para max-w-2xl mx-auto px-4">
-            {description}
-          </p>
-        </div>
-
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {images.map((img, index) => (
@@ -114,8 +72,8 @@ const Gallery = ({
               ref={(el) => (imagesRef.current[index] = el)}
               className="group relative aspect-square md:aspect-[4/3] overflow-hidden rounded-[2rem] cursor-pointer shadow-lg"
             >
-              <a
-                href={img.src}
+              
+                <a href={img.src}
                 data-fancybox="gallery"
                 data-caption={img.alt}
                 className="block w-full h-full"
@@ -132,11 +90,11 @@ const Gallery = ({
                 
                 {/* Optional Zoom Icon Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
-                    </div>
+                  <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
                 </div>
               </a>
             </div>

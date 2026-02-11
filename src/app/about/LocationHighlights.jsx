@@ -26,7 +26,7 @@ const locations = [
 ];
 
 export default function LocationHighlights() {
-  const [open, setOpen] = useState(1);
+  const [open, setOpen] = useState(0);
 
   return (
     <section className="py-20 bg-white">

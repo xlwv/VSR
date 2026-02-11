@@ -12,7 +12,7 @@ export default function BetterCareSection() {
         </p>
         <div className="w-full max-w-[1150px] h-[250px] md:h-[500px] rounded-2xl md:rounded-[24px] overflow-hidden mt-10 md:mt-2">
           <Image
-            src="/assets/programs.jpg"
+            src="/assets/programs.webp"
             alt="Wellness Therapy"
             width={1200}
             height={500}

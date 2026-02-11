@@ -23,11 +23,11 @@ const PageBanner = ({
  <div className="w-full max-w-[1200px] mx-auto px-4">
         {/* INNER CONTENT – like col-md-8 offset-md-2 */}
         <div className="max-w-[800px]">
-          <h1 className="mb-4 md:mb-9 text-2xl md:text-[48px] font-normal leading-[57.6px] text-white">
-            {title}
-          </h1>
+         <h1 className="pagebanner-title mb-4 md:mb-9 text-2xl md:text-[48px] font-normal leading-[57.6px] text-white">
+  {title}
+</h1>
 
-        <div className="flex items-center text-base text-white">
+<div className="pagebanner-breadcrumbs flex items-center text-base text-white">
           {breadcrumbs.map((item, index) => (
             <span key={index} className="flex items-center">
               {item.href ? (
