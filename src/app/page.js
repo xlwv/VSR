@@ -135,7 +135,7 @@ export default function Page() {
           },          
         ]}
       />
-      <section className="pt-16 md:py-24 bg-white">
+      <section className="pt-16 bg-white">
         <div className="container">
           {/* Title and Description */}
           <div className="text-center mb-12 space-y-4">
