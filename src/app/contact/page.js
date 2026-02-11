@@ -37,7 +37,7 @@ export default function Page() {
             { label: "Home", href: "/" },
             { label: "Contact Us" },
           ]}
-          bgImage="/assets/banner.jpg"
+          bgImage="/assets/banner.webp"
         />
       </div>
 
