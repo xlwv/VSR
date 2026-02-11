@@ -179,13 +179,13 @@ const renderDiscoverContent = () => (
       className="bg-[#f5f0ed]" 
       style={{ 
         height: '370px', 
-        width: '160px', 
+        width: '130px', 
         borderRadius: '25px', 
         color: 'rgba(160, 61, 19, 0.08)' 
       }}
     ></div>
 
-    <div className="absolute" style={{ top: '80px', left: '120px' }}>
+    <div className="absolute" style={{ top: '100px', left: '120px' }}>
       <h2 
         className={`text-[42px] font-serif mb-8 tracking-wider ${headingClassName}`} 
         style={{ color: textColor }}

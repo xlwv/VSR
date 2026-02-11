@@ -29,6 +29,12 @@ const HeroProgram = () => {
       description: "Designed to help you achieve your target weight naturally, this program combines...",
     },
     {
+      id: 4, // Deliberately out of order in array to demonstrate the sort works
+      image: "/assets/HP-4.webp",
+      title: "Body & Mind Detox Package",
+      description: "This program aims to reduce stress, calm your mind, and repair your body through...",
+    },
+    {
       id: 2,
       image: "/assets/HP-2.webp",
       title: "Diabetes Remission Package",
@@ -39,12 +45,6 @@ const HeroProgram = () => {
       image: "/assets/HP-3.webp",
       title: "Renew Your Gut Package",
       description: "Address issues like bloating, constipation, and IBS through carefully curated treatments",
-    },
-    {
-      id: 4,
-      image: "/assets/HP-4.webp",
-      title: "Body & Mind Detox Package",
-      description: "This program aims to reduce stress, calm your mind, and repair your body through...",
     },
     {
       id: 5,
@@ -87,7 +87,7 @@ const HeroProgram = () => {
         opacity: 0,
         y: 100,
         duration: 0.8,
-        stagger: 0.15, // Sequential delay between cards
+        stagger: 0.15, 
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -115,7 +115,7 @@ const HeroProgram = () => {
 
       <div className="container relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 
             ref={titleRef}
             className="text-3xl md:text-4xl lg:text-5xl text-white mb-4"
@@ -139,12 +139,13 @@ const HeroProgram = () => {
         </div>
 
         {/* Swiper Carousel */}
-        <div className="program-swiper-container my-5">
+        <div className="program-swiper-container">
           <Swiper
+            className="!pt-8 !pb-12 !px-4" /* Fix for cutoff applied here */
             modules={[Autoplay]}
             spaceBetween={24}
             slidesPerView={1}
-            loop={true}
+            loop={false} /* Loop disabled */
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
@@ -168,15 +169,18 @@ const HeroProgram = () => {
               },
             }}
           >
-            {programs.map((program, index) => (
-              <SwiperSlide key={program.id}>
-                <div
-                  ref={(el) => (cardsRef.current[index] = el)}
-                  className="group h-full"
-                >
-                  <ProgramCard program={program} />
-                </div>
-              </SwiperSlide>
+            {/* Added .sort() to ensure ID order 1, 2, 3... */}
+            {programs
+              .sort((a, b) => a.id - b.id) 
+              .map((program, index) => (
+                <SwiperSlide key={program.id}>
+                  <div
+                    ref={(el) => (cardsRef.current[index] = el)}
+                    className="group h-full"
+                  >
+                    <ProgramCard program={program} />
+                  </div>
+                </SwiperSlide>
             ))}
           </Swiper>
         </div>
@@ -185,6 +189,7 @@ const HeroProgram = () => {
       <style jsx global>{`
         .program-swiper-container .swiper-slide {
           height: auto;
+          overflow: visible; 
         }
       `}</style>
     </section>
@@ -194,7 +199,7 @@ const HeroProgram = () => {
 // Program Card Component
 const ProgramCard = ({ program }) => {
   return (
-    <div className="bg-black/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:scale-105 h-full flex flex-col">
+    <div className="bg-black/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:scale-105 h-full flex flex-col shadow-lg">
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image 
