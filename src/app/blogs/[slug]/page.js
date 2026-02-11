@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import PageBanner from "@/components/PageBanner";
 import IndividualBlogStructure from "@/components/BlogComponents/IndividualBlogStructure";
-import { blogData as allBlogs } from "../blogsData";
+import blogs from "../blogsData.json";
+
+
 
 const blogsData = {
   "yoga-and-meditation-retreats": {
@@ -294,7 +296,7 @@ export default async function BlogDetailPage({ params }) {
 
   const blogData = {
     ...blog,
-    allBlogs: allBlogs.filter((b) => b.slug !== slug),
+    allBlogs: blogs.filter((b) => b.slug !== slug),
   };
 
   return (
