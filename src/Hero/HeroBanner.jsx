@@ -25,7 +25,7 @@ const HeroBanner = () => {
           </div>
           
           {/* CTA Button - Yellow */}
-          <button className="call-btn">
+          <button className="call-btn text-black">
             BOOK YOUR STAY
           </button>
         </div>

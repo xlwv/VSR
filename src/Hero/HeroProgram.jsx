@@ -139,7 +139,7 @@ const HeroProgram = () => {
         </div>
 
         {/* Swiper Carousel */}
-        <div className="program-swiper-container">
+        <div className="program-swiper-container my-5">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
