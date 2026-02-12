@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
-const MoreTreatments = ({ blogs = [], title = "More Treatments" }) => {
+const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "services" }) => {
 
   useEffect(() => {
     console.log("MoreTreatments received blogs:", blogs);
@@ -111,7 +111,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments" }) => {
         {blogs.map((blog) => (
           <Link
             key={blog.slug}
-            href={`/blogs/${blog.slug}`}
+            href={`/${linkPath}/${blog.slug}`}
             className="
               group flex-shrink-0
               w-full

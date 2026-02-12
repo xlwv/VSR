@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import PageBanner from "@/components/PageBanner";
+import MoreTreatments from "@/components/BlogComponents/MoreTreatments";
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import AOS from "aos";
@@ -75,7 +76,16 @@ export default function ServiceDetailPage() {
     
     return sourceArray
       .filter((s) => s.slug !== currentService.slug)
-      .slice(0, 3);
+      .slice(0, 6); // Get 6 related services for the carousel
+  };
+
+  // Transform services data to match MoreTreatments component's expected format
+  const transformServicesToBlogs = (services) => {
+    return services.map((service) => ({
+      slug: service.slug,
+      title: service.name,
+      image: `/assets/${service.imageName}`,
+    }));
   };
 
   const relatedServices = getRelatedServices();
@@ -305,58 +315,12 @@ export default function ServiceDetailPage() {
               </div>
             )}
 
-            {/* More Treatments/Therapies Section */}
+            {/* More Treatments/Therapies Section using MoreTreatments Component */}
             {relatedServices.length > 0 && (
-              <div className="mt-16">
-                <div className="flex items-center justify-between mb-8">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800">
-                    {sectionTitle}
-                    <Image
-                      src="/assets/SVG/below-right.svg"
-                      alt=""
-                      width={139}
-                      height={20}
-                      className="mt-2 mb-6"
-                    />
-                  </h2>
-                  <div className="flex gap-2">
-                    <button className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white transition-colors">
-                      <ChevronRight className="w-5 h-5 rotate-180" />
-                    </button>
-                    <button className="w-10 h-10 rounded-full bg-[var(--brand-brown)] text-white flex items-center justify-center hover:bg-[#7f3214] transition-colors">
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {relatedServices.map((service) => (
-                    <div
-                      key={service.id}
-                      onClick={() => handleServiceClick(service, serviceType)}
-                      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-2"
-                    >
-                      <div className="relative h-48 overflow-hidden">
-                        <Image
-                          src={`/assets/${service.imageName}`}
-                          alt={service.name}
-                          width={400}
-                          height={300}
-                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                        />
-                      </div>
-                      <div className="p-5">
-                        <h3 className="text-xl font-bold text-[var(--brand-brown)] mb-2">
-                          {service.name}
-                        </h3>
-                        <p className="text-gray-600 text-sm line-clamp-2">
-                          {service.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <MoreTreatments 
+                blogs={transformServicesToBlogs(relatedServices)}
+                title={sectionTitle}
+              />
             )}
           </main>
         </div>
