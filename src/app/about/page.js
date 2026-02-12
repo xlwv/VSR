@@ -12,7 +12,7 @@ export default function Page() {
   // Define your story slides data
   const aboutSlides = [
     {
-      image: "/assets/ourstory.png",
+      image: "/assets/gallery-1.webp",
       imageAlt: "Nature and wellness",
       imageTitle: "",
       imageDescription: "",
@@ -82,56 +82,72 @@ export default function Page() {
       />
 
       <section className="w-full overflow-hidden">
-        <div className="flex flex-col md:flex-row w-full min-h-[460px]">
-          {/* IMAGE */}
-          <div className="relative w-full md:w-1/2 min-h-[320px] md:min-h-[460px]">
-            <Image
-              src="/assets/mission_vision.webp"
-              alt="Girl silhouette with nature"
-              fill
-              priority
-            />
-          </div>
+  <div className="flex flex-col md:flex-row w-full">
 
-          {/* CONTENT */}
-          <div
-            className="w-full md:w-1/2 flex items-center"
-            style={{
-              background: "linear-gradient(180deg, #EAEDDA 0%, #E6E7D7 100%)",
-            }}
-          >
-            <div className="px-6 md:pl-20 py-14 max-w-[520px]">
-              <h2 className="text-[32px] font-serif text-[#2b2b2b]">Mission</h2>
-              <Image
-                src="/assets/SVG/below-right.svg"
-                alt=""
-                width={139}
-                height={20}
-                className="mt-2 mb-6"
-              />
+    {/* IMAGE SIDE */}
+    <div className="relative w-full md:w-1/2 h-[320px] sm:h-[420px] md:h-auto md:min-h-[460px]">
 
-              <p className="text-[16px] leading-[28px] text-[#555] mb-14">
-                To provide a complete rejuvenation and healing experience with
-                the most innovative methods and advanced technology.
-              </p>
 
-              <h2 className="text-[32px] font-serif text-[#2b2b2b]">Vision</h2>
-              <Image
-                src="/assets/SVG/below-right.svg"
-                alt=""
-                width={139}
-                height={20}
-                className="mt-2 mb-6"
-              />
+  {/* Tablet */}
+  <Image
+    src="/assets/mission_vision.webp"
+    alt="Girl silhouette with nature"
+    fill
+    priority
+    className="block object-cover object-[92%_center]  lg:object-[85%_center]"
+  />
 
-              <p className="text-[16px] leading-[28px] text-[#555]">
-                To be Telangana's first nature cure centre of its kind,
-                providing exceptional service.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
+</div>
+
+
+    {/* CONTENT SIDE */}
+    <div
+      className="w-full md:w-1/2 flex items-center md:min-h-[460px]"
+      style={{
+        background: "linear-gradient(180deg, #EAEDDA 0%, #E6E7D7 100%)",
+      }}
+    >
+      <div className="px-6 sm:px-8 md:pl-20 py-10 md:py-14 max-w-[520px]">
+
+        <h2 className="text-[26px] sm:text-[30px] md:text-[32px] font-serif text-[#2b2b2b]">
+          Mission
+        </h2>
+        <Image
+          src="/assets/SVG/below-right.svg"
+          alt=""
+          width={139}
+          height={20}
+          className="mt-2 mb-6"
+        />
+
+        <p className="text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-[#555] mb-12 md:mb-14">
+          To provide a complete rejuvenation and healing experience with
+          the most innovative methods and advanced technology.
+        </p>
+
+        <h2 className="text-[26px] sm:text-[30px] md:text-[32px] font-serif text-[#2b2b2b]">
+          Vision
+        </h2>
+        <Image
+          src="/assets/SVG/below-right.svg"
+          alt=""
+          width={139}
+          height={20}
+          className="mt-2 mb-6"
+        />
+
+        <p className="text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-[#555]">
+          To be Telangana's first nature cure centre of its kind,
+          providing exceptional service.
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       <Amenities />
 

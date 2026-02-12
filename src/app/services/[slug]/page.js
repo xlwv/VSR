@@ -125,10 +125,10 @@ export default function ServiceDetailPage() {
         />
       </div>
 
-      <div className="container mx-auto px-4 py-8 lg:py-12">
+      <div className="container py-8 lg:py-12">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar */}
-          <aside className="lg:w-72 flex-shrink-0">
+          <aside className="w-full lg:w-72 flex-shrink-0">
             <div className="bg-[#FFF8F5] rounded-lg p-4 lg:sticky lg:top-24">
               {/* Treatments Section */}
               <div className="mb-4">
@@ -225,7 +225,7 @@ export default function ServiceDetailPage() {
                 alt={currentService.name}
                 width={800}
                 height={400}
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[240px] md:h-[320px] lg:h-[400px] object-cover"
               />
             </div>
 
@@ -317,10 +317,56 @@ export default function ServiceDetailPage() {
 
             {/* More Treatments/Therapies Section using MoreTreatments Component */}
             {relatedServices.length > 0 && (
-              <MoreTreatments 
-                blogs={transformServicesToBlogs(relatedServices)}
-                title={sectionTitle}
-              />
+              <div className="mt-16">
+                <div className="flex items-center justify-between mb-8">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-800">
+                    {sectionTitle}
+                    <Image
+                      src="/assets/SVG/below-right.svg"
+                      alt=""
+                      width={139}
+                      height={20}
+                      className="mt-2 mb-6"
+                    />
+                  </h2>
+                  <div className="flex gap-2">
+                    <button className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white transition-colors">
+                      <ChevronRight className="w-5 h-5 rotate-180" />
+                    </button>
+                    <button className="w-10 h-10 rounded-full bg-[var(--brand-brown)] text-white flex items-center justify-center hover:bg-[#7f3214] transition-colors">
+                      <ChevronRight className="w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {relatedServices.map((service) => (
+                    <div
+                      key={service.id}
+                      onClick={() => handleServiceClick(service, serviceType)}
+                      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-2"
+                    >
+                      <div className="relative h-48 overflow-hidden">
+                        <Image
+                          src={`/assets/${service.imageName}`}
+                          alt={service.name}
+                          width={400}
+                          height={300}
+                          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        />
+                      </div>
+                      <div className="p-5">
+                        <h3 className="text-xl font-bold text-[var(--brand-brown)] mb-2">
+                          {service.name}
+                        </h3>
+                        <p className="text-gray-600 text-sm line-clamp-2">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             )}
           </main>
         </div>

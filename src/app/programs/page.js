@@ -20,7 +20,7 @@ export default function Page() {
         title="Optimal Weight Package"
         duration="7/14/21 Days"
         description="Designed to help you achieve your target weight naturally, this program combines therapeutic treatments and holistic practices to boost metabolism, improve energy levels, and enhance cardiac health."
-        benefits={["Boosts metabolism", "Improves cardiac health", "Enhances energy levels"]}
+        benefits={["Boosts metabolism", "Improves cardiac health", "Enhances energy levels","Supports achieving your target weight"]}
         includes={["Udhwarthanam", "Deep tissue massage", "Vibro massage"]}
         image="/assets/HP-1.webp"
         reverse={false}
@@ -31,7 +31,7 @@ export default function Page() {
         description="This program focuses on managing blood sugar levels and improving 
 insulin sensitivity using natural therapies and dietary practices tailored 
 to your needs."
-        benefits={["Regulates insulin", "Controls glucose", "Reduces cholesterol"]}
+        benefits={["Regulates insulin resistance", "Helps control blood glucose levels", "Reduces blood cholesterol levels"]}
         includes={["GH Pack", "Castor oil pack", "Hip bath"]}
         image="/assets/HP-2.webp"
         reverse={true}
@@ -40,7 +40,7 @@ to your needs."
          title="Renew Your Gut Package"
   duration="7/14 Days"
   description="Address issues like bloating, constipation, and IBS through carefully curated treatments designed to improve digestion and restore gut balance."
-        benefits={["Enhances digestion","Alleviates gas", "bloating", "IBS","Supports overall gut health"]}
+        benefits={["Enhances digestion","Alleviates gas, bloating, and IBS","Supports overall gut health"]}
         includes={["Abdomen pack","Castor oil pack","Hip bath"]}
         image="/assets/HP-3.webp"
         reverse={false}

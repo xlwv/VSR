@@ -27,28 +27,44 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link href="/">
-          <div className="flex items-center">
-            <Image src={Logo} alt="VSR Vriksha Logo" style={{ minWidth: "160px" }}  width={150} height={50} />
-          </div>
+            <div className="flex items-center">
+              <Image
+                src={Logo}
+                alt="VSR Vriksha Logo"
+                style={{ minWidth: "160px" }}
+                width={150}
+                height={50}
+              />
+            </div>
           </Link>
 
-          {/* Desktop Navigation (UNCHANGED) */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 font-medium text-gray-600 nav-menu">
-            {navLinks.map((link) => (
-              
-              <Link key={link.href} href={link.href} className="hover:text-primary transition-colors text-[16px]">
-              <p>  {link.name} </p>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname.startsWith(link.href);
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`transition-colors text-[16px] ${
+                    isActive
+                      ? "text-[#A54220]"
+                      : "text-gray-600 hover:text-[#A54220]"
+                  }`}
+                >
+                  <p>{link.name}</p>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Call Button (DESKTOP ONLY) */}
           <div className="hidden lg:block">
-          <a href="tel:+918431004444" className="call-btn">
-            +91 84310 04444
-          </a>
-        </div>
-
+            <a href="tel:+918431004444" className="call-btn">
+              +91 84310 04444
+            </a>
+          </div>
 
           {/* Hamburger (MOBILE ONLY) */}
           <button
@@ -56,10 +72,20 @@ const Navbar = () => {
             className="lg:hidden"
             aria-label="Open menu"
           >
-            <svg xmlns="http://www.w3.org/2000/SVG" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
-          </svg>
-
+            <svg
+              xmlns="http://www.w3.org/2000/SVG"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+              />
+            </svg>
           </button>
         </div>
       </header>
@@ -95,7 +121,11 @@ const Navbar = () => {
               stroke="currentColor"
               className="w-6 h-6"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -107,12 +137,11 @@ const Navbar = () => {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className={`transition-colors
-                ${pathname === link.href
-                  ? "text-[var(--brand-brown)]"
+              className={`transition-colors ${
+                pathname.startsWith(link.href)
+                  ? "text-[#A54220]"
                   : "text-gray-700"
-                }
-              `}
+              }`}
             >
               {link.name}
             </Link>

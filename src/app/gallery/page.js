@@ -20,11 +20,13 @@ export default function Page() {
         ]}
         bgImage="/assets/banner.webp"
       />
+      <div className="mt-22 mb-20 ml-4 ">
       <Gallery 
         title=""
         description=""
         images={galleryData}
       />
+      </div>
       </div>
     </main>
   );

@@ -12,7 +12,7 @@ const amenities = [
   { title: "Stay in super-deluxe rooms", icon: "/assets/stay.png" },
   { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/organic.png" },
   { title: "Swimming pool", icon: "/assets/pool.png" },
-    { title: "Personalized care customized treatment", icon: "/assets/clubhouse.png" },
+  { title: "Personalized care customized treatment", icon: "/assets/clubhouse.png" },
   { title: "Stay in super-deluxe rooms", icon: "/assets/clubhouse.png" },
   { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/clubhouse.png" },
   { title: "Swimming pool", icon: "/assets/clubhouse.png" },
@@ -20,48 +20,51 @@ const amenities = [
 
 export default function Amenities() {
   const [expanded, setExpanded] = useState(false);
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-serif mb-2">
           A Serene Retreat For A Wholesome Experience
         </h2>
-       <p className="para text-[#404041] mt-8 mb-4">Relish the Boundless Amenities</p>
-<Image
-  src="/assets/SVG/below.svg"
-  alt="Decorative line"
-  width={279}
-  height={60}
-  className="mx-auto"
- />
-     <div
-  className={`
-    grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-14
-    transition-all duration-500 mt-8 overflow-hidden
-    ${expanded ? "max-h-[2000px]" : "max-h-[380px]"}
-  `}
->
 
-          {amenities.map((item, i) => (
+        <p className="para text-[#404041] mt-8 mb-4">
+          Relish the Boundless Amenities
+        </p>
+
+        <Image
+          src="/assets/SVG/below.svg"
+          alt="Decorative line"
+          width={279}
+          height={60}
+          className="mx-auto"
+        />
+
+        {/* GRID */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-14 mt-12">
+          {(expanded ? amenities : amenities.slice(0, 8)).map((item, i) => (
             <div key={i} className="flex flex-col items-center">
-              <div className="w-[88px] h-[88px]  flex items-center justify-center">
+              <div className="w-[88px] h-[88px] flex items-center justify-center">
                 <Image
                   src={item.icon}
                   alt={item.title}
-                  width={112}
-                  height={112}
+                  width={88}
+                  height={88}
+                  className="object-contain"
                 />
               </div>
-              <p className="mt-4 para text-gray-600 max-w-[310px]">
+
+              <p className="mt-4 para text-gray-600 max-w-[260px]">
                 {item.title}
               </p>
             </div>
           ))}
         </div>
-        {!expanded && (
+
+        {!expanded && amenities.length > 8 && (
           <button
             onClick={() => setExpanded(true)}
-            className="mt-12 px-8 py-2 rounded-full bg-[#A54220] text-white text-sm tracking-wide hover:bg-orange-800"
+            className="mt-12 px-8 py-2 rounded-full bg-[#A54220] text-white text-sm tracking-wide hover:bg-orange-800 transition"
           >
             VIEW MORE
           </button>

@@ -22,7 +22,7 @@ const IndividualBlogStructure = ({ data }) => {
 
   return (
     <section className="bg-white py-10 md:py-16" data-aos="fade-up">
-      <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-4 sm:px-6">
 
         {/* ===== PAGE TITLE ===== */}
         <h1 className="font-heading text-[24px] sm:text-[30px] md:text-[40px] leading-tight mb-8 md:mb-12">
@@ -46,7 +46,7 @@ const IndividualBlogStructure = ({ data }) => {
           {/* Intro Text + Back Button */}
           <div>
             <p
-              className="font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]"
+              className="para! font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]"
               style={{ whiteSpace: "pre-line" }}
               dangerouslySetInnerHTML={{ __html: data.intro }}
             />
@@ -84,7 +84,7 @@ const IndividualBlogStructure = ({ data }) => {
               {section.paragraphs.map((para, pIndex) => (
                 <p
                   key={`${section.heading}-${pIndex}`}
-                  className="mb-5 font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]"
+                  className="para! mb-5 font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]"
                   dangerouslySetInnerHTML={{ __html: para }}
                 />
               ))}

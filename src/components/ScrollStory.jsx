@@ -83,7 +83,7 @@ export default function ScrollStory({
       {slides.map((item, i) => (
         <div key={i} className={isMobile ? "w-full flex-shrink-0" : "min-w-full"}>
           {item.paragraphs?.map((para, idx) => (
-            <p key={idx} className={`para mb-3 ${layoutType === "discover" ? "text-[#555]" : "text-gray-600"}`}>
+            <p key={idx} className={`para ${layoutType === "discover" ? "text-[#555]" : "text-gray-600"}`}>
               {para}
             </p>
           ))}
@@ -216,9 +216,10 @@ const renderDiscoverContent = () => (
 
   if (layoutType === "discover") {
     return (
-      <div ref={wrapperRef} className="h-[300vh]" style={{ backgroundColor }}>
+     <div ref={wrapperRef} className="md:h-[300vh]" style={{ backgroundColor }}>
+
         <section
-          className={`sticky top-0 max-w-7xl mx-auto px-6 md:px-16 py-16 md:py-24 min-h-screen flex flex-col justify-center ${sectionClassName}`}
+          className={`md:sticky md:top-0 max-w-7xl mx-auto px-6 md:px-16 py-16 md:py-24 min-h-screen flex flex-col justify-center ${sectionClassName}`}
           
         >
           <div className={`hidden md:flex items-end flex-row gap-16 ${containerClassName} justify-between`}>
@@ -281,7 +282,7 @@ const renderDiscoverContent = () => (
   }
 
   return (
-    <div ref={wrapperRef} className="h-[200vh]">
+    <div ref={wrapperRef} className="md:h-[200vh]">
       <section
         className={`sticky top-0 max-w-7xl mx-auto px-6 md:px-16 py-8 md:py-24 min-h-screen flex flex-col justify-center ${sectionClassName}`}
         style={{ backgroundColor }}

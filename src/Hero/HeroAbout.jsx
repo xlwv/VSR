@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 const HeroAbout = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const loadVideo = () => {
@@ -9,24 +10,24 @@ const HeroAbout = () => {
     return (
         <>
         <div className="bg2">
-        <section className="container py-8 flex flex-wrap justify-center text-center">
+        <section className="container py-8 flex flex-wrap  justify-center text-center">
             <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div >
-                <h3 className="text-3xl home-stat">3000+</h3>
+                <h3 className="text-4xl home-stat">3000+</h3>
                 <p className="text-[#646464] para">Clients Served</p>
             </div>
             <div>
-                <h3 className="text-3xl home-stat">84000+</h3>
-                <p className="text-[#646464] para">Trophies Delivered</p>
+                <h3 className="text-4xl home-stat">84000+</h3>
+                <p className="text-[#646464] para">Therapies Delivered</p>
             </div>
             </div>
             <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div>
-                <h3 className="text-3xl home-stat">70+</h3>
+                <h3 className="text-4xl home-stat">70+</h3>
                 <p className="text-[#646464] para">Ailments Cured</p>
             </div>
             <div>
-                <h3 className="text-3xl home-stat">200+</h3>
+                <h3 className="text-4xl home-stat">200+</h3>
                 <p className="text-[#646464] para">Global Clientele</p>
             </div>
             </div>
@@ -70,9 +71,11 @@ const HeroAbout = () => {
 
             {/* CTA Button */}
             <div>
+              <Link href="/about">
               <button className="call-btn">
                 KNOW MORE
               </button>
+              </Link>
             </div>
           </div>
 

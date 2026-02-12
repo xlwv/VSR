@@ -102,7 +102,7 @@ const HeroProgram = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 md:py-24 overflow-hidden"
+      className="relative py-16 md:py-10 overflow-hidden"
       style={{
         backgroundImage: "url('/assets/HP-bg.webp')",
         backgroundSize: 'cover',
@@ -126,7 +126,7 @@ const HeroProgram = () => {
           {/* Underline SVG */}
           <div 
             ref={underlineRef}
-            className="flex justify-center mb-6"
+            className="flex justify-center"
           >
             <Image 
               src="/assets/SVG/below-gray.svg"
@@ -141,9 +141,9 @@ const HeroProgram = () => {
         {/* Swiper Carousel */}
         <div className="program-swiper-container">
           <Swiper
-            className="!pt-8 !pb-12 !px-4" /* Fix for cutoff applied here */
+            className="!pt-3 !pb-12 !px-4" /* Fix for cutoff applied here */
             modules={[Autoplay]}
-            spaceBetween={24}
+            spaceBetween={10}
             slidesPerView={1}
             loop={false} /* Loop disabled */
             autoplay={{
@@ -173,14 +173,15 @@ const HeroProgram = () => {
             {programs
               .sort((a, b) => a.id - b.id) 
               .map((program, index) => (
-                <SwiperSlide key={program.id}>
-                  <div
-                    ref={(el) => (cardsRef.current[index] = el)}
-                    className="group h-full"
-                  >
-                    <ProgramCard program={program} />
-                  </div>
-                </SwiperSlide>
+                <SwiperSlide key={program.id} className="flex justify-center">
+                <div
+                  ref={(el) => (cardsRef.current[index] = el)}
+                  className="group h-full flex"
+                >
+                  <ProgramCard program={program} />
+                </div>
+              </SwiperSlide>
+
             ))}
           </Swiper>
         </div>
@@ -199,31 +200,53 @@ const HeroProgram = () => {
 // Program Card Component
 const ProgramCard = ({ program }) => {
   return (
-    <div className="bg-black/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300 hover:transform hover:scale-105 h-full flex flex-col shadow-lg">
+    <div className="bg-black/60 backdrop-blur-md 
+                    rounded-[28px] 
+                    border border-[#ffffff40] 
+                    hover:border-[#ffffff80] 
+                    transition-all duration-300 
+                    shadow-xl
+                    w-[310px] max-w-[620px] p-3">
+
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <Image 
+      <div className="relative h-[200px] overflow-hidden rounded-t-[28px]">
+        <Image
           src={program.image}
           alt={program.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
+          className="object-cover"
           loading="lazy"
           quality={85}
         />
       </div>
 
       {/* Content */}
-      <div className="p-6 text-center flex flex-col flex-grow">
-        <h3 className="text-xl font-semibold text-white mb-3">
-          {program.title}
-        </h3>
-        <p className="text-gray-300 para mb-6 flex-grow">
-          {program.description}
-        </p>
-        <button className="call-btn">
-          VIEW MORE
-        </button>
+      <div className="px-6 py-6 text-center flex flex-col justify-between h-[230px]">
+
+        <div>
+          {/* Swis Font Override */}
+          <h3
+            className="text-white mb-3"
+            style={{
+              fontFamily: '"Swis721 BT", sans-serif',
+              fontSize: "18px",
+              fontWeight: 500,
+            }}
+          >
+            {program.title}
+          </h3>
+
+          <p className="font-Swis721 text-gray-300 text-[14px] leading-[1.6] line-clamp-3">
+            {program.description}
+          </p>
+        </div>
+
+        <div className="mt-6">
+          <button className="call-btn !px-7 !py-2 !text-[13px]">
+            VIEW MORE
+          </button>
+        </div>
+
       </div>
     </div>
   );

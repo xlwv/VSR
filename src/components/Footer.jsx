@@ -17,35 +17,47 @@ const Footer = () => {
           
           {/* Social Media Icons */}
           <div className="flex gap-4 pt-2">
-            <Link 
-              href="#" 
-              className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
-              aria-label="Facebook"
-            >
-              <FaFacebookF className="w-5 h-5" />
-            </Link>
-            <Link 
-              href="#" 
-              className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
-              aria-label="Instagram"
-            >
-              <FaInstagram className="w-5 h-5" />
-            </Link>
-            <Link 
-              href="#" 
-              className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
-              aria-label="Twitter"
-            >
-              <FaXTwitter className="w-5 h-5" />
-            </Link>
-            <Link 
-              href="#" 
-              className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn className="w-5 h-5" />
-            </Link>
-          </div>
+  <a
+    href="https://facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
+    aria-label="Facebook"
+  >
+    <FaFacebookF className="w-5 h-5" />
+  </a>
+
+  <a
+    href="https://instagram.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
+    aria-label="Instagram"
+  >
+    <FaInstagram className="w-5 h-5" />
+  </a>
+
+  <a
+    href="https://twitter.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
+    aria-label="Twitter"
+  >
+    <FaXTwitter className="w-5 h-5" />
+  </a>
+
+  <a
+    href="https://linkedin.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
+    aria-label="LinkedIn"
+  >
+    <FaLinkedinIn className="w-5 h-5" />
+  </a>
+</div>
+
         </div>
 
         {/* Middle Column - Quick Links */}
@@ -113,20 +125,26 @@ const Footer = () => {
             </div>
 
             {/* Phone Numbers */}
-            <div className="flex gap-3">
-              <FaPhone className="w-5 h-5 flex-shrink-0" />
-              <div className="text-sm"><p>
-                <a href="tel:+918431004444" className="opacity-90 hover:text-orange-200 transition-colors">
-                  +91 84310 04444
-                </a></p>
-                {" | "}
-                <p>
-                <a href="tel:+918905004444" className="opacity-90 hover:text-orange-200 transition-colors">
-                  +91 89050 04444
-                </a>
-                </p>
-              </div>
-            </div>
+            <div className="flex gap-3 items-start">
+  <FaPhone className="w-5 h-5 mt-1 flex-shrink-0" />
+
+  <div className="text-sm space-y-1">
+    <a
+      href="tel:+918431004444"
+      className="block opacity-90 hover:text-orange-200 transition-colors"
+    >
+      +91 84310 04444
+    </a>
+
+    <a
+      href="tel:+918905004444"
+      className="block opacity-90 hover:text-orange-200 transition-colors"
+    >
+      +91 89050 04444
+    </a>
+  </div>
+</div>
+
 
             {/* Email */}
             <div className="flex gap-3">
