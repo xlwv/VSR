@@ -179,13 +179,13 @@ const renderDiscoverContent = () => (
       className="bg-[#f5f0ed]" 
       style={{ 
         height: '370px', 
-        width: '130px', 
+        width: '140px', 
         borderRadius: '25px', 
         color: 'rgba(160, 61, 19, 0.08)' 
       }}
     ></div>
 
-    <div className="absolute" style={{ top: '100px', left: '120px' }}>
+    <div className="absolute" style={{ top: '100px', left: '120px', width: '500px' }}>
       <h2 
         className={`text-[42px] font-serif mb-8 tracking-wider ${headingClassName}`} 
         style={{ color: textColor }}
@@ -196,7 +196,7 @@ const renderDiscoverContent = () => (
         {bulletPoints.map((point, i) => (
           <li key={i} className="flex items-start gap-3"><h3>
             <span className="text-[#A54220] text-xl mt-1">•</span>
-            <span className="text-[18px] text-[#2b2b2b] tracking-wide uppercase font-light">
+            <span className="text-[18px] text-[#2b2b2b] tracking-wide uppercase pl-5 font-light">
               {point}
             </span>
             </h3>

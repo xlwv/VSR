@@ -1,7 +1,6 @@
 import PageBanner from "@/components/PageBanner";
 import WellnessIntro from "./WellnessIntro";
 import HealthPackage from "@/components/HealthPackage";
-import HolisticTreatments from "@/components/HolisticTreatments";
 
 export default function Page() {
   return (

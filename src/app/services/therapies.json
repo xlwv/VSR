@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Diet Therapy",
+    "slug": "diet-therapy",
+    "imageName": "thrp-1.png",
+    "description": "Food is more than a mere medium of sustenance, it is a form of medicine. What you eat can have a crucial impact on your overall health and well-being."
+  },
+  {
+    "id": 2,
+    "name": "Hydrotherapy",
+    "slug": "hydrotherapy",
+    "imageName": "thrp-2.png",
+    "description": "Not only is water an essential element of life, but it also has incredible healing properties. We bring to you the power of water in healing."
+  },
+  {
+    "id": 3,
+    "name": "Aroma Therapy",
+    "slug": "aroma-therapy",
+    "imageName": "thrp-3.png",
+    "description": "Aromatherapy is a method of therapy that uses essential oils to boost a person's overall health. Rejuvenate your mind, body, and spirit."
+  },
+  {
+    "id": 4,
+    "name": "Massage Therapy",
+    "slug": "massage-therapy",
+    "imageName": "thrp-4.png",
+    "description": "Massages have been used as a form of therapy since ancient times. There are many benefits to this age-old practice of healing."
+  },
+  {
+    "id": 5,
+    "name": "Acupuncture",
+    "slug": "acupuncture",
+    "imageName": "thrp-5.png",
+    "description": "This incredible method of healing is an ancient part of traditional Chinese medicine. It helps the body find its natural balance."
+  },
+  {
+    "id": 6,
+    "name": "Yoga",
+    "slug": "yoga",
+    "imageName": "thrp-6.png",
+    "description": "Yoga, an ancient Indian tradition, is a group of physical, mental, and spiritual practices that have stood the test of time."
+  },
+  {
+    "id": 7,
+    "name": "Mud Therapy",
+    "slug": "mud-therapy",
+    "imageName": "thrp-7.png",
+    "description": "Discover the therapeutic benefits of natural mud treatments. Detoxify and rejuvenate your body with earth's healing elements."
+  },
+  {
+    "id": 8,
+    "name": "Chromotherapy",
+    "slug": "chromotherapy",
+    "imageName": "thrp-8.png",
+    "description": "Experience healing through colors. This ancient practice uses colored lights to balance energy and promote physical and emotional well-being."
+  }
+]

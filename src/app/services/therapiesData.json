@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "slug": "diet-therapy",
+    "introduction": "Food is medicine - a fundamental principle of naturopathy. Our diet therapy program goes beyond simple nutrition to use food as a healing tool for various health conditions.",
+    "benefits": [
+      "Improves digestion and metabolism",
+      "Helps in weight management",
+      "Boosts immunity and energy levels",
+      "Reduces inflammation in the body",
+      "Supports disease prevention and management",
+      "Enhances overall vitality and wellbeing"
+    ],
+    "process": "Our expert nutritionists create personalized meal plans based on your health condition, body constitution, and specific needs. We focus on whole foods, proper food combinations, and mindful eating practices to maximize nutritional benefits and support healing.",
+    "conditionsTreated": [
+      "Obesity",
+      "Diabetes",
+      "Digestive disorders",
+      "High cholesterol",
+      "Hypertension",
+      "Food allergies"
+    ],
+    "duration": "Varies based on individual goals - typically 2-4 weeks for initial program with ongoing support",
+    "additionalInfo": "Our diet therapy includes education on food selection, preparation methods, and sustainable eating habits that you can maintain long after your program ends."
+  },
+  {
+    "id": 2,
+    "slug": "hydrotherapy",
+    "introduction": "Water has been used for healing since ancient times. Our comprehensive hydrotherapy program harnesses the therapeutic properties of water at various temperatures to promote healing and wellness.",
+    "benefits": [
+      "Improves blood circulation",
+      "Relieves muscle tension and pain",
+      "Enhances detoxification",
+      "Boosts immune system",
+      "Reduces stress and promotes relaxation",
+      "Improves skin health"
+    ],
+    "process": "We offer various hydrotherapy treatments including therapeutic baths, contrast baths, underwater massage, steam baths, and our signature Vichy Shower Massage. Each treatment is tailored to your specific condition and needs.",
+    "conditionsTreated": [
+      "Joint pain and arthritis",
+      "Muscle soreness",
+      "Poor circulation",
+      "Stress and anxiety",
+      "Skin conditions",
+      "Chronic fatigue"
+    ],
+    "duration": "Individual sessions: 30-60 minutes. Recommended course: 7-14 sessions",
+    "additionalInfo": "We are the only hospital in Hyderabad offering the Vichy Shower Massage - a luxurious treatment where multiple shower heads deliver therapeutic water massage."
+  },
+  {
+    "id": 3,
+    "slug": "aroma-therapy",
+    "introduction": "Essential oils extracted from plants have powerful therapeutic properties. Our aromatherapy treatments use pure, therapeutic-grade essential oils to promote physical and emotional healing.",
+    "benefits": [
+      "Reduces stress and anxiety",
+      "Improves sleep quality",
+      "Relieves headaches and migraines",
+      "Boosts mood and mental clarity",
+      "Enhances respiratory function",
+      "Supports immune system"
+    ],
+    "process": "Our certified aromatherapists blend essential oils specifically for your needs. Treatments may include inhalation therapy, aromatic massage, or diffusion therapy, depending on your condition.",
+    "conditionsTreated": [
+      "Stress and anxiety",
+      "Insomnia",
+      "Depression",
+      "Respiratory issues",
+      "Chronic pain",
+      "Hormonal imbalances"
+    ],
+    "duration": "Sessions: 45-60 minutes. Recommended: 6-12 sessions for optimal results",
+    "additionalInfo": "Each essential oil has unique properties - lavender for relaxation, peppermint for energy, eucalyptus for respiratory health. We customize blends for your specific needs."
+  },
+  {
+    "id": 4,
+    "slug": "massage-therapy",
+    "introduction": "Therapeutic massage is an ancient healing art that combines skilled touch with anatomical knowledge to promote health and wellbeing. Our expert therapists provide various massage techniques tailored to your needs.",
+    "benefits": [
+      "Relieves muscle tension and pain",
+      "Improves circulation",
+      "Reduces stress hormones",
+      "Enhances flexibility and range of motion",
+      "Promotes better sleep",
+      "Boosts immune function"
+    ],
+    "process": "We offer Swedish massage, deep tissue massage, Ayurvedic massage (Abhyanga), sports massage, and therapeutic massage. Your therapist will assess your condition and recommend the most appropriate technique.",
+    "conditionsTreated": [
+      "Back and neck pain",
+      "Sports injuries",
+      "Fibromyalgia",
+      "Arthritis",
+      "Stress-related conditions",
+      "Poor circulation"
+    ],
+    "duration": "Sessions: 60-90 minutes. Frequency depends on condition - may range from weekly to monthly",
+    "additionalInfo": "Massage therapy works best as part of a comprehensive wellness program. Regular sessions provide cumulative benefits for both physical and mental health."
+  },
+  {
+    "id": 5,
+    "slug": "acupuncture",
+    "introduction": "This ancient Chinese healing practice uses fine needles to stimulate specific points on the body, promoting natural healing and pain relief by balancing the body's energy flow (Qi).",
+    "benefits": [
+      "Effective pain management",
+      "Reduces inflammation",
+      "Relieves stress and anxiety",
+      "Improves sleep quality",
+      "Enhances digestive function",
+      "Boosts immune system"
+    ],
+    "process": "Our certified acupuncturists insert very fine needles at specific points along meridian pathways. The treatment is virtually painless and induces deep relaxation while stimulating the body's healing response.",
+    "conditionsTreated": [
+      "Chronic pain",
+      "Migraines and headaches",
+      "Anxiety and depression",
+      "Digestive disorders",
+      "Insomnia",
+      "Allergies"
+    ],
+    "duration": "Initial session: 60-90 minutes. Follow-up: 45-60 minutes. Recommended: 6-12 sessions",
+    "additionalInfo": "Acupuncture is recognized by the WHO as effective for over 100 conditions. It works by triggering the release of endorphins and influencing the autonomic nervous system."
+  },
+  {
+    "id": 6,
+    "slug": "yoga",
+    "introduction": "Yoga is a holistic practice that unites body, mind, and spirit through physical postures (asanas), breathing techniques (pranayama), and meditation. Our programs are designed for all levels and specific health conditions.",
+    "benefits": [
+      "Increases flexibility and strength",
+      "Improves balance and posture",
+      "Reduces stress and anxiety",
+      "Enhances respiratory function",
+      "Promotes better sleep",
+      "Supports cardiovascular health"
+    ],
+    "process": "Our experienced yoga instructors guide you through appropriate asanas, breathing exercises, and meditation practices. Classes are tailored to your fitness level and health goals, with therapeutic yoga available for specific conditions.",
+    "conditionsTreated": [
+      "Back pain",
+      "Anxiety and depression",
+      "Hypertension",
+      "Diabetes",
+      "Respiratory conditions",
+      "Hormonal imbalances"
+    ],
+    "duration": "Daily sessions: 60-90 minutes. Recommended minimum: 2-4 weeks for noticeable benefits",
+    "additionalInfo": "We offer various yoga styles including Hatha, therapeutic yoga for specific conditions, and meditation sessions. Private sessions available for personalized attention."
+  },
+  {
+    "id": 7,
+    "slug": "mud-therapy",
+    "introduction": "Earth is one of nature's most powerful healing elements. Mud therapy uses specially prepared medicinal mud to detoxify, heal, and rejuvenate the body through its rich mineral content and cooling properties.",
+    "benefits": [
+      "Detoxifies the body",
+      "Improves skin health",
+      "Reduces inflammation",
+      "Relieves joint and muscle pain",
+      "Enhances circulation",
+      "Provides cooling effect for heat-related conditions"
+    ],
+    "process": "We use clean, medicinal mud rich in minerals. The mud is applied to specific body parts or as full-body packs. As it dries, it draws out toxins and provides therapeutic cooling. The treatment concludes with a gentle cleansing.",
+    "conditionsTreated": [
+      "Skin conditions (eczema, psoriasis)",
+      "Joint pain and arthritis",
+      "Headaches",
+      "Inflammation",
+      "Insomnia",
+      "Digestive issues"
+    ],
+    "duration": "Sessions: 30-45 minutes. Recommended: 7-14 sessions for therapeutic course",
+    "additionalInfo": "Mud therapy is particularly effective when combined with other naturopathic treatments. The minerals in mud are absorbed through the skin, providing systemic benefits."
+  },
+  {
+    "id": 8,
+    "slug": "chromotherapy",
+    "introduction": "Color therapy, or chromotherapy, uses the therapeutic properties of colors and light to balance energy and promote healing. Different colors vibrate at different frequencies, affecting our physical and emotional states.",
+    "benefits": [
+      "Balances energy centers (chakras)",
+      "Improves mood and emotional wellbeing",
+      "Enhances sleep quality",
+      "Reduces stress and anxiety",
+      "Supports healing processes",
+      "Promotes mental clarity"
+    ],
+    "process": "Our chromotherapy treatments use colored lights in a controlled environment. You'll be exposed to specific colors based on your condition - red for energy, blue for calming, green for balance, etc. The treatment is deeply relaxing and non-invasive.",
+    "conditionsTreated": [
+      "Depression and anxiety",
+      "Insomnia",
+      "Seasonal affective disorder",
+      "Fatigue",
+      "Stress-related conditions",
+      "Energy imbalances"
+    ],
+    "duration": "Sessions: 20-40 minutes. Recommended: 8-12 sessions for optimal benefits",
+    "additionalInfo": "Chromotherapy is often combined with meditation or relaxation therapy for enhanced effects. Each color has specific therapeutic properties that influence both physical and emotional health."
+  }
+]

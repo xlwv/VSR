@@ -41,9 +41,9 @@ const HeroAbout = () => {
           <div className="space-y-6">
             {/* About Label with Underline SVG */}
             <div className="inline-block">
-              <h2 className="text-xl md:text-2xl uppercase tracking-wider text-gray-600 mb-2">
+              <h3 className="text-xl md:text-2xl uppercase tracking-wider text-gray-600 mb-2">
                 ABOUT
-              </h2>
+              </h3>
               <Image 
                 src="/assets/SVG/below-right.svg"
                 alt=""
@@ -54,9 +54,9 @@ const HeroAbout = () => {
             </div>
 
             {/* Main Heading */}
-            <h3 className="text-3xl md:text-4xl lg:text-5xl text-[#9c3f1a] leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#9c3f1a] leading-tight">
               VSR Vriksha Nature Cure Center
-            </h3>
+            </h2>
 
             {/* Description Paragraphs */}
             <div className="space-y-4 text-gray-700 leading-relaxed">

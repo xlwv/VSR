@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Panchakarma",
+    "slug": "panchakarma",
+    "imageName": "trt-1.png",
+    "description": "A comprehensive Ayurvedic detoxification and rejuvenation program designed to cleanse the body of toxins and restore balance."
+  },
+  {
+    "id": 2,
+    "name": "Shirodhara",
+    "slug": "shirodhara",
+    "imageName": "trt-2.png",
+    "description": "A deeply relaxing treatment where warm herbal oil is gently poured over the forehead to calm the mind and soothe the nervous system."
+  },
+  {
+    "id": 3,
+    "name": "Abhyanga",
+    "slug": "abhyanga",
+    "imageName": "trt-3.png",
+    "description": "Traditional Ayurvedic oil massage that promotes circulation, detoxification, and deep relaxation using warm herbal oils."
+  },
+  {
+    "id": 4,
+    "name": "Udvartana",
+    "slug": "udvartana",
+    "imageName": "trt-4.png",
+    "description": "An invigorating herbal powder massage that helps reduce excess weight, improves skin texture, and enhances circulation."
+  },
+  {
+    "id": 5,
+    "name": "Nasyam",
+    "slug": "nasyam",
+    "imageName": "trt-5.png",
+    "description": "A nasal therapy that cleanses and protects the respiratory passages, helpful for sinus issues, headaches, and mental clarity."
+  },
+  {
+    "id": 6,
+    "name": "Kati Basti",
+    "slug": "kati-basti",
+    "imageName": "trt-6.png",
+    "description": "Specialized treatment for lower back pain where warm medicated oil is retained over the lumbar region to relieve pain and stiffness."
+  },
+  {
+    "id": 7,
+    "name": "Janu Basti",
+    "slug": "janu-basti",
+    "imageName": "trt-7.png",
+    "description": "Therapeutic treatment for knee joint pain using warm medicated oil to reduce inflammation and improve mobility."
+  },
+  {
+    "id": 8,
+    "name": "Pizhichil",
+    "slug": "pizhichil",
+    "imageName": "trt-8.png",
+    "description": "The 'Royal Treatment' where streams of warm medicated oil are poured over the body while being gently massaged, deeply nourishing."
+  }
+]
