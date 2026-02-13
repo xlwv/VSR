@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "../../public/assets/SVG/logo.svg";
+import Button from "@/components/Button";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -23,37 +24,35 @@ const Navbar = () => {
     <>
       {/* ===== HEADER ===== */}
       <header className="fixed top-0 z-50 w-full bg-white shadow-sm">
-        <div className="container flex items-center justify-between">
-
+        <div className="container flex items-center justify-between py-2">
+          
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center">
-              <Image
-                src={Logo}
-                alt="VSR Vriksha Logo"
-                style={{ minWidth: "160px" }}
-                width={150}
-                height={50}
-              />
+              <Image src={Logo} alt="VSR Vriksha Logo" style={{ minWidth: "160px" }} width={150} height={50} />
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 font-medium text-gray-600 nav-menu">
+          <nav className="hidden lg:flex items-center gap-8 font-medium nav-menu">
             {navLinks.map((link) => {
-              const isActive = pathname.startsWith(link.href);
-
+              const isActive = pathname === link.href;
+              
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition-colors text-[16px] ${
-                    isActive
-                      ? "text-[#A54220]"
-                      : "text-gray-600 hover:text-[#A54220]"
+                  className={`relative py-1 transition-colors text-[16px] group ${
+                    isActive ? "text-[var(--brand-brown)] font-semibold" : "text-gray-600 hover:text-[var(--brand-brown)]"
                   }`}
                 >
-                  <p>{link.name}</p>
+                  {link.name}
+                  {/* Animated Bottom Underline */}
+                  <span
+                    className={`absolute left-0 bottom-0 h-[2px] bg-[var(--brand-brown)] transition-all duration-300 ease-in-out ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
                 </Link>
               );
             })}
@@ -61,30 +60,17 @@ const Navbar = () => {
 
           {/* Call Button (DESKTOP ONLY) */}
           <div className="hidden lg:block">
-            <a href="tel:+918431004444" className="call-btn">
-              +91 84310 04444
-            </a>
+            <Button text="+91 84310 04444" href="tel:+918431004444" variant="primary" />
           </div>
 
           {/* Hamburger (MOBILE ONLY) */}
           <button
             onClick={() => setOpen(true)}
-            className="lg:hidden"
+            className="lg:hidden p-2 text-gray-700"
             aria-label="Open menu"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/SVG"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
             </svg>
           </button>
         </div>
@@ -94,7 +80,7 @@ const Navbar = () => {
       <div
         className={`
           fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px]
-          transition-opacity duration-500
+          transition-opacity duration-300
           ${open ? "opacity-100 visible" : "opacity-0 invisible"}
           md:hidden
         `}
@@ -105,48 +91,46 @@ const Navbar = () => {
       <div
         className={`
           fixed top-0 right-0 z-50 h-full w-[80%] max-w-sm bg-white shadow-xl
-          transform transition-transform duration-500 ease-in-out
+          transform transition-transform duration-300 ease-in-out
           ${open ? "translate-x-0" : "translate-x-full"}
           md:hidden
         `}
       >
         {/* Close button */}
         <div className="flex justify-end p-4">
-          <button onClick={() => setOpen(false)}>
-            <svg
-              xmlns="http://www.w3.org/2000/SVG"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+          <button onClick={() => setOpen(false)} className="p-2 text-gray-600 hover:text-black transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
         {/* Mobile Nav Links */}
-        <nav className="flex flex-col items-center gap-6 mt-10 font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className={`transition-colors ${
-                pathname.startsWith(link.href)
-                  ? "text-[#A54220]"
-                  : "text-gray-700"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <nav className="flex flex-col items-center gap-3 mt-4 px-6">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={`w-full text-center py-3 rounded-xl transition-all duration-300 para ${
+                  isActive
+                    ? "bg-[var(--brand-brown)] text-white shadow-md transform scale-[1.02] font-semibold"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-[var(--brand-brown)]"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </nav>
+        
+        {/* Mobile Call Button */}
+        <div className="absolute bottom-10 w-full px-6 flex justify-center">
+          <Button text="Call Now" href="tel:+918431004444" variant="primary" />
+        </div>
       </div>
     </>
   );

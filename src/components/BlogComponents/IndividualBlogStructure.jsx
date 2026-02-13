@@ -54,7 +54,7 @@ const IndividualBlogStructure = ({ data }) => {
             <div className="mt-4 flex justify-end">
               <Link
                 href="/blogs"
-                className="inline-flex items-center gap-2 rounded-full bg-[#A54220] px-5 py-2 text-sm text-white hover:bg-[#8e3d1b] transition whitespace-nowrap"
+                className="para inline-flex items-center gap-2 rounded-full bg-[#A54220] px-5 py-2 text-sm text-white hover:bg-[#8e3d1b] transition whitespace-nowrap"
               >
                 <svg
                   width="16"

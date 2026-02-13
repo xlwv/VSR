@@ -2,6 +2,7 @@
 import Image from "next/image";
 
 export default function HealthPackage({
+  id, // Add id prop for anchor linking
   title,
   description,
   duration,
@@ -33,7 +34,10 @@ export default function HealthPackage({
   );
 
   return (
-    <section className="w-full bg-white pt-4 pb-18">
+    <section 
+      id={id} // Add id for anchor linking
+      className="w-full bg-white pt-4 pb-18 scroll-mt-24" // scroll-mt-24 for offset when jumping to anchor
+    >
       <div
         className={`container flex flex-col lg:flex-row items-center gap-6 md:gap-12 ${
           reverse ? "lg:flex-row-reverse" : ""

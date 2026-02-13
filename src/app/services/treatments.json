@@ -45,14 +45,14 @@
     "id": 7,
     "name": "Janu Basti",
     "slug": "janu-basti",
-    "imageName": "trt-7.png",
+    "imageName": "gallery-5.webp",
     "description": "Therapeutic treatment for knee joint pain using warm medicated oil to reduce inflammation and improve mobility."
   },
   {
     "id": 8,
     "name": "Pizhichil",
     "slug": "pizhichil",
-    "imageName": "trt-8.png",
+    "imageName": "gallery-6.webp",
     "description": "The 'Royal Treatment' where streams of warm medicated oil are poured over the body while being gently massaged, deeply nourishing."
   }
 ]

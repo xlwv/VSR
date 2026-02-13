@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
+import Button from "@/components/Button";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,33 +25,38 @@ const HeroProgram = () => {
   const programs = [
     {
       id: 1,
+      slug: "optimal-weight-package",
       image: "/assets/HP-1.webp",
       title: "Optimal Weight Package",
       description: "Designed to help you achieve your target weight naturally, this program combines...",
     },
     {
-      id: 4, // Deliberately out of order in array to demonstrate the sort works
-      image: "/assets/HP-4.webp",
-      title: "Body & Mind Detox Package",
-      description: "This program aims to reduce stress, calm your mind, and repair your body through...",
-    },
-    {
       id: 2,
+      slug: "diabetes-remission-package",
       image: "/assets/HP-2.webp",
       title: "Diabetes Remission Package",
       description: "This program focuses on managing blood sugar levels and improving insulin sensitivity...",
     },
     {
       id: 3,
+      slug: "renew-your-gut-package",
       image: "/assets/HP-3.webp",
       title: "Renew Your Gut Package",
       description: "Address issues like bloating, constipation, and IBS through carefully curated treatments",
     },
     {
-      id: 5,
-      image: "/assets/HP-1.webp",
+      id: 4,
+      slug: "body-mind-detox-package",
+      image: "/assets/HP-4.webp",
       title: "Body & Mind Detox Package",
       description: "This program aims to reduce stress, calm your mind, and repair your body through...",
+    },
+    {
+      id: 5,
+      slug: "pain-management-package",
+      image: "/assets/pain.webp",
+      title: "Pain Management Package",
+      description: "Whether you're dealing with arthritis, migraines, or muscular pain, this program is ...",
     },
   ];
 
@@ -111,14 +117,14 @@ const HeroProgram = () => {
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/70 z-0" />
+      <div className="absolute inset-0 bg-black/85 z-0" />
 
       <div className="container relative z-10">
         {/* Header */}
         <div className="text-center mb-8">
           <h2 
             ref={titleRef}
-            className="text-3xl md:text-4xl lg:text-5xl text-white mb-4"
+            className="text-white mb-4"
           >
             Programs
           </h2>
@@ -206,15 +212,15 @@ const ProgramCard = ({ program }) => {
                     hover:border-[#ffffff80] 
                     transition-all duration-300 
                     shadow-xl
-                    w-[310px] max-w-[620px] p-3">
+                    w-[310px] max-w-[620px] p-3 card-serv">
 
       {/* Image */}
-      <div className="relative h-[200px] overflow-hidden rounded-t-[28px]">
+      <div className="relative h-[200px] overflow-hidden img-serv rounded-t-[28px]">
         <Image
           src={program.image}
           alt={program.title}
           fill
-          className="object-cover"
+          className="object-cover rounded-2xl"
           loading="lazy"
           quality={85}
         />
@@ -223,14 +229,14 @@ const ProgramCard = ({ program }) => {
       {/* Content */}
       <div className="px-6 py-6 text-center flex flex-col justify-between h-[230px]">
 
-        <div>
+        <div className="card-text">
           {/* Swis Font Override */}
           <h3
             className="text-white mb-3"
             style={{
               fontFamily: '"Swis721 BT", sans-serif',
-              fontSize: "18px",
               fontWeight: 500,
+              fontSize: '18px',
             }}
           >
             {program.title}
@@ -242,9 +248,13 @@ const ProgramCard = ({ program }) => {
         </div>
 
         <div className="mt-6">
-          <button className="call-btn !px-7 !py-2 !text-[13px]">
-            VIEW MORE
-          </button>
+          <Button 
+            text="VIEW MORE" 
+            variant="primary" 
+            size="sm" 
+            href={`/programs#${program.slug}`}
+            className="!px-7 !py-2 !text-[13px]" 
+          />
         </div>
 
       </div>

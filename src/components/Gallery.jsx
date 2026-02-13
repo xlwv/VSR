@@ -1,20 +1,30 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "@/components/Button";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const Gallery = ({ images = [] }) => {
+const Gallery = ({ images = [], initialVisible = 6 }) => {
   const containerRef = useRef(null);
   const imagesRef = useRef([]);
+  const [visibleCount, setVisibleCount] = useState(initialVisible);
+
+  // Check if all images are visible
+  const allImagesVisible = visibleCount >= images.length;
+
+  // Handle VIEW MORE click
+  const handleViewMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 6, images.length));
+  };
 
   useEffect(() => {
     // 1. Initialize Fancybox
@@ -58,22 +68,23 @@ const Gallery = ({ images = [] }) => {
       Fancybox.close();
       ctx.revert();
     };
-  }, [images]); // Re-run if images prop changes
+  }, [visibleCount]); // Re-run when visible count changes
+
+  // Get only visible images
+  const visibleImages = images.slice(0, visibleCount);
 
   return (
-    <section ref={containerRef} className="bg-white">
-      <div className="container mx-auto px-4">
-        
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-4 mb-12">
-          {images.map((img, index) => (
+    <section ref={containerRef} className="py-4 bg-white">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          {visibleImages.map((img, index) => (
             <div
               key={index}
               ref={(el) => (imagesRef.current[index] = el)}
-              className="group relative aspect-square md:aspect-[4/3] overflow-hidden rounded-[1rem] cursor-pointer shadow-lg"
+              className="group relative aspect-square md:aspect-[4/3] overflow-hidden rounded-[1rem] cursor-pointer"
             >
-              
-                <a href={img.src}
+              <a 
+                href={img.src}
                 data-fancybox="gallery"
                 data-caption={img.alt}
                 className="block w-full h-full"
@@ -101,12 +112,17 @@ const Gallery = ({ images = [] }) => {
           ))}
         </div>
 
-        {/* View More Button */}
-        <div className="text-center">
-          <button className="call-btn px-8 py-3 text-sm tracking-wider uppercase">
-            View More
-          </button>
-        </div>
+        {/* View More Button - Only show if there are more images */}
+        {!allImagesVisible && (
+          <div className="text-center">
+            <Button 
+              text="VIEW MORE" 
+              variant="primary" 
+              onClick={handleViewMore}
+              className="px-8 py-3 text-sm tracking-wider uppercase" 
+            />
+          </div>
+        )}
 
       </div>
     </section>

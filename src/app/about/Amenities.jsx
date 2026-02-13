@@ -23,8 +23,8 @@ export default function Amenities() {
 
   return (
     <section className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-serif mb-2">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="font-serif mb-2">
           A Serene Retreat For A Wholesome Experience
         </h2>
 

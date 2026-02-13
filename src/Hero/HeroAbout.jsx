@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Button from "@/components/Button";
 const HeroAbout = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const loadVideo = () => {
@@ -13,21 +13,21 @@ const HeroAbout = () => {
         <section className="container py-8 flex flex-wrap  justify-center text-center">
             <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div >
-                <h3 className="text-4xl home-stat">3000+</h3>
+                <h3 className="home-stat">3000+</h3>
                 <p className="text-[#646464] para">Clients Served</p>
             </div>
             <div>
-                <h3 className="text-4xl home-stat">84000+</h3>
+                <h3 className="home-stat">84000+</h3>
                 <p className="text-[#646464] para">Therapies Delivered</p>
             </div>
             </div>
             <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div>
-                <h3 className="text-4xl home-stat">70+</h3>
+                <h3 className="home-stat">70+</h3>
                 <p className="text-[#646464] para">Ailments Cured</p>
             </div>
             <div>
-                <h3 className="text-4xl home-stat">200+</h3>
+                <h3 className="home-stat">200+</h3>
                 <p className="text-[#646464] para">Global Clientele</p>
             </div>
             </div>
@@ -42,7 +42,7 @@ const HeroAbout = () => {
           <div className="space-y-6">
             {/* About Label with Underline SVG */}
             <div className="inline-block">
-              <h3 className="text-xl md:text-2xl uppercase tracking-wider text-gray-600 mb-2">
+              <h3 className="uppercase tracking-wider text-gray-600 mb-2">
                 ABOUT
               </h3>
               <Image 
@@ -55,7 +55,7 @@ const HeroAbout = () => {
             </div>
 
             {/* Main Heading */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#9c3f1a] leading-tight">
+            <h2 className="text-[#9c3f1a] leading-tight">
               VSR Vriksha Nature Cure Center
             </h2>
 
@@ -71,11 +71,7 @@ const HeroAbout = () => {
 
             {/* CTA Button */}
             <div>
-              <Link href="/about">
-              <button className="call-btn">
-                KNOW MORE
-              </button>
-              </Link>
+              <Button text="KNOW MORE" variant="primary" href="/about" />
             </div>
           </div>
 

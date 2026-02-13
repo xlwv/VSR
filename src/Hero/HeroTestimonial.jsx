@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 // 1. Sub-component for Video Logic
@@ -9,7 +9,7 @@ const VideoCard = ({ videoUrl, thumbnail }) => {
 
   return (
     <div className="relative w-full">
-      <div className="relative yt-frame rounded-2xl overflow-hidden shadow-2xl aspect-video bg-gray-200">
+      <div className="relative yt-frame rounded-2xl overflow-hidden aspect-video bg-gray-200">
         {!videoLoaded ? (
           // Video Thumbnail with Play Button (before click)
           <div 
@@ -57,9 +57,41 @@ const HeroTestimonial = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const testimonialsPerView = 3;
-  // Ensure we don't have 0 slides to avoid division by zero errors
+  // Responsive testimonials per view
+  // Mobile: 1, Tablet/md: 2, Desktop/lg: 3
+  const getTestimonialsPerView = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1024) return 3; // lg breakpoint
+      if (window.innerWidth >= 768) return 2;  // md breakpoint
+    }
+    return 1; // mobile
+  };
+
+  const [testimonialsPerView, setTestimonialsPerView] = useState(3); // Default to 3 before mount
+
+  // Update testimonials per view on resize
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Set initial value on mount
+      setTestimonialsPerView(getTestimonialsPerView());
+      
+      const handleResize = () => {
+        setTestimonialsPerView(getTestimonialsPerView());
+        // Reset to first slide on resize to prevent out-of-bounds blank screens
+        setCurrentIndex(0); 
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  // Calculate total slides based on current testimonials per view
   const totalSlides = Math.ceil(testimonials.length / testimonialsPerView) || 1;
+
+  // Check if we're at first or last slide
+  const isFirstSlide = currentIndex === 0;
+  const isLastSlide = currentIndex === totalSlides - 1;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % totalSlides);
@@ -69,20 +101,26 @@ const HeroTestimonial = ({
     setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
-  const currentTestimonials = testimonials.slice(
-    currentIndex * testimonialsPerView,
-    (currentIndex + 1) * testimonialsPerView
-  );
+  // Group testimonials into "pages" for the slider
+  const pages = [];
+  for (let i = 0; i < totalSlides; i++) {
+    pages.push(
+      testimonials.slice(
+        i * testimonialsPerView,
+        (i + 1) * testimonialsPerView
+      )
+    );
+  }
 
-  // If no testimonials are passed, you might want to hide the section or show a placeholder
+  // If no testimonials are passed, hide the section
   if (!testimonials || testimonials.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-14 bg-[#FAF5F3]"> {/* Added a light bg for contrast */}
-      <div className="container">
+    <section className="py-16 md:py-14 bg-[#FAF5F3]">
+      <div className="container overflow-hidden">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="para1 text-3xl md:text-4xl lg:text-3xl mb-4 text-[#1A1A1A]">
+          <h2 className="mb-4 text-[#A03D13]">
             {title}
           </h2>
           
@@ -94,24 +132,32 @@ const HeroTestimonial = ({
             <path d="M251.635 6.72938C253.658 8.8847 254.734 11.04 254.82 13.7126C254.82 14.661 254.605 15.0489 253.572 14.9627C249.225 14.7472 245.824 12.0746 244.791 7.80704C244.533 6.81559 244.146 6.64316 243.285 6.68627C242.123 6.72937 139.755 6.68627 139.755 6.68627L139.76 6.0061L139.755 4.53094C139.755 4.53094 252.711 4.143 259.167 4.74649C266.183 5.34998 271.649 11.8159 271.606 18.8423C271.606 19.7475 271.348 20.0062 270.444 20.0062C263.73 20.0062 257.747 15.1783 256.499 8.49676C256.24 7.03115 255.81 6.42763 254.303 6.68627C253.572 6.81559 252.797 6.68627 251.678 6.68627M268.335 17.6353C269.54 17.7646 269.196 16.9887 269.11 16.4283C268.421 11.9022 263.902 7.5053 259.382 6.90181C258.694 6.8156 258.306 6.85869 258.479 7.5915C258.651 11.9021 263.945 17.2043 268.335 17.5922L268.335 17.6353ZM251.936 12.5057C252.582 12.5057 252.453 12.1608 252.367 11.7728C252.022 9.91925 249.397 7.33287 247.589 7.03113C247.245 6.98802 246.814 6.8156 246.9 7.5053C246.9 9.18645 250.258 12.5057 251.936 12.5057Z" fill="#A03D13"/>
             <path d="M272.037 6.99043C269.411 6.90422 267.259 6.04211 265.409 4.31785C264.763 3.75747 264.763 3.2833 265.409 2.6367C268.852 -0.94113 275.351 -0.854914 278.665 2.80913C279.225 3.45573 279.053 3.71435 278.579 4.23162C276.728 6.04209 274.533 6.90422 272.08 6.99043M275.782 3.41262C273.199 1.68836 270.401 1.68836 268.034 3.54194C270.875 5.26619 273.759 5.17999 275.782 3.41262Z" fill="#A03D13"/>
             </svg>
-
           </div>
-
-          
+          {description && <p className="para">{description}</p>}
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {currentTestimonials.map((testimonial, index) => (
-            <div key={index} className="flex flex-col gap-4">
-              <VideoCard 
-                videoUrl={testimonial.videoUrl} 
-                thumbnail={testimonial.thumbnail} 
-              />
-              {/* Client name */}
-              
-            </div>
-          ))}
+        {/* Sliding Testimonials Track */}
+        <div className="w-full relative mb-12">
+          <div 
+            className="flex w-full transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {pages.map((page, pageIndex) => (
+              <div 
+                key={pageIndex} 
+                className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              >
+                {page.map((testimonial, idx) => (
+                  <div key={idx} className="flex flex-col gap-4">
+                    <VideoCard 
+                      videoUrl={testimonial.videoUrl} 
+                      thumbnail={testimonial.thumbnail} 
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Navigation Controls (Only show if there are multiple slides) */}
@@ -120,11 +166,19 @@ const HeroTestimonial = ({
             {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className="w-11 h-10 rounded-full bg-[#9c3f1a] hover:bg-[#7f3214] flex items-center justify-center transition-colors shadow-lg"
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                isFirstSlide
+                  ? 'bg-white border border-[#9c3f1a] hover:bg-[#9c3f1a] group' // Outline style when at first slide
+                  : 'bg-[#9c3f1a] hover:bg-[#7f3214]' // Filled style when not at first slide
+              }`}
               aria-label="Previous testimonials"
             >
               <svg 
-                className="w-5 h-5 text-white" 
+                className={`w-5 h-5 transition-colors duration-300 ${
+                  isFirstSlide
+                    ? 'text-[#9c3f1a] group-hover:text-white' // Brown arrow, white on hover
+                    : 'text-white' // White arrow
+                }`}
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -152,11 +206,19 @@ const HeroTestimonial = ({
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className="w-11 h-10 rounded-full bg-[#9c3f1a] hover:bg-[#7f3214] flex items-center justify-center transition-colors shadow-lg"
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                isLastSlide
+                  ? 'bg-white border border-[#9c3f1a] hover:bg-[#9c3f1a] group' // Outline style when at last slide
+                  : 'bg-[#9c3f1a] hover:bg-[#7f3214]' // Filled style when not at last slide
+              }`}
               aria-label="Next testimonials"
             >
               <svg 
-                className="w-5 h-5 text-white" 
+                className={`w-5 h-5 transition-colors duration-300 ${
+                  isLastSlide
+                    ? 'text-[#9c3f1a] group-hover:text-white' // Brown arrow, white on hover
+                    : 'text-white' // White arrow
+                }`}
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"

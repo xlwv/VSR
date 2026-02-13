@@ -5,7 +5,6 @@ import HeroTestimonial from "../Hero/HeroTestimonial";
 import HolisticTreatments from "@/components/HolisticTreatments";
 import Gallery from "@/components/Gallery";
 import ScrollStory from "@/components/ScrollStory";
-import Image from "next/image";
 export default function Page() {
   const galleryData = [
     { src: "/assets/gallery-1.webp", alt: "Wellness Center Interior" },
@@ -14,25 +13,24 @@ export default function Page() {
     { src: "/assets/gallery-4.webp", alt: "Kitchen Staff" },
     { src: "/assets/gallery-5.webp", alt: "Treatment Facilities" },
     { src: "/assets/gallery-6.webp", alt: "Relaxation Room" },
+    { src: "/assets/gallery-1.webp", alt: "Kitchen Staff" },
+    { src: "/assets/gallery-2.webp", alt: "Treatment Facilities" },
+    { src: "/assets/gallery-3.webp", alt: "Relaxation Room" },
   ];
   const testimonialData = [
     {
-      name: "Mr. Raj Kapoor | Customer Testimonial",
       thumbnail: "https://img.youtube.com/vi/BxkXBSAeG_8/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/embed/BxkXBSAeG_8",
     },
     {
-      name: "Mr. Vangala Sanjeeva Reddy, Chairperson",
       thumbnail: "https://img.youtube.com/vi/jxcP8N35RvY/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/embed/jxcP8N35RvY",
     },
     {
-      name: "Manyam Pichi Reddy | Customer Testimonial",
       thumbnail: "https://img.youtube.com/vi/jH16xGuXPDY/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY",
     },
     {
-      name: "Mr. Vangala Sanjeeva Reddy, Chairperson",
       thumbnail: "https://img.youtube.com/vi/jxcP8N35RvY/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/embed/jxcP8N35RvY",
     },
@@ -140,13 +138,14 @@ export default function Page() {
             image: "/assets/Hero-Holi-4.webp",
           },          
         ]}
+        showButtons={false}
       />
       {/* Gallery Component */}
       <section className="py-16 bg-white">
         <div className="container">
           {/* Title and Description */}
           <div className="text-center mb-12 space-y-4">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl mb-4 text-black">
+            <h2 className="mb-4 text-black">
               Photo Gallery
             </h2>
             
@@ -175,7 +174,7 @@ export default function Page() {
       </section>
       <HeroTestimonial 
         title="Doctor Videos"
-        description="The results and our client testimonials speak volumes of our efforts in paving the way towards an illustrious legacy"
+        description=""
         testimonials={doctorData}
       />
     </main>

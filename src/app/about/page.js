@@ -81,73 +81,67 @@ export default function Page() {
         ctaLink="/booking"
       />
 
-      <section className="w-full overflow-hidden">
-  <div className="flex flex-col md:flex-row w-full">
+      {/* Added relative positioning and z-index */}
+      <section className="relative w-full overflow-hidden z-0">
+        <div className="flex flex-col md:flex-row w-full">
 
-    {/* IMAGE SIDE */}
-    <div className="relative w-full md:w-1/2 h-[320px] sm:h-[420px] md:h-auto md:min-h-[460px]">
+          {/* IMAGE SIDE - Added z-0 to keep it below popup */}
+          <div className="relative w-full md:w-1/2 h-[320px] sm:h-[420px] md:h-auto md:min-h-[460px] z-0">
+            <Image
+              src="/assets/mission_vision.webp"
+              alt="Girl silhouette with nature"
+              fill
+              priority
+              className="object-cover object-[100%_center]"
+            />
+          </div>
 
+          {/* CONTENT SIDE - Added z-0 */}
+          <div
+            className="relative w-full md:w-1/2 flex items-center md:min-h-[460px] z-0"
+            style={{
+              background: "linear-gradient(180deg, #EAEDDA 0%, #E6E7D7 100%)",
+            }}
+          >
+            <div className="px-6 sm:px-8 md:pl-20 py-10 md:py-14 max-w-[520px]">
 
-  {/* Tablet */}
-  <Image
-    src="/assets/mission_vision.webp"
-    alt="Girl silhouette with nature"
-    fill
-    priority
-    className="block object-cover object-[92%_center]  lg:object-[85%_center]"
-  />
+              <h3 className="sub-h2 font-serif text-[#2b2b2b]">
+                Mission
+              </h3>
+              <Image
+                src="/assets/SVG/below-right.svg"
+                alt=""
+                width={139}
+                height={20}
+                className="mt-2 mb-6"
+              />
 
+              <p className="para leading-[26px] sm:leading-[28px] text-[#555] mb-12 md:mb-14">
+                To provide a complete rejuvenation and healing experience with
+                the most innovative methods and advanced technology.
+              </p>
 
-</div>
+              <h3 className="sub-h2 font-serif text-[#2b2b2b]">
+                Vision
+              </h3>
+              <Image
+                src="/assets/SVG/below-right.svg"
+                alt=""
+                width={139}
+                height={20}
+                className="mt-2 mb-6"
+              />
 
+              <p className="para leading-[26px] sm:leading-[28px] text-[#555]">
+                To be Telangana&apos;s first nature cure centre of its kind,
+                providing exceptional service.
+              </p>
 
-    {/* CONTENT SIDE */}
-    <div
-      className="w-full md:w-1/2 flex items-center md:min-h-[460px]"
-      style={{
-        background: "linear-gradient(180deg, #EAEDDA 0%, #E6E7D7 100%)",
-      }}
-    >
-      <div className="px-6 sm:px-8 md:pl-20 py-10 md:py-14 max-w-[520px]">
+            </div>
+          </div>
 
-        <h2 className="text-[26px] sm:text-[30px] md:text-[32px] font-serif text-[#2b2b2b]">
-          Mission
-        </h2>
-        <Image
-          src="/assets/SVG/below-right.svg"
-          alt=""
-          width={139}
-          height={20}
-          className="mt-2 mb-6"
-        />
-
-        <p className="text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-[#555] mb-12 md:mb-14">
-          To provide a complete rejuvenation and healing experience with
-          the most innovative methods and advanced technology.
-        </p>
-
-        <h2 className="text-[26px] sm:text-[30px] md:text-[32px] font-serif text-[#2b2b2b]">
-          Vision
-        </h2>
-        <Image
-          src="/assets/SVG/below-right.svg"
-          alt=""
-          width={139}
-          height={20}
-          className="mt-2 mb-6"
-        />
-
-        <p className="text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] text-[#555]">
-          To be Telangana's first nature cure centre of its kind,
-          providing exceptional service.
-        </p>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
+        </div>
+      </section>
 
       <Amenities />
 

@@ -1,5 +1,5 @@
 import { FaLocationDot } from "react-icons/fa6";
-import Link from "next/link";
+import Button from "@/components/Button";
 
 const HeroBanner = () => {
   return (
@@ -15,25 +15,20 @@ const HeroBanner = () => {
           </h1>
 
           {/* Subheading */}
-          <h3 className="text-sm sm:text-base md:text-2xl mb-5 md:mb-6 font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-5 md:mb-6 font-light leading-relaxed">
             Telangana&apos;s First Premium Naturopathy Retreat
-          </h3>
+          </p>
 
           {/* Location */}
           <div className="flex items-center gap-2 sm:gap-3 mb-6 md:mb-8">
             <FaLocationDot className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            <p className="text-sm sm:text-base para">
+            <p className="text-lg sm:text-xl md:text-2xl">
               Hyderabad
             </p>
           </div>
 
           {/* CTA */}
-          <Link href="/booking">
-            <button className="call-btn text-black">
-              BOOK YOUR STAY
-            </button>
-          </Link>
-
+<Button text="BOOK YOUR STAY" variant="secondary" />
         </div>
       </div>
     </section>

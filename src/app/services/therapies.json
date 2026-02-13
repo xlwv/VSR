@@ -45,14 +45,14 @@
     "id": 7,
     "name": "Mud Therapy",
     "slug": "mud-therapy",
-    "imageName": "thrp-7.png",
+    "imageName": "gallery-1.webp",
     "description": "Discover the therapeutic benefits of natural mud treatments. Detoxify and rejuvenate your body with earth's healing elements."
   },
   {
     "id": 8,
     "name": "Chromotherapy",
     "slug": "chromotherapy",
-    "imageName": "thrp-8.png",
+    "imageName": "gallery-2.webp",
     "description": "Experience healing through colors. This ancient practice uses colored lights to balance energy and promote physical and emotional well-being."
   }
 ]

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import Button from "@/components/Button";
 
 export default function ScrollStory({
   slides = [],
@@ -83,7 +84,7 @@ export default function ScrollStory({
       {slides.map((item, i) => (
         <div key={i} className={isMobile ? "w-full flex-shrink-0" : "min-w-full"}>
           {item.paragraphs?.map((para, idx) => (
-            <p key={idx} className={`para ${layoutType === "discover" ? "text-[#555]" : "text-gray-600"}`}>
+            <p key={idx} className={`para mb-3 ${layoutType === "discover" ? "text-[#555]" : "text-gray-600"}`}>
               {para}
             </p>
           ))}
@@ -109,7 +110,7 @@ export default function ScrollStory({
   const renderImageSection = (isMobile = false) => {
     const imageWrapperClass = layoutType === "discover" 
       ? `${isMobile ? "w-full mb-6" : "w-[580px] flex-shrink-0"}` 
-      : `${isMobile ? "w-full mb-6" : "w-[500px] flex-shrink-0"}`;
+      : `${isMobile ? "w-full mb-6" : "w-[520px] flex-shrink-0"}`;
 
     const imageHeightClass = layoutType === "discover"
       ? `${isMobile ? "h-[280px]" : "h-[400px]"}`
@@ -156,9 +157,9 @@ export default function ScrollStory({
         </div>
 
         {(currentSlide.imageTitle || currentSlide.imageDescription) && (
-          <div className="mt-4 px-1">
+          <div className="mt-4 px-1 h-[100px]">
             {currentSlide.imageTitle && (
-              <h3 className={`text-lg font-semibold mb-2 ${layoutType === "discover" ? "text-[#A54220]" : "text-gray-800"}`}>
+              <h3 className={`font-semibold mb-2 ${layoutType === "discover" ? "text-[#A54220]" : "text-gray-800"}`}>
                 {currentSlide.imageTitle}
               </h3>
             )}
@@ -173,59 +174,64 @@ export default function ScrollStory({
     );
   };
 
-const renderDiscoverContent = () => (
-  <div className="relative rounded-[32px] p-12 max-w-[480px]"> {/* Added 'relative' so absolute positioning works correctly */}
-    <div 
-      className="bg-[#f5f0ed]" 
-      style={{ 
-        height: '370px', 
-        width: '140px', 
-        borderRadius: '25px', 
-        color: 'rgba(160, 61, 19, 0.08)' 
-      }}
-    ></div>
+  const renderDiscoverContent = () => (
+    <div className="relative rounded-[32px] p-12 pl-4 max-w-[480px]">
+      <div 
+        className="bg-[#f5f0ed]" 
+        style={{ 
+          height: '370px', 
+          width: '140px', 
+          borderRadius: '25px', 
+          color: 'rgba(160, 61, 19, 0.08)' 
+        }}
+      ></div>
 
-    <div className="absolute" style={{ top: '100px', left: '120px', width: '500px' }}>
-      <h2 
-        className={`text-[42px] font-serif mb-8 tracking-wider ${headingClassName}`} 
-        style={{ color: textColor }}
-      >
-        {heading}
-      </h2>
-      <ul className="space-y-6">
-        {bulletPoints.map((point, i) => (
-          <li key={i} className="flex items-start gap-3"><h3>
-            <span className="text-[#A54220] text-xl mt-1">•</span>
-            <span className="text-[18px] text-[#2b2b2b] tracking-wide uppercase pl-5 font-light">
-              {point}
-            </span>
-            </h3>
-          </li>
-        ))}
-      </ul>
+      <div className="absolute" style={{ top: '100px', left: '70px', width: '500px' }}>
+        <h2 
+          className={`font-serif mb-8 tracking-wider ${headingClassName}`} 
+          style={{ color: textColor }}
+        >
+          {heading}
+        </h2>
+        <ul className="space-y-6">
+          {bulletPoints.map((point, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <h3>
+                <span className="text-[#A54220] text-xl mt-1">•</span>
+                <span className="text-[#2b2b2b] tracking-wide uppercase pl-5 font-light">
+                  {point}
+                </span>
+              </h3>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {renderDots()}
     </div>
-    {renderDots()}
-  </div>
-);
+  );
+
   const renderCtaButton = () => {
-    const buttonClasses = "bg-[#a44a1f] text-white px-8 py-3 rounded-full hover:bg-[#8a3d19] transition-colors inline-block";
-    if (ctaLink) return <Link href={ctaLink} className={buttonClasses}>{ctaText}</Link>;
-    if (onCtaClick) return <button onClick={onCtaClick} className={buttonClasses}>{ctaText}</button>;
-    return <span className={buttonClasses}>{ctaText}</span>;
+    return (
+      <Button
+        text={ctaText}
+        href={ctaLink}
+        onClick={onCtaClick}
+        variant="primary"
+        className="!bg-[#a44a1f] !px-8 !py-3 hover:!bg-[#8a3d19]"
+      />
+    );
   };
 
   if (layoutType === "discover") {
     return (
-     <div ref={wrapperRef} className="md:h-[300vh]" style={{ backgroundColor }}>
-
+      <div ref={wrapperRef} className="h-[180vh]" style={{ backgroundColor }}>
         <section
-          className={`md:sticky md:top-0 max-w-7xl mx-auto px-6 md:px-16 py-16 md:py-24 min-h-screen flex flex-col justify-center ${sectionClassName}`}
-          
+          className={`sticky top-0 container mx-auto py-12 md:py-14 lg:py-16 xl:py-18 min-h-screen flex flex-col justify-center ${sectionClassName}`}
         >
-          <div className={`hidden md:flex items-end flex-row gap-16 ${containerClassName} justify-between`}>
+          <div className={`hidden lg:flex items-end flex-row gap-16 ${containerClassName} justify-between`}>
             {showBulletPoints ? renderDiscoverContent() : (
               <div className={`max-w-xl flex-1 ${contentClassName}`}>
-                <h2 className={`text-[24px] tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
+                <h2 className={`tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
                   {heading}
                 </h2>
                 <div className="mb-6">
@@ -238,29 +244,30 @@ const renderDiscoverContent = () => (
             {renderImageSection()}
           </div>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             {renderImageSection(true)}
             {showBulletPoints ? (
-              <div className="bg-[#f5f0ed] rounded-[24px] p-8 mt-6">
-                <h2 className={`text-[28px] font-serif mb-6 ${headingClassName}`} style={{ color: textColor }}>
+              <div className="bg-[#f5f0ed] rounded-[24px] p-6 mt-6">
+                <h2 className={`font-serif mb-3 ${headingClassName}`} style={{ color: textColor }}>
                   {heading}
                 </h2>
-                <ul className="space-y-4 mb-6"><h3>
-                  {bulletPoints.map((point, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="text-[#A54220] text-lg">•</span>
-                      <span className="text-[16px] text-[#2b2b2b]">{point}</span>
-                    </li>
-                  ))}
+                <ul className="space-y-4 mb-6">
+                  <h3>
+                    {bulletPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-[#A54220]">•</span>
+                        <span className="text-[#2b2b2b]">{point}</span>
+                      </li>
+                    ))}
                   </h3>
                 </ul>
                 {renderDots(true)}
               </div>
             ) : (
               <>
-                <h2 className={`text-[20px] tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
+                <h3 className={`tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
                   {heading}
-                </h2>
+                </h3>
                 <div className="mb-4">
                   <Image src={decorativeImageMobile} alt="" width={160} height={10} />
                 </div>
@@ -271,8 +278,8 @@ const renderDiscoverContent = () => (
           </div>
 
           {(ctaText || ctaDescription) && (
-            <div className="text-center mt-12">
-              {ctaDescription && <p className="text-gray-500 mb-6 para">{ctaDescription}</p>}
+            <div className="text-center mt-6 md:mt-8 lg:mt-10">
+              {ctaDescription && <p className="text-gray-500 mb-4 md:mb-5 para">{ctaDescription}</p>}
               {ctaText && renderCtaButton()}
             </div>
           )}
@@ -282,19 +289,18 @@ const renderDiscoverContent = () => (
   }
 
   return (
-    <div ref={wrapperRef} className="md:h-[200vh]">
+    <div ref={wrapperRef} className="h-[150vh]">
       <section
-        className={`sticky top-0 max-w-7xl mx-auto px-6 md:px-16 py-8 md:py-24 min-h-screen flex flex-col justify-center ${sectionClassName}`}
+        className={`sticky top-0 max-w-7xl mx-auto px-6 md:px-16 py-8 md:py-10 lg:py-12 xl:py-14 min-h-screen flex flex-col justify-center ${sectionClassName}`}
         style={{ backgroundColor }}
       >
-        <div className={`hidden md:flex items-start ${imagePosition === "right" ? "flex-row-reverse" : ""} gap-16 overflow-hidden ${containerClassName}`}>
+        <div className={`hidden lg:flex items-start ${imagePosition === "right" ? "flex-row-reverse" : ""} gap-16 overflow-hidden ${containerClassName}`}>
           {renderImageSection()}
           
           <div className={`max-w-xl flex-1 overflow-hidden mt-4 ${contentClassName}`}>
-            
-            <h2 className={`text-[24px] tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
+            <h3 className={`tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
               {heading}
-            </h2>
+            </h3>
             <div className="mb-6">
               <Image src={decorativeImage} alt="" width={200} height={12} />
             </div>
@@ -303,12 +309,12 @@ const renderDiscoverContent = () => (
           </div>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           {renderImageSection(true)}
           
-          <h2 className={`text-[20px] tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
+          <h3 className={`tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
             {heading}
-          </h2>
+          </h3>
           <div className="mb-4">
             <Image src={decorativeImageMobile} alt="" width={160} height={10} />
           </div>
@@ -318,8 +324,8 @@ const renderDiscoverContent = () => (
         </div>
 
         {(ctaText || ctaDescription) && (
-          <div className="text-center mt-12">
-            {ctaDescription && <p className="text-gray-500 mb-6 para">{ctaDescription}</p>}
+          <div className="text-center mt-6 md:mt-8 lg:mt-10">
+            {ctaDescription && <p className="text-gray-500 mb-4 md:mb-5 para">{ctaDescription}</p>}
             {ctaText && renderCtaButton()}
           </div>
         )}

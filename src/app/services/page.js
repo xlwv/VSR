@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import therapiesData from "./therapies.json";
 import treatmentsData from "./treatments.json";
 import Image from "next/image";
+import Button from "@/components/Button";
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState("therapies");
@@ -52,24 +53,26 @@ export default function ServicesPage() {
       <div className="container py-8 md:py-12">
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 mb-12" data-aos="fade-up">
+        <div className="flex justify-center gap-4 md:mb-12 mb-8" data-aos="fade-up">
+          {/* Therapies Tab */}
           <button
             onClick={() => setActiveTab("therapies")}
-            className={`px-8 py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
+            className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
               activeTab === "therapies"
-                ? "call-btn"
-                : "bg-transparent border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white"
+                ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none" // Active: no hover
+                : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white" // Inactive: has hover
             }`}
           >
             THERAPIES
           </button>
 
+          {/* Treatments Tab */}
           <button
             onClick={() => setActiveTab("treatments")}
-            className={`px-8 py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
+            className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
               activeTab === "treatments"
-                ? "call-btn"
-                : "bg-transparent border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white"
+                ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none" // Active: no hover
+                : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white" // Inactive: has hover
             }`}
           >
             TREATMENTS
@@ -84,17 +87,17 @@ export default function ServicesPage() {
           {displayCards.map((card, index) => (
             <div
               key={card.id}
-              className="bg-gray-100 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+              className="bg-[#A542201A] rounded-3xl card-serv overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="relative h-56 overflow-hidden p-4">
+              <div className="relative h-55 overflow-hidden p-4">
                 <Image
                   src={`/assets/${card.imageName}`}
                   alt={card.name}
                   height={60}
                   width={80}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105 rounded-[20px]"
+                  className="w-full h-full object-cover img-serv rounded-[20px]"
                 />
               </div>
 
@@ -107,12 +110,14 @@ export default function ServicesPage() {
                   {card.description}
                 </p>
 
-                <a
+                {/* Use Button component with outline variant */}
+                <Button
+                  text="VIEW MORE"
+                  variant="outline"
                   href={`/services/${card.slug}`}
-                  className="inline-block px-6 py-2.5 border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] rounded-full text-sm font-medium hover:bg-[var(--brand-brown)] hover:text-white transition-all duration-300"
-                >
-                  VIEW MORE
-                </a>
+                  size="sm"
+                  className="!text-sm"
+                />
               </div>
             </div>
           ))}
@@ -121,12 +126,12 @@ export default function ServicesPage() {
         {/* Global View More */}
         {visibleCount < allCards.length && (
           <div className="flex justify-center mt-12" data-aos="fade-up">
-            <button
+            <Button
+              text="VIEW MORE"
+              variant="primary"
               onClick={handleViewMore}
-              className="call-btn px-10 py-3 text-base cursor-pointer hover:shadow-lg transition-all"
-            >
-              VIEW MORE
-            </button>
+              className="px-10 py-3 text-base"
+            />
           </div>
         )}
       </div>

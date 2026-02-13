@@ -95,7 +95,7 @@ export default function ServiceDetailPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Service not found</h2>
+          <h2 className="font-bold text-gray-800 mb-4">Service not found</h2>
           <button
             onClick={() => router.push("/services")}
             className="call-btn"
@@ -137,7 +137,7 @@ export default function ServiceDetailPage() {
                   className="flex items-center justify-between w-full text-left py-2 px-3 rounded-lg hover:bg-white/50 transition-colors"
                 >
                   <span className="font-medium text-[var(--brand-brown)]">
-                    <h2>Treatments</h2>
+                    <h3>Treatments</h3>
                   </span>
                   {treatmentsOpen ? (
                     <ChevronDown className="w-5 h-5 text-[var(--brand-brown)]" />
@@ -172,7 +172,7 @@ export default function ServiceDetailPage() {
                   className="flex items-center justify-between w-full text-left py-2 px-3 rounded-lg hover:bg-white/50 transition-colors"
                 >
                   <span className="font-medium text-[var(--brand-brown)]">
-                    <h2>Therapies</h2>
+                    <h3>Therapies</h3>
                   </span>
                   {therapiesOpen ? (
                     <ChevronDown className="w-5 h-5 text-[var(--brand-brown)]" />
@@ -206,9 +206,9 @@ export default function ServiceDetailPage() {
           <main className="flex-1" data-aos="fade-up">
             {/* Service Title */}
             <div className="mb-6">
-              <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-2">
+              <h2 className="font-bold sub-h2 text-gray-800 mb-2">
                 {currentService.name}
-              </h1>
+              </h2>
               <Image
                 src="/assets/SVG/below-right.svg"
                 alt=""
@@ -251,7 +251,7 @@ export default function ServiceDetailPage() {
                 {/* Benefits Section */}
                 {currentDetailData.benefits && currentDetailData.benefits.length > 0 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                    <h2 className=" sub-h2 font-bold text-gray-800 mb-4">
                       Benefits
                     </h2>
                     <ul className="space-y-3">
@@ -268,7 +268,7 @@ export default function ServiceDetailPage() {
                 {/* How It Works / Process */}
                 {currentDetailData.process && (
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                    <h2 className="sub-h2 font-bold text-gray-800 mb-4">
                       How It Works
                     </h2>
                     <p className="para text-gray-700 leading-relaxed">
@@ -280,14 +280,14 @@ export default function ServiceDetailPage() {
                 {/* Conditions Treated */}
                 {currentDetailData.conditionsTreated && currentDetailData.conditionsTreated.length > 0 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                    <h2 className="sub-h2 font-bold text-gray-800 mb-4">
                       Conditions Treated
                     </h2>
                     <div className="flex flex-wrap gap-3">
                       {currentDetailData.conditionsTreated.map((condition, index) => (
                         <span
                           key={index}
-                          className="px-4 py-2 bg-[#FFF8F5] text-[var(--brand-brown)] rounded-full text-sm font-medium"
+                          className="para px-4 py-2 bg-[#FFF8F5] text-[var(--brand-brown)] rounded-full text-sm font-medium"
                         >
                           {condition}
                         </span>

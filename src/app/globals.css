@@ -157,3 +157,32 @@ header {
     font-size: 14px;
   }
 }
+@layer base {
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+@layer components {
+  .sub-h2 {
+    @apply !text-2xl sm:!text-3xl xl:!text-[34px];
+  }
+  .home-stat{
+    @apply !text-4xl;
+  } 
+}
+.card-serv:hover .img-serv {
+    transform: scale(1.05, 1.08);
+    transition: transform 0.8s ease-in-out;
+  }
+.card-text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
