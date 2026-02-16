@@ -12,6 +12,147 @@ import treatmentsData from "../treatments.json";
 import therapiesDetailData from "../therapiesData.json";
 import treatmentsDetailData from "../treatmentsData.json";
 
+// FAQ Accordion Component
+const FAQAccordion = ({ faqs }) => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  if (!faqs || faqs.length === 0) return null;
+
+  return (
+    <div className="space-y-4">
+      <h2 className="sub-h2 font-bold text-gray-800 mb-6">
+        Frequently Asked Questions
+      </h2>
+      <div className="space-y-3">
+        {faqs.map((faq, index) => (
+          <div
+            key={index}
+            className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow"
+          >
+            <button
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors"
+            >
+              <span className="font-medium text-gray-800 pr-4">
+                {faq.question}
+              </span>
+              <ChevronDown
+                className={`w-5 h-5 text-[var(--brand-brown)] flex-shrink-0 transition-transform duration-300 ${
+                  openIndex === index ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {openIndex === index && (
+              <div className="px-5 pb-5 pt-2">
+                <p className="para text-gray-700 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// Content Section Renderer
+const ContentSection = ({ section, index }) => {
+  if (!section) return null;
+
+  switch (section.type) {
+    case "paragraph":
+      return (
+        <div key={index} className="mb-8">
+          {section.heading && (
+            <h2 className="sub-h2 font-bold text-gray-800 mb-4">
+              {section.heading}
+            </h2>
+          )}
+          <p className="para text-gray-700 leading-relaxed">
+            {section.content}
+          </p>
+        </div>
+      );
+
+    case "list":
+      return (
+        <div key={index} className="mb-8">
+          {section.heading && (
+            <h2 className="sub-h2 font-bold text-gray-800 mb-4">
+              {section.heading}
+            </h2>
+          )}
+          <ul className="space-y-3">
+            {section.items.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-[var(--brand-brown)] mt-1">✓</span>
+                <span className="para text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+
+    case "tags":
+      return (
+        <div key={index} className="mb-8">
+          {section.heading && (
+            <h2 className="sub-h2 font-bold text-gray-800 mb-4">
+              {section.heading}
+            </h2>
+          )}
+          <div className="flex flex-wrap gap-3">
+            {section.items.map((item, i) => (
+              <span
+                key={i}
+                className="para px-4 py-2 bg-[#FFF8F5] text-[var(--brand-brown)] rounded-full text-sm font-medium"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      );
+
+    case "highlight":
+      return (
+        <div key={index} className="bg-[#FFF8F5] rounded-xl p-6 mb-8">
+          {section.heading && (
+            <h3 className="font-bold text-gray-800 mb-2">
+              {section.heading}
+            </h3>
+          )}
+          <p className="para text-gray-700">{section.content}</p>
+        </div>
+      );
+
+    case "numbered-list":
+      return (
+        <div key={index} className="mb-8">
+          {section.heading && (
+            <h2 className="sub-h2 font-bold text-gray-800 mb-4">
+              {section.heading}
+            </h2>
+          )}
+          <ol className="space-y-4 list-none">
+            {section.items.map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--brand-brown)] text-white flex items-center justify-center text-sm font-medium">
+                  {i + 1}
+                </span>
+                <span className="para text-gray-700 flex-1">{item}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      );
+
+    default:
+      return null;
+  }
+};
+
 export default function ServiceDetailPage() {
   const params = useParams();
   const router = useRouter();
@@ -19,7 +160,8 @@ export default function ServiceDetailPage() {
   const [therapiesOpen, setTherapiesOpen] = useState(false);
   const [currentService, setCurrentService] = useState(null);
   const [currentDetailData, setCurrentDetailData] = useState(null);
-  const [serviceType, setServiceType] = useState(null); // 'treatment' or 'therapy'
+  const [serviceType, setServiceType] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -34,6 +176,8 @@ export default function ServiceDetailPage() {
 
   useEffect(() => {
     if (params.slug) {
+      setIsLoading(true);
+      
       // Find service in treatments
       const treatment = treatmentsData.find((t) => t.slug === params.slug);
       if (treatment) {
@@ -42,9 +186,9 @@ export default function ServiceDetailPage() {
         setTreatmentsOpen(true);
         setTherapiesOpen(false);
         
-        // Find detail data
         const detailData = treatmentsDetailData.find((t) => t.slug === params.slug);
         setCurrentDetailData(detailData || null);
+        setIsLoading(false);
         return;
       }
 
@@ -56,11 +200,14 @@ export default function ServiceDetailPage() {
         setTherapiesOpen(true);
         setTreatmentsOpen(false);
         
-        // Find detail data
         const detailData = therapiesDetailData.find((t) => t.slug === params.slug);
         setCurrentDetailData(detailData || null);
+        setIsLoading(false);
         return;
       }
+      
+      // If nothing found
+      setIsLoading(false);
     }
   }, [params.slug]);
 
@@ -68,7 +215,6 @@ export default function ServiceDetailPage() {
     router.push(`/services/${service.slug}`);
   };
 
-  // Get related services for "More Treatments/Therapies" section
   const getRelatedServices = () => {
     if (!currentService || !serviceType) return [];
     
@@ -76,10 +222,9 @@ export default function ServiceDetailPage() {
     
     return sourceArray
       .filter((s) => s.slug !== currentService.slug)
-      .slice(0, 6); // Get 6 related services for the carousel
+      .slice(0, 6);
   };
 
-  // Transform services data to match MoreTreatments component's expected format
   const transformServicesToBlogs = (services) => {
     return services.map((service) => ({
       slug: service.slug,
@@ -91,6 +236,18 @@ export default function ServiceDetailPage() {
   const relatedServices = getRelatedServices();
   const sectionTitle = serviceType === "treatment" ? "More Treatments" : "More Therapies";
 
+  // Show loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--brand-brown)] mx-auto"></div>
+        </div>
+      </div>
+    );
+  }
+
+  // Show not found only after loading is complete
   if (!currentService) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -125,10 +282,10 @@ export default function ServiceDetailPage() {
         />
       </div>
 
-      <div className="container mx-auto px-4 py-8 lg:py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
+      <div className="container py-8 lg:py-12 md:max-w-[1200px] lg:max-w-[1300px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[288px_1fr] gap-8">
           {/* Sidebar */}
-          <aside className="lg:w-72 flex-shrink-0">
+          <aside className="lg:order-1">
             <div className="bg-[#FFF8F5] rounded-lg p-4 lg:sticky lg:top-24">
               {/* Treatments Section */}
               <div className="mb-4">
@@ -203,7 +360,7 @@ export default function ServiceDetailPage() {
           </aside>
 
           {/* Main Content */}
-          <main className="flex-1" data-aos="fade-up">
+          <main className="lg:order-2 min-w-0" data-aos="fade-up">
             {/* Service Title */}
             <div className="mb-6">
               <h2 className="font-bold sub-h2 text-gray-800 mb-2">
@@ -214,7 +371,7 @@ export default function ServiceDetailPage() {
                 alt=""
                 width={200}
                 height={40}
-                className="mt-2 mb-6"
+                className="mt-2 mb-6 max-w-full h-auto"
               />
             </div>
 
@@ -225,102 +382,42 @@ export default function ServiceDetailPage() {
                 alt={currentService.name}
                 width={800}
                 height={400}
-                className="w-full h-[240px] md:h-[320px] lg:h-[400px] object-cover"
+                className="w-full h-[240px] md:h-[320px] lg:h-[360px] xl:h-[400px] object-cover"
               />
             </div>
 
-            {/* Description */}
+            {/* Short Description */}
             <div className="prose prose-lg max-w-none mb-8">
               <p className="para text-gray-700 leading-relaxed mb-6">
                 {currentService.description}
               </p>
             </div>
 
-            {/* Detailed Content from Detail Data */}
-            {currentDetailData && (
+            {/* Dynamic Content Sections */}
+            {currentDetailData && currentDetailData.sections && (
               <div className="space-y-8">
-                {/* Introduction/Overview */}
-                {currentDetailData.introduction && (
-                  <div>
-                    <p className="para text-gray-700 leading-relaxed">
-                      {currentDetailData.introduction}
-                    </p>
-                  </div>
-                )}
-
-                {/* Benefits Section */}
-                {currentDetailData.benefits && currentDetailData.benefits.length > 0 && (
-                  <div>
-                    <h2 className=" sub-h2 font-bold text-gray-800 mb-4">
-                      Benefits
-                    </h2>
-                    <ul className="space-y-3">
-                      {currentDetailData.benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <span className="text-[var(--brand-brown)] mt-1">✓</span>
-                          <span className="para text-gray-700">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* How It Works / Process */}
-                {currentDetailData.process && (
-                  <div>
-                    <h2 className="sub-h2 font-bold text-gray-800 mb-4">
-                      How It Works
-                    </h2>
-                    <p className="para text-gray-700 leading-relaxed">
-                      {currentDetailData.process}
-                    </p>
-                  </div>
-                )}
-
-                {/* Conditions Treated */}
-                {currentDetailData.conditionsTreated && currentDetailData.conditionsTreated.length > 0 && (
-                  <div>
-                    <h2 className="sub-h2 font-bold text-gray-800 mb-4">
-                      Conditions Treated
-                    </h2>
-                    <div className="flex flex-wrap gap-3">
-                      {currentDetailData.conditionsTreated.map((condition, index) => (
-                        <span
-                          key={index}
-                          className="para px-4 py-2 bg-[#FFF8F5] text-[var(--brand-brown)] rounded-full text-sm font-medium"
-                        >
-                          {condition}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Duration */}
-                {currentDetailData.duration && (
-                  <div className="bg-[#FFF8F5] rounded-xl p-6">
-                    <h3 className="font-bold text-gray-800 mb-2">Duration</h3>
-                    <p className="para text-gray-700">{currentDetailData.duration}</p>
-                  </div>
-                )}
-
-                {/* Additional Info */}
-                {currentDetailData.additionalInfo && (
-                  <div>
-                    <p className="para text-gray-700 leading-relaxed">
-                      {currentDetailData.additionalInfo}
-                    </p>
-                  </div>
-                )}
+                {currentDetailData.sections.map((section, index) => (
+                  <ContentSection key={index} section={section} index={index} />
+                ))}
               </div>
             )}
 
-            {/* More Treatments/Therapies Section using MoreTreatments Component */}
+            {/* FAQ Accordion */}
+            {currentDetailData && currentDetailData.faqs && (
+              <div className="mt-12">
+                <FAQAccordion faqs={currentDetailData.faqs} />
+              </div>
+            )}
+
+            {/* More Treatments/Therapies Section */}
             {relatedServices.length > 0 && (
-              <MoreTreatments 
-                blogs={transformServicesToBlogs(relatedServices)}
-                title={sectionTitle}
-              />
+              <div className="mt-12">
+                <MoreTreatments 
+                  blogs={transformServicesToBlogs(relatedServices)}
+                  title={sectionTitle}
+                  linkPath="services"
+                />
+              </div>
             )}
           </main>
         </div>

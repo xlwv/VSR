@@ -1,58 +1,51 @@
 [
   {
     "id": 1,
-    "name": "Panchakarma",
-    "slug": "panchakarma",
-    "imageName": "trt-1.png",
-    "description": "A comprehensive Ayurvedic detoxification and rejuvenation program designed to cleanse the body of toxins and restore balance."
+    "name": "Cardiovascular",
+    "slug": "cardiovascular",
+    "imageName": "Cardio-Vascular-min.png",
+    "description": "Holistic, non-invasive care for heart health addressing root causes through natural therapies, diet, and lifestyle changes."
   },
   {
     "id": 2,
-    "name": "Shirodhara",
-    "slug": "shirodhara",
-    "imageName": "trt-2.png",
-    "description": "A deeply relaxing treatment where warm herbal oil is gently poured over the forehead to calm the mind and soothe the nervous system."
+    "name": "Endocrinal",
+    "slug": "endocrinal",
+    "imageName": "Endocrinal-min.png",
+    "description": "Natural hormonal balance restoration for thyroid, diabetes, PCOD/PCOS, and metabolic disorders without lifelong medication."
   },
   {
     "id": 3,
-    "name": "Abhyanga",
-    "slug": "abhyanga",
-    "imageName": "trt-3.png",
-    "description": "Traditional Ayurvedic oil massage that promotes circulation, detoxification, and deep relaxation using warm herbal oils."
+    "name": "Gastrointestinal",
+    "slug": "gastrointestinal",
+    "imageName": "Gastro-Intestinal-min.png",
+    "description": "Root-cause treatment for digestive issues including IBS, constipation, acidity, and gut imbalances through naturopathy."
   },
   {
     "id": 4,
-    "name": "Udvartana",
-    "slug": "udvartana",
-    "imageName": "trt-4.png",
-    "description": "An invigorating herbal powder massage that helps reduce excess weight, improves skin texture, and enhances circulation."
+    "name": "Metabolic Disorders",
+    "slug": "metabolic-disorders",
+    "imageName": "Metabolic-disorders-min.png",
+    "description": "Natural management of blood sugar, cholesterol, and metabolic imbalances through lifestyle correction and holistic therapies."
   },
   {
     "id": 5,
-    "name": "Nasyam",
-    "slug": "nasyam",
-    "imageName": "trt-5.png",
-    "description": "A nasal therapy that cleanses and protects the respiratory passages, helpful for sinus issues, headaches, and mental clarity."
+    "name": "Musculoskeletal",
+    "slug": "musculoskeletal",
+    "imageName": "Musculo-Skeletal-min.png",
+    "description": "Drug-free relief for joint pain, arthritis, back pain, and mobility issues using yoga, massage, and natural therapies."
   },
   {
     "id": 6,
-    "name": "Kati Basti",
-    "slug": "kati-basti",
-    "imageName": "trt-6.png",
-    "description": "Specialized treatment for lower back pain where warm medicated oil is retained over the lumbar region to relieve pain and stiffness."
+    "name": "Respiratory",
+    "slug": "respiratory",
+    "imageName": "Respiratory-min.png",
+    "description": "Natural treatment for asthma, bronchitis, sinusitis, and breathing problems through pranayama and clean healing environments."
   },
   {
     "id": 7,
-    "name": "Janu Basti",
-    "slug": "janu-basti",
-    "imageName": "gallery-5.webp",
-    "description": "Therapeutic treatment for knee joint pain using warm medicated oil to reduce inflammation and improve mobility."
-  },
-  {
-    "id": 8,
-    "name": "Pizhichil",
-    "slug": "pizhichil",
-    "imageName": "gallery-6.webp",
-    "description": "The 'Royal Treatment' where streams of warm medicated oil are poured over the body while being gently massaged, deeply nourishing."
+    "name": "Skin",
+    "slug": "skin",
+    "imageName": "Skin-min.png",
+    "description": "Holistic skin healing for acne, eczema, and psoriasis addressing internal imbalances for long-term natural results."
   }
 ]

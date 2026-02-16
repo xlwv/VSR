@@ -147,9 +147,10 @@ header {
   }
 }
 
-.para {
+.para ,
+a {
   font-family: "Swis721 BT";
-  font-size: 16px !important;
+  font-size: 18px !important;
   line-height: 1.6;
 }
 @media (max-width: 768px) {

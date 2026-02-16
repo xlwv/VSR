@@ -149,8 +149,9 @@ const HeroProgram = () => {
           <Swiper
             className="!pt-3 !pb-12 !px-4" /* Fix for cutoff applied here */
             modules={[Autoplay]}
-            spaceBetween={10}
-            slidesPerView={1}
+            spaceBetween={24}
+            slidesPerView={'auto'}
+            centeredSlides={false}
             loop={false} /* Loop disabled */
             autoplay={{
               delay: 5000,
@@ -158,19 +159,15 @@ const HeroProgram = () => {
             }}
             breakpoints={{
               640: {
-                slidesPerView: 1,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 2,
                 spaceBetween: 24,
               },
               1024: {
-                slidesPerView: 3,
                 spaceBetween: 24,
               },
               1280: {
-                slidesPerView: 4,
                 spaceBetween: 24,
               },
             }}
@@ -179,10 +176,10 @@ const HeroProgram = () => {
             {programs
               .sort((a, b) => a.id - b.id) 
               .map((program, index) => (
-                <SwiperSlide key={program.id} className="flex justify-center">
+                <SwiperSlide key={program.id} className="!w-auto">
                 <div
                   ref={(el) => (cardsRef.current[index] = el)}
-                  className="group h-full flex"
+                  className="group h-full"
                 >
                   <ProgramCard program={program} />
                 </div>

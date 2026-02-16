@@ -145,7 +145,7 @@ const HeroTestimonial = ({
             {pages.map((page, pageIndex) => (
               <div 
                 key={pageIndex} 
-                className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pr-6"
               >
                 {page.map((testimonial, idx) => (
                   <div key={idx} className="flex flex-col gap-4">

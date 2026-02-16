@@ -1,194 +1,469 @@
 [
   {
     "id": 1,
-    "slug": "introduction",
-    "introduction": "Naturopathic medicine is a holistic approach to healthcare that emphasizes the use of natural remedies to support the body's ability to heal itself. At VSR, we use the power of the five elements of nature - earth, water, sun, air and ether to provide care therapy for myriad health conditions.",
-    "benefits": [
-      "Treats root causes, not just symptoms",
-      "Uses natural, non-invasive therapies",
-      "Focuses on prevention and wellness",
-      "Personalized treatment plans",
-      "Minimal to no side effects",
-      "Holistic approach to health"
+    "slug": "cardiovascular",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "With the rising incidence of heart-related conditions, it's crucial to seek reliable cardiovascular disease treatment in Hyderabad that goes beyond medications. At VSR Vriksha: A Boutique Naturopathy Retreat, we provide holistic, non-invasive care for patients with heart issues; addressing the root cause and not just the symptoms."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Holistic Care for a Healthy Heart",
+        "content": "Today, cardiovascular disease has become one of the leading causes of health complications due to sedentary lifestyles, stress, and poor dietary habits. Early signs like fatigue, shortness of breath, or chest discomfort should never be ignored, as they may be early cardiovascular disease symptoms."
+      },
+      {
+        "type": "paragraph",
+        "content": "Our expert team combines ancient healing sciences with modern naturopathic practices to offer comprehensive cardiovascular disease treatment in Hyderabad. Each treatment plan is personalized to the patient's health condition, lifestyle, and recovery goals."
+      },
+      {
+        "type": "list",
+        "heading": "Our Natural Approach to Heart Health",
+        "items": [
+          "Personalized diet therapy — Heart-friendly nutritional plans customized to each patient's needs",
+          "Therapeutic yoga and exercise — Designed to improve circulation and lower blood pressure",
+          "Detoxification and stress relief — Hydrotherapy, massage, and breathing exercises",
+          "Lifestyle counselling — Helping you sustain heart-healthy habits"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "With our cardiovascular disease treatment in Hyderabad, we address the underlying imbalances in the body to promote long-term cardiovascular health."
+      },
+      {
+        "type": "list",
+        "heading": "Why Choose VSR for Cardiovascular Treatment?",
+        "items": [
+          "Root-cause-focused care without side effects",
+          "Tailored diet and fitness programs",
+          "Serene, natural healing environment",
+          "Experienced naturopathic doctors",
+          "Emotional and mental wellness support"
+        ]
+      }
     ],
-    "process": "Vangala Sanjeeva Reddy is a first-of-its-kind nature cure centre in Hyderabad, located amidst the tranquility of nature. We have left no stone unturned in ensuring that you get the best of ancient wisdom, nature and modern scientific knowledge. You'll experience the most comfortable accommodations, state-of-the-art amenities and many other luxury facilities.",
-    "conditionsTreated": [
-      "All chronic conditions",
-      "Lifestyle diseases",
-      "Stress-related disorders",
-      "Digestive issues",
-      "Metabolic disorders",
-      "Musculoskeletal problems"
-    ],
-    "duration": "Programs range from 7-21 days depending on condition severity",
-    "additionalInfo": "From the IRIS diagnosis to being the only hospital in Hyderabad that offers the Vichy Shower Massage, we are committed to providing the very best to you."
+    "faqs": [
+      {
+        "question": "What is cardiovascular disease?",
+        "answer": "Cardiovascular disease refers to a group of disorders involving the heart and blood vessels, including conditions like coronary artery disease, hypertension, and heart failure."
+      },
+      {
+        "question": "What are the common symptoms of CVD?",
+        "answer": "Common cardiovascular disease symptoms include chest pain, shortness of breath, fatigue, dizziness, and irregular heartbeat. In some cases, symptoms may be silent until a major episode like a heart attack."
+      },
+      {
+        "question": "How is cardiovascular disease diagnosed?",
+        "answer": "Diagnosis may include physical examinations, blood pressure checks, ECG, echocardiograms, stress tests, and blood work, depending on the patient's health history."
+      },
+      {
+        "question": "What are the treatment options for CVD?",
+        "answer": "At VSR Vriksha, we offer cardiovascular disease treatment in Hyderabad that focuses on lifestyle correction, diet, detoxification, stress management, and therapeutic exercise as part of a holistic, non-invasive plan."
+      },
+      {
+        "question": "Can cardiovascular disease be cured?",
+        "answer": "While some forms of cardiovascular disease cannot be completely cured, they can be managed or reversed through sustained lifestyle changes and early intervention."
+      },
+      {
+        "question": "How important is lifestyle change in CVD treatment?",
+        "answer": "Lifestyle change is the cornerstone of treating and preventing cardiovascular disease. Proper diet, regular physical activity, and stress reduction significantly reduce risk and aid recovery."
+      },
+      {
+        "question": "Can CVD be prevented?",
+        "answer": "Yes. Most forms of cardiovascular disease are preventable with a heart-healthy lifestyle, including regular exercise, a balanced diet, and stress management."
+      }
+    ]
   },
   {
     "id": 2,
-    "slug": "gastrointestinal",
-    "introduction": "The gastrointestinal system is fundamental to overall health. Our comprehensive program addresses digestive disorders through natural therapies, dietary modifications, and detoxification techniques.",
-    "benefits": [
-      "Restores healthy digestion",
-      "Eliminates toxins from digestive tract",
-      "Balances gut microbiome",
-      "Reduces inflammation",
-      "Improves nutrient absorption",
-      "Enhances overall energy and vitality"
+    "slug": "endocrinal",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Hormonal imbalances can impact everything from your energy and metabolism to reproductive and bone health. At VSR Vriksha: A Boutique Naturopathy retreat, we offer holistic endocrinal treatment in Hyderabad that restores balance and improves overall well-being."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Restore Hormonal Balance, Naturally",
+        "content": "The body's endocrine glands, including the thyroid, adrenal, and pituitary, play a critical role in regulating metabolism, mood, fertility, and stress response. When these glands underperform or overact, it can lead to common disorders such as diabetes, PCOD/PCOS, obesity, and osteoporosis."
+      },
+      {
+        "type": "paragraph",
+        "content": "Our comprehensive endocrinal treatment in Hyderabad focuses on identifying the root cause of hormonal imbalances and restoring natural harmony in the body without lifelong dependence on medications."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Our Holistic Approach to Endocrinal Healing",
+        "content": "At VSR, we take a multi-dimensional approach that heals both the body and mind. Instead of masking symptoms, our treatments work to revive the functioning of the endocrine glands naturally."
+      },
+      {
+        "type": "list",
+        "heading": "Our therapies include",
+        "items": [
+          "Diet therapy — Personalized plans that help regulate hormones and improve metabolism",
+          "Yoga and exercise — Practices that improve endocrine gland function and reduce stress",
+          "Hydrotherapy — Detoxifying treatments to restore hormonal balance",
+          "Acupuncture and massage — Stimulate internal healing and energy balance"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Whether it's thyroid dysfunction, insulin resistance, or hormonal imbalances in women, our endocrinal treatment provides natural, lasting solutions."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions We Commonly Treat",
+        "items": [
+          "Thyroid disorders (hypothyroidism, hyperthyroidism)",
+          "Diabetes",
+          "PCOD/PCOS",
+          "Obesity and metabolic syndrome",
+          "Adrenal fatigue",
+          "Osteoporosis",
+          "Hormonal acne and mood disorders"
+        ]
+      }
     ],
-    "process": "Our program includes specialized diet therapy, juice fasting, enemas, abdominal massages, and mud packs. We focus on cleansing and strengthening the digestive system while addressing the root cause of disorders.",
-    "conditionsTreated": [
-      "IBS (Irritable Bowel Syndrome)",
-      "Acidity and GERD",
-      "Constipation",
-      "Bloating and gas",
-      "Ulcers",
-      "Inflammatory bowel conditions"
-    ],
-    "duration": "Recommended program: 14-21 days for optimal results",
-    "additionalInfo": "A healthy gut is essential for immunity, mental health, and overall wellbeing. Our program not only treats symptoms but educates you on maintaining digestive health long-term."
+    "faqs": [
+      {
+        "question": "What is endocrinology?",
+        "answer": "Endocrinology is the branch of medicine that focuses on the endocrine glands and the hormones they produce. These hormones control many vital processes in the body, from growth to reproduction."
+      },
+      {
+        "question": "Can hormonal imbalances be managed permanently?",
+        "answer": "Yes, many hormonal imbalances can be managed or even reversed with consistent lifestyle changes and natural therapies. Our endocrinal treatment is designed to support long-term healing and hormone regulation."
+      }
+    ]
   },
   {
     "id": 3,
-    "slug": "respiratory",
-    "introduction": "Respiratory health is vital for overall wellbeing. Our respiratory program uses natural therapies to cleanse, strengthen, and heal the respiratory system, addressing conditions from asthma to chronic bronchitis.",
-    "benefits": [
-      "Improves lung capacity",
-      "Clears respiratory passages",
-      "Reduces inflammation",
-      "Strengthens immunity",
-      "Decreases dependence on medications",
-      "Enhances oxygen supply to body"
+    "slug": "gastrointestinal",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Your digestive health is the foundation of your overall wellness. At our center, we offer the best personalized gastrointestinal treatment in Hyderabad rooted in naturopathy, addressing the root causes of gut issues through natural, non-invasive therapies."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Restore Your Gut To Restore Your Health",
+        "content": "Poor gut health is often the hidden root of many chronic conditions. From stress and poor diet to medication overuse and internal imbalances, several factors can contribute to gastrointestinal disturbances."
+      },
+      {
+        "type": "paragraph",
+        "content": "Our gastrointestinal treatment program focuses on long-term relief through holistic and natural methods. Unlike conventional quick fixes, we dive deep into the cause of the disorder and offer customized care."
+      },
+      {
+        "type": "list",
+        "heading": "Naturopathic Gastrointestinal Treatment In Hyderabad",
+        "items": [
+          "Hydrotherapy — Flushes out toxins and soothes the digestive tract",
+          "Diet therapy — Personalized meal plans to heal, nourish, and rebalance the digestive system",
+          "Lifestyle changes — Stress management and detox practices to support lasting wellness",
+          "Yoga Therapy — Targeted postures and breathing techniques to improve digestion and reduce stress"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Each step in our treatment plan is tailored to your unique needs, ensuring a safe and effective recovery journey."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions We Help With",
+        "items": [
+          "Chronic constipation",
+          "Acidity and bloating",
+          "Irritable Bowel Syndrome (IBS)",
+          "Gastritis",
+          "Indigestion",
+          "Leaky gut and other functional digestive issues"
+        ]
+      }
     ],
-    "process": "The program includes steam inhalation, breathing exercises (pranayama), chest physiotherapy, mud packs, specialized diet, and various hydrotherapy treatments to open airways and reduce inflammation.",
-    "conditionsTreated": [
-      "Asthma",
-      "Chronic bronchitis",
-      "Sinusitis",
-      "Allergic rhinitis",
-      "COPD",
-      "Recurrent respiratory infections"
-    ],
-    "duration": "Initial program: 14-21 days. Maintenance protocols provided for home practice",
-    "additionalInfo": "Breathing exercises and lifestyle modifications learned during the program can be practiced at home for long-term respiratory health."
+    "faqs": [
+      {
+        "question": "What is gastrointestinal (GI) treatment?",
+        "answer": "Gastrointestinal treatment refers to therapies aimed at diagnosing and healing disorders of the digestive tract. Our naturopathic gastrointestinal treatment focuses on detoxification, dietary adjustments, and gut restoration using non-invasive techniques."
+      },
+      {
+        "question": "When should I see a gastroenterologist?",
+        "answer": "You should consult a specialist if you experience ongoing symptoms like bloating, abdominal pain, frequent constipation, or digestive discomfort not relieved by routine care."
+      },
+      {
+        "question": "Are advanced GI treatments available in Hyderabad?",
+        "answer": "Yes, you can find advanced gastrointestinal treatment in Hyderabad at our center, where we combine traditional wisdom with modern naturopathic techniques to offer safe, effective, and personalized care. One of our advanced therapies includes Colon Hydrotherapy; an advanced, non-invasive method of deep colon cleansing that helps eliminate toxins, improve digestion, and support overall gut health."
+      },
+      {
+        "question": "How much does gastrointestinal treatment cost in Hyderabad?",
+        "answer": "Costs vary based on the treatment plan and duration. We provide a personalized assessment during your initial visit and share an affordable treatment plan."
+      },
+      {
+        "question": "What are the common gastrointestinal diseases treated in Hyderabad?",
+        "answer": "Commonly treated conditions include IBS, constipation, acidity, gastritis, indigestion, and general gut imbalances, all addressed through comprehensive gastrointestinal disease treatment at our center."
+      }
+    ]
   },
   {
     "id": 4,
-    "slug": "musculoskeletal",
-    "introduction": "Our musculoskeletal program provides comprehensive natural treatment for joint, muscle, and bone conditions. We use therapies that reduce pain, improve mobility, and strengthen the musculoskeletal system.",
-    "benefits": [
-      "Reduces pain and inflammation",
-      "Improves flexibility and mobility",
-      "Strengthens muscles and joints",
-      "Enhances circulation",
-      "Promotes tissue healing",
-      "Prevents recurrence"
+    "slug": "metabolic-disorders",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Looking for effective and natural metabolic disorder treatment in Hyderabad? At VSR Vriksha: A Boutique Naturopathy Retreat, we help you manage and recover from metabolic imbalances through holistic therapies that address the root cause; your lifestyle and daily habits."
+      },
+      {
+        "type": "paragraph",
+        "heading": "A Natural Approach to Metabolic Disorders",
+        "content": "Metabolic disorders occur when your body's normal chemical processes become disrupted, often leading to conditions like high blood sugar, high blood pressure, and abnormal cholesterol levels. If left unaddressed, these can result in serious complications such as kidney damage, heart disease, or stroke."
+      },
+      {
+        "type": "paragraph",
+        "content": "The good news? With the right changes in lifestyle and diet, many metabolic disorders can be managed, without the need for long-term medication or surgery. At VSR Vriksha, our expert team offers personalized metabolic disorder treatment in Hyderabad using time-tested naturopathy methods."
+      },
+      {
+        "type": "list",
+        "heading": "What We Offer",
+        "items": [
+          "Customized diet therapy tailored to your metabolic profile",
+          "Yoga, exercise & pranayama sessions to regulate metabolism",
+          "Detoxification therapies for internal cleansing",
+          "Lifestyle counselling to adopt sustainable healthy habits"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Our goal is to provide safe, natural, and effective metabolic disorder treatment in Hyderabad without side effects, helping you heal from within."
+      },
+      {
+        "type": "list",
+        "heading": "Why Choose Us?",
+        "items": [
+          "Holistic, non-invasive treatment protocols",
+          "Individualised care and therapy programs",
+          "Tranquil, healing atmosphere and eco-friendly surroundings",
+          "Expert naturopathic doctors focused on long-term wellness",
+          "Emotional and mental wellness support"
+        ]
+      }
     ],
-    "process": "Treatment includes therapeutic massages, hydrotherapy, mud therapy, physiotherapy, yoga, and specific exercises. We also address nutritional deficiencies and provide guidance on ergonomics and posture.",
-    "conditionsTreated": [
-      "Arthritis (osteo and rheumatoid)",
-      "Back pain and sciatica",
-      "Frozen shoulder",
-      "Sports injuries",
-      "Joint pain and stiffness",
-      "Muscle strains"
-    ],
-    "duration": "Typical program: 14-21 days with follow-up exercises for home",
-    "additionalInfo": "Our approach not only provides pain relief but also addresses underlying causes and teaches preventive strategies."
+    "faqs": [
+      {
+        "question": "What are metabolic disorders?",
+        "answer": "Metabolic disorders refer to conditions that disrupt the body's normal metabolic processes, often leading to imbalances in blood sugar, cholesterol, and blood pressure levels."
+      },
+      {
+        "question": "What are the common types of metabolic disorders?",
+        "answer": "Common metabolic disorders include diabetes, obesity, metabolic syndrome, thyroid imbalances, and lipid metabolism disorders."
+      },
+      {
+        "question": "How are metabolic disorders diagnosed?",
+        "answer": "Diagnosis typically involves blood tests to check glucose, insulin, cholesterol, and hormone levels, along with evaluating physical symptoms and medical history."
+      },
+      {
+        "question": "What treatments are available for metabolic disorders?",
+        "answer": "At VSR, we offer the best metabolic disorder treatment in Hyderabad, which includes customized diet plans, physical activity, yoga, detox therapies, and stress management; all natural and side-effect free."
+      },
+      {
+        "question": "Can metabolic disorders be prevented?",
+        "answer": "Yes. Many metabolic disorders can be prevented by maintaining a healthy diet, regular exercise, avoiding processed foods, and managing stress effectively."
+      }
+    ]
   },
   {
     "id": 5,
-    "slug": "endocrinal",
-    "introduction": "Hormonal imbalances affect multiple body systems. Our endocrinal program naturally regulates hormones through diet, lifestyle modifications, and specific therapies to restore balance.",
-    "benefits": [
-      "Balances hormone levels naturally",
-      "Improves metabolic function",
-      "Regulates blood sugar",
-      "Supports thyroid health",
-      "Reduces symptoms of hormonal imbalance",
-      "Enhances overall vitality"
+    "slug": "musculoskeletal",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Looking for lasting relief from joint or muscle discomfort? Our holistic musculoskeletal diseases treatment in Hyderabad offers natural and effective therapies to treat pain, restore mobility, and improve quality of life, without medication or surgery."
+      },
+      {
+        "type": "paragraph",
+        "heading": "A Natural Approach to Musculoskeletal Healing",
+        "content": "The musculoskeletal system is the foundation of your body's structure and movement. It includes bones, muscles, ligaments, tendons, and soft tissues. Any disruption in this system, due to injury, overuse, poor posture, or inflammation, can lead to musculoskeletal pain, stiffness, and reduced flexibility."
+      },
+      {
+        "type": "paragraph",
+        "content": "At our center, we provide comprehensive musculoskeletal treatment using evidence-backed naturopathic therapies that promote healing, reduce pain, and strengthen the body's natural alignment."
+      },
+      {
+        "type": "list",
+        "heading": "Our Treatment Approach",
+        "items": [
+          "Yoga therapy — For flexibility, alignment, and strength",
+          "Massage therapy — To reduce inflammation and improve circulation",
+          "Acupuncture — To relieve pain and promote energy flow",
+          "Heliotherapy — Exposure to natural sunlight for bone and joint health",
+          "Hydrotherapy — To ease pain and relax tense muscles"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "We may also integrate musculoskeletal physiotherapy principles through movement therapies and posture correction routines under expert guidance."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions We Address",
+        "items": [
+          "Chronic neck, shoulder, and back pain",
+          "Arthritis (osteoarthritis, rheumatoid arthritis)",
+          "Joint stiffness and swelling",
+          "Tendonitis",
+          "Sports injuries",
+          "Postural imbalance",
+          "Muscle fatigue and weakness"
+        ]
+      }
     ],
-    "process": "The program includes specialized diet therapy, stress management, yoga, specific exercises, and natural supplements. We focus on supporting gland function and improving hormone sensitivity.",
-    "conditionsTreated": [
-      "Thyroid disorders (hypo/hyperthyroidism)",
-      "Type 2 Diabetes",
-      "PCOS (Polycystic Ovary Syndrome)",
-      "Menopausal symptoms",
-      "Adrenal fatigue",
-      "Hormonal imbalances"
-    ],
-    "duration": "Recommended: 21 days initial program with ongoing lifestyle support",
-    "additionalInfo": "Hormonal balance is achieved through a comprehensive approach addressing diet, stress, sleep, and lifestyle factors."
+    "faqs": [
+      {
+        "question": "What is musculoskeletal treatment?",
+        "answer": "Musculoskeletal treatment involves therapies to manage disorders affecting bones, muscles, joints, and related tissues. Our naturopathic approach provides holistic and drug-free solutions for chronic and acute musculoskeletal pain."
+      },
+      {
+        "question": "What are common musculoskeletal conditions treated?",
+        "answer": "We treat arthritis, back and joint pain, sprains, repetitive strain injuries, tendonitis, and more using natural therapies including musculoskeletal physiotherapy, yoga, massage, and hydrotherapy."
+      },
+      {
+        "question": "Can musculoskeletal conditions be prevented?",
+        "answer": "Yes. With regular physical activity, posture correction, and stress reduction, many musculoskeletal issues can be prevented. Our treatments also focus on prevention and strengthening."
+      }
+    ]
   },
   {
     "id": 6,
-    "slug": "skin",
-    "introduction": "Your skin reflects internal health. Our skin treatment program addresses conditions from within, using detoxification, dietary changes, and topical natural therapies for lasting results.",
-    "benefits": [
-      "Clears skin from within",
-      "Reduces inflammation and irritation",
-      "Improves skin texture and tone",
-      "Addresses root causes",
-      "Natural, chemical-free approach",
-      "Long-lasting results"
+    "slug": "respiratory",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "If you're struggling with breathing issues, chronic cough, or sinus problems, our natural and holistic respiratory problems treatment in Hyderabad offers long-term relief without dependency on medication or invasive procedures."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Breathe Easier With Our Treatment for Respiratory Problems",
+        "content": "With increasing pollution, allergies, and lifestyle habits like smoking, respiratory illness has become more common than ever. Conditions affecting the lungs and airways can significantly reduce your quality of life, causing fatigue, discomfort, and even leading to serious complications if untreated."
+      },
+      {
+        "type": "paragraph",
+        "content": "At VSR Vriksha, we provide advanced treatments for respiratory problems that combine naturopathic therapies with clean, healing environments to rejuvenate your respiratory system. Our approach focuses on eliminating toxins, strengthening lung function, and enhancing overall immunity."
+      },
+      {
+        "type": "list",
+        "heading": "Our Approach to Treating Respiratory Problems",
+        "items": [
+          "Yoga therapy — Breathing exercises (Pranayama) to increase lung capacity",
+          "Diet therapy — Anti-inflammatory and alkaline diets for respiratory health",
+          "Detoxification — To clear toxins that may affect lung performance",
+          "Hydrotherapy — To ease nasal and chest congestion",
+          "Nature therapy — Clean air, restful environment, and healing spaces",
+          "Air Therapy — Scheduled exposure to fresh morning air, enhancing pranic energy and respiratory strength"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Whether you're dealing with asthma, bronchitis, sinusitis, or general breathing difficulty, our treatments for respiratory problems help restore balance and breathing comfort naturally."
+      },
+      {
+        "type": "tags",
+        "heading": "Common Conditions We Treat",
+        "items": [
+          "Asthma",
+          "Bronchitis",
+          "Chronic cough",
+          "Sinusitis",
+          "Allergic rhinitis",
+          "Smoking-related respiratory issues",
+          "General respiratory weakness and congestion"
+        ]
+      }
     ],
-    "process": "Treatment includes dietary modifications, detoxification, mud therapy, herbal applications, hydrotherapy, and specific nutritional support. We identify and eliminate triggers while promoting skin healing.",
-    "conditionsTreated": [
-      "Acne and pimples",
-      "Eczema",
-      "Psoriasis",
-      "Pigmentation",
-      "Allergic skin conditions",
-      "Chronic skin rashes"
-    ],
-    "duration": "Initial program: 14-21 days. Skin conditions may require extended care",
-    "additionalInfo": "Healthy skin requires healthy internal systems. Our holistic approach ensures beautiful skin through overall health improvement."
+    "faqs": [
+      {
+        "question": "What is respiratory treatment?",
+        "answer": "Respiratory treatment focuses on diagnosing and managing respiratory illness through therapies that improve lung function and breathing efficiency. At VSR, we use holistic methods to heal and strengthen your respiratory system naturally."
+      },
+      {
+        "question": "What respiratory conditions are commonly treated in Hyderabad?",
+        "answer": "Common conditions include asthma, sinusitis, bronchitis, allergic rhinitis, and other chronic breathing issues. Our respiratory treatment in Hyderabad offers non-invasive therapies tailored to each condition."
+      },
+      {
+        "question": "What diagnostic tests are used for respiratory diseases?",
+        "answer": "Typically, spirometry, chest X-rays, allergy tests, and oxygen saturation monitoring may be used to evaluate the respiratory condition before beginning treatment."
+      },
+      {
+        "question": "How much does respiratory treatment cost in Hyderabad?",
+        "answer": "Costs can vary based on the severity of the condition and the duration of the therapy. Our treatments are competitively priced and offer long-term health benefits without side effects."
+      }
+    ]
   },
   {
     "id": 7,
-    "slug": "cardiovascular",
-    "introduction": "Cardiovascular health is essential for longevity and quality of life. Our program strengthens heart health, improves circulation, and manages risk factors through natural methods.",
-    "benefits": [
-      "Improves heart function",
-      "Reduces blood pressure naturally",
-      "Lowers cholesterol levels",
-      "Enhances circulation",
-      "Reduces cardiovascular risk",
-      "Increases stamina and energy"
+    "slug": "skin",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "At VSR Vriksha: A Boutique Naturopathy Retreat has established itself as the best centre for safe and effective skin treatment in Hyderabad. We provide holistic therapies that heal your skin from within, naturally, and offer long-term results without side effects."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Naturopathy for Healthier Skin",
+        "content": "The skin is the largest organ of the human body and is often the first to show signs of internal imbalance. Many common skin conditions today are caused by stress, poor diet, hormonal issues, and an unhealthy lifestyle."
+      },
+      {
+        "type": "paragraph",
+        "content": "Most modern treatments offer only temporary relief or involve chemical-based solutions that may harm your skin in the long run. That's where naturopathy skin treatment stands apart. At VSR Vriksha, we combine ancient healing wisdom with modern natural practices to provide personalized skin treatment in Hyderabad."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions We Treat",
+        "items": [
+          "Acne and pimples",
+          "Eczema",
+          "Psoriasis"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "We focus on identifying and addressing the root cause of the condition through lifestyle correction, detox therapies, and internal healing."
+      },
+      {
+        "type": "list",
+        "heading": "What to Expect at VSR Vriksha",
+        "items": [
+          "Personalized diet and nutrition therapy",
+          "Detoxification techniques",
+          "Yoga and breathing exercises to reduce stress",
+          "Long-term wellness counselling"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "We aim to help your skin regenerate naturally without side effects, making naturopathy skin treatment an ideal option, especially for chronic or recurring skin concerns."
+      }
     ],
-    "process": "The program includes heart-healthy diet, gentle exercises, stress management, yoga, hydrotherapy, and specific cardiovascular therapies. We monitor progress and adjust treatments accordingly.",
-    "conditionsTreated": [
-      "Hypertension",
-      "High cholesterol",
-      "Poor circulation",
-      "Mild heart conditions",
-      "Post-cardiac rehabilitation",
-      "Cardiovascular risk factors"
-    ],
-    "duration": "Recommended: 21 days with lifestyle modification guidance",
-    "additionalInfo": "Prevention is key in cardiovascular health. Our program provides tools and knowledge for lifelong heart health."
-  },
-  {
-    "id": 8,
-    "slug": "metabolic-disorders",
-    "introduction": "Metabolic disorders like obesity and diabetes require comprehensive lifestyle changes. Our program addresses these conditions holistically through diet, exercise, and natural therapies.",
-    "benefits": [
-      "Promotes healthy weight loss",
-      "Regulates blood sugar levels",
-      "Improves insulin sensitivity",
-      "Boosts metabolism",
-      "Reduces medication dependence",
-      "Provides sustainable lifestyle changes"
-    ],
-    "process": "The program includes customized diet plans, therapeutic fasting, exercise routines, yoga, stress management, and educational sessions on nutrition and lifestyle. Regular monitoring ensures safe and effective progress.",
-    "conditionsTreated": [
-      "Obesity",
-      "Type 2 Diabetes",
-      "Metabolic syndrome",
-      "Pre-diabetes",
-      "Insulin resistance",
-      "Weight-related health issues"
-    ],
-    "duration": "Initial program: 21 days with extended support for sustained results",
-    "additionalInfo": "Sustainable weight loss and diabetes management require permanent lifestyle changes. Our program equips you with knowledge and habits for long-term success."
+    "faqs": [
+      {
+        "question": "What is naturopathy skin treatment?",
+        "answer": "Naturopathy skin treatment focuses on healing skin issues using natural therapies, lifestyle changes, and internal detoxification; without the use of harsh chemicals."
+      },
+      {
+        "question": "Which skin problems can be treated with naturopathy?",
+        "answer": "Common conditions like acne, eczema, psoriasis, rashes, and pigmentation issues can be treated with naturopathic methods. At our centre, we provide the best skin treatment in Hyderabad for all the above issues and more."
+      },
+      {
+        "question": "Is naturopathy safe for sensitive skin?",
+        "answer": "Yes. Naturopathy uses gentle, non-invasive therapies, making it highly suitable for people with sensitive or reactive skin types."
+      },
+      {
+        "question": "How long does it take to see results?",
+        "answer": "This depends on the condition and its severity. Most patients begin to see improvement within a few weeks of consistent treatment."
+      },
+      {
+        "question": "Can naturopathy help with skin aging?",
+        "answer": "Absolutely. Naturopathic skin care promotes cell regeneration and reduces oxidative stress, helping to delay signs of aging like wrinkles and dullness."
+      },
+      {
+        "question": "Do I need to follow a special diet during treatment?",
+        "answer": "Yes, a customized diet plan is a key part of the therapy to support internal healing and faster recovery from skin conditions."
+      }
+    ]
   }
 ]

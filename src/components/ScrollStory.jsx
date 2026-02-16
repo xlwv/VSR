@@ -109,8 +109,8 @@ export default function ScrollStory({
 
   const renderImageSection = (isMobile = false) => {
     const imageWrapperClass = layoutType === "discover" 
-      ? `${isMobile ? "w-full mb-6" : "w-[580px] flex-shrink-0"}` 
-      : `${isMobile ? "w-full mb-6" : "w-[520px] flex-shrink-0"}`;
+      ? `${isMobile ? "w-full mb-6" : "w-[500px] flex-shrink-0"}` 
+      : `${isMobile ? "w-full mb-6" : "w-[460px] flex-shrink-0"}`;
 
     const imageHeightClass = layoutType === "discover"
       ? `${isMobile ? "h-[280px]" : "h-[400px]"}`
@@ -198,7 +198,7 @@ export default function ScrollStory({
             <li key={i} className="flex items-start gap-3">
               <h3>
                 <span className="text-[#A54220] text-xl mt-1">•</span>
-                <span className="text-[#2b2b2b] tracking-wide uppercase pl-5 font-light">
+                <span className="text-[#2b2b2b] tracking-wide uppercase pl-5 font-light md:text-[16px] lg:text-[18px] xl:text-[20px]">
                   {point}
                 </span>
               </h3>

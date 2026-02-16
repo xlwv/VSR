@@ -2,12 +2,15 @@ import Gallery from "@/components/Gallery";
 import PageBanner from "@/components/PageBanner";
 export default function Page() {
   const galleryData = [
-    { src: "/assets/gallery-1.webp", alt: "Wellness Center Interior" },
-    { src: "/assets/gallery-2.webp", alt: "Therapy Session" },
-    { src: "/assets/gallery-3.webp", alt: "Organic Dining" },
-    { src: "/assets/gallery-4.webp", alt: "Kitchen Staff" },
-    { src: "/assets/gallery-5.webp", alt: "Treatment Facilities" },
-    { src: "/assets/gallery-6.webp", alt: "Relaxation Room" },
+    { src: "/assets/g1.jpg", alt: "Wellness Center Interior" },
+    { src: "/assets/g2.jpg", alt: "Therapy Session" },
+    { src: "/assets/g3.jpg", alt: "Organic Dining" },
+    { src: "/assets/g4.jpg", alt: "Kitchen Staff" },
+    { src: "/assets/g5.jpg", alt: "Treatment Facilities" },
+    { src: "/assets/g6.jpg", alt: "Relaxation Room" },
+    { src: "/assets/g7.jpg", alt: "Kitchen Staff" },
+    { src: "/assets/g8.jpg", alt: "Treatment Facilities" },
+    { src: "/assets/g9.jpg", alt: "Relaxation Room" },
   ];
   return (
     <main>

@@ -46,7 +46,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
           <button
             onClick={() => scrollByOneCard("left")}
             aria-label="Scroll left"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#A54220] text-[#A54220] hover:bg-[#A54220] hover:text-white transition"
+            className="flex h-9 w-9 items-center justify-center rounded-full m-1 ml-2 border border-[#A54220] text-[#A54220] hover:bg-[#A54220] hover:text-white transition"
           >
             <svg
               width="16"
@@ -64,7 +64,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
           <button
             onClick={() => scrollByOneCard("right")}
             aria-label="Scroll right"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#A54220] text-[#A54220] hover:bg-[#A54220] hover:text-white transition"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#A54220] text-[#A54220] m-1 hover:bg-[#A54220] hover:text-white transition"
           >
             <svg
               width="16"
@@ -120,7 +120,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
               snap-start
             "
           >
-            <div className="rounded-2xl overflow-hidden bg-white">
+            <div className="overflow-hidden bg-white">
               {/* Image */}
               <div
                 className="
@@ -137,9 +137,9 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
               </div>
 
               {/* Title */}
-              <h3 className="font-swis font-body mt-3 text-[13px] sm:text-[14px] text-[#333] leading-relaxed">
+              <h3 className="font-swis font-body mt-3 para text-[#333] leading-relaxed">
                 {blog.title}
-                <span className="text-[#A54220] ml-1">Read More</span>
+                <span className="text-[#A54220] ml-1 text-[12px]">Read More</span>
               </h3>
             </div>
           </Link>

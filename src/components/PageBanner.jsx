@@ -21,8 +21,8 @@ const PageBanner = ({
         `,
       }}
     >
-      <div className="w-full max-w-[1200px] mx-auto px-5 sm:px-6">
-        <div className="max-w-[800px]">
+      <div className="container">
+        <div>
 
           {/* Title */}
           <h1 className="mb-3 sm:mb-4 md:mb-9

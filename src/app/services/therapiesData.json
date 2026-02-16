@@ -1,194 +1,681 @@
 [
   {
     "id": 1,
-    "slug": "diet-therapy",
-    "introduction": "Food is medicine - a fundamental principle of naturopathy. Our diet therapy program goes beyond simple nutrition to use food as a healing tool for various health conditions.",
-    "benefits": [
-      "Improves digestion and metabolism",
-      "Helps in weight management",
-      "Boosts immunity and energy levels",
-      "Reduces inflammation in the body",
-      "Supports disease prevention and management",
-      "Enhances overall vitality and wellbeing"
+    "slug": "acupuncture",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "If you're looking for a safe and effective way to restore balance and promote healing through acupuncture therapy in Hyderabad, you've come to the right place. Acupuncture offers a time-tested solution rooted in traditional Chinese medicine, using fine needles to activate your body's natural healing mechanisms and support holistic wellness."
+      },
+      {
+        "type": "paragraph",
+        "heading": "What is Acupuncture Therapy?",
+        "content": "Acupuncture therapy involves the insertion of ultra-thin needles into specific points on the body to stimulate nerves, muscles, and connective tissues. This ancient practice is designed to enhance the body's natural healing process and restore energetic balance. It is widely recognized for its ability to treat a variety of conditions in a non-invasive, drug-free manner."
+      },
+      {
+        "type": "list",
+        "heading": "Benefits of Acupuncture Therapy",
+        "items": [
+          "Pain Management: Effective for chronic and acute pain, including back pain, joint pain, and migraines",
+          "Stress and Anxiety Relief: Helps reduce cortisol levels and promotes relaxation",
+          "Improved Sleep: Aids in managing insomnia by regulating energy flow and relaxing the mind",
+          "Digestive Health: Supports gut function and helps in treating conditions like IBS and indigestion",
+          "Injury Recovery: Often used in sports medicine to accelerate healing and reduce inflammation"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "At our center, we customize each acupuncture treatment plan according to your health condition, combining traditional knowledge with modern naturopathic methods."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions Treated with Acupuncture Therapy",
+        "items": [
+          "Headaches and migraines",
+          "Insomnia",
+          "Stress and anxiety",
+          "Arthritis",
+          "Digestive disorders",
+          "Sports injuries",
+          "Musculoskeletal pain"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "We often combine acupuncture treatment with other holistic techniques for optimal results."
+      },
+      {
+        "type": "list",
+        "heading": "Why Choose VSR for Acupuncture Therapy in Hyderabad?",
+        "items": [
+          "Certified and experienced acupuncture practitioners",
+          "Personalized treatment plans",
+          "Calm and hygienic treatment environment",
+          "Integration with other natural therapies for complete healing"
+        ]
+      }
     ],
-    "process": "Our expert nutritionists create personalized meal plans based on your health condition, body constitution, and specific needs. We focus on whole foods, proper food combinations, and mindful eating practices to maximize nutritional benefits and support healing.",
-    "conditionsTreated": [
-      "Obesity",
-      "Diabetes",
-      "Digestive disorders",
-      "High cholesterol",
-      "Hypertension",
-      "Food allergies"
-    ],
-    "duration": "Varies based on individual goals - typically 2-4 weeks for initial program with ongoing support",
-    "additionalInfo": "Our diet therapy includes education on food selection, preparation methods, and sustainable eating habits that you can maintain long after your program ends."
+    "faqs": [
+      {
+        "question": "What is Acupuncture Therapy?",
+        "answer": "Acupuncture therapy is a holistic treatment involving the insertion of fine needles into specific points to relieve pain and restore energy balance."
+      },
+      {
+        "question": "What are the benefits of Acupuncture Therapy?",
+        "answer": "It offers numerous benefits such as pain relief, stress reduction, improved sleep, enhanced digestion, and overall well-being."
+      },
+      {
+        "question": "How many sessions of Acupuncture are needed?",
+        "answer": "The number of sessions varies based on your condition. Some may feel relief after just one session, while others may need multiple sessions for lasting results."
+      },
+      {
+        "question": "Are there any side effects of Acupuncture?",
+        "answer": "Acupuncture is generally safe when performed by qualified professionals. Minor side effects may include slight bruising or temporary soreness at the needle site."
+      },
+      {
+        "question": "Who can benefit from Acupuncture Therapy?",
+        "answer": "People suffering from chronic pain, stress, insomnia, digestive issues, and joint problems can greatly benefit from acupuncture treatment."
+      }
+    ]
   },
   {
     "id": 2,
-    "slug": "hydrotherapy",
-    "introduction": "Water has been used for healing since ancient times. Our comprehensive hydrotherapy program harnesses the therapeutic properties of water at various temperatures to promote healing and wellness.",
-    "benefits": [
-      "Improves blood circulation",
-      "Relieves muscle tension and pain",
-      "Enhances detoxification",
-      "Boosts immune system",
-      "Reduces stress and promotes relaxation",
-      "Improves skin health"
+    "slug": "aroma-therapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Aromatherapy is a gentle yet powerful healing technique that uses pure essential oils to promote physical, emotional, and spiritual well-being. Come experience the best aromatherapy in Hyderabad at VSR Vriksha: A Boutique Naturopathy Retreat. Rooted in both ancient tradition and modern science, this therapy helps restore balance to your body and mind in a deeply soothing way."
+      },
+      {
+        "type": "paragraph",
+        "heading": "What is Aromatherapy?",
+        "content": "Aromatherapy is a holistic healing practice that uses aromatic plant extracts, commonly known as essential oils, for therapeutic purposes. These oils are either inhaled or applied to the body, allowing their natural essence to influence brain activity, ease muscular discomfort, and uplift emotional health."
+      },
+      {
+        "type": "paragraph",
+        "content": "From calming lavender and refreshing eucalyptus to grounding sandalwood, the scents we use are more than pleasant, they're powerful. At VSR, our aromatherapy treatment is personalized to your needs, whether you're seeking relaxation, pain relief, or emotional clarity."
+      },
+      {
+        "type": "list",
+        "heading": "Benefits of Aromatherapy",
+        "items": [
+          "Reduce stress and anxiety",
+          "Ease muscle tension and chronic pain",
+          "Support deeper sleep and emotional balance",
+          "Alleviate respiratory congestion through inhalation",
+          "Improve focus and uplift mood",
+          "Reduce headaches and migraines naturally"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Each session is conducted by experienced therapists, following a doctor's prescription, who carefully select and blend essential oils based on your individual needs."
+      },
+      {
+        "type": "paragraph",
+        "heading": "How We Do It",
+        "content": "We use only 100% natural, therapeutic-grade essential oils, ensuring every drop that touches your skin or fills your lungs is pure, safe, and effective. The serene and nature-inspired ambiance at VSR enhances your experience, making your aromatherapy treatment feel like a rejuvenating escape from the chaos of daily life."
+      }
     ],
-    "process": "We offer various hydrotherapy treatments including therapeutic baths, contrast baths, underwater massage, steam baths, and our signature Vichy Shower Massage. Each treatment is tailored to your specific condition and needs.",
-    "conditionsTreated": [
-      "Joint pain and arthritis",
-      "Muscle soreness",
-      "Poor circulation",
-      "Stress and anxiety",
-      "Skin conditions",
-      "Chronic fatigue"
-    ],
-    "duration": "Individual sessions: 30-60 minutes. Recommended course: 7-14 sessions",
-    "additionalInfo": "We are the only hospital in Hyderabad offering the Vichy Shower Massage - a luxurious treatment where multiple shower heads deliver therapeutic water massage."
+    "faqs": [
+      {
+        "question": "What is Aromatherapy?",
+        "answer": "Aromatherapy is a healing technique that uses essential oils derived from plants to promote well-being. Oils are either inhaled or applied to the skin, creating both physical and emotional benefits."
+      },
+      {
+        "question": "What are the benefits of Aromatherapy?",
+        "answer": "It can reduce stress, ease muscular pain, relieve anxiety, improve sleep, enhance mood, and help manage symptoms of headaches, fatigue, and tension."
+      },
+      {
+        "question": "What types of essential oils are commonly used in Aromatherapy?",
+        "answer": "Some of the most effective oils include lavender (for relaxation), peppermint (for headaches), eucalyptus (for respiratory support), lemon (for mood upliftment), and chamomile (for calm)."
+      },
+      {
+        "question": "Can I do Aromatherapy at home?",
+        "answer": "Yes, simple methods like using an oil diffuser or adding a few drops of essential oil to your bath can help. However, for therapeutic results, it's best to consult professionals, like those at VSR, who specialize in aromatherapy treatment and understand proper usage and safety measures."
+      },
+      {
+        "question": "Are there any side effects of Aromatherapy?",
+        "answer": "When used properly, aromatherapy is safe. However, people with allergies or sensitive skin should always consult a doctor before application."
+      },
+      {
+        "question": "Is Aromatherapy suitable for children and pregnant women?",
+        "answer": "Yes, but with caution. Certain oils must be avoided during pregnancy or with young children. Our therapists ensure only safe, diluted oils are used in such cases, under expert supervision."
+      }
+    ]
   },
   {
     "id": 3,
-    "slug": "aroma-therapy",
-    "introduction": "Essential oils extracted from plants have powerful therapeutic properties. Our aromatherapy treatments use pure, therapeutic-grade essential oils to promote physical and emotional healing.",
-    "benefits": [
-      "Reduces stress and anxiety",
-      "Improves sleep quality",
-      "Relieves headaches and migraines",
-      "Boosts mood and mental clarity",
-      "Enhances respiratory function",
-      "Supports immune system"
+    "slug": "diet-therapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Food is more than a mere medium of sustenance, it is a form of medicine. What you eat can have a crucial impact on your wellbeing, and the absence or presence of certain nutrients in your meal can make all the difference."
+      },
+      {
+        "type": "paragraph",
+        "heading": "What is Diet Therapy?",
+        "content": "Diet therapy involves using specific dietary plans and nutritional strategies to prevent and treat various health conditions. It's a holistic approach that considers individual health needs, preferences, and goals."
+      },
+      {
+        "type": "list",
+        "heading": "Benefits of Diet Therapy",
+        "items": [
+          "Improves overall health and wellness",
+          "Helps manage chronic conditions like diabetes and hypertension",
+          "Boosts immune system function",
+          "Enhances energy levels and mental clarity",
+          "Supports healthy weight management",
+          "Reduces inflammation in the body"
+        ]
+      },
+      {
+        "type": "numbered-list",
+        "heading": "How Diet Therapy Works",
+        "items": [
+          "Initial consultation and health assessment to understand your current dietary habits and health goals",
+          "Personalized meal plan creation based on your specific nutritional needs and preferences",
+          "Regular monitoring and adjustments to ensure optimal results",
+          "Education on proper food choices, portion control, and meal timing",
+          "Ongoing support and guidance throughout your wellness journey"
+        ]
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions Treated",
+        "items": [
+          "Diabetes",
+          "Obesity",
+          "Hypertension",
+          "Digestive Disorders",
+          "Heart Disease",
+          "High Cholesterol",
+          "Kidney Disease",
+          "Liver Problems"
+        ]
+      },
+      {
+        "type": "highlight",
+        "heading": "Duration",
+        "content": "Diet therapy programs typically range from 7 to 21 days, depending on individual needs and health goals. Extended programs may be recommended for chronic conditions."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Why Choose VSR Vriksha for Diet Therapy?",
+        "content": "At VSR Vriksha, our expert nutritionists create personalized diet plans using organic, farm-fresh ingredients grown on our own premises. We combine traditional dietary wisdom with modern nutritional science to deliver optimal results."
+      }
     ],
-    "process": "Our certified aromatherapists blend essential oils specifically for your needs. Treatments may include inhalation therapy, aromatic massage, or diffusion therapy, depending on your condition.",
-    "conditionsTreated": [
-      "Stress and anxiety",
-      "Insomnia",
-      "Depression",
-      "Respiratory issues",
-      "Chronic pain",
-      "Hormonal imbalances"
-    ],
-    "duration": "Sessions: 45-60 minutes. Recommended: 6-12 sessions for optimal results",
-    "additionalInfo": "Each essential oil has unique properties - lavender for relaxation, peppermint for energy, eucalyptus for respiratory health. We customize blends for your specific needs."
+    "faqs": []
   },
   {
     "id": 4,
-    "slug": "massage-therapy",
-    "introduction": "Therapeutic massage is an ancient healing art that combines skilled touch with anatomical knowledge to promote health and wellbeing. Our expert therapists provide various massage techniques tailored to your needs.",
-    "benefits": [
-      "Relieves muscle tension and pain",
-      "Improves circulation",
-      "Reduces stress hormones",
-      "Enhances flexibility and range of motion",
-      "Promotes better sleep",
-      "Boosts immune function"
+    "slug": "exercise-therapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "It is no secret that exercise is an integral part of a healthy lifestyle. Under the supervision of our doctors, you can engage in specific physical activities to heal and maintain your health."
+      },
+      {
+        "type": "paragraph",
+        "content": "There is no denying the myriad health benefits of exercise for our mind and body. The advantages of exercise are limitless. In fact, regular physical activity is known to keep many diseases at bay and boost your mental and physical health. But while exercising on your own is a great way to stay fit, the benefits are accentuated when you are at our center."
+      },
+      {
+        "type": "paragraph",
+        "content": "At our nature cure center, you will be guided by experts with immense knowledge and skills. You'll have the best, state-of-the-art equipment and facilities at your disposal. A customised exercise plan will be created for each individual based on their health condition and goals."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions We Help With",
+        "items": [
+          "Muscular pain and tension",
+          "Stress",
+          "Skin problems",
+          "Anxiety and depression",
+          "Weak immune system",
+          "Insomnia",
+          "Respiratory conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "The therapy may involve exercises such as strength training, aerobics, and stretching."
+      }
     ],
-    "process": "We offer Swedish massage, deep tissue massage, Ayurvedic massage (Abhyanga), sports massage, and therapeutic massage. Your therapist will assess your condition and recommend the most appropriate technique.",
-    "conditionsTreated": [
-      "Back and neck pain",
-      "Sports injuries",
-      "Fibromyalgia",
-      "Arthritis",
-      "Stress-related conditions",
-      "Poor circulation"
-    ],
-    "duration": "Sessions: 60-90 minutes. Frequency depends on condition - may range from weekly to monthly",
-    "additionalInfo": "Massage therapy works best as part of a comprehensive wellness program. Regular sessions provide cumulative benefits for both physical and mental health."
+    "faqs": []
   },
   {
     "id": 5,
-    "slug": "acupuncture",
-    "introduction": "This ancient Chinese healing practice uses fine needles to stimulate specific points on the body, promoting natural healing and pain relief by balancing the body's energy flow (Qi).",
-    "benefits": [
-      "Effective pain management",
-      "Reduces inflammation",
-      "Relieves stress and anxiety",
-      "Improves sleep quality",
-      "Enhances digestive function",
-      "Boosts immune system"
+    "slug": "heliotherapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Heliotherapy, also known as climate therapy, uses the healing powers of the sun to treat skin ailments."
+      },
+      {
+        "type": "paragraph",
+        "content": "The benefits of the sun are well known. We have also realised the importance of artificial light. Heliotherapy, or light therapy, uses the power of the sun or artificial light to promote health and well-being. Although it is commonly used for treating various skin ailments, its use goes far beyond that."
+      },
+      {
+        "type": "paragraph",
+        "content": "The treatment is done under sunlight covered with plantain leaves. Even neem or lotus leaves may be used. The duration of the session could last anywhere from 10 to 15 minutes."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions Treated",
+        "items": [
+          "Skin conditions, such as acne and eczema",
+          "Insomnia",
+          "Depression",
+          "Osteoporosis",
+          "Rheumatoid arthritis",
+          "Vitamin D deficiency",
+          "Weak immune system"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "At our center, we make the most of sunlight and artificial lights through the use of the latest equipment."
+      }
     ],
-    "process": "Our certified acupuncturists insert very fine needles at specific points along meridian pathways. The treatment is virtually painless and induces deep relaxation while stimulating the body's healing response.",
-    "conditionsTreated": [
-      "Chronic pain",
-      "Migraines and headaches",
-      "Anxiety and depression",
-      "Digestive disorders",
-      "Insomnia",
-      "Allergies"
-    ],
-    "duration": "Initial session: 60-90 minutes. Follow-up: 45-60 minutes. Recommended: 6-12 sessions",
-    "additionalInfo": "Acupuncture is recognized by the WHO as effective for over 100 conditions. It works by triggering the release of endorphins and influencing the autonomic nervous system."
+    "faqs": []
   },
   {
     "id": 6,
-    "slug": "yoga",
-    "introduction": "Yoga is a holistic practice that unites body, mind, and spirit through physical postures (asanas), breathing techniques (pranayama), and meditation. Our programs are designed for all levels and specific health conditions.",
-    "benefits": [
-      "Increases flexibility and strength",
-      "Improves balance and posture",
-      "Reduces stress and anxiety",
-      "Enhances respiratory function",
-      "Promotes better sleep",
-      "Supports cardiovascular health"
+    "slug": "hydrotherapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "VSR Vriksha: A Boutique Naturopathy Retreat is known to be the best centre for hydrotherapy in Hyderabad. Hydrotherapy is a time-tested healing practice that promotes physical and mental well-being."
+      },
+      {
+        "type": "paragraph",
+        "heading": "What is Hydrotherapy?",
+        "content": "Hydrotherapy, also known as water therapy, uses water in various forms: hot, cold, steam, or pressure; to relieve pain, reduce inflammation, and support healing. Hydrotherapy in naturopathy focuses on restoring balance within the body using nature's most powerful element: water."
+      },
+      {
+        "type": "paragraph",
+        "content": "Whether it's performed in a therapeutic treatment or through water-based applications like compresses and baths, we offer safe, drug-free, and effective hydrotherapy in Hyderabad for a wide range of conditions."
+      },
+      {
+        "type": "tags",
+        "heading": "What Conditions Can Hydrotherapy Help Treat?",
+        "items": [
+          "Arthritis and joint pain",
+          "Neurological conditions (stroke, traumatic brain injury, multiple sclerosis)",
+          "Orthopedic injuries and back pain",
+          "Fibromyalgia and muscle tension",
+          "Stress and chronic fatigue"
+        ]
+      },
+      {
+        "type": "list",
+        "heading": "Types of Hydrotherapy Treatments We Offer",
+        "items": [
+          "Sauna baths: Dry heat therapy that promotes circulation, detoxification, immune strength",
+          "Steam baths: Moist heat that soothes pain, reduces stress, and supports weight loss",
+          "Packs: Wet cloth wraps used on specific areas like the chest, abdomen, kidneys, or the full body to draw out toxins and stimulate healing",
+          "Enema: A natural cleansing method to detoxify the digestive system",
+          "Whirlpool baths: A relaxing bath with whirling jets that ease inflammation, accelerate wound healing, and reduce pain"
+        ]
+      },
+      {
+        "type": "list",
+        "heading": "Why Choose VSR for Hydrotherapy in Hyderabad?",
+        "items": [
+          "Holistic, drug-free healing environment",
+          "Expert naturopaths and hydrotherapy specialists",
+          "Peaceful, nature-based setting",
+          "Personalized treatment plans",
+          "Safe and effective for all age groups"
+        ]
+      }
     ],
-    "process": "Our experienced yoga instructors guide you through appropriate asanas, breathing exercises, and meditation practices. Classes are tailored to your fitness level and health goals, with therapeutic yoga available for specific conditions.",
-    "conditionsTreated": [
-      "Back pain",
-      "Anxiety and depression",
-      "Hypertension",
-      "Diabetes",
-      "Respiratory conditions",
-      "Hormonal imbalances"
-    ],
-    "duration": "Daily sessions: 60-90 minutes. Recommended minimum: 2-4 weeks for noticeable benefits",
-    "additionalInfo": "We offer various yoga styles including Hatha, therapeutic yoga for specific conditions, and meditation sessions. Private sessions available for personalized attention."
+    "faqs": [
+      {
+        "question": "What is Hydrotherapy?",
+        "answer": "Hydrotherapy is a natural healing method that uses water in different forms to treat physical ailments and promote relaxation. Hydrotherapy in naturopathy plays a key role in detoxifying and rejuvenating the body."
+      },
+      {
+        "question": "What are the benefits of Hydrotherapy?",
+        "answer": "Hydrotherapy improves blood circulation, reduces inflammation, relieves stress, aids digestion, supports immune function, and helps manage chronic conditions like arthritis and back pain."
+      },
+      {
+        "question": "What types of Hydrotherapy treatments are available?",
+        "answer": "We offer a wide range of hydrotherapy treatments, including sauna and steam baths, whirlpool therapy, wet packs, and enemas."
+      },
+      {
+        "question": "How long does a Hydrotherapy session last?",
+        "answer": "Depending on the treatment type, a session typically lasts between 20 to 60 minutes. Our team will recommend the ideal duration based on your condition and goals."
+      },
+      {
+        "question": "What should I expect during a Hydrotherapy session?",
+        "answer": "You'll be guided through a safe and relaxing hydrotherapy treatment process that may involve warm or cold water, gentle stretching, or therapeutic applications, all designed to support your healing journey."
+      },
+      {
+        "question": "How many Hydrotherapy sessions will I need?",
+        "answer": "The number of sessions depends on your specific condition and response to therapy. Chronic conditions may require multiple sessions, while acute issues might respond faster."
+      }
+    ]
   },
   {
     "id": 7,
-    "slug": "mud-therapy",
-    "introduction": "Earth is one of nature's most powerful healing elements. Mud therapy uses specially prepared medicinal mud to detoxify, heal, and rejuvenate the body through its rich mineral content and cooling properties.",
-    "benefits": [
-      "Detoxifies the body",
-      "Improves skin health",
-      "Reduces inflammation",
-      "Relieves joint and muscle pain",
-      "Enhances circulation",
-      "Provides cooling effect for heat-related conditions"
+    "slug": "magnet-color-therapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "heading": "Magnet Therapy",
+        "content": "Color therapy is a holistic approach to boosting a person's mental and overall health. Magnet treatment uses the power of the magnetic field all around us to heal the body."
+      },
+      {
+        "type": "paragraph",
+        "content": "Magnetic therapy is a form of medicine where we use magnets to stimulate our body's natural healing process. This is done by strategically placing magnets on or near the body. This therapy has been used in several ancient cultures since ancient times."
+      },
+      {
+        "type": "paragraph",
+        "content": "The vast electromagnetic field all around us has a huge impact on our overall health and well-being. Magnets can be used to help the cells in our body renew. The wrong use of magnets can have a harmful effect on our health. So it is critical that skilled experts with the right knowledge and experience handle the therapy."
+      },
+      {
+        "type": "tags",
+        "heading": "Magnet Therapy Helps With",
+        "items": [
+          "Arthritis",
+          "Asthma",
+          "Spondylitis",
+          "Migraine",
+          "Lower back pain",
+          "Joint pain",
+          "Blood pressure",
+          "Chronic pain",
+          "Headaches and migraines",
+          "Insomnia",
+          "Stress and anxiety"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "heading": "Color Therapy",
+        "content": "Color therapy, a natural and non-invasive method to treat various medical problems, has surprising health benefits. It uses specific colours through lights aimed at certain body parts or the eyes. The therapy helps promote balance in the body and improve mood."
+      },
+      {
+        "type": "tags",
+        "heading": "Color Therapy Helps With",
+        "items": [
+          "Skin conditions",
+          "Stress and anxiety",
+          "Depression",
+          "Insomnia",
+          "Headaches and migraines"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "The therapy is used under the guidance of experts for efficient results."
+      }
     ],
-    "process": "We use clean, medicinal mud rich in minerals. The mud is applied to specific body parts or as full-body packs. As it dries, it draws out toxins and provides therapeutic cooling. The treatment concludes with a gentle cleansing.",
-    "conditionsTreated": [
-      "Skin conditions (eczema, psoriasis)",
-      "Joint pain and arthritis",
-      "Headaches",
-      "Inflammation",
-      "Insomnia",
-      "Digestive issues"
-    ],
-    "duration": "Sessions: 30-45 minutes. Recommended: 7-14 sessions for therapeutic course",
-    "additionalInfo": "Mud therapy is particularly effective when combined with other naturopathic treatments. The minerals in mud are absorbed through the skin, providing systemic benefits."
+    "faqs": []
   },
   {
     "id": 8,
-    "slug": "chromotherapy",
-    "introduction": "Color therapy, or chromotherapy, uses the therapeutic properties of colors and light to balance energy and promote healing. Different colors vibrate at different frequencies, affecting our physical and emotional states.",
-    "benefits": [
-      "Balances energy centers (chakras)",
-      "Improves mood and emotional wellbeing",
-      "Enhances sleep quality",
-      "Reduces stress and anxiety",
-      "Supports healing processes",
-      "Promotes mental clarity"
+    "slug": "massage-therapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "At VSR Vriksha: A Boutique Naturopathy Retreat, we offer the best massage therapy in Hyderabad. This is a time-tested therapeutic method known for its numerous physical and mental health benefits. With a combination of ancient practices and modern techniques, our massage therapies are tailored to address your unique health needs and promote overall well-being."
+      },
+      {
+        "type": "paragraph",
+        "heading": "What is Massage Therapy?",
+        "content": "Massage therapy is a therapeutic technique that involves manipulating the muscles, tendons, and skin to relieve tension, reduce pain, and improve circulation. It is an essential part of naturopathy and is used to restore balance to the body and mind through various massage techniques."
+      },
+      {
+        "type": "list",
+        "heading": "Types of Massage Therapy",
+        "items": [
+          "Swedish Massage: A relaxing massage designed to relieve muscle tension and improve circulation",
+          "Deep Tissue Massage: Focuses on deeper layers of muscle and connective tissue, ideal for chronic pain and muscle stiffness"
+        ]
+      },
+      {
+        "type": "list",
+        "heading": "Benefits of Massage Therapy",
+        "items": [
+          "Muscle Relaxation: Relieves tension and muscle stiffness",
+          "Pain Relief: Helps with back pain, nerve pain, and sports injuries",
+          "Stress Reduction: Reduces anxiety and promotes relaxation",
+          "Improved Circulation: Enhances blood flow, reducing muscle fatigue and promoting healing"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "heading": "Massage Therapy for Back Pain",
+        "content": "Massage therapy for back pain is particularly effective at relieving chronic pain and discomfort. Our deep tissue massage targets the muscles and ligaments that support the spine, reducing tension and inflammation, and promoting healing. With regular sessions, many of our clients experience significant relief from lower back pain."
+      },
+      {
+        "type": "list",
+        "heading": "Why Choose VSR for Massage Therapy in Hyderabad?",
+        "items": [
+          "Experienced therapists specializing in body massage therapy",
+          "A customized approach to address individual needs and health goals",
+          "State-of-the-art equipment and serene healing environment",
+          "Holistic and natural healing techniques for lasting results"
+        ]
+      }
     ],
-    "process": "Our chromotherapy treatments use colored lights in a controlled environment. You'll be exposed to specific colors based on your condition - red for energy, blue for calming, green for balance, etc. The treatment is deeply relaxing and non-invasive.",
-    "conditionsTreated": [
-      "Depression and anxiety",
-      "Insomnia",
-      "Seasonal affective disorder",
-      "Fatigue",
-      "Stress-related conditions",
-      "Energy imbalances"
+    "faqs": [
+      {
+        "question": "What is Massage Therapy?",
+        "answer": "Massage therapy is the manipulation of soft tissues (muscles, tendons, and skin) to relieve tension, improve circulation, and promote overall health. At VSR, we offer specialized massage therapy in Hyderabad for relaxation and healing."
+      },
+      {
+        "question": "What are the benefits of Massage Therapy?",
+        "answer": "Body massage therapy helps with pain relief, muscle tension, stress reduction, improved circulation, and better sleep. It is also beneficial for addressing sports injuries, headaches, and anxiety."
+      },
+      {
+        "question": "How long does a typical massage session last?",
+        "answer": "A typical session lasts anywhere between 30 to 90 minutes, depending on the type of massage and the needs of the client."
+      },
+      {
+        "question": "What should I expect during a massage session?",
+        "answer": "You will experience a relaxing environment, where our skilled therapists use different techniques to address your specific needs, whether it's massage therapy for back pain relief or overall muscle relaxation."
+      },
+      {
+        "question": "How often should I get a massage?",
+        "answer": "The frequency of massage therapy depends on your personal health goals. For chronic conditions, such as back pain, more frequent sessions may be recommended. For relaxation and stress relief, once a week or bi-weekly can be beneficial."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "physiotherapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "We have established ourselves as a premium centre for physiotherapy in Hyderabad. Our naturopathic approach combines traditional physiotherapy with holistic therapies to help you recover faster, move better, and live pain-free."
+      },
+      {
+        "type": "paragraph",
+        "heading": "What is Physiotherapy?",
+        "content": "Physiotherapy, also known as physical therapy, is a hands-on healing technique that focuses on restoring mobility, function, and quality of life. Whether you're recovering from an injury, managing chronic pain, or living with a neurological or orthopedic condition, our personalized physiotherapy treatment plans are designed to support long-term wellness without surgery or medication."
+      },
+      {
+        "type": "paragraph",
+        "content": "At our physiotherapy center, skilled therapists use scientifically-backed methods to target the root cause of pain and dysfunction, helping you heal naturally and holistically."
+      },
+      {
+        "type": "tags",
+        "heading": "What Conditions Can Physiotherapy Treat?",
+        "items": [
+          "Muscular pain and joint tension",
+          "Lack of flexibility or mobility",
+          "Back and neck pain",
+          "Sports injuries and orthopedic recovery",
+          "Diabetes-related complications",
+          "Musculoskeletal disorders",
+          "Neurological issues (stroke, spinal cord injuries)",
+          "Cardiovascular and respiratory conditions"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Our therapy programs may include guided exercises, manual therapy, posture correction, stretching routines, and heat/cold therapy for enhanced outcomes."
+      },
+      {
+        "type": "list",
+        "heading": "Why Choose VSR for Physiotherapy in Hyderabad?",
+        "items": [
+          "Experienced and certified therapists",
+          "Personalized treatment plans",
+          "Peaceful, nature-based healing environment",
+          "Integrated approach with naturopathy and yoga",
+          "Proven success in chronic and acute conditions"
+        ]
+      }
     ],
-    "duration": "Sessions: 20-40 minutes. Recommended: 8-12 sessions for optimal benefits",
-    "additionalInfo": "Chromotherapy is often combined with meditation or relaxation therapy for enhanced effects. Each color has specific therapeutic properties that influence both physical and emotional health."
+    "faqs": [
+      {
+        "question": "What is Physiotherapy?",
+        "answer": "Physiotherapy is a non-invasive treatment method that helps restore movement and function when someone is affected by injury, illness, or disability. At our physiotherapy centre, it involves tailored treatments like guided exercises, stretching, and manual techniques."
+      },
+      {
+        "question": "What are the benefits of Physiotherapy?",
+        "answer": "It improves flexibility, reduces pain, restores mobility, prevents further injury, and supports overall recovery, especially in post-operative or chronic health conditions."
+      },
+      {
+        "question": "Is Physiotherapy painful?",
+        "answer": "While you might experience mild discomfort during certain movements, our trained therapists ensure that your physiotherapy treatment is gentle, effective, and always aligned with your comfort level."
+      },
+      {
+        "question": "How many Physiotherapy sessions will I need?",
+        "answer": "The number of sessions depends on your condition, goals, and response to treatment. Some people experience relief in a few sessions, while others may require longer-term care for chronic conditions."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "skin-therapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "There are surprising benefits to using natural methods to treat skin problems and rejuvenate it. With naturopathy, you can now avoid harmful medicines and chemicals for healthy, youthful skin."
+      },
+      {
+        "type": "paragraph",
+        "content": "It is common for people to depend on medication and other treatment options that can have harmful effects on an individual's health. The skin is the largest organ in our body and is prone to myriad health problems caused by the environment, stress, and diet."
+      },
+      {
+        "type": "list",
+        "heading": "Our Naturopathic Approach",
+        "items": [
+          "Nutrition and dietary changes customised for you",
+          "Lifestyle changes, such as managing stress",
+          "Physical therapies that include massages and hydrotherapy"
+        ]
+      },
+      {
+        "type": "tags",
+        "heading": "Skin Conditions We Treat",
+        "items": [
+          "Acne",
+          "Dermatitis",
+          "Eczema",
+          "Rosacea",
+          "Psoriasis"
+        ]
+      }
+    ],
+    "faqs": []
+  },
+  {
+    "id": 11,
+    "slug": "sound-music-therapy",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "It is an established fact that music has a relaxing effect on our minds. We use music and sound therapy in combination with other methods to reduce stress, and improve mood."
+      },
+      {
+        "type": "paragraph",
+        "content": "Sound and music therapy, or 'sound healing' is a very unique naturopathic method used to promote health and well-being. Music has a therapeutic effect on our minds and overall health."
+      },
+      {
+        "type": "paragraph",
+        "content": "Naturopathic sound therapy employs the use of various types of music or specific sounds to relieve stress and promote relaxation. The facilities and the effect of the pristine nature help strengthen the impact of the therapy. Music can have a calming effect on the nervous system. Relish the soothing effect of carefully chosen music and sounds under the supervision of experts for an ethereal experience."
+      },
+      {
+        "type": "tags",
+        "heading": "Conditions We Help With",
+        "items": [
+          "Stress and anxiety",
+          "Insomnia",
+          "Depression",
+          "Headaches and migraines",
+          "Pain management",
+          "Musculoskeletal disorders"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "This is a healthy alternative to harmful medicines and invasive surgeries, without any side effects."
+      }
+    ],
+    "faqs": []
+  },
+  {
+    "id": 12,
+    "slug": "yoga",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "If you are seeking the best yoga therapy in Hyderabad, you have reached the right place. At VSR Vriksha: A Boutique Naturopathy Retreat, we offer personalized yoga therapy, designed to heal your body, calm your mind, and restore balance to your life. Rooted in ancient Indian wisdom and adapted for modern lifestyles, our therapy combines yogic techniques with naturopathy to promote holistic wellness."
+      },
+      {
+        "type": "paragraph",
+        "heading": "What is Yoga Therapy?",
+        "content": "Yoga Therapy is a specialized approach that uses yoga postures, breathing exercises, meditation, and lifestyle guidance to address specific physical and emotional conditions. Unlike general yoga classes, yoga therapy at VSR is conducted in a clinical setting by trained professionals who tailor each session to your unique health concerns. It's not just about stretching or flexibility; it's about creating harmony between the body, mind, and spirit."
+      },
+      {
+        "type": "list",
+        "heading": "Benefits of Yoga Therapy",
+        "items": [
+          "Relieve stress and anxiety",
+          "Reduce muscular pain and tension",
+          "Manage headaches and migraines",
+          "Improve digestion and metabolic health",
+          "Combat insomnia and sleep disorders",
+          "Balance blood pressure and support heart health"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": "Each session is carefully crafted by a qualified yoga therapist, ensuring that movements and breathing techniques are safe, effective, and suited to your current health status."
+      },
+      {
+        "type": "paragraph",
+        "heading": "Why Choose VSR Vriksha for Yoga Therapy in Hyderabad?",
+        "content": "At VSR Vriksha, yoga therapy is more than a class, it's a therapeutic experience. Our serene natural setting, combined with guidance from experienced yoga therapists and the integration of naturopathy and lifestyle medicine, creates the ideal environment for healing and transformation. Whether you're managing a chronic illness or simply seeking mental clarity, our therapy sessions are personalized to help you regain control over your health—naturally and holistically."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Yoga Therapy?",
+        "answer": "Yoga Therapy is a healing system that uses yoga practices, like breathing, meditation, and specific postures, to address physical, emotional, and spiritual health challenges. It's tailored to individual needs by a trained yoga therapist."
+      },
+      {
+        "question": "What are the benefits of Yoga Therapy?",
+        "answer": "It helps reduce stress, manage chronic conditions, improve flexibility, boost immunity, enhance sleep, and promote overall well-being. Many people experience improved energy, emotional balance, and reduced dependence on medication."
+      },
+      {
+        "question": "Is Yoga Therapy suitable for everyone?",
+        "answer": "Yes. It is safe and beneficial for people of all ages and abilities. Whether you're recovering from an illness or looking to prevent one, yoga therapy is adaptable to your needs."
+      },
+      {
+        "question": "How is Yoga Therapy different from regular Yoga classes?",
+        "answer": "Regular yoga classes are general in nature, focusing on overall fitness. Yoga therapy, on the other hand, is condition-specific and therapeutic, often done one-on-one or in small groups with close guidance from a yoga therapist."
+      },
+      {
+        "question": "How long do I need to practice Yoga Therapy to see results?",
+        "answer": "Improvements can be felt within a few sessions, especially in terms of stress relief and sleep quality. However, consistent practice over weeks or months delivers lasting physical and mental health benefits."
+      }
+    ]
   }
 ]

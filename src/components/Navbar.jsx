@@ -36,7 +36,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 font-medium nav-menu">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              // Check if current path starts with the link href (for child routes)
+              // Special case for home: only exact match
+              const isActive = link.href === "/" 
+                ? pathname === link.href 
+                : pathname.startsWith(link.href);
               
               return (
                 <Link
@@ -82,7 +86,7 @@ const Navbar = () => {
           fixed inset-0 z-40 bg-black/30 backdrop-blur-[2px]
           transition-opacity duration-300
           ${open ? "opacity-100 visible" : "opacity-0 invisible"}
-          md:hidden
+          lg:hidden
         `}
         onClick={() => setOpen(false)}
       />
@@ -93,7 +97,7 @@ const Navbar = () => {
           fixed top-0 right-0 z-50 h-full w-[80%] max-w-sm bg-white shadow-xl
           transform transition-transform duration-300 ease-in-out
           ${open ? "translate-x-0" : "translate-x-full"}
-          md:hidden
+          lg:hidden
         `}
       >
         {/* Close button */}
@@ -108,7 +112,11 @@ const Navbar = () => {
         {/* Mobile Nav Links */}
         <nav className="flex flex-col items-center gap-3 mt-4 px-6">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            // Check if current path starts with the link href (for child routes)
+            // Special case for home: only exact match
+            const isActive = link.href === "/" 
+              ? pathname === link.href 
+              : pathname.startsWith(link.href);
             
             return (
               <Link
