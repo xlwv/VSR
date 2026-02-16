@@ -12,7 +12,7 @@ export default function Page() {
   // Define your story slides data
   const aboutSlides = [
     {
-      image: "/assets/gallery-1.webp",
+      image: "/assets/g5.jpg",
       imageAlt: "Nature and wellness",
       imageTitle: "",
       imageDescription: "",
@@ -22,7 +22,7 @@ export default function Page() {
       ]
     },
     {
-      image: "/assets/gallery-2.webp",
+      image: "/assets/g12.jpg",
       imageAlt: "Mental wellness",
       imageTitle: "",
       imageDescription: "",
@@ -32,7 +32,7 @@ export default function Page() {
       ]
     },
     {
-      image: "/assets/gallery-3.webp",
+      image: "/assets/hero.webp",
       imageAlt: "Physical wellbeing",
       imageTitle: "",
       imageDescription: "",

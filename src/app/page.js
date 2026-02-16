@@ -58,21 +58,21 @@ export default function Page() {
   ];
   const discoverSlides = [
     {
-      image: "/assets/gallery-1.webp",
+      image: "/assets/g1.jpg",
       imageAlt: "Holistic Health Treatments",
       imageTitle: "Holistic Health Treatments",
       imageDescription: "Heal your mind, body, and soul with our wide array of natural therapies. The treatment covers gastrointestinal, cardiovascular, skin, respiratory",
       paragraphs: [] // Not used in discover layout with bullet points
     },
     {
-      image: "/assets/gallery-2.webp",
+      image: "/assets/g5.jpg",
       imageAlt: "Natural Therapies",
       imageTitle: "Natural Therapies",
       imageDescription: "Experience the healing power of nature through our advanced therapeutic treatments",
       paragraphs: []
     },
     {
-      image: "/assets/gallery-3.webp",
+      image: "/assets/g9.jpg",
       imageAlt: "Wellness Programs",
       imageTitle: "Wellness Programs",
       imageDescription: "Customized programs designed for your complete transformation",
