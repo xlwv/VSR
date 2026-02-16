@@ -63,7 +63,7 @@ export default function GetInTouch() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-[1200px] gap-16 px-6 md:grid-cols-2">
+      <div className="grid container gap-16 px-6 md:grid-cols-2">
         <div className="rounded-2xl bg-[#FBEEE8] p-8">
           <h3 className="mb-6 text-[27px] text-[#212529]">
             Please reach out for any{" "}
@@ -119,12 +119,12 @@ export default function GetInTouch() {
         </div>
 
         <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-10 text-[24px] text-[#212529]">
+          <div className="flex items-center gap-10 text-[20px] text-[#212529]">
             <Image src="/assets/SVG/calendar.svg" alt="" width={25} height={30} />
             Monday to Sunday
           </div>
 
-          <div className="flex items-center gap-10 text-[24px] text-[#212529]">
+          <div className="flex items-center gap-10 text-[20px] text-[#212529]">
             <Image src="/assets/SVG/clock.svg" alt="" width={32} height={32} />
             7 AM to 7 PM
           </div>

@@ -19,9 +19,7 @@ const CONTACTS = [
   {
     icon: "/assets/SVG/loc.svg",
     title: "Location",
-    text: `Irish Valley, Dharmaram Village, Near Bits
-Pilani Campus, Keesara Mandal, Medchal
-District, Shameerpet, Telangana - 501301`,
+    text: `Irish Valley, Dharmaram Village, Near Bits Pilani Campus, Keesara Mandal, Medchal District, Shameerpet, Telangana - 501301`,
     href: "https://www.google.com/maps/place/VSR+Vriksha+Naturopathy+Center+In+Hyderabad/",
   },
 ];
@@ -59,9 +57,9 @@ export default function Page() {
         />
 
         {/* Content */}
-        <div className="relative z-10 mx-auto grid max-w-6xl gap-16 px-6 text-center md:grid-cols-3">
+        <div className="relative z-10 grid container py-4 text-center md:grid-cols-3">
           {CONTACTS.map((item) => (
-            <div key={item.title} className="flex flex-col items-center">
+            <div key={item.title} className="flex py-6 flex-col items-center">
               
               {/* Icon */}
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full">
@@ -82,7 +80,7 @@ export default function Page() {
               {item.title === "Email" && (
                 <a
                   href={item.href}
-                  className="text-[18] text-[#212529] transition hover:text-[#A03D13]"
+                  className="!text-[14px] md:!text-[16px] text-[#212529] transition hover:text-[#A03D13]"
                 >
                   {item.text}
                 </a>
@@ -94,7 +92,7 @@ export default function Page() {
                     <a
                       key={index}
                       href={item.href[index]}
-                      className="block text-[18] text-[#212529] transition hover:text-[#A03D13]"
+                      className="block !text-[14px] md:!text-[16px] text-[#212529] transition hover:text-[#A03D13]"
                     >
                       {phone}
                     </a>
@@ -107,7 +105,7 @@ export default function Page() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="whitespace-pre-line text-[18] leading-relaxed text-[#212529] transition hover:text-[#A03D13]"
+                  className="whitespace-pre-line !text-[14px] md:!text-[16px] leading-relaxed text-[#212529] transition hover:text-[#A03D13]"
                 >
                   {item.text}
                 </a>

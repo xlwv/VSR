@@ -77,14 +77,14 @@ const IndividualBlogStructure = ({ data }) => {
           {data.sections.map((section) => (
             <div key={section.heading}>
 
-              <h2 className="font-heading text-[22px] sm:text-[26px] md:text-[35px] leading-tight mb-4 md:mb-6">
+              <h2 className="font-heading text-[22px] sm:text-[26px] md:text-[35px] leading-tight mb-2 md:mb-4">
                 {section.heading}
               </h2>
 
               {section.paragraphs.map((para, pIndex) => (
                 <p
                   key={`${section.heading}-${pIndex}`}
-                  className="para! mb-5 font-body text-[15px] sm:text-[16px] font-normal leading-[1.9] text-[#333]"
+                  className="font-body text-[15px] sm:text-[16px] para! font-normal leading-[1.9] text-[#333]"
                   dangerouslySetInnerHTML={{ __html: para }}
                 />
               ))}

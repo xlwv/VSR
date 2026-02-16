@@ -162,7 +162,7 @@ const Footer = () => {
 
       {/* Bottom Bar - Copyright */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
+        <div className="container py-4 flex flex-col md:flex-row justify-between items-center gap-2">
           <p className="para opacity-80">
             © Copyright 2026 All Rights Reserved
           </p>

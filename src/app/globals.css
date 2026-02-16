@@ -187,3 +187,9 @@ a {
     flex-direction: column;
     justify-content: space-between;
 }
+@media screen and ((min-width:1000px) and (max-width: 1200px) ){
+  .nav-menu a,
+  .foot a{
+    font-size: 14px !important;
+  }
+}
