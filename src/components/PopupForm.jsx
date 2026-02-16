@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
+import { submitLead } from "@/lib/submitLead";
 
 export default function PopupForm({ isOpen, onClose }) {
+  const router = useRouter();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -12,33 +14,16 @@ export default function PopupForm({ isOpen, onClose }) {
   });
 
   const [errors, setErrors] = useState({});
-  const [mounted, setMounted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Ensure component is mounted (for portal)
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Lock background scroll
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.width = "100%";
-    } else {
-      document.body.style.overflow = "auto";
-      document.body.style.position = "static";
-      document.body.style.width = "auto";
-    }
-    
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
-      document.body.style.position = "static";
-      document.body.style.width = "auto";
     };
   }, [isOpen]);
 
-  if (!isOpen || !mounted) return null;
+  if (!isOpen) return null;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -48,9 +33,7 @@ export default function PopupForm({ isOpen, onClose }) {
   const validate = () => {
     const newErrors = {};
 
-    if (!form.name.trim()) {
-      newErrors.name = "Name is required";
-    }
+    if (!form.name.trim()) newErrors.name = "Name is required";
 
     if (!form.email.trim()) {
       newErrors.email = "Email is required";
@@ -68,118 +51,107 @@ export default function PopupForm({ isOpen, onClose }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
-    console.log("Form Data:", form);
+    setIsSubmitting(true);
 
-    setForm({ name: "", email: "", phone: "", message: "" });
-    onClose();
+    const success = await submitLead({
+      name: form.name,
+      email: form.email,
+      phone: form.phone,
+      source: "Popup Form",
+      message: form.message,
+    });
+
+    if (success) {
+      setForm({ name: "", email: "", phone: "", message: "" });
+      onClose();
+      router.push("/thank-you");
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+
+    setIsSubmitting(false);
   };
 
-  const modalContent = (
-    <div 
-      className="fixed inset-0 flex items-center justify-center overflow-y-auto bg-black/60 p-4"
-      style={{ 
-        zIndex: 999999,
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0
-      }}
-      onClick={(e) => {
-        // Close when clicking backdrop
-        if (e.target === e.currentTarget) {
-          onClose();
-        }
-      }}
-    >
-      {/* Modal */}
-      <div 
-        className="relative w-full max-w-[520px] rounded-2xl bg-[#FBEEE8] p-8 my-8"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Close */}
+  return (
+    <div className="fixed inset-0 z-[99999] flex justify-center overflow-y-auto bg-black/60 pt-[100px] pb-10">
+      <div className="relative my-auto w-[95%] max-w-[520px] rounded-2xl bg-[#FBEEE8] p-8">
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-3xl text-[#A03D13] hover:text-[#7f3214] transition-colors leading-none"
-          aria-label="Close"
+          className="absolute right-4 top-4 text-2xl text-[#A03D13]"
         >
           ×
         </button>
 
-        {/* Title */}
         <h3 className="mb-6 text-center text-[28px] font-medium text-[#A03D13]">
           Book Your Stay
         </h3>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-          {/* Name */}
           <div>
             <input
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="Name*"
-              className="w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#A03D13]/20"
+              className="text-black w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none"
             />
             {errors.name && (
-              <p className="mt-1 text-xs text-red-600">{errors.name}</p>
+              <p className="text-xs text-red-600 mt-1">{errors.name}</p>
             )}
           </div>
 
-          {/* Email */}
           <div>
             <input
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="Email ID*"
-              className="w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#A03D13]/20"
+              className="text-black w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none"
             />
             {errors.email && (
-              <p className="mt-1 text-xs text-red-600">{errors.email}</p>
+              <p className="text-xs text-red-600 mt-1">{errors.email}</p>
             )}
           </div>
 
-          {/* Phone */}
           <div>
             <input
               name="phone"
               value={form.phone}
               onChange={handleChange}
+              maxLength="10"
+              onInput={(e) =>
+                (e.target.value = e.target.value.replace(/\D/g, ""))
+              }
               placeholder="Mobile No.*"
-              className="w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#A03D13]/20"
+              className="text-black w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none"
             />
             {errors.phone && (
-              <p className="mt-1 text-xs text-red-600">{errors.phone}</p>
+              <p className="text-xs text-red-600 mt-1">{errors.phone}</p>
             )}
           </div>
 
-          {/* Message */}
           <textarea
             name="message"
             value={form.message}
             onChange={handleChange}
             rows="4"
             placeholder="Message"
-            className="w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-[#A03D13]/20 resize-none"
+            className="text-black w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none"
           />
 
-          {/* Submit */}
           <button
             type="submit"
-            className="para mx-auto block rounded-full bg-[#A03D13] px-10 py-3 text-sm text-white hover:opacity-90 transition-opacity"
+            disabled={isSubmitting}
+            className="mx-auto block rounded-full bg-[#A03D13] px-10 py-3 text-sm text-white"
           >
-            SUBMIT
+            {isSubmitting ? "Submitting..." : "SUBMIT"}
           </button>
         </form>
       </div>
     </div>
   );
-
-  // Render using portal to ensure it's at the top of the DOM tree
-  return createPortal(modalContent, document.body);
 }
