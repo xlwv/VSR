@@ -15,7 +15,7 @@ body {
   padding: 0;
 }
 
-h1,h2,h3{
+h1, h2, h3 {
   font-family: "Houstiq";
   font-weight: 400;
 }
@@ -60,14 +60,17 @@ h1,h2,h3{
     font-size: 12px;
   }
 }
-.yt:hover{
+
+.yt:hover {
   transform: scale(1.3);
   transition: transform 1s ease-in-out;
 }
-.yt-frame:hover{
+
+.yt-frame:hover {
   transform: scale(1.03);
   transition: transform 0.5s ease-in-out;
 }
+
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -87,7 +90,6 @@ h1,h2,h3{
   width: 100%;
 }
 
-/* Dark overlay for better text readability */
 .hero::before {
   content: '';
   position: absolute;
@@ -99,19 +101,16 @@ h1,h2,h3{
   z-index: 1;
 }
 
-/* Make sure content is above overlay */
 .hero > * {
   position: relative;
   z-index: 2;
 }
 
-/* Apply nav-menu styles only to the nav container, not individual links */
 .nav-menu {
   font-weight: 400;
   font-size: 16px;
 }
 
-/* Individual link styles - these won't conflict with Tailwind */
 .nav-menu a {
   text-decoration: none;
   color: inherit;
@@ -129,16 +128,19 @@ header {
 .home-stat {
   color: var(--brand-brown);
 }
+
 .hide-scroll::-webkit-scrollbar {
   display: none;
 }
 
 .hide-scroll {
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
-.para1{
+
+.para1 {
   font-family: "Houstiq", sans-serif;
 }
+
 @layer utilities {
   h3.font-swis {
     font-family: "Swis721 BT", sans-serif !important;
@@ -147,49 +149,72 @@ header {
   }
 }
 
-.para ,
-a {
-  font-family: "Swis721 BT";
-  font-size: 18px !important;
-  line-height: 1.6;
-}
-@media (max-width: 768px) {
-  .para {
-    font-size: 14px;
-  }
-}
+/* ─── Responsive Typography ──────────────────────────────────────────────── */
+
 @layer base {
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    /* 32px → 40px → 52px → 60px */
+    @apply text-[32px] sm:text-[40px] lg:text-[52px] xl:text-[60px] leading-tight;
   }
+
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    /* 26px → 32px → 40px → 48px */
+    @apply text-[26px] sm:text-[32px] lg:text-[40px] xl:text-[48px] leading-snug;
   }
+
   h3 {
-    @apply text-xl md:text-2xl;
+    /* 18px → 20px → 24px */
+    @apply text-[18px] sm:text-[20px] lg:text-[24px] leading-snug;
   }
 }
+
 @layer components {
+  /* Body / paragraph text — no !important, scales cleanly */
+  .para,
+  .para a {
+    font-family: "Swis721 BT", sans-serif;
+    /* 14px → 15px → 16px → 18px */
+    font-size: clamp(14px, 1.2vw, 18px);
+    line-height: 1.7;
+  }
+
+  /* Override: plain <a> tags outside .para keep the same scale */
+  a {
+    font-family: "Swis721 BT", sans-serif;
+    font-size: clamp(14px, 1.2vw, 18px);
+    line-height: 1.6;
+  }
+
+  /* Sub-heading variant — sits between h2 and h3 */
   .sub-h2 {
-    @apply !text-2xl sm:!text-3xl xl:!text-[34px];
+    /* 20px → 24px → 28px → 34px */
+    @apply text-[20px] sm:text-[24px] lg:text-[28px] xl:text-[34px] leading-snug;
   }
-  .home-stat{
-    @apply !text-4xl;
-  } 
-}
-.card-serv:hover .img-serv {
-    transform: scale(1.05, 1.08);
-    transition: transform 0.8s ease-in-out;
+
+  /* Stat numbers on home page */
+  .home-stat {
+    /* 28px → 32px → 36px → 40px */
+    @apply text-[28px] sm:text-[32px] lg:text-[36px] xl:text-[40px];
   }
-.card-text{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
-@media screen and ((min-width:1000px) and (max-width: 1200px) ){
+
+/* ─── Nav & Footer small-screen text ────────────────────────────────────── */
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
   .nav-menu a,
-  .foot a{
+  .foot a {
     font-size: 14px !important;
   }
+}
+
+/* ─── Service card ───────────────────────────────────────────────────────── */
+.card-serv:hover .img-serv {
+  transform: scale(1.05, 1.08);
+  transition: transform 0.8s ease-in-out;
+}
+
+.card-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -8,10 +8,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import Button from "@/components/Button";
 
-// Import Swiper styles
 import 'swiper/css';
 
-// Register GSAP plugins
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -60,10 +58,8 @@ const HeroProgram = () => {
     },
   ];
 
-  // GSAP Animations
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation
       gsap.from(titleRef.current, {
         opacity: 0,
         y: -50,
@@ -75,7 +71,6 @@ const HeroProgram = () => {
         },
       });
 
-      // Underline animation
       gsap.from(underlineRef.current, {
         opacity: 0,
         scaleX: 0,
@@ -88,12 +83,11 @@ const HeroProgram = () => {
         },
       });
 
-      // Cards stagger animation - sequential loading
       gsap.from(cardsRef.current, {
         opacity: 0,
         y: 100,
         duration: 0.8,
-        stagger: 0.15, 
+        stagger: 0.15,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -108,7 +102,7 @@ const HeroProgram = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 md:py-10 overflow-hidden"
+      className="relative py-12 md:py-16 overflow-hidden"
       style={{
         backgroundImage: "url('/assets/HP-bg.webp')",
         backgroundSize: 'cover',
@@ -121,25 +115,21 @@ const HeroProgram = () => {
 
       <div className="container relative z-10">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h2 
+        <div className="text-center mb-8 md:mb-10">
+          <h2
             ref={titleRef}
             className="text-white mb-4"
           >
             Programs
           </h2>
-          
-          {/* Underline SVG */}
-          <div 
-            ref={underlineRef}
-            className="flex justify-center"
-          >
-            <Image 
+
+          <div ref={underlineRef} className="flex justify-center">
+            <Image
               src="/assets/SVG/below-gray.svg"
               alt=""
               width={200}
               height={20}
-              className="w-48"
+              className="w-36 md:w-48"
             />
           </div>
         </div>
@@ -147,45 +137,56 @@ const HeroProgram = () => {
         {/* Swiper Carousel */}
         <div className="program-swiper-container">
           <Swiper
-            className="!pt-3 !pb-12 !px-4" /* Fix for cutoff applied here */
+            className="!pt-3 !pb-6"
             modules={[Autoplay]}
-            spaceBetween={24}
-            slidesPerView={'auto'}
+            spaceBetween={10}
+            slidesPerView={1}
             centeredSlides={false}
-            loop={false} /* Loop disabled */
+            loop={false}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
             }}
             breakpoints={{
-              640: {
-                spaceBetween: 20,
+              480: {
+                slidesPerView: 1.3,
+                spaceBetween: 10,
+                centeredSlides: true,
               },
-              768: {
-                spaceBetween: 24,
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                centeredSlides: false,
               },
               1024: {
-                spaceBetween: 24,
+                slidesPerView: 3,
+                spaceBetween: 14,
+                centeredSlides: false,
               },
               1280: {
-                spaceBetween: 24,
+                slidesPerView: 3.5,
+                spaceBetween: 14,
+                centeredSlides: false,
+              },
+              1400: {
+                slidesPerView: 4,
+                spaceBetween: 14,
+                centeredSlides: false,
               },
             }}
           >
-            {/* Added .sort() to ensure ID order 1, 2, 3... */}
             {programs
-              .sort((a, b) => a.id - b.id) 
+              .sort((a, b) => a.id - b.id)
               .map((program, index) => (
-                <SwiperSlide key={program.id} className="!w-auto">
-                <div
-                  ref={(el) => (cardsRef.current[index] = el)}
-                  className="group h-full"
-                >
-                  <ProgramCard program={program} />
-                </div>
-              </SwiperSlide>
-
-            ))}
+                <SwiperSlide key={program.id}>
+                  <div
+                    ref={(el) => (cardsRef.current[index] = el)}
+                    className="h-full"
+                  >
+                    <ProgramCard program={program} />
+                  </div>
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>
@@ -193,7 +194,6 @@ const HeroProgram = () => {
       <style jsx global>{`
         .program-swiper-container .swiper-slide {
           height: auto;
-          overflow: visible; 
         }
       `}</style>
     </section>
@@ -203,57 +203,51 @@ const HeroProgram = () => {
 // Program Card Component
 const ProgramCard = ({ program }) => {
   return (
-    <div className="bg-black/60 backdrop-blur-md 
-                    rounded-[28px] 
-                    border border-[#ffffff80] 
-                    hover:border-[#ffffff] 
-                    transition-all duration-300 
+    <div className="bg-black/60 backdrop-blur-md
+                    rounded-[24px]
+                    border border-[#ffffff50]
+                    hover:border-white
+                    transition-all duration-300
                     shadow-xl
-                    w-[310px] max-w-[620px] p-2 card-serv">
+                    w-full p-2 card-serv
+                    flex flex-col">
 
-      {/* Image */}
-      <div className="relative h-[220px] overflow-hidden img-serv rounded-t-[28px]">
+      {/* Image — aspect ratio instead of fixed height */}
+      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[20px] img-serv">
         <Image
           src={program.image}
           alt={program.title}
           fill
-          className="object-cover rounded-2xl"
+          className="object-cover"
           loading="lazy"
           quality={85}
         />
       </div>
 
       {/* Content */}
-      <div className="px-6 py-6 text-center flex flex-col justify-between h-[190px]">
-
-        <div className="card-text">
-          {/* Swis Font Override */}
+      <div className="px-4 sm:px-5 py-3 text-center flex flex-col flex-1 justify-between">
+        <div>
           <h3
-            className="text-white mb-3"
-            style={{
-              fontFamily: '"Swis721 BT", sans-serif',
-              fontWeight: 500,
-              fontSize: '18px',
-            }}
+            className="text-white mt-1 mb-2 text-[16px] sm:text-[17px] md:text-[18px] leading-snug"
+            style={{ fontFamily: '"Swis721 BT", sans-serif', fontWeight: 500 }}
           >
             {program.title}
           </h3>
 
-          <p className="font-Swis721 text-gray-300 text-[14px] leading-[1.6] line-clamp-3">
+          <p className="text-gray-300 text-[13px] sm:text-[14px] leading-relaxed line-clamp-3">
             {program.description}
           </p>
         </div>
 
-        <div className="mt-6">
-          <Button 
-            text="VIEW MORE" 
-            variant="primary" 
-            size="sm" 
+        <div className="mt-5">
+          <Button
+            text="VIEW MORE"
+            variant="primary"
+            size="sm"
             href={`/programs#${program.slug}`}
-            className="!px-7 !py-2 !text-[13px]" 
+            className="!px-6 !py-2 !text-[13px]"
           />
         </div>
-
       </div>
     </div>
   );
