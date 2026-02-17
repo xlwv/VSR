@@ -209,7 +209,7 @@ const ProgramCard = ({ program }) => {
                     hover:border-[#ffffff] 
                     transition-all duration-300 
                     shadow-xl
-                    w-[310px] max-w-[620px] p-3 card-serv">
+                    w-[310px] max-w-[620px] p-2 card-serv">
 
       {/* Image */}
       <div className="relative h-[220px] overflow-hidden img-serv rounded-t-[28px]">
