@@ -18,27 +18,27 @@ const BlogGrid = ({ blogs = [], initialCount = 6 }) => {
           {blogs.slice(0, visibleCount).map((blog, index) => (
             <Link
               key={index}
-              href={`/blogs/${blog.slug}`}
+              href={`/blog/${blog.slug}`}
               className="group cursor-pointer"
             >
               <div className="overflow-hidden rounded-2xl bg-white">
-                <div className="relative w-full h-[210px] sm:h-[230px] lg:h-[250px] overflow-hidden rounded-2xl">
+                <div className="relative w-full aspect-[5/6] overflow-hidden rounded-2xl">
                   <Image
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
                 <div className="pt-4 px-1">
                  <h3 className="font-swis text-[13px] leading-relaxed text-gray-700">
                   {blog.title}
-                  <span className="text-orange-700 underline ml-1 cursor-pointer hover:text-orange-800 transition-colors">
-  ...Read More
-</span>
-                </h3>
 
+                </h3>
+                  <span className="text-orange-700 underline ml-1 cursor-pointer hover:text-orange-800 transition-colors">
+  Read More
+</span>
                 </div>
               </div>
             </Link>

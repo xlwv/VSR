@@ -28,7 +28,7 @@ export default function BlogPage() {
           title="Blogs"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Blogs", href: "/blogs" },
+            { label: "Blog", href: "/blog" },
           ]}
           bgImage="/assets/banner.webp"
         />

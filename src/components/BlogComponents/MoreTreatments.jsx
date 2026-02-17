@@ -37,7 +37,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
     <section className="mt-14 md:mt-20">
       {/* ===== Header ===== */}
       <div className="mb-6 md:mb-1 flex items-center justify-between">
-        <h2 className="font-heading text-[22px] sm:text-[24px] md:text-[30px] leading-tight">
+        <h2 className="font-heading  text-[22px] sm:text-[24px] md:text-[30px] leading-tight">
           {title}
         </h2>
         
@@ -132,15 +132,16 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
                   src={blog.image}
                   alt={blog.title}
                   fill
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
 
               {/* Title */}
-              <h3 className="font-swis font-body mt-3 para text-[#333] leading-relaxed">
+              <h3 className="font-swis font-body mt-3 !no-underline para text-[#333] leading-relaxed">
                 {blog.title}
-                <span className="text-[#A54220] ml-1 text-[14px] underline">Read More</span>
+
               </h3>
+                              <span className="text-[#A54220]  ml-1 text-[14px] ">Read More</span>
             </div>
           </Link>
         ))}

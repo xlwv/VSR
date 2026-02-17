@@ -36,7 +36,7 @@ const PageBanner = ({
           {/* Breadcrumbs */}
           <div className="flex flex-wrap items-center text-sm sm:text-base text-white">
             {breadcrumbs.map((item, index) => (
-              <span key={index} className="flex items-center">
+              <span key={index} className="flex  no-underline items-center">
                 {item.href ? (
                   <Link
                     href={item.href}
@@ -45,7 +45,7 @@ const PageBanner = ({
                     {item.label}
                   </Link>
                 ) : (
-                  <span className="font-semibold">{item.label}</span>
+                  <span className="font-regular   no-underline text-lg" >{item.label}</span>
                 )}
 
                 {index < breadcrumbs.length - 1 && (
