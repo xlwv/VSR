@@ -41,7 +41,7 @@ export default function Page() {
 
       {/* CONTACT INFO SECTION */}
       <section className="relative overflow-hidden bg-white py-28">
-                <div
+        <div
           className="
             pointer-events-none
             absolute
@@ -60,14 +60,15 @@ export default function Page() {
         <div className="relative z-10 grid container py-4 text-center md:grid-cols-3">
           {CONTACTS.map((item) => (
             <div key={item.title} className="flex py-6 flex-col items-center">
-              
-              {/* Icon */}
-              <div className="mb-6 flex h-24 w-24 md:h-18 md:w-18 items-center justify-center rounded-full">
+
+              {/* Icon — larger on mobile (w-20/h-20), normal on md+ (w-[112px]/h-[112px]) */}
+              <div className="mb-6 flex items-center justify-center rounded-full">
                 <Image
                   src={item.icon}
                   alt={item.title}
                   width={112}
                   height={112}
+                  className="w-20 h-20 md:w-[112px] md:h-[112px]"
                 />
               </div>
 

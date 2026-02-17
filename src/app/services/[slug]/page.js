@@ -177,86 +177,69 @@ export default function ServiceDetailPage() {
   useEffect(() => {
     if (params.slug) {
       setIsLoading(true);
-      
-      // Find service in treatments
+
       const treatment = treatmentsData.find((t) => t.slug === params.slug);
       if (treatment) {
         setCurrentService(treatment);
         setServiceType("treatment");
         setTreatmentsOpen(true);
         setTherapiesOpen(false);
-        
         const detailData = treatmentsDetailData.find((t) => t.slug === params.slug);
         setCurrentDetailData(detailData || null);
         setIsLoading(false);
         return;
       }
 
-      // Find service in therapies
       const therapy = therapiesData.find((t) => t.slug === params.slug);
       if (therapy) {
         setCurrentService(therapy);
         setServiceType("therapy");
         setTherapiesOpen(true);
         setTreatmentsOpen(false);
-        
         const detailData = therapiesDetailData.find((t) => t.slug === params.slug);
         setCurrentDetailData(detailData || null);
         setIsLoading(false);
         return;
       }
-      
-      // If nothing found
+
       setIsLoading(false);
     }
   }, [params.slug]);
 
-  const handleServiceClick = (service, type) => {
+  const handleServiceClick = (service) => {
     router.push(`/services/${service.slug}`);
   };
 
   const getRelatedServices = () => {
     if (!currentService || !serviceType) return [];
-    
     const sourceArray = serviceType === "treatment" ? treatmentsData : therapiesData;
-    
-    return sourceArray
-      .filter((s) => s.slug !== currentService.slug)
-      .slice(0, 6);
+    return sourceArray.filter((s) => s.slug !== currentService.slug).slice(0, 6);
   };
 
-  const transformServicesToBlogs = (services) => {
-    return services.map((service) => ({
+  const transformServicesToBlogs = (services) =>
+    services.map((service) => ({
       slug: service.slug,
       title: service.name,
       image: `/assets/${service.imageName}`,
     }));
-  };
 
   const relatedServices = getRelatedServices();
   const sectionTitle = serviceType === "treatment" ? "More Treatments" : "More Therapies";
 
-  // Show loading state
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--brand-brown)] mx-auto"></div>
-        </div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--brand-brown)]" />
       </div>
     );
   }
 
-  // Show not found only after loading is complete
   if (!currentService) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h2 className="font-bold text-gray-800 mb-4">Service not found</h2>
-          <button
-            onClick={() => router.push("/services")}
-            className="call-btn"
-          >
+          <button onClick={() => router.push("/services")} className="call-btn">
             Back to Services
           </button>
         </div>
@@ -272,9 +255,9 @@ export default function ServiceDetailPage() {
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Services", href: "/services" },
-            { 
-              label: serviceType === "treatment" ? "Treatments" : "Therapies", 
-              href: "/services" 
+            {
+              label: serviceType === "treatment" ? "Treatments" : "Therapies",
+              href: "/services",
             },
             { label: currentService.name, href: "#" },
           ]}
@@ -284,10 +267,12 @@ export default function ServiceDetailPage() {
 
       <div className="container py-8 lg:py-12 md:max-w-[1200px] lg:max-w-[1300px]">
         <div className="grid grid-cols-1 lg:grid-cols-[288px_1fr] gap-8">
-          {/* Sidebar */}
+
+          {/* ── Sidebar ── */}
           <aside className="lg:order-1">
             <div className="bg-[#FFF8F5] rounded-lg p-4 lg:sticky lg:top-24">
-              {/* Treatments Section */}
+
+              {/* Treatments */}
               <div className="mb-4">
                 <button
                   onClick={() => setTreatmentsOpen(!treatmentsOpen)}
@@ -305,24 +290,43 @@ export default function ServiceDetailPage() {
 
                 {treatmentsOpen && (
                   <div className="mt-2 space-y-1">
-                    {treatmentsData.map((treatment) => (
-                      <button
-                        key={treatment.id}
-                        onClick={() => handleServiceClick(treatment, "treatment")}
-                        className={`w-full text-left py-2 px-4 rounded-lg text-sm transition-colors ${
-                          currentService.slug === treatment.slug
-                            ? "bg-white text-[var(--brand-brown)] font-medium"
-                            : "text-gray-600 hover:bg-white/50 hover:text-[var(--brand-brown)]"
-                        }`}
-                      >
-                        <p className="para">{treatment.name}</p>
-                      </button>
-                    ))}
+                    {treatmentsData.map((treatment) => {
+                      const isActive = currentService.slug === treatment.slug;
+                      return (
+                        <button
+                          key={treatment.id}
+                          onClick={() => handleServiceClick(treatment)}
+                          className={`
+                            group relative w-full text-left py-2 px-4 rounded-lg text-sm
+                            transition-colors
+                            ${isActive
+                              ? "bg-white text-[var(--brand-brown)] font-medium"
+                              : "text-gray-600 hover:bg-white/50 hover:text-[var(--brand-brown)]"
+                            }
+                          `}
+                        >
+                          <p className="para">{treatment.name}</p>
+
+                          {/* Underline — always present, expands on active/hover */}
+                          <span
+                            className={`
+                              absolute bottom-0 left-4 right-4 h-[2px] rounded-full
+                              bg-[var(--brand-brown)]
+                              transition-all duration-300 origin-left
+                              ${isActive
+                                ? "scale-x-100 opacity-100"
+                                : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-60"
+                              }
+                            `}
+                          />
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
               </div>
 
-              {/* Therapies Section */}
+              {/* Therapies */}
               <div>
                 <button
                   onClick={() => setTherapiesOpen(!therapiesOpen)}
@@ -340,28 +344,46 @@ export default function ServiceDetailPage() {
 
                 {therapiesOpen && (
                   <div className="mt-2 space-y-1">
-                    {therapiesData.map((therapy) => (
-                      <button
-                        key={therapy.id}
-                        onClick={() => handleServiceClick(therapy, "therapy")}
-                        className={`w-full text-left py-2 px-4 rounded-lg text-sm transition-colors ${
-                          currentService.slug === therapy.slug
-                            ? "bg-white text-[var(--brand-brown)] font-medium"
-                            : "text-gray-600 hover:bg-white/50 hover:text-[var(--brand-brown)]"
-                        }`}
-                      >
-                        <p className="para">{therapy.name}</p>
-                      </button>
-                    ))}
+                    {therapiesData.map((therapy) => {
+                      const isActive = currentService.slug === therapy.slug;
+                      return (
+                        <button
+                          key={therapy.id}
+                          onClick={() => handleServiceClick(therapy)}
+                          className={`
+                            group relative w-full text-left py-2 px-4 rounded-lg text-sm
+                            transition-colors
+                            ${isActive
+                              ? "bg-white text-[var(--brand-brown)] font-medium"
+                              : "text-gray-600 hover:bg-white/50 hover:text-[var(--brand-brown)]"
+                            }
+                          `}
+                        >
+                          <p className="para">{therapy.name}</p>
+
+                          {/* Underline — expands on active/hover */}
+                          <span
+                            className={`
+                              absolute bottom-0 left-4 right-4 h-[2px] rounded-full
+                              bg-[var(--brand-brown)]
+                              transition-all duration-300 origin-left
+                              ${isActive
+                                ? "scale-x-100 opacity-100"
+                                : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-60"
+                              }
+                            `}
+                          />
+                        </button>
+                      );
+                    })}
                   </div>
                 )}
               </div>
             </div>
           </aside>
 
-          {/* Main Content */}
+          {/* ── Main Content — unchanged ── */}
           <main className="lg:order-2 min-w-0" data-aos="fade-up">
-            {/* Service Title */}
             <div className="mb-6">
               <h2 className="font-bold sub-h2 text-gray-800 mb-2">
                 {currentService.name}
@@ -375,7 +397,6 @@ export default function ServiceDetailPage() {
               />
             </div>
 
-            {/* Main Image */}
             <div className="mb-8 rounded-2xl overflow-hidden">
               <Image
                 src={`/assets/${currentService.imageName}`}
@@ -386,15 +407,13 @@ export default function ServiceDetailPage() {
               />
             </div>
 
-            {/* Short Description */}
             <div className="prose prose-lg max-w-none mb-8">
               <p className="para text-gray-700 leading-relaxed mb-6">
                 {currentService.description}
               </p>
             </div>
 
-            {/* Dynamic Content Sections */}
-            {currentDetailData && currentDetailData.sections && (
+            {currentDetailData?.sections && (
               <div className="space-y-8">
                 {currentDetailData.sections.map((section, index) => (
                   <ContentSection key={index} section={section} index={index} />
@@ -402,17 +421,15 @@ export default function ServiceDetailPage() {
               </div>
             )}
 
-            {/* FAQ Accordion */}
-            {currentDetailData && currentDetailData.faqs && (
+            {currentDetailData?.faqs && (
               <div className="mt-12">
                 <FAQAccordion faqs={currentDetailData.faqs} />
               </div>
             )}
 
-            {/* More Treatments/Therapies Section */}
             {relatedServices.length > 0 && (
               <div className="mt-12">
-                <MoreTreatments 
+                <MoreTreatments
                   blogs={transformServicesToBlogs(relatedServices)}
                   title={sectionTitle}
                   linkPath="services"

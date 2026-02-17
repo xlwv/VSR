@@ -13,23 +13,58 @@ export const submitLead = async ({
     source,
     additional_col1: message,
   };
+
   try {
+    // 1️⃣ Send to Scaledino
     const response = await fetch(
       "https://leadapi.scaledino.com/api/leads/web",
       {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       }
     );
-    const text = await response.text();
-    console.log("Scaledino Response:", text);
+
+    // 2️⃣ Log internally — wrapped in type + payload
+    await fetch("/api/log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "form_submission",
+        payload: {
+          name,
+          email,
+          phone,
+          source,
+          message,
+          page: typeof window !== "undefined" ? window.location.pathname : "unknown",
+          submittedAt: new Date().toISOString(),
+          scaledinoStatus: response.ok,
+        },
+      }),
+    });
 
     return response.ok;
   } catch (error) {
-    console.error("Lead submission failed:", error);
+    // 3️⃣ Log failure — also wrapped in type + payload
+    await fetch("/api/log", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "form_submission_error",
+        payload: {
+          name,
+          email,
+          phone,
+          source,
+          message,
+          error: error.message,
+          page: typeof window !== "undefined" ? window.location.pathname : "unknown",
+          submittedAt: new Date().toISOString(),
+        },
+      }),
+    });
+
     return false;
   }
 };

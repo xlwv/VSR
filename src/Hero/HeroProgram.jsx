@@ -5,10 +5,11 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import Button from "@/components/Button";
 
 import 'swiper/css';
+import 'swiper/css/pagination';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -116,10 +117,7 @@ const HeroProgram = () => {
       <div className="container relative z-10">
         {/* Header */}
         <div className="text-center mb-8 md:mb-10">
-          <h2
-            ref={titleRef}
-            className="text-white mb-4"
-          >
+          <h2 ref={titleRef} className="text-white mb-4">
             Programs
           </h2>
 
@@ -138,7 +136,7 @@ const HeroProgram = () => {
         <div className="program-swiper-container">
           <Swiper
             className="!pt-3 !pb-6"
-            modules={[Autoplay]}
+            modules={[Autoplay, Pagination]}
             spaceBetween={10}
             slidesPerView={1}
             centeredSlides={false}
@@ -147,6 +145,15 @@ const HeroProgram = () => {
               delay: 5000,
               disableOnInteraction: false,
             }}
+            // Dots only on mobile — disabled above 768px via breakpoints
+            pagination={{
+              clickable: true,
+              el: '.program-pagination-dots',
+              bulletClass: 'program-dot',
+              bulletActiveClass: 'program-dot-active',
+              renderBullet: (_, className) =>
+                `<button class="${className}" aria-label="Go to slide"></button>`,
+            }}
             breakpoints={{
               480: {
                 slidesPerView: 1.3,
@@ -154,6 +161,11 @@ const HeroProgram = () => {
                 centeredSlides: true,
               },
               640: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+                centeredSlides: false,
+              },
+              768: {
                 slidesPerView: 2,
                 spaceBetween: 12,
                 centeredSlides: false,
@@ -188,12 +200,39 @@ const HeroProgram = () => {
                 </SwiperSlide>
               ))}
           </Swiper>
+
+          {/* Dots container — hidden on md+ via CSS below */}
+          <div className="program-pagination-dots flex justify-center gap-2 mt-4" />
         </div>
       </div>
 
       <style jsx global>{`
         .program-swiper-container .swiper-slide {
           height: auto;
+        }
+
+        /* Dot base style */
+        .program-dot {
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 9999px;
+          background-color: rgba(255, 255, 255, 0.35);
+          cursor: pointer;
+          transition: width 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Active dot — pill shape in white */
+        .program-dot-active {
+          width: 28px;
+          background-color: #ffffff;
+        }
+
+        /* Hide dots on md and above (≥768px) */
+        @media (min-width: 768px) {
+          .program-pagination-dots {
+            display: none !important;
+          }
         }
       `}</style>
     </section>
@@ -228,13 +267,13 @@ const ProgramCard = ({ program }) => {
       <div className="px-4 sm:px-5 py-3 text-center flex flex-col flex-1 justify-between">
         <div>
           <h3
-            className="text-white mt-1 mb-2 text-[16px] sm:text-[17px] md:text-[18px] leading-snug"
+            className="text-white mt-1 mb-2 text-[16px] sm:text-[18px] leading-snug"
             style={{ fontFamily: '"Swis721 BT", sans-serif', fontWeight: 500 }}
           >
             {program.title}
           </h3>
 
-          <p className="text-gray-300 text-[13px] sm:text-[14px] leading-relaxed line-clamp-3">
+          <p className="text-gray-300 text-[14px] sm:text-[16px] leading-relaxed line-clamp-3">
             {program.description}
           </p>
         </div>
@@ -245,7 +284,7 @@ const ProgramCard = ({ program }) => {
             variant="primary"
             size="sm"
             href={`/programs#${program.slug}`}
-            className="!px-6 !py-2 !text-[13px]"
+            className="!px-6 !py-2 !text-[16px]"
           />
         </div>
       </div>

@@ -84,7 +84,7 @@ export default function ScrollStory({
       {slides.map((item, i) => (
         <div key={i} className={isMobile ? "w-full flex-shrink-0" : "min-w-full"}>
           {item.paragraphs?.map((para, idx) => (
-            <p key={idx} className={`para mb-3 ${layoutType === "discover" ? "text-[#555]" : "text-gray-600"}`}>
+            <p key={idx} className={`para mb-3 ${layoutType === "discover" ? "text-[#555]" : "text-gray-600 "}`}>
               {para}
             </p>
           ))}
@@ -109,8 +109,8 @@ export default function ScrollStory({
 
   const renderImageSection = (isMobile = false) => {
     const imageWrapperClass = layoutType === "discover" 
-      ? `${isMobile ? "w-full mb-6" : "w-[500px] flex-shrink-0"}` 
-      : `${isMobile ? "w-full mb-6" : "w-[460px] flex-shrink-0"}`;
+      ? `${isMobile ? "w-full mb-6" : "w-[460px] flex-shrink-0"}` 
+      : `${isMobile ? "w-full mb-6" : "w-[400px] flex-shrink-0"}`;
 
     const imageHeightClass = layoutType === "discover"
       ? `${isMobile ? "h-[280px]" : "h-[400px]"}`
@@ -159,12 +159,12 @@ export default function ScrollStory({
         {(currentSlide.imageTitle || currentSlide.imageDescription) && (
           <div className="mt-4 px-1 h-[140px]">
             {currentSlide.imageTitle && (
-              <h3 className={`font-semibold mb-2 ${layoutType === "discover" ? "text-[#A54220]" : "text-gray-800"}`}>
+              <h3 className={`font-semibold mb-2 ${layoutType === "discover" ? "text-[#A54220] text-[20px] sm:text-[24px] md:text-[28px]" : "text-gray-800"}`}>
                 {currentSlide.imageTitle}
               </h3>
             )}
             {currentSlide.imageDescription && (
-              <p className="text-gray-600 para">
+              <p className="text-gray-600 para text-[16px] sm:text-[18px] md:text-[20px]">
                 {currentSlide.imageDescription}
               </p>
             )}
@@ -247,7 +247,7 @@ export default function ScrollStory({
           <div className="lg:hidden">
             {renderImageSection(true)}
             {showBulletPoints ? (
-              <div className="bg-[#f5f0ed] rounded-[24px] p-6 mt-16 sm:mt-6">
+              <div className="bg-[#f5f0ed] rounded-[24px] p-6 resp">
                 <h2 className={`font-serif mb-3 ${headingClassName}`} style={{ color: textColor }}>
                   {heading}
                 </h2>

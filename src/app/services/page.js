@@ -63,7 +63,7 @@ function ServicesContent() {
       <div className="container py-8 md:py-12">
 
         {/* Tabs */}
-        <div className="flex justify-center gap-4 md:mb-12 mb-8" data-aos="fade-up">
+        <div className="flex justify-center gap-4 md:mb-12 mb-8 flex-wrap" data-aos="fade-up">
           <button
             onClick={() => setActiveTab("therapies")}
             className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
