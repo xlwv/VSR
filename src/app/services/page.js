@@ -1,7 +1,7 @@
 "use client";
 
 import PageBanner from "@/components/PageBanner";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -10,7 +10,8 @@ import treatmentsData from "./treatments.json";
 import Image from "next/image";
 import Button from "@/components/Button";
 
-export default function ServicesPage() {
+// Inner component that uses useSearchParams — must be wrapped in Suspense
+function ServicesContent() {
   const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState("therapies");
   const [visibleCount, setVisibleCount] = useState(6);
@@ -59,12 +60,10 @@ export default function ServicesPage() {
         />
       </div>
 
-      {/* Container Only */}
       <div className="container py-8 md:py-12">
 
         {/* Tabs */}
         <div className="flex justify-center gap-4 md:mb-12 mb-8" data-aos="fade-up">
-          {/* Therapies Tab */}
           <button
             onClick={() => setActiveTab("therapies")}
             className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
@@ -76,7 +75,6 @@ export default function ServicesPage() {
             THERAPIES
           </button>
 
-          {/* Treatments Tab */}
           <button
             onClick={() => setActiveTab("treatments")}
             className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
@@ -145,5 +143,14 @@ export default function ServicesPage() {
         )}
       </div>
     </>
+  );
+}
+
+// Default export wraps inner component in Suspense
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={null}>
+      <ServicesContent />
+    </Suspense>
   );
 }

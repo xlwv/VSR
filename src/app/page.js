@@ -31,8 +31,16 @@ export default function Page() {
       videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY",
     },
     {
-      thumbnail: "https://img.youtube.com/vi/jxcP8N35RvY/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/jxcP8N35RvY",
+      thumbnail: "https://img.youtube.com/vi/7GJnDAlTqY4/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/7GJnDAlTqY4",
+    },
+    {
+      thumbnail: "https://img.youtube.com/vi/3OafkGMEuyU/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/3OafkGMEuyU",
+    },
+    {
+      thumbnail: "https://img.youtube.com/vi/fF8gm-0i_uM/sddefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/fF8gm-0i_uM",
     },
     
     // ... add more items here
@@ -48,12 +56,12 @@ export default function Page() {
       name: "",
       thumbnail: "https://img.youtube.com/vi/jCFQLJVjmyw/hqdefault.jpg",
       videoUrl: "https://www.youtube.com/embed/jCFQLJVjmyw",
-    },
-    {
-      name: "",
-      thumbnail: "https://img.youtube.com/vi/qiyhlhfwMGo/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/qiyhlhfwMGo",
-    },
+      },
+      {
+        name: "",
+        thumbnail: "https://img.youtube.com/vi/qiyhlhfwMGo/maxresdefault.jpg",
+        videoUrl: "https://www.youtube.com/embed/qiyhlhfwMGo",
+      },
     // ... add more items here
   ];
   const discoverSlides = [

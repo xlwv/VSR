@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex gap-4 pt-2">
   <a
-    href="https://facebook.com"
+    href="https://www.facebook.com/VSRNaturecure"
     target="_blank"
     rel="noopener noreferrer"
     className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
@@ -28,7 +28,7 @@ const Footer = () => {
   </a>
 
   <a
-    href="https://instagram.com"
+    href="https://www.instagram.com/vsrvrikshanaturecurecenter/"
     target="_blank"
     rel="noopener noreferrer"
     className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
@@ -38,7 +38,7 @@ const Footer = () => {
   </a>
 
   <a
-    href="https://twitter.com"
+    href="https://twitter.com/Official_VSR"
     target="_blank"
     rel="noopener noreferrer"
     className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"
@@ -48,7 +48,7 @@ const Footer = () => {
   </a>
 
   <a
-    href="https://linkedin.com"
+    href="https://www.linkedin.com/company/vsr-nature-cure-center/"
     target="_blank"
     rel="noopener noreferrer"
     className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded flex items-center justify-center transition-colors"

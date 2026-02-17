@@ -173,8 +173,7 @@ header {
   .para,
   .para a {
     font-family: "Swis721 BT", sans-serif;
-    /* 14px → 15px → 16px → 18px */
-    font-size: clamp(14px, 1.2vw, 18px);
+    @apply text-[14px] md:text-[16px] leading-tight;
     line-height: 1.7;
   }
 
