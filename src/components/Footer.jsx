@@ -62,7 +62,7 @@ const Footer = () => {
 
         {/* Middle Column - Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Quick links</h3>
+          <h3 className=" font-semibold mb-4">Quick links</h3>
           
           <ul className="space-y-2">
             <li>
@@ -112,7 +112,7 @@ const Footer = () => {
 
         {/* Right Column - Contact Info */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+          <h3 className=" font-semibold mb-4">Contact Us</h3>
           <div className="space-y-4">
             
             {/* Address */}

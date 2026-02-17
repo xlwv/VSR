@@ -173,21 +173,21 @@ header {
   .para,
   .para a {
     font-family: "Swis721 BT", sans-serif;
-    @apply text-[16px] md:text-[18px] leading-tight;
-    line-height: 1.7;
+    @apply text-[18px] md:text-[20px] leading-tight;
+    line-height: 1.6;
   }
 
   /* Override: plain <a> tags outside .para keep the same scale */
   a {
     font-family: "Swis721 BT", sans-serif;
-    font-size: clamp(14px, 1.2vw, 18px);
+    font-size: clamp(18px, 1.2vw, 22px);
     line-height: 1.6;
   }
 
   /* Sub-heading variant — sits between h2 and h3 */
   .sub-h2 {
     /* 20px → 24px → 28px → 34px */
-    @apply text-[20px] sm:text-[24px] lg:text-[28px] xl:text-[34px] leading-snug;
+    @apply text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[36px] leading-snug;
   }
 
   /* Stat numbers on home page */
@@ -196,12 +196,19 @@ header {
     @apply text-[28px] sm:text-[32px] lg:text-[36px] xl:text-[40px];
   }
 }
-
+.resp{
+  margin-top: 1rem;
+}
+@media (max-width: 345px) {
+  .resp {
+    margin-top: 4rem;  
+  }
+}
 /* ─── Nav & Footer small-screen text ────────────────────────────────────── */
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
   .nav-menu a,
   .foot a {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 }
 

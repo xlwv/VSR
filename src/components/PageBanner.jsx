@@ -34,7 +34,7 @@ const PageBanner = ({
           </h1>
 
           {/* Breadcrumbs */}
-          <div className="flex flex-wrap items-center text-sm sm:text-base text-white">
+          <div className="flex flex-wrap items-center text-md sm:text-lg text-white">
             {breadcrumbs.map((item, index) => (
               <span key={index} className="flex items-center">
                 {item.href ? (

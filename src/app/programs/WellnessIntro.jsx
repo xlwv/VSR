@@ -8,7 +8,7 @@ export default function BetterCareSection() {
           Better Care for a Better You!
         </h1>
 
-        <p className="para font-body text-sm md:text-base leading-relaxed md:leading-[26px] text-[#404041] text-center max-w-[1000px] mt-4 mb-5 md:mt-2">
+        <p className="para font-body leading-relaxed md:leading-[26px] text-[#404041] text-center max-w-[1000px] mt-4 mb-5 md:mt-2">
           We believe that true wellness is the balance of mind, body, and spirit. Located in serene, nature-filled surroundings, our luxury boutique naturopathy retreat offers a transformative experience designed for those seeking the highest level of care. Indulge in personalized therapies, wellness programs, and the perfect escape from the hustle of everyday life.
         </p>
 
@@ -22,7 +22,7 @@ export default function BetterCareSection() {
           />
         </div>
 
-        <p className="para font-body text-sm md:text-base leading-relaxed md:leading-[26px] text-[#404041] text-center max-w-[900px] mt-4 md:mt-6">
+        <p className="para font-body leading-relaxed md:leading-[26px] text-[#404041] text-center max-w-[900px] mt-4 md:mt-6">
           Our luxury retreat is reimagining the way you experience healing. Focusing on holistic treatments that are not just effective, but tailored to meet your individual needs, we combine the timeless power of nature with modern therapies to provide unparalleled care.
         </p>
       </div>

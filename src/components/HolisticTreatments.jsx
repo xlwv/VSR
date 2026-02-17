@@ -19,14 +19,14 @@ export default function HolisticTreatments({
             {mainTitle}
           </h2>
           <Image src="/assets/SVG/below-gray.svg" width={320} height={10} className="mx-auto mt-3" alt="" />
-          <p className="para text-white">{Description}</p>
+          <p className="para text-white pt-2">{Description}</p>
         </div>
 
         {sections.map((sec, i) => (
           <div
             key={i}
-            className={`flex flex-col md:flex-row items-center gap-12 ${
-              i % 2 === 0 ? "mb-20" : "md:flex-row-reverse mb-20"
+            className={`flex flex-col md:flex-row items-center gap-6 md:gap-12 ${
+              i % 2 === 0 ? "mb-10 md:mb-20" : "md:flex-row-reverse mb-10 md:mb-20"
             }`}
           >
             <div className="w-full md:w-1/2">

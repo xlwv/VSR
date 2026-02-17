@@ -17,21 +17,21 @@ const HeroAbout = () => {
           <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div>
               <h3 className="home-stat">3000+</h3>
-              <p className="text-[#646464] para">Clients Served</p>
+              <p className="text-[#646464] para">Clients<br className="sm:hidden" />  Served</p>
             </div>
             <div>
               <h3 className="home-stat">84000+</h3>
-              <p className="text-[#646464] para">Therapies Delivered</p>
+              <p className="text-[#646464] para">Therapies<br className="sm:hidden" />  Delivered</p>
             </div>
           </div>
           <div className="w-full md:w-[45%] grid-rows-3 flex md:grid-rows-6 justify-around py-5">
             <div>
               <h3 className="home-stat">70+</h3>
-              <p className="text-[#646464] para">Ailments Cured</p>
+              <p className="text-[#646464] para">Ailments<br className="sm:hidden" /> Cured</p>
             </div>
             <div>
               <h3 className="home-stat">200+</h3>
-              <p className="text-[#646464] para">Global Clientele</p>
+              <p className="text-[#646464] para">Global< br className="sm:hidden" /> Clientele</p>
             </div>
           </div>
         </section>

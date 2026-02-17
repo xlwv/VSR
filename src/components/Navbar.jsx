@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation"; // Added useRouter
 import Logo from "../../public/assets/SVG/logo.svg";
 import Button from "@/components/Button";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter(); // Initialize router
 
   const navLinks = [
     { name: "About Us", href: "/about" },
@@ -19,6 +20,21 @@ const Navbar = () => {
     { name: "Blogs", href: "/blogs" },
     { name: "Contact Us", href: "/contact" },
   ];
+
+  // Function to handle delayed navigation on mobile
+  const handleMobileClick = (e, href) => {
+    // Check if screen width is mobile (< 768px)
+    if (window.innerWidth < 768) {
+      e.preventDefault(); // Stop immediate navigation
+      
+      setTimeout(() => {
+        setOpen(false);
+        router.push(href);
+      }, 500); // 0.5 sec delay
+    } else {
+      setOpen(false); // Immediate close for larger screens if triggered
+    }
+  };
 
   return (
     <>
@@ -49,7 +65,6 @@ const Navbar = () => {
                   }`}
                 >
                   {link.name}
-                  {/* Animated Bottom Underline */}
                   <span
                     className={`absolute left-0 bottom-0 h-[2px] bg-[var(--brand-brown)] transition-all duration-300 ease-in-out ${
                       isActive ? "w-full" : "w-0 group-hover:w-full"
@@ -98,7 +113,6 @@ const Navbar = () => {
           lg:hidden
         `}
       >
-        {/* Close button */}
         <div className="flex justify-end p-4">
           <button onClick={() => setOpen(false)} className="p-2 text-gray-600 hover:text-black transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-7 h-7">
@@ -118,18 +132,15 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
-                // Added active:scale-95 and active:bg-gray-100 for the click effect
+                onClick={(e) => handleMobileClick(e, link.href)} // Applied delay function
                 className={`flex justify-center w-full py-3 rounded-xl transition-all duration-200 para active:scale-95 active:bg-gray-100 group ${
                   isActive
                     ? "text-[var(--brand-brown)] font-semibold"
                     : "text-gray-700 hover:bg-gray-50 hover:text-[var(--brand-brown)]"
                 }`}
               >
-                {/* Wrapping the text in an inline-block div so the underline doesn't stretch across the entire screen */}
                 <div className="relative inline-block">
                   {link.name}
-                  {/* Animated Bottom Underline (matches desktop) */}
                   <span
                     className={`absolute left-0 -bottom-1 h-[2px] bg-[var(--brand-brown)] transition-all duration-300 ease-in-out ${
                       isActive ? "w-full" : "w-0 group-hover:w-full"
@@ -141,7 +152,6 @@ const Navbar = () => {
           })}
         </nav>
         
-        {/* Mobile Call Button */}
         <div className="absolute bottom-10 w-full px-6 flex justify-center">
           <Button text="Call Now" href="tel:+918431004444" variant="primary" />
         </div>
