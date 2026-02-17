@@ -3,49 +3,49 @@
     "id": 1,
     "name": "Cardiovascular",
     "slug": "cardiovascular",
-    "imageName": "Cardio-Vascular-min.png",
+    "imageName": "Cardio-Vascular-min.webp",
     "description": "Holistic, non-invasive care for heart health addressing root causes through natural therapies, diet, and lifestyle changes."
   },
   {
     "id": 2,
     "name": "Endocrinal",
     "slug": "endocrinal",
-    "imageName": "Endocrinal-min.png",
+    "imageName": "Endocrinal-min.webp",
     "description": "Natural hormonal balance restoration for thyroid, diabetes, PCOD/PCOS, and metabolic disorders without lifelong medication."
   },
   {
     "id": 3,
     "name": "Gastrointestinal",
     "slug": "gastrointestinal",
-    "imageName": "Gastro-Intestinal-min.png",
+    "imageName": "Gastro-Intestinal-min.webp",
     "description": "Root-cause treatment for digestive issues including IBS, constipation, acidity, and gut imbalances through naturopathy."
   },
   {
     "id": 4,
     "name": "Metabolic Disorders",
     "slug": "metabolic-disorders",
-    "imageName": "Metabolic-disorders-min.png",
+    "imageName": "Metabolic-disorders-min.webp",
     "description": "Natural management of blood sugar, cholesterol, and metabolic imbalances through lifestyle correction and holistic therapies."
   },
   {
     "id": 5,
     "name": "Musculoskeletal",
     "slug": "musculoskeletal",
-    "imageName": "Musculo-Skeletal-min.png",
+    "imageName": "Musculo-Skeletal-min.webp",
     "description": "Drug-free relief for joint pain, arthritis, back pain, and mobility issues using yoga, massage, and natural therapies."
   },
   {
     "id": 6,
     "name": "Respiratory",
     "slug": "respiratory",
-    "imageName": "Respiratory-min.png",
+    "imageName": "Respiratory-min.webp",
     "description": "Natural treatment for asthma, bronchitis, sinusitis, and breathing problems through pranayama and clean healing environments."
   },
   {
     "id": 7,
     "name": "Skin",
     "slug": "skin",
-    "imageName": "Skin-min.png",
+    "imageName": "Skin-min.webp",
     "description": "Holistic skin healing for acne, eczema, and psoriasis addressing internal imbalances for long-term natural results."
   }
 ]
