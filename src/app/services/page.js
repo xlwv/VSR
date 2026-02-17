@@ -2,6 +2,7 @@
 
 import PageBanner from "@/components/PageBanner";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import therapiesData from "./therapies.json";
@@ -10,8 +11,17 @@ import Image from "next/image";
 import Button from "@/components/Button";
 
 export default function ServicesPage() {
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState("therapies");
   const [visibleCount, setVisibleCount] = useState(6);
+
+  // Set tab from URL query param on mount (e.g. /services?tab=treatments)
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+    if (tab === "treatments" || tab === "therapies") {
+      setActiveTab(tab);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     AOS.init({
@@ -59,8 +69,8 @@ export default function ServicesPage() {
             onClick={() => setActiveTab("therapies")}
             className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
               activeTab === "therapies"
-                ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none" // Active: no hover
-                : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white" // Inactive: has hover
+                ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none"
+                : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white"
             }`}
           >
             THERAPIES
@@ -71,8 +81,8 @@ export default function ServicesPage() {
             onClick={() => setActiveTab("treatments")}
             className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
               activeTab === "treatments"
-                ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none" // Active: no hover
-                : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white" // Inactive: has hover
+                ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none"
+                : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white"
             }`}
           >
             TREATMENTS
@@ -110,7 +120,6 @@ export default function ServicesPage() {
                   {card.description}
                 </p>
 
-                {/* Use Button component with outline variant */}
                 <Button
                   text="VIEW MORE"
                   variant="outline"

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { submitLead } from "@/lib/submitLead";
+import Button from "@/components/Button";
 
 export default function PopupForm({ isOpen, onClose }) {
   const router = useRouter();
@@ -143,13 +144,14 @@ export default function PopupForm({ isOpen, onClose }) {
             className="text-black w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none"
           />
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="mx-auto block rounded-full bg-[#A03D13] px-10 py-3 text-sm text-white"
-          >
-            {isSubmitting ? "Submitting..." : "SUBMIT"}
-          </button>
+          <div className="flex justify-center">
+            <Button
+              text={isSubmitting ? "Submitting..." : "SUBMIT"}
+              type="submit"
+              variant="primary"
+              disabled={isSubmitting}
+            />
+          </div>
         </form>
       </div>
     </div>

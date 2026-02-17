@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import Button from "@/components/Button";
 
 const amenities = [
   { title: "12 acres across 50 acres of farmland", icon: "/assets/clubhouse.png" },
@@ -58,12 +59,13 @@ export default function Amenities() {
         </div>
 
         {!expanded && amenities.length > 8 && (
-          <button
-            onClick={() => setExpanded(true)}
-            className="mt-12 px-8 py-2 rounded-full bg-[#A54220] text-white text-sm tracking-wide hover:bg-orange-800 transition"
-          >
-            VIEW MORE
-          </button>
+          <div className="mt-12">
+            <Button
+              text="VIEW MORE"
+              variant="primary"
+              onClick={() => setExpanded(true)}
+            />
+          </div>
         )}
       </div>
     </section>

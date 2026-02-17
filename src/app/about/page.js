@@ -158,11 +158,13 @@ export default function Page() {
             title: "Holistic Health Treatments",
             description: "A practise focused on complete treatment, focusing on the mental, spiritual, physical, and emotional aspects of an individual.",
             image: "/assets/holistic_1.webp",
+            href: "/services?tab=treatments",
           },
           {
             title: "Natural Therapies",
             description: "The use of natural elements and the power of nature through the latest technology and advanced equipment for therapeutic benefits.",
             image: "/assets/holistic_2.webp",
+            href: "/services?tab=therapies",
           },
         ]}
       />

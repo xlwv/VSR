@@ -48,7 +48,7 @@ export default function HolisticTreatments({
               </p>
               {/* Conditionally render button based on showButtons prop */}
               {showButtons && (
-                <Button text="VIEW MORE" variant="outlineWhite" />
+                <Button text="VIEW MORE" variant="outlineWhite" href={sec.href} />
               )}
             </div>
           </div>
