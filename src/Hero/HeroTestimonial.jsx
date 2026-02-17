@@ -53,7 +53,9 @@ const VideoCard = ({ videoUrl, thumbnail }) => {
 const HeroTestimonial = ({ 
   title = "What Our Clients Think About Us",
   description = "The results and our client testimonials speak volumes of our efforts in paving the way towards an illustrious legacy",
-  testimonials = []
+  testimonials = [],
+  bgColor = "white",
+   titleColor = "#A03D13",
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -116,11 +118,11 @@ const HeroTestimonial = ({
   if (!testimonials || testimonials.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-14 bg-[#FAF5F3]">
-      <div className="container overflow-hidden">
+    <section className="py-16 md:py-14" style={{ backgroundColor: bgColor }}>
+      <div className="container">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="mb-4 text-[#A03D13]">
+          <h2 className="mb-4" style={{ color: titleColor }}>
             {title}
           </h2>
           
@@ -136,8 +138,8 @@ const HeroTestimonial = ({
           {description && <p className="para">{description}</p>}
         </div>
 
-        {/* Sliding Testimonials Track */}
-        <div className="w-full relative mb-12">
+        {/* Sliding Testimonials Track - WITH OVERFLOW HIDDEN */}
+        <div className="w-full relative mb-12 overflow-hidden">
           <div 
             className="flex w-full transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -145,7 +147,7 @@ const HeroTestimonial = ({
             {pages.map((page, pageIndex) => (
               <div 
                 key={pageIndex} 
-                className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pr-6"
+                className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0"
               >
                 {page.map((testimonial, idx) => (
                   <div key={idx} className="flex flex-col gap-4">

@@ -205,14 +205,14 @@ const ProgramCard = ({ program }) => {
   return (
     <div className="bg-black/60 backdrop-blur-md 
                     rounded-[28px] 
-                    border border-[#ffffff40] 
-                    hover:border-[#ffffff80] 
+                    border border-[#ffffff80] 
+                    hover:border-[#ffffff] 
                     transition-all duration-300 
                     shadow-xl
                     w-[310px] max-w-[620px] p-3 card-serv">
 
       {/* Image */}
-      <div className="relative h-[200px] overflow-hidden img-serv rounded-t-[28px]">
+      <div className="relative h-[220px] overflow-hidden img-serv rounded-t-[28px]">
         <Image
           src={program.image}
           alt={program.title}
@@ -224,7 +224,7 @@ const ProgramCard = ({ program }) => {
       </div>
 
       {/* Content */}
-      <div className="px-6 py-6 text-center flex flex-col justify-between h-[230px]">
+      <div className="px-6 py-6 text-center flex flex-col justify-between h-[190px]">
 
         <div className="card-text">
           {/* Swis Font Override */}

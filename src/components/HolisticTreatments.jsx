@@ -19,7 +19,7 @@ export default function HolisticTreatments({
             {mainTitle}
           </h2>
           <Image src="/assets/SVG/below.svg" width={320} height={10} className="mx-auto mt-3" alt="" />
-          <p className="para">{Description}</p>
+          <p className="para text-white">{Description}</p>
         </div>
 
         {sections.map((sec, i) => (

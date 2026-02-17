@@ -78,10 +78,7 @@ export default function LocationHighlights() {
           </div>
 
           {/* Map */}
-          <div className="rounded-2xl overflow-hidden shadow-md 
-                          h-[320px] sm:h-[350px] 
-                          md:h-[420px] 
-                          lg:min-h-[420px]">
+          <div className="rounded-2xl overflow-hidden shadow-md h-full">
 
             <iframe
               className="w-full h-full border-0"

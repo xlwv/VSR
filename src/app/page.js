@@ -88,6 +88,7 @@ export default function Page() {
         title="What Our Clients Think About Us"
         description="The results and our client testimonials speak volumes of our efforts in paving the way towards an illustrious legacy"
         testimonials={testimonialData}
+        titleColor="#A03D13"
       />
        <ScrollStory
         slides={discoverSlides}
@@ -176,6 +177,8 @@ export default function Page() {
         title="Doctor Videos"
         description=""
         testimonials={doctorData}
+        bgColor="#FAF5F3"
+        titleColor="#000"
       />
     </main>
   );

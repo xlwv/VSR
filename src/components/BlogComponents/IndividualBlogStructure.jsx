@@ -30,7 +30,7 @@ const IndividualBlogStructure = ({ data }) => {
         </h1>
 
         {/* ===== INTRO SECTION ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-[420px_1fr] gap-8 md:gap-12 mb-12 md:mb-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[340px_1fr] lg:grid-cols-[420px_1fr] gap-8 lg:gap-12 mb-12 md:mb-16 items-start">
           
           {/* Image */}
           <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl">

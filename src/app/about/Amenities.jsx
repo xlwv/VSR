@@ -12,10 +12,6 @@ const amenities = [
   { title: "Stay in super-deluxe rooms", icon: "/assets/stay.png" },
   { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/organic.png" },
   { title: "Swimming pool", icon: "/assets/pool.png" },
-  { title: "Personalized care customized treatment", icon: "/assets/clubhouse.png" },
-  { title: "Stay in super-deluxe rooms", icon: "/assets/clubhouse.png" },
-  { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/clubhouse.png" },
-  { title: "Swimming pool", icon: "/assets/clubhouse.png" },
 ];
 
 export default function Amenities() {
