@@ -121,7 +121,7 @@ const HeroTestimonial = ({
     <section className="py-16 md:py-14" style={{ backgroundColor: bgColor }}>
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="mb-4" style={{ color: titleColor }}>
             {title}
           </h2>
@@ -147,7 +147,7 @@ const HeroTestimonial = ({
             {pages.map((page, pageIndex) => (
               <div 
                 key={pageIndex} 
-                className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-0"
+                className="w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2"
               >
                 {page.map((testimonial, idx) => (
                   <div key={idx} className="flex flex-col gap-4">
