@@ -71,7 +71,7 @@ const HeroAbout = () => {
                     onClick={loadVideo}
                   >
                     <Image
-                      src="/assets/thumbnail.png"
+                      src="/assets/thumbnail.webp"
                       alt="The Story of Hyderabad's Most Premium Naturopathy Retreat"
                       fill
                       className="object-cover"
