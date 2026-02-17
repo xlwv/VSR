@@ -118,7 +118,7 @@ const HeroTestimonial = ({
   if (!testimonials || testimonials.length === 0) return null;
 
   return (
-    <section className="py-16 md:py-14" style={{ backgroundColor: bgColor }}>
+    <section className="py-20 md:py-14" style={{ backgroundColor: bgColor }}>
       <div className="container">
         {/* Header */}
         <div className="text-center mb-8">

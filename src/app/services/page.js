@@ -134,7 +134,7 @@ function ServicesContent() {
         {visibleCount < allCards.length && (
           <div className="flex justify-center mt-12" data-aos="fade-up">
             <Button
-              text="VIEW MORE"
+              text="VIEW ALL"
               variant="primary"
               onClick={handleViewMore}
               className="px-10 py-3 text-base"

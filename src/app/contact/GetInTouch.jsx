@@ -129,10 +129,10 @@ export default function GetInTouch() {
             7 AM to 7 PM
           </div>
 
-          <div className="mt-4 overflow-hidden rounded-2xl">
+          <div className="mt-4 h-full overflow-hidden rounded-2xl">
             <iframe
               src="https://www.google.com/maps?q=VSR%20Vriksha%20Nature%20Cure%20Center&output=embed"
-              className="h-[280px] w-full border-0"
+              className="h-full w-full border-0"
               loading="lazy"
             />
           </div>

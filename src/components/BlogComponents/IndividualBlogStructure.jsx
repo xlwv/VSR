@@ -21,7 +21,7 @@ const IndividualBlogStructure = ({ data }) => {
   }, []);
 
   return (
-    <section className="bg-white py-10 md:py-16" data-aos="fade-up">
+    <section className="bg-white py-10 md:py-20" data-aos="fade-up">
       <div className="container mx-auto px-4 sm:px-6">
 
         {/* ===== PAGE TITLE ===== */}
@@ -50,25 +50,6 @@ const IndividualBlogStructure = ({ data }) => {
               style={{ whiteSpace: "pre-line" }}
               dangerouslySetInnerHTML={{ __html: data.intro }}
             />
-
-            <div className="mt-4 flex justify-end">
-              <Link
-                href="/blogs"
-                className="para inline-flex items-center gap-2 rounded-full bg-[#A54220] px-5 py-2 text-sm text-white hover:bg-[#8e3d1b] transition whitespace-nowrap"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-                Back to Blogs
-              </Link>
-            </div>
           </div>
         </div>
 
@@ -91,6 +72,24 @@ const IndividualBlogStructure = ({ data }) => {
             </div>
           ))}
         </div>
+        <div className="mt-4 flex justify-end">
+              <Link
+                href="/blogs"
+                className="para inline-flex items-center gap-2 rounded-full bg-[#A54220] px-5 py-2 text-sm text-white hover:bg-[#8e3d1b] transition whitespace-nowrap"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+                Back to Blogs
+              </Link>
+            </div>
 
         {/* ===== MORE TREATMENTS ===== */}
         <div data-aos="fade-up">

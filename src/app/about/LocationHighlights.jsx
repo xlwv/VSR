@@ -14,8 +14,8 @@ export default function LocationHighlights() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 md:py-22 bg-white">
+      <div className="container">
 
         {/* Heading */}
         <div className="text-center mb-12 md:mb-16">

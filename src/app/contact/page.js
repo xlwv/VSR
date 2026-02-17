@@ -62,7 +62,7 @@ export default function Page() {
             <div key={item.title} className="flex py-6 flex-col items-center">
               
               {/* Icon */}
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full">
+              <div className="mb-6 flex h-24 w-24 md:h-18 md:w-18 items-center justify-center rounded-full">
                 <Image
                   src={item.icon}
                   alt={item.title}

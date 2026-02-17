@@ -157,7 +157,7 @@ export default function ScrollStory({
         </div>
 
         {(currentSlide.imageTitle || currentSlide.imageDescription) && (
-          <div className="mt-4 px-1 h-[100px]">
+          <div className="mt-4 px-1 h-[140px]">
             {currentSlide.imageTitle && (
               <h3 className={`font-semibold mb-2 ${layoutType === "discover" ? "text-[#A54220]" : "text-gray-800"}`}>
                 {currentSlide.imageTitle}
@@ -224,9 +224,9 @@ export default function ScrollStory({
 
   if (layoutType === "discover") {
     return (
-      <div ref={wrapperRef} className="h-[180vh]" style={{ backgroundColor }}>
+      <div ref={wrapperRef} className="h-[200vh]" style={{ backgroundColor }}>
         <section
-          className={`sticky top-0 container mx-auto py-12 md:py-14 lg:py-16 xl:py-18 min-h-screen flex flex-col justify-center ${sectionClassName}`}
+          className={`sticky top-0 container mx-auto py-12 md:py-14 lg:py-20 xl:py-18 min-h-screen flex flex-col justify-center ${sectionClassName}`}
         >
           <div className={`hidden lg:flex items-end flex-row gap-16 ${containerClassName} justify-between`}>
             {showBulletPoints ? renderDiscoverContent() : (
@@ -247,7 +247,7 @@ export default function ScrollStory({
           <div className="lg:hidden">
             {renderImageSection(true)}
             {showBulletPoints ? (
-              <div className="bg-[#f5f0ed] rounded-[24px] p-6 mt-6">
+              <div className="bg-[#f5f0ed] rounded-[24px] p-6 mt-16 sm:mt-6">
                 <h2 className={`font-serif mb-3 ${headingClassName}`} style={{ color: textColor }}>
                   {heading}
                 </h2>

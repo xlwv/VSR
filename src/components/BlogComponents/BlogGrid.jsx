@@ -34,7 +34,9 @@ const BlogGrid = ({ blogs = [], initialCount = 6 }) => {
                 <div className="pt-4 px-1">
                  <h3 className="font-swis text-[13px] leading-relaxed text-gray-700">
                   {blog.title}
-                  <span className="text-orange-700 ml-1">...Read More</span>
+                  <span className="text-orange-700 underline ml-1 cursor-pointer hover:text-orange-800 transition-colors">
+  ...Read More
+</span>
                 </h3>
 
                 </div>

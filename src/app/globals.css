@@ -159,12 +159,12 @@ header {
 
   h2 {
     /* 26px → 32px → 40px → 48px */
-    @apply text-[26px] sm:text-[32px] lg:text-[40px] xl:text-[48px] leading-snug;
+    @apply text-[30px] sm:text-[34px] lg:text-[42px] xl:text-[48px] leading-snug;
   }
 
   h3 {
     /* 18px → 20px → 24px */
-    @apply text-[18px] sm:text-[20px] lg:text-[24px] leading-snug;
+    @apply text-[20px] sm:text-[22px] lg:text-[28px] leading-snug;
   }
 }
 
@@ -173,7 +173,7 @@ header {
   .para,
   .para a {
     font-family: "Swis721 BT", sans-serif;
-    @apply text-[14px] md:text-[16px] leading-tight;
+    @apply text-[16px] md:text-[18px] leading-tight;
     line-height: 1.7;
   }
 

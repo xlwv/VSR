@@ -150,7 +150,7 @@ export default function Page() {
         showButtons={false}
       />
       {/* Gallery Component */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="container">
           {/* Title and Description */}
           <div className="text-center mb-12 space-y-4">

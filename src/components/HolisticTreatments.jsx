@@ -12,13 +12,13 @@ export default function HolisticTreatments({
       className="relative w-full md:h-full bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/assets/holisticbg.webp')" }}
     >
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-20">
 
         <div className="text-center mb-16">
           <h2 className="sub-h2 text-white tracking-widest">
             {mainTitle}
           </h2>
-          <Image src="/assets/SVG/below.svg" width={320} height={10} className="mx-auto mt-3" alt="" />
+          <Image src="/assets/SVG/below-gray.svg" width={320} height={10} className="mx-auto mt-3" alt="" />
           <p className="para text-white">{Description}</p>
         </div>
 

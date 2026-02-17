@@ -36,8 +36,6 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 font-medium nav-menu">
             {navLinks.map((link) => {
-              // Check if current path starts with the link href (for child routes)
-              // Special case for home: only exact match
               const isActive = link.href === "/" 
                 ? pathname === link.href 
                 : pathname.startsWith(link.href);
@@ -110,10 +108,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Nav Links */}
-        <nav className="flex flex-col items-center gap-3 mt-4 px-6">
+        <nav className="flex flex-col items-center gap-2 mt-4 px-6">
           {navLinks.map((link) => {
-            // Check if current path starts with the link href (for child routes)
-            // Special case for home: only exact match
             const isActive = link.href === "/" 
               ? pathname === link.href 
               : pathname.startsWith(link.href);
@@ -123,13 +119,23 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className={`w-full text-center py-3 rounded-xl transition-all duration-300 para ${
+                // Added active:scale-95 and active:bg-gray-100 for the click effect
+                className={`flex justify-center w-full py-3 rounded-xl transition-all duration-200 para active:scale-95 active:bg-gray-100 group ${
                   isActive
-                    ? "bg-[var(--brand-brown)] text-white shadow-md transform scale-[1.02] font-semibold"
+                    ? "text-[var(--brand-brown)] font-semibold"
                     : "text-gray-700 hover:bg-gray-50 hover:text-[var(--brand-brown)]"
                 }`}
               >
-                {link.name}
+                {/* Wrapping the text in an inline-block div so the underline doesn't stretch across the entire screen */}
+                <div className="relative inline-block">
+                  {link.name}
+                  {/* Animated Bottom Underline (matches desktop) */}
+                  <span
+                    className={`absolute left-0 -bottom-1 h-[2px] bg-[var(--brand-brown)] transition-all duration-300 ease-in-out ${
+                      isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </div>
               </Link>
             );
           })}

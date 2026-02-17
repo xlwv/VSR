@@ -8,7 +8,7 @@ const PageBanner = ({
   return (
     <section
       className="relative flex w-full items-center bg-cover bg-center 
-                 h-[200px] sm:h-[240px] md:h-[320px]"
+                 h-[320px] sm:h-[400px] md:h-[440px] priority"
       style={{
         backgroundImage: `
           linear-gradient(

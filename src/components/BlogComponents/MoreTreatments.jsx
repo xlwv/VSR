@@ -139,7 +139,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
               {/* Title */}
               <h3 className="font-swis font-body mt-3 para text-[#333] leading-relaxed">
                 {blog.title}
-                <span className="text-[#A54220] ml-1 text-[12px]">Read More</span>
+                <span className="text-[#A54220] ml-1 text-[14px] underline">Read More</span>
               </h3>
             </div>
           </Link>

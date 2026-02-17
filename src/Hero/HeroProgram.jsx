@@ -102,7 +102,7 @@ const HeroProgram = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 md:py-16 overflow-hidden"
+      className="relative py-12 md:py-20 overflow-hidden"
       style={{
         backgroundImage: "url('/assets/HP-bg.webp')",
         backgroundSize: 'cover',
