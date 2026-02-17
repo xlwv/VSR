@@ -55,7 +55,7 @@ export default function HealthPackage({
 
         <div className="w-full lg:w-[630px] space-y-4 md:space-y-5">
           <div className="flex flex-col md:flex-row xl:items-center gap-3 md:gap-6">
-            <span className="inline-flex items-center justify-center whitespace-nowrap rounded-xl px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm w-[120px] h-[38px] sm:w-[142px] sm:h-[43px] border border-[#A54220] bg-[#A54220]/20 text-[#404041] md:order-2 xl:ml-10">
+            <span className="inline-flex items-center justify-center whitespace-nowrap rounded-xl px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm w-[120px] h-[38px] sm:w-[142px] sm:h-[43px] border border-[#A54220] bg-[#A54220]/20 text-[#404041] md:order-2 xl:ml-9 mr-[6px]!">
               {duration}
             </span>
 
