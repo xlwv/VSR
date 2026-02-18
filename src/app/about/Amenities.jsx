@@ -55,7 +55,7 @@ export default function Amenities() {
                 />
               </div>
 
-              <p className="mt-4 para text-gray-600 max-w-[260px]">
+              <p className="mt-4 para text-gray-600 max-w-[260px] text-[14px] md:text-[16px] lg:text-[18px] leading-tight px-1.5">
                 {item.title}
               </p>
             </div>
