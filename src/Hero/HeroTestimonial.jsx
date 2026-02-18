@@ -158,7 +158,6 @@ const HeroTestimonial = ({
             slidesPerView={1}
             spaceBetween={0}
             loop={false}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
             // Mobile dots — hidden on md+ via CSS below
             pagination={{
               clickable: true,

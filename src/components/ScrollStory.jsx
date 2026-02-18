@@ -17,7 +17,7 @@ export default function ScrollStory({
   heading = "OUR STORY",
   headingClassName = "",
   decorativeImage = "/assets/SVG/below-right.svg",
-  decorativeImageMobile = "/assets/stick.png",
+  decorativeImageMobile = "/assets/stick.webp",
   ctaText = "",
   ctaDescription = "",
   ctaLink = "",

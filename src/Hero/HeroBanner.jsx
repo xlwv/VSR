@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 
 const HeroBanner = () => {
   return (
-    <section className="hero">
+    <section className="hero priority">
       <div className="container h-full flex items-center px-5 sm:px-6">
 
         {/* Content Wrapper */}
