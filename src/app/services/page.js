@@ -13,16 +13,11 @@ import Button from "@/components/Button";
 // Inner component that uses useSearchParams — must be wrapped in Suspense
 function ServicesContent() {
   const searchParams = useSearchParams();
-  const [activeTab, setActiveTab] = useState("therapies");
+  const tabParam = searchParams.get("tab");
+  const activeTab = tabParam === "treatments" || tabParam === "therapies" ? tabParam : "therapies";
+  const [userTab, setUserTab] = useState(null);
   const [visibleCount, setVisibleCount] = useState(6);
-
-  // Set tab from URL query param on mount (e.g. /services?tab=treatments)
-  useEffect(() => {
-    const tab = searchParams.get("tab");
-    if (tab === "treatments" || tab === "therapies") {
-      setActiveTab(tab);
-    }
-  }, [searchParams]);
+  const currentTab = userTab ?? activeTab;
 
   useEffect(() => {
     AOS.init({
@@ -35,11 +30,12 @@ function ServicesContent() {
     });
   }, []);
 
-  useEffect(() => {
+  const handleTabChange = (tab) => {
+    setUserTab(tab);
     setVisibleCount(6);
-  }, [activeTab]);
+  };
 
-  const allCards = activeTab === "therapies" ? therapiesData : treatmentsData;
+  const allCards = currentTab === "therapies" ? therapiesData : treatmentsData;
   const displayCards = allCards.slice(0, visibleCount);
 
   const handleViewMore = () => {
@@ -54,7 +50,7 @@ function ServicesContent() {
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Services", href: "/services" },
-            { label: activeTab === "therapies" ? "Therapies" : "Treatments", href: "/services" },
+            { label: currentTab === "therapies" ? "Therapies" : "Treatments", href: "/services" },
           ]}
           bgImage="/assets/banner.webp"
         />
@@ -65,9 +61,9 @@ function ServicesContent() {
         {/* Tabs */}
         <div className="flex justify-center gap-4 md:mb-12 mb-8 flex-wrap" data-aos="fade-up">
           <button
-            onClick={() => setActiveTab("therapies")}
+            onClick={() => handleTabChange("therapies")}
             className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
-              activeTab === "therapies"
+              currentTab === "therapies"
                 ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none"
                 : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white"
             }`}
@@ -76,9 +72,9 @@ function ServicesContent() {
           </button>
 
           <button
-            onClick={() => setActiveTab("treatments")}
+            onClick={() => handleTabChange("treatments")}
             className={`para px-8 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 ${
-              activeTab === "treatments"
+              currentTab === "treatments"
                 ? "bg-[var(--brand-brown)] text-white cursor-default pointer-events-none"
                 : "bg-[#A542201A] border-2 border-[var(--brand-brown)] text-[var(--brand-brown)] hover:bg-[var(--brand-brown)] hover:text-white"
             }`}
@@ -99,12 +95,12 @@ function ServicesContent() {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="relative h-55 overflow-hidden p-4">
+              <div className="relative h-60 overflow-hidden p-4">
                 <Image
                   src={`/assets/${card.imageName}`}
                   alt={card.name}
-                  height={60}
-                  width={80}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-full object-cover img-serv rounded-[20px]"
                 />
               </div>

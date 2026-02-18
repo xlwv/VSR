@@ -156,12 +156,6 @@ const ContentSection = ({ section, index }) => {
 export default function ServiceDetailPage() {
   const params = useParams();
   const router = useRouter();
-  const [treatmentsOpen, setTreatmentsOpen] = useState(false);
-  const [therapiesOpen, setTherapiesOpen] = useState(false);
-  const [currentService, setCurrentService] = useState(null);
-  const [currentDetailData, setCurrentDetailData] = useState(null);
-  const [serviceType, setServiceType] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({
@@ -174,37 +168,20 @@ export default function ServiceDetailPage() {
     });
   }, []);
 
-  useEffect(() => {
-    if (params.slug) {
-      setIsLoading(true);
+  // Derive all values from slug — no state needed
+  const treatment = treatmentsData.find((t) => t.slug === params.slug);
+  const therapy = therapiesData.find((t) => t.slug === params.slug);
 
-      const treatment = treatmentsData.find((t) => t.slug === params.slug);
-      if (treatment) {
-        setCurrentService(treatment);
-        setServiceType("treatment");
-        setTreatmentsOpen(true);
-        setTherapiesOpen(false);
-        const detailData = treatmentsDetailData.find((t) => t.slug === params.slug);
-        setCurrentDetailData(detailData || null);
-        setIsLoading(false);
-        return;
-      }
-
-      const therapy = therapiesData.find((t) => t.slug === params.slug);
-      if (therapy) {
-        setCurrentService(therapy);
-        setServiceType("therapy");
-        setTherapiesOpen(true);
-        setTreatmentsOpen(false);
-        const detailData = therapiesDetailData.find((t) => t.slug === params.slug);
-        setCurrentDetailData(detailData || null);
-        setIsLoading(false);
-        return;
-      }
-
-      setIsLoading(false);
-    }
-  }, [params.slug]);
+  const currentService = treatment || therapy || null;
+  const serviceType = treatment ? "treatment" : therapy ? "therapy" : null;
+  const currentDetailData = treatment
+    ? treatmentsDetailData.find((t) => t.slug === params.slug) || null
+    : therapy
+    ? therapiesDetailData.find((t) => t.slug === params.slug) || null
+    : null;
+  const [treatmentsOpen, setTreatmentsOpen] = useState(!!treatment);
+  const [therapiesOpen, setTherapiesOpen] = useState(!!therapy);
+  const isLoading = false;
 
   const handleServiceClick = (service) => {
     router.push(`/services/${service.slug}`);
@@ -354,7 +331,7 @@ export default function ServiceDetailPage() {
                             group relative w-full text-left py-2 px-4 rounded-lg text-sm
                             transition-colors
                             ${isActive
-                              ? "bg-white text-[var(--brand-brown)] font-medium"
+                              ? "bg-white  text-[var(--brand-brown)] font-medium"
                               : "text-gray-600 hover:bg-white/50 hover:text-[var(--brand-brown)]"
                             }
                           `}
@@ -362,17 +339,7 @@ export default function ServiceDetailPage() {
                           <p className="para">{therapy.name}</p>
 
                           {/* Underline — expands on active/hover */}
-                          <span
-                            className={`
-                              absolute bottom-0 left-4 right-4 h-[2px] rounded-full
-                              bg-[var(--brand-brown)]
-                              transition-all duration-300 origin-left
-                              ${isActive
-                                ? "scale-x-100 opacity-100"
-                                : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-60"
-                              }
-                            `}
-                          />
+                         
                         </button>
                       );
                     })}

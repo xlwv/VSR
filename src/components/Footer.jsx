@@ -114,14 +114,14 @@ const Footer = () => {
         <div>
           <h3 className=" font-semibold mb-4">Contact Us</h3>
           <div className="space-y-4">
-            
+             
             {/* Address */}
             <div className="flex gap-3">
               <FaLocationDot className="w-5 h-5 mt-1 flex-shrink-0" />
-              <p className="para">
+              <a href="https://maps.app.goo.gl/wwE1ef6rBD5QxqPd7" className="para">
                 Irish Valley, Dharmaram Village, Near Bits Pilani campus, 
                 Keesara Mandal, Medchal District, Shamirpet, Telangana - 501301
-              </p>
+              </a>
             </div>
 
             {/* Phone Numbers */}
@@ -163,14 +163,14 @@ const Footer = () => {
       {/* Bottom Bar - Copyright */}
       <div className="border-t border-white/10">
         <div className="container py-4 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="para opacity-80">
+          <p className="para w-full text-center opacity-80">
             © Copyright 2026 All Rights Reserved
           </p>
-          <Link href="/privacy" className="opacity-90 hover:text-orange-200 transition-colors">
-<p>
+          {/* <Link href="/privacy" className="opacity-90 hover:text-orange-200 transition-colors">
+            <p>
             Privacy Policy
           </p>
-</Link>
+        </Link> */}
         </div>
       </div>
     </footer>

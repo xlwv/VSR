@@ -20,7 +20,7 @@ const CONTACTS = [
     icon: "/assets/SVG/loc.svg",
     title: "Location",
     text: `Irish Valley, Dharmaram Village, Near Bits Pilani Campus, Keesara Mandal, Medchal District, Shameerpet, Telangana - 501301`,
-    href: "https://www.google.com/maps/place/VSR+Vriksha+Naturopathy+Center+In+Hyderabad/",
+    href: "https://maps.app.goo.gl/wwE1ef6rBD5QxqPd7",
   },
 ];
 

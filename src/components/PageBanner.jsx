@@ -45,7 +45,7 @@ const PageBanner = ({
                     {item.label}
                   </Link>
                 ) : (
-                  <span className="font-regular   no-underline text-lg" >{item.label}</span>
+                  <span className="font-regular  no-underline text-lg" >{item.label}</span>
                 )}
 
                 {index < breadcrumbs.length - 1 && (
