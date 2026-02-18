@@ -1,5 +1,19 @@
 [
   {
+    "id": 0,
+    "slug": "introduction",
+    "sections": [
+      {
+        "type": "paragraph",
+        "content": "Vangala Sanjeeva Reddy is a first-of-its-kind nature cure centre in Hyderabad, located amidst the tranquility of nature. We have left no stone unturned in ensuring that you get the best of ancient wisdom, nature, and modern scientific knowledge. You'll experience the most comfortable accommodations, state-of-the-art amenities, and many other luxury facilities."
+      },
+      {
+        "type": "paragraph",
+        "content": "From the IRIS diagnosis to being the only hospital in Hyderabad that offers the Vichy Shower Massage, we are committed to providing the very best to you."
+      }
+    ]
+  },
+  {
     "id": 1,
     "slug": "cardiovascular",
     "sections": [

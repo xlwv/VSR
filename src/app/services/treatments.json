@@ -1,5 +1,12 @@
 [
   {
+    "id": 0,
+    "name": "Introduction",
+    "slug": "introduction",
+    "imageName": "Introduction-min.webp",
+    "description": "Naturopathic medicine is a holistic approach to healthcare that emphasises the use of natural remedies to support the body's ability to heal itself."
+  },
+  {
     "id": 1,
     "name": "Cardiovascular",
     "slug": "cardiovascular",

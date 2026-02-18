@@ -154,17 +154,17 @@ header {
 @layer base {
   h1 {
     /* 32px → 40px → 52px → 60px */
-    @apply text-[32px] sm:text-[40px] lg:text-[52px] xl:text-[60px] leading-tight;
+    @apply text-[32px] sm:text-[40px] lg:text-[52px] xl:text-[60px] leading-tight font-semibold sm:font-medium;
   }
 
   h2 {
     /* 26px → 32px → 40px → 48px */
-    @apply text-[30px] sm:text-[34px] lg:text-[42px] xl:text-[48px] leading-snug;
+    @apply text-[30px] sm:text-[34px] lg:text-[42px] xl:text-[48px] leading-snug font-semibold sm:font-medium;
   }
 
   h3 {
     /* 18px → 20px → 24px */
-    @apply text-[20px] sm:text-[22px] lg:text-[28px] leading-snug;
+    @apply text-[20px] sm:text-[22px] lg:text-[28px] leading-snug font-semibold sm:font-medium;
   }
 }
 

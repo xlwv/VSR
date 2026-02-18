@@ -7,32 +7,36 @@ import Gallery from "@/components/Gallery";
 import ScrollStory from "@/components/ScrollStory";
 export default function Page() {
   const galleryData = [
-    { src: "/assets/g1.jpg", alt: "Wellness Center Interior" },
-    { src: "/assets/g2.jpg", alt: "Therapy Session" },
-    { src: "/assets/g3.jpg", alt: "Organic Dining" },
-    { src: "/assets/g4.jpg", alt: "Kitchen Staff" },
-    { src: "/assets/g5.jpg", alt: "Treatment Facilities" },
-    { src: "/assets/g6.jpg", alt: "Relaxation Room" },
-    { src: "/assets/g7.jpg", alt: "Kitchen Staff" },
-    { src: "/assets/g8.jpg", alt: "Treatment Facilities" },
-    { src: "/assets/g9.jpg", alt: "Relaxation Room" },
+    { src: "/assets/g1.webp", alt: "Wellness Center Interior" },
+    { src: "/assets/g2.webp", alt: "Therapy Session" },
+    { src: "/assets/g3.webp", alt: "Organic Dining" },
+    { src: "/assets/g4.webp", alt: "Kitchen Staff" },
+    { src: "/assets/g5.webp", alt: "Treatment Facilities" },
+    { src: "/assets/g6.webp", alt: "Relaxation Room" },
+    { src: "/assets/g7.webp", alt: "Treatment Equipment" },
+    { src: "/assets/g8.webp", alt: "Wellness Center" },
+    { src: "/assets/g9.webp", alt: "Our Staff" },
+    { src: "/assets/g10.webp", alt: "Swimming Pool" },
+    { src: "/assets/g11.webp", alt: "Dining Hall" },
+    { src: "/assets/g12.webp", alt: "Outdoor Relaxation Area" },
+    { src: "/assets/g13.webp", alt: "Spa Treatment Room" },
   ];
   const testimonialData = [
     {
-      thumbnail: "https://img.youtube.com/vi/BxkXBSAeG_8/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/BxkXBSAeG_8",
+      thumbnail: "https://img.youtube.com/vi/LbL6JZ7IP1U/hqdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/LbL6JZ7IP1U",
     },
     {
-      thumbnail: "https://img.youtube.com/vi/jxcP8N35RvY/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/jxcP8N35RvY",
+      thumbnail: "https://img.youtube.com/vi/BxkXBSAeG_8/maxresdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/BxkXBSAeG_8",
     },
     {
       thumbnail: "https://img.youtube.com/vi/jH16xGuXPDY/maxresdefault.jpg",
       videoUrl: "https://www.youtube.com/embed/jH16xGuXPDY",
     },
     {
-      thumbnail: "https://img.youtube.com/vi/7GJnDAlTqY4/maxresdefault.jpg",
-      videoUrl: "https://www.youtube.com/embed/7GJnDAlTqY4",
+      thumbnail: "https://img.youtube.com/vi/4gqk1qvUpao/hqdefault.jpg",
+      videoUrl: "https://www.youtube.com/embed/4gqk1qvUpao",
     },
     {
       thumbnail: "https://img.youtube.com/vi/3OafkGMEuyU/maxresdefault.jpg",
@@ -42,8 +46,6 @@ export default function Page() {
       thumbnail: "https://img.youtube.com/vi/fF8gm-0i_uM/sddefault.jpg",
       videoUrl: "https://www.youtube.com/embed/fF8gm-0i_uM",
     },
-    
-    // ... add more items here
   ];
 
   const doctorData = [
@@ -66,21 +68,21 @@ export default function Page() {
   ];
   const discoverSlides = [
     {
-      image: "/assets/g1.jpg",
+      image: "/assets/g1.webp",
       imageAlt: "Holistic Health Treatments",
       imageTitle: "Holistic Health Treatments",
       imageDescription: "Heal your mind, body, and soul with our wide array of natural therapies. The treatment covers gastrointestinal, cardiovascular, skin, respiratory",
       paragraphs: [] // Not used in discover layout with bullet points
     },
     {
-      image: "/assets/g5.jpg",
+      image: "/assets/g5.webp",
       imageAlt: "Natural Therapies",
       imageTitle: "Natural Therapies",
       imageDescription: "Experience the healing power of nature through our advanced therapeutic treatments",
       paragraphs: []
     },
     {
-      image: "/assets/g9.jpg",
+      image: "/assets/g9.webp",
       imageAlt: "Wellness Programs",
       imageTitle: "Wellness Programs",
       imageDescription: "Customized programs designed for your complete transformation",
