@@ -3,14 +3,14 @@
     "id": 1,
     "name": "Acupuncture",
     "slug": "acupuncture",
-    "imageName": "Acupuncture.png",
+    "imageName": "Acupuncture.webp",
     "description": "This incredible method of healing is an ancient part of traditional Chinese medicine. It helps the body find its natural balance."
   },
   {
     "id": 2,
     "name": "Aroma Therapy",
     "slug": "aroma-therapy",
-    "imageName": "Aroma-Therapy.png",
+    "imageName": "Aroma-Therapy.webp",
     "description": "Aromatherapy is a gentle yet powerful healing technique that uses pure essential oils to promote physical, emotional, and spiritual well-being."
   },
   {
@@ -38,21 +38,21 @@
     "id": 9,
     "name": "Massage Therapy",
     "slug": "massage-therapy",
-    "imageName": "Massage-Therapy.png",
+    "imageName": "Massage-Therapy.webp",
     "description": "Massages have been used as a form of therapy since ancient times. There are many benefits to this age-old practice of healing."
   },
   {
     "id": 12,
     "name": "Physiotherapy",
     "slug": "physiotherapy",
-    "imageName": "Physiotherapy-min-min.png",
+    "imageName": "Physiotherapy-min-min.webp",
     "description": "A hands-on healing technique that focuses on restoring mobility, function, and quality of life through natural therapies."
   },
   {
     "id": 13,
     "name": "Yoga",
     "slug": "yoga",
-    "imageName": "Yogaa.png",
+    "imageName": "Yogaa.webp",
     "description": "Yoga, an ancient Indian tradition, is a group of physical, mental, and spiritual practices that have stood the test of time."
   }
 ]
