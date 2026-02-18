@@ -125,7 +125,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
               <div
                 className="
                   relative w-full overflow-hidden rounded-2xl
-                  h-[200px] sm:h-[210px] lg:h-[220px]
+                  aspect-[5/6]
                 "
               >
                 <Image
@@ -141,7 +141,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
                 {blog.title}
 
               </h3>
-                              <span className="text-[#A54220]  ml-1 text-[14px] ">Read More</span>
+                              <span className="text-[#A54220]  ml-1 text-lg ">Read More</span>
             </div>
           </Link>
         ))}

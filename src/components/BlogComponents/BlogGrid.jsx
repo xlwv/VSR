@@ -32,11 +32,11 @@ const BlogGrid = ({ blogs = [], initialCount = 6 }) => {
                 </div>
 
                 <div className="pt-4 px-1">
-                 <h3 className="font-swis text-[13px] leading-relaxed text-gray-700">
+                 <h3 className="font-swis text-lg leading-relaxed text-gray-700">
                   {blog.title}
 
                 </h3>
-                  <span className="text-orange-700 underline ml-1 cursor-pointer hover:text-orange-800 transition-colors">
+                  <span className="  text-[var(--brand-brown)] text-lg">
   Read More
 </span>
                 </div>
