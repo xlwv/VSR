@@ -196,9 +196,9 @@ header {
     @apply text-[28px] sm:text-[32px] lg:text-[36px] xl:text-[40px];
   }
 }
-.resp{
+/* .resp{
   margin-top: 1rem;
-}
+} */
 @media (max-width: 345px) {
   .resp {
     margin-top: 4rem;  

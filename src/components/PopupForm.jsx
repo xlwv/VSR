@@ -70,9 +70,16 @@ export default function PopupForm({ isOpen, onClose }) {
       setForm({ name: "", email: "", phone: "", message: "" });
       onClose();
       router.push("/thank-you");
-    } else {
+    }
+
+    else if (!authorised) {
+      alert("Please authorise VSR Vriksha Nature Cure Center to contact you.");
+      return;
+    }
+     else {
       alert("Something went wrong. Please try again.");
     }
+
 
     setIsSubmitting(false);
   };
@@ -152,6 +159,46 @@ export default function PopupForm({ isOpen, onClose }) {
               disabled={isSubmitting}
             />
           </div>
+          <label className="flex cursor-pointer items-start gap-3 pt-1 select-none">
+              <div className="relative mt-[2px] flex-shrink-0">
+                <input
+                  type="checkbox"
+                  checked={authorised}
+                  onChange={(e) => setAuthorised(e.target.checked)}
+                  className="peer sr-only"
+                />
+                {/* Custom checkbox box */}
+                <div
+                  className="
+                    h-5 w-5 rounded-sm border-2 border-[#A03D13]
+                    bg-white
+                    flex items-center justify-center
+                    peer-checked:bg-[#A03D13]
+                    transition-colors duration-200
+                  "
+                >
+                  {/* Tick — shown when checked */}
+                  {authorised && (
+                    <svg
+                      className="h-3 w-3 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={3}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  )}
+                </div>
+              </div>
+              <span className="text-sm text-[#212529] leading-snug">
+                I, hereby authorise VSR Vriksha Nature Cure Center to contact me.
+              </span>
+            </label>
         </form>
       </div>
     </div>
