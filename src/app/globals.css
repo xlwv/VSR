@@ -180,7 +180,7 @@ header {
   /* Override: plain <a> tags outside .para keep the same scale */
   a {
     font-family: "Swis721 BT", sans-serif;
-    font-size: clamp(18px, 1.2vw, 22px);
+    @apply text-[16px] md:text-[18px];
     line-height: 1.6;
   }
 

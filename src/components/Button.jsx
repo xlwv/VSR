@@ -21,6 +21,7 @@ import PopupForm from "./PopupForm";
  * @param {string} size - 'sm' | 'md' | 'lg'
  * @param {string} type - 'button' | 'submit' | 'reset'
  */
+
 const Button = ({
   text = "Button",
   variant = "primary",

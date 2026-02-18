@@ -30,27 +30,26 @@ const IndividualBlogStructure = ({ data }) => {
         </h1>
 
         {/* ===== INTRO SECTION ===== */}
-        <div className="grid grid-cols-1 md:grid-cols-[340px_1fr] lg:grid-cols-[420px_1fr] gap-8 lg:gap-12 mb-12 md:mb-16 items-start [&_a]:text-[var(--brand-brown)] [&_a]:underline">
-          
-          {/* Image */}
-          <div className="relative w-full aspect-[5/6] overflow-hidden rounded-2xl">
+        <div className="mb-12 md:mb-16 [&_a]:text-[var(--brand-brown)] [&_a]:underline overflow-hidden">
+
+          {/* Image — floated left so text wraps around it */}
+          <div className="relative float-left mr-6 mb-4 md:mr-8 md:mb-6 w-full sm:w-2/5 md:w-1/3 aspect-[5/6] overflow-hidden rounded-2xl">
             <Image
               src={data.heroImage}
               alt={data.title}
               fill
               priority
+              sizes="(max-width: 640px) 100vw, (max-width: 768px) 40vw, 33vw"
               className="object-cover object-center"
             />
           </div>
 
-          {/* Intro Text + Back Button */}
-          <div>
-            <p
-              className="para! font-body text-[16px] md:text-[18px] font-normal leading-[1.9] text-[#333]"
-              style={{ whiteSpace: "pre-line" }}
-              dangerouslySetInnerHTML={{ __html: data.intro }}
-            />
-          </div>
+          {/* Intro Text — wraps around the floated image */}
+          <p
+            className="para! font-body text-[16px] md:text-[18px] font-normal leading-[1.9] text-[#333]"
+            style={{ whiteSpace: "pre-line" }}
+            dangerouslySetInnerHTML={{ __html: data.intro }}
+          />
         </div>
 
         {/* ===== CONTENT SECTIONS ===== */}

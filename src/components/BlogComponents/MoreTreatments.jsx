@@ -132,6 +132,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
                   src={blog.image}
                   alt={blog.title}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -141,7 +142,7 @@ const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "ser
                 {blog.title}
 
               </h3>
-                              <span className="text-[#A54220]  ml-1 text-lg ">Read More</span>
+                              <span className="text-[#A54220]   text-lg ">Read More</span>
             </div>
           </Link>
         ))}
