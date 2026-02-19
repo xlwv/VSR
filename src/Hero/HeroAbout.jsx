@@ -58,7 +58,7 @@ const HeroAbout = () => {
               </div>
 
               <h2 className="text-[#9c3f1a] leading-tight">
-                VSR Vriksha Nature Cure Center
+                VSR Vriksha Nature Cure centre
               </h2>
             </div>
 
@@ -107,10 +107,10 @@ const HeroAbout = () => {
             <div className="order-3 lg:col-start-1 lg:row-start-2 space-y-6">
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p className="para">
-                  VSR Vriksha, a unit of Vangala Sanjeeva Reddy Foundation, is an integrated residential wellness center with all facilities and latest equipment that offers holistic health care services in Naturopathy, Physiotherapy, Yoga, and Meditation.
+                  VSR Vriksha, a unit of Vangala Sanjeeva Reddy Foundation, is an integrated residential wellness centre with all facilities and the latest equipment, offering holistic health care services in naturopathy, physiotherapy, yoga, and meditation.
                 </p>
                 <p className="para">
-                  We firmly believe in the healing power of nature and provide personalized care to help guests achieve a harmonious balance between mind, body, and spirit. The therapies, meals, and daily routine are carefully curated to promote natural healing and rejuvenation, enabling guests to emerge healed and revitalized.
+                  We firmly believe in the healing power of nature and provide personalized care to help guests achieve a harmonious balance between mind, body, and spirit. The therapies, meals, and daily routines are carefully curated to promote natural healing and rejuvenation, enabling guests to emerge healed and revitalized.
                 </p>
               </div>
 

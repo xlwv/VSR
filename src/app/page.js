@@ -7,14 +7,14 @@ import Gallery from "@/components/Gallery";
 import ScrollStory from "@/components/ScrollStory";
 export default function Page() {
   const galleryData = [
-    { src: "/assets/g1.webp", alt: "Wellness Center Interior" },
+    { src: "/assets/g1.webp", alt: "Wellness centre Interior" },
     { src: "/assets/g2.webp", alt: "Therapy Session" },
     { src: "/assets/g3.webp", alt: "Organic Dining" },
     { src: "/assets/g4.webp", alt: "Kitchen Staff" },
     { src: "/assets/g5.webp", alt: "Treatment Facilities" },
     { src: "/assets/g6.webp", alt: "Relaxation Room" },
     { src: "/assets/g7.webp", alt: "Treatment Equipment" },
-    { src: "/assets/g8.webp", alt: "Wellness Center" },
+    { src: "/assets/g8.webp", alt: "Wellness centre" },
     { src: "/assets/g9.webp", alt: "Our Staff" },
     { src: "/assets/g10.webp", alt: "Swimming Pool" },
     { src: "/assets/g11.webp", alt: "Dining Hall" },
@@ -96,7 +96,7 @@ export default function Page() {
       <HeroProgram />
       <HeroTestimonial 
         title="What Our Clients Think About Us"
-        description="The results and our client testimonials speak volumes of our efforts in paving the way towards an illustrious legacy"
+        description="Our results and client testimonials reflect the trust we’ve built and the care we deliver."
         testimonials={testimonialData}
         titleColor="#A03D13"
       />
@@ -130,22 +130,22 @@ export default function Page() {
        sections={[
           {
             title: "ORGANIC FOOD",
-            description: "Here, you can enjoy the most delicious fruits and vegetables without doubting the source. They are grown on our own farm and are free of any pesticides.",
+            description: "Enjoy fresh, delicious organic fruits and vegetables grown on our own farm, cultivated naturally and free from pesticides.",
             image: "/assets/Hero-Holi-1.webp",
           },
           {
             title: "YOGA AND MEDITATION",
-            description: "Among the many facilities that we offer arethe Yoga and Meditation centers.You will be guided by the expertise of our highly experienced faculty.",
+            description: "Among the many facilities we offer are the yoga and meditation centres. You will be guided by our highly experienced instructors.",
             image: "/assets/Hero-Holi-2.webp",
           },
           {
             title: "STATE-OF-THE-ART FACILITIES",
-            description: "VSR employs cutting-edge technology to diagnose and treat a wide range of health issues. We spare no expense in procuring the highest quality equipment.",
+            description: "VSR employs cutting-edge technology to diagnose and treat a wide range of health concerns. We spare no expense in procuring the highest-quality equipment.",
             image: "/assets/Hero-Holi-3.webp",
           },
           {
             title: "MUSIC THERAPY",
-            description: "We can proudly say that we are the only naturopathic center to introduce music therapy. We spare no effort in ensuring your wellbeing.",
+            description: "We are proud to offer music therapy as a distinctive part of our naturopathic care, thoughtfully designed to enhance relaxation, healing, and overall wellbeing.",
             image: "/assets/Hero-Holi-4.webp",
           },          
         ]}
@@ -171,7 +171,7 @@ export default function Page() {
             </div>
 
             <p className="text-[#646464] font-swis para max-w-2xl mx-auto px-4">
-              Take a break and rediscover your connection with nature as you heal yourself
+              Take a break and rediscover your connection with nature as you heal and rejuvenate.
             </p>
           </div>
         </div>
@@ -183,7 +183,7 @@ export default function Page() {
         <Gallery images={galleryData} />
       </section>
       <HeroTestimonial 
-        title="Doctor Videos"
+        title="Insights from Our Doctors"
         description=""
         testimonials={doctorData}
         bgColor="#FAF5F3"

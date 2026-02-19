@@ -3,11 +3,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 const locations = [
-  { title: "The Outer Ring Road", content: "50 km from the International Airport" },
+  { title: "The Outer Ring Road", content: "9.5 km from the Outer Ring Road" },
   { title: "Airport", content: "50 km from the International Airport" },
-  { title: "BITS Pilani", content: "30 km from Hyderabad" },
-  { title: "Secunderabad Club", content: "22 km from the Airport" },
-  { title: "Hyderabad city", content: "30 km from BITS Pilani" },
+  { title: "BITS Pilani", content: "30 km from BITS Pilani" },
+  { title: "Secunderabad Club", content: "22 km from the Secunderabad Club" },
+  { title: "Hyderabad city", content: "30 km from Hyderabad" },
 ];
 
 export default function LocationHighlights() {
