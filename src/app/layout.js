@@ -5,6 +5,22 @@ import "../app/globals.css";
 
 const GTM_ID = "GTM-M89ZWPJ";
 
+export const metadata = {
+  title: "VSR Vriksha | Telangana's First Premium Naturopathy Retreat",
+  description:
+    "VSR Vriksha Nature Cure Center is Telangana's first premium naturopathy retreat in Hyderabad. Experience holistic healing through yoga, diet therapy, and natural treatments.",
+  alternates: {
+    canonical: "https://vsrvriksha.com",
+  },
+  openGraph: {
+    title: "VSR Vriksha | Telangana's First Premium Naturopathy Retreat",
+    description:
+      "VSR Vriksha Nature Cure Center is Telangana's first premium naturopathy retreat in Hyderabad. Experience holistic healing through yoga, diet therapy, and natural treatments.",
+    url: "https://vsrvriksha.com",
+    type: "website",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
