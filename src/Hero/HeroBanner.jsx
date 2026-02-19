@@ -1,34 +1,67 @@
+import Image from "next/image";
 import { FaLocationDot } from "react-icons/fa6";
 import Button from "@/components/Button";
 
 const HeroBanner = () => {
   return (
-    <section className="hero priority">
-      <div className="container h-full flex items-center px-5 sm:px-6">
+    <section className="relative h-screen w-full overflow-hidden">
+      
+      {/* Desktop Background Image */}
+      <div className="absolute inset-0 hidden md:block">
+        <Image
+          src="/assets/hero.webp"
+          alt="VSR Vriksha Naturopathy Retreat"
+          fill
+          priority
+          quality={90}
+          className="object-cover object-center"
+        />
+      </div>
 
-        {/* Content Wrapper */}
-        <div className="max-w-2xl text-white pt-28 sm:pt-32 md:pt-0">
+      {/* Mobile Background Image */}
+      <div className="absolute inset-0 block md:hidden">
+        <Image
+          src="/assets/hero-mob.webp"
+          alt="VSR Vriksha Naturopathy Retreat"
+          fill
+          priority
+          quality={90}
+          className="object-cover object-center"
+        />
+      </div>
 
-          {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 text-[#F4C430] leading-tight">
-            VSR Vriksha
-          </h1>
+      {/* Dark Gradient Overlay (Bottom to Top) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#401300] via-[#401300]/70 to-transparent z-10" />
 
-          {/* Subheading */}
-          <p className="text-lg sm:text-xl md:text-2xl mb-5 md:mb-6 font-light leading-relaxed">
-            Telangana&apos;s First Premium Naturopathy Retreat
-          </p>
+      {/* Content */}
+      <div className="relative z-20 h-full">
+        {/* Changed items-center to items-end and added bottom padding */}
+        <div className="container h-full flex items-start pt-40 px-5 sm:px-6">
+          
+          {/* Content Wrapper */}
+          <div className="max-w-2xl text-white">
 
-          {/* Location */}
-          <div className="flex items-center gap-2 sm:gap-3 mb-6 md:mb-8">
-            <FaLocationDot className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-            <p className="text-lg sm:text-xl md:text-2xl">
-              Hyderabad
+            {/* Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-3 md:mb-4 text-[#F4C430] leading-tight">
+              VSR Vriksha
+            </h1>
+
+            {/* Subheading */}
+            <p className="text-lg sm:text-xl md:text-2xl mb-5 md:mb-6 font-light leading-relaxed">
+              Telangana&apos;s First Premium Naturopathy Retreat
             </p>
-          </div>
 
-          {/* CTA */}
-<Button text="BOOK YOUR STAY" variant="secondary" />
+            {/* Location */}
+            <div className="flex items-center gap-2 sm:gap-3 mb-6 md:mb-8">
+              <FaLocationDot className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <p className="text-lg sm:text-xl md:text-2xl">
+                Hyderabad
+              </p>
+            </div>
+
+            {/* CTA */}
+            <Button text="BOOK YOUR STAY" variant="secondary" />
+          </div>
         </div>
       </div>
     </section>

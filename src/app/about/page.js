@@ -17,8 +17,9 @@ export default function Page() {
       imageTitle: "",
       imageDescription: "",
       paragraphs: [
-        "Our mental & physical well-being is under constant stress from the impact of modern-day lifestyles. The negative energy and health issues build up and eventually lead to severe disorders.",
-        "This is essentially an imbalance within our body. And more often than not, it is the drastic change in our way of life and being disconnected from nature that is at the root of the myriad health issues."
+        "Our story began with a quiet but powerful idea; that healing should feel natural, gentle, and deeply personal.",
+        "After visiting several naturopathy centres across the country, our Chairperson, Mr. Vangala Sanjeeva Reddy, was moved by the transformative impact of nature-based healing. He envisioned creating a similar wellness retreat in Hyderabad.",
+        "Telangana’s first premium residential naturopathy retreat, a sanctuary to escape and restore wellbeing."
       ]
     },
     {
@@ -27,8 +28,8 @@ export default function Page() {
       imageTitle: "",
       imageDescription: "",
       paragraphs: [
-        "Our mental is under constant stress from the impact of modern-day lifestyles. The negative energy and health issues build up and eventually lead to severe disorders.",
-        "This is essentially an imbalance within our body. And more often than not, it is the drastic change in our way of life and being disconnected from nature that is at the root of the myriad health issues."
+        "What started as a dream has now touched the lives of over 3,000 guests. Watching them find relief from long-standing health concerns continues to remind us why we began this journey.",
+        "VSR Vriksha was designed as a retreat that carries the calm elegance of a boutique resort while offering the depth of a wellness centre. Nourishing meals, mindful routines, and thoughtfully curated therapies work in harmony with the tranquil surroundings."
       ]
     },
     {
@@ -37,8 +38,9 @@ export default function Page() {
       imageTitle: "",
       imageDescription: "",
       paragraphs: [
-        "Physical well-being is under constant stress from the impact of modern-day lifestyles. The negative energy and health issues build up and eventually lead to severe disorders.",
-        "This is essentially an imbalance within our body. And more often than not, it is the drastic change in our way of life and being disconnected from nature that is at the root of the myriad health issues."
+        "Our story is still unfolding, and with each passing year it grows richer.",
+        "Every guest who leaves feeling lighter, healthier, and more at peace becomes part of the journey we are building. We aspire to reach more people and continue refining a space where natural healing can thrive.",
+        "As we look toward the future, we invite more people to walk this path with us and become part of a story that is rooted in care, compassion, and the enduring power of nature."
       ]
     }
   ];
@@ -117,8 +119,7 @@ export default function Page() {
               />
 
               <p className="para leading-[26px] sm:leading-[28px] text-[#555] mb-12 md:mb-14">
-                To provide a complete rejuvenation and healing experience with
-                the most innovative methods and advanced technology.
+                To deliver a transformative healing and rejuvenation experience through ancient knowledge, natural therapies and advanced technology.
               </p>
 
               <h3 className="sub-h2 font-serif text-[#2b2b2b]">
@@ -133,8 +134,7 @@ export default function Page() {
               />
 
               <p className="para leading-[26px] sm:leading-[28px] text-[#555]">
-                To be Telangana&apos;s first nature cure centre of its kind,
-                providing exceptional service.
+                To be Telangana’s first-of-its-kind nature cure centre, providing exceptional holistic healing and care.
               </p>
 
             </div>

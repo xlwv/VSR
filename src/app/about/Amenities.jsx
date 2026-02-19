@@ -5,12 +5,12 @@ import { useState } from "react";
 import Button from "@/components/Button";
 
 const amenities = [
-  { title: "12 acres across 50 acres of farmland", icon: "/assets/clubhouse.png" },
+  { title: "12 acres within a 50-acre farmland", icon: "/assets/clubhouse.png" },
   { title: "Tranquil residential nature cure centre", icon: "/assets/house.png" },
   { title: "Latest equipment for treatment", icon: "/assets/treatment.png" },
   { title: "Traditional yoga and meditation hall", icon: "/assets/yoga.png" },
-  { title: "Personalized care customized treatment", icon: "/assets/care.png" },
-  { title: "Stay in super-deluxe rooms", icon: "/assets/stay.png" },
+  { title: "Personalized care & customized treatment", icon: "/assets/care.png" },
+  { title: "Accommodation in super deluxe rooms", icon: "/assets/stay.png" },
   { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/organic.png" },
   { title: "Swimming pool", icon: "/assets/pool.png" },
   { title: "A unique reflexology walkway", icon: "/assets/feet.png" },

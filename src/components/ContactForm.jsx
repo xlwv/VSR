@@ -22,10 +22,12 @@ export default function ContactForm({
   const [errors, setErrors] = useState({});
   const [authorised, setAuthorised] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
+    setErrorMessage(""); // Clear error message on input change
   };
 
   const validate = () => {
@@ -58,8 +60,9 @@ export default function ContactForm({
     if (!validate()) return;
 
     setIsSubmitting(true);
+    setErrorMessage("");
 
-    const success = await submitLead({
+    const result = await submitLead({
       name: form.name,
       email: form.email,
       phone: form.phone,
@@ -67,13 +70,13 @@ export default function ContactForm({
       message: form.message,
     });
 
-    if (success) {
+    if (result.success && result.message === "Lead submitted successfully!") {
       setForm({ name: "", email: "", phone: "", message: "" });
       setAuthorised(false);
       if (onSuccess) onSuccess();
       router.push("/thank-you");
     } else {
-      alert("Something went wrong. Please try again.");
+      setErrorMessage(result.message || "Something went wrong. Please try again.");
     }
 
     setIsSubmitting(false);
@@ -91,6 +94,13 @@ export default function ContactForm({
       )}
 
       <form className="space-y-4" onSubmit={handleSubmit}>
+        {/* Error Message Display */}
+        {errorMessage && (
+          <div className="p-3 bg-red-50 border border-red-200 rounded-md">
+            <p className="text-sm text-red-600 text-center">{errorMessage}</p>
+          </div>
+        )}
+
         <div>
           <input
             name="name"
@@ -183,7 +193,7 @@ export default function ContactForm({
                 </div>
               </div>
               <span className="text-sm text-[#212529] leading-snug">
-                I, hereby authorise VSR Vriksha Nature Cure Center to contact me.
+                I, hereby authorise VSR Vriksha Nature Cure centre to contact me.
               </span>
             </label>
             {errors.authorised && (

@@ -21,7 +21,7 @@ export default function RejuvenationGrid() {
         {/* DESKTOP */}
         <div className="hidden lg:flex absolute inset-0 flex-col items-center justify-center text-center z-10 pointer-events-none">
           <h2 className="font-serif text-[#0F1E3A] leading-snug lg:text-4xl xl:text-5xl">
-            Step into a journey that redefines <br /> Rejuvenation.
+            Step into a journey that redefines <br /> rejuvenation.
           </h2>
 
           <div className="mt-6 pointer-events-auto">

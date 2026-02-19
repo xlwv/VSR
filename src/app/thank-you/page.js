@@ -4,16 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function ThankYouClient() {
-  const router = useRouter();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      router.push("/");
-    }, 10000);
-
-    return () => clearTimeout(timer);
-  }, [router]);
-
+  
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center max-w-xl mx-auto">
@@ -49,10 +40,6 @@ export default function ThankYouClient() {
 
         <p className="text-gray-500">
           Our team will get in touch with you shortly.
-        </p>
-
-        <p className="text-sm text-gray-400 mt-6">
-          You will be redirected to the homepage shortly...
         </p>
 
       </div>

@@ -33,7 +33,7 @@ const IndividualBlogStructure = ({ data }) => {
         <div className="mb-12 md:mb-16 [&_a]:text-[var(--brand-brown)] [&_a]:underline overflow-hidden">
 
           {/* Image — floated left so text wraps around it */}
-          <div className="relative float-left mr-6 mb-4 md:mr-8 md:mb-6 w-full sm:w-2/5 md:w-1/3 aspect-[5/6] overflow-hidden rounded-2xl">
+          <div className="relative float-left mr-6 mb-4 md:mr-8 md:mb-6 w-full sm:w-2/5 md:w-1/3 aspect-5/6 overflow-hidden rounded-2xl lg:max-h-[450px]">
             <Image
               src={data.heroImage}
               alt={data.title}
@@ -46,7 +46,7 @@ const IndividualBlogStructure = ({ data }) => {
 
           {/* Intro Text — wraps around the floated image */}
           <p
-            className="para! font-body text-[16px] md:text-[18px] font-normal leading-[1.9] text-[#333]"
+            className="para! font-body text-[16px] md:text-[18px] font-normal leading-[1.9] text-[#333] "
             style={{ whiteSpace: "pre-line" }}
             dangerouslySetInnerHTML={{ __html: data.intro }}
           />

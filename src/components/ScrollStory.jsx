@@ -84,7 +84,7 @@ export default function ScrollStory({
       {slides.map((item, i) => (
         <div key={i} className={isMobile ? "w-full flex-shrink-0" : "min-w-full"}>
           {item.paragraphs?.map((para, idx) => (
-            <p key={idx} className={`para mb-3 ${layoutType === "discover" ? "text-[#555]" : "text-gray-600 "}`}>
+            <p key={idx} className={`para mb-2 sm:mb-3 ${layoutType === "discover" ? "text-[#555]" : "text-gray-600 text-[15px] sm:text-[16px] md:text-[18px]"}`}>
               {para}
             </p>
           ))}
@@ -109,12 +109,12 @@ export default function ScrollStory({
 
   const renderImageSection = (isMobile = false) => {
     const imageWrapperClass = layoutType === "discover" 
-      ? `${isMobile ? "w-full mb-6" : "w-[460px] flex-shrink-0"}` 
-      : `${isMobile ? "w-full mb-6" : "w-[400px] flex-shrink-0"}`;
+      ? `${isMobile ? "w-full mb-3 mt-15" : "w-[460px] mt-15 flex-shrink-0"}` 
+      : `${isMobile ? "w-full mb-3 mt-12" : "w-[400px] flex-shrink-0"}`;
 
     const imageHeightClass = layoutType === "discover"
-      ? `${isMobile ? "h-[280px]" : "h-[400px]"}`
-      : `${isMobile ? "h-[240px]" : "h-[353px]"}`;
+      ? `${isMobile ? "h-[240px] mt-12" : "h-[400px]"}`
+      : `${isMobile ? "h-[200px] mt-18" : "h-[353px]"}`;
 
     return (
       <div className={imageWrapperClass}>
@@ -224,7 +224,7 @@ export default function ScrollStory({
 
   if (layoutType === "discover") {
     return (
-      <div ref={wrapperRef} className="h-[200vh]" style={{ backgroundColor }}>
+      <div ref={wrapperRef} className="h-[300vh]" style={{ backgroundColor }}>
         <section
           className={`sticky top-0 container mx-auto py-12 md:py-14 lg:py-20 xl:py-18 min-h-screen flex flex-col justify-center ${sectionClassName}`}
         >
@@ -265,10 +265,10 @@ export default function ScrollStory({
               </div>
             ) : (
               <>
-                <h3 className={`tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
+                <h3 className={`tracking-[0.2em] mb-1 ${headingClassName}`} style={{ color: textColor }}>
                   {heading}
                 </h3>
-                <div className="mb-4">
+                <div className="mb-2">
                   <Image src={decorativeImageMobile} alt="" width={160} height={10} />
                 </div>
                 <div className="w-full overflow-hidden">{renderTextContent(true)}</div>
@@ -289,12 +289,12 @@ export default function ScrollStory({
   }
 
   return (
-    <div ref={wrapperRef} className="h-[150vh]">
+    <div ref={wrapperRef} className="h-[300vh]">
       <section
-        className={`sticky top-0 max-w-7xl mx-auto px-6 md:px-16 py-8 md:py-10 lg:py-12 xl:py-14 min-h-screen flex flex-col justify-center ${sectionClassName}`}
+        className={`sticky top-0 container mx-auto px-6 md:px-16 py-8 md:py-10 lg:py-12 xl:py-14 min-h-screen flex flex-col justify-center ${sectionClassName}`}
         style={{ backgroundColor }}
       >
-        <div className={`hidden lg:flex items-start ${imagePosition === "right" ? "flex-row-reverse" : ""} gap-16 overflow-hidden ${containerClassName}`}>
+        <div className={`hidden lg:flex items-center ${imagePosition === "right" ? "flex-row-reverse" : ""} gap-16 overflow-hidden ${containerClassName}`}>
           {renderImageSection()}
           
           <div className={`max-w-xl flex-1 overflow-hidden mt-4 ${contentClassName}`}>
@@ -315,7 +315,7 @@ export default function ScrollStory({
           <h3 className={`tracking-[0.2em] mb-2 ${headingClassName}`} style={{ color: textColor }}>
             {heading}
           </h3>
-          <div className="mb-4">
+          <div className="mb-2">
             <Image src={decorativeImageMobile} alt="" width={160} height={10} />
           </div>
 

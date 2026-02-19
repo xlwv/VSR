@@ -24,7 +24,7 @@ export default function GetInTouch() {
         <div className="rounded-2xl bg-[#FBEEE8] p-4 md:p-8">
           <h3 className="mb-6 text-[27px] text-[#212529]">
             Please reach out for any{" "}
-            <span className="text-[#A03D13] text-[27px]">Queries</span>
+            <span className="text-[#A03D13] text-[27px]">queries</span>
           </h3>
 
           <ContactForm

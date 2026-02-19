@@ -11,8 +11,7 @@ const Footer = () => {
         <div className="space-y-4">
           <h2 className="text-2xl font-serif font-bold">VSR Vriksha</h2>
           <p className="para opacity-90">
-            A center for naturopathic treatment of myriad ailments. 
-            Experience the healing power of nature amidst the pristine environs.
+            A naturopathic wellness centre offering holistic care for a wide range of ailments. Experience the healing power of nature in serene, pristine surroundings.
           </p>
           
           {/* Social Media Icons */}
