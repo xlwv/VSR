@@ -27,13 +27,13 @@ const PageBanner = ({
           <div>
 
             {/* Title */}
-            <h1 className="mb-3 sm:mb-4 md:mb-9
+            <h2 className="mb-3 sm:mb-4 md:mb-9
                            text-xl sm:text-2xl md:text-[48px]
                            font-normal
                            leading-snug md:leading-[57.6px]
                            text-white">
               {title}
-            </h1>
+            </h2>
 
             {/* Breadcrumbs */}
             <div className="flex flex-wrap items-center text-md sm:text-lg text-white">
