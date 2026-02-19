@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-19T11:00:14.365Z",
+  "type": "form_submission",
+  "payload": {
+    "name": "test",
+    "email": "komaldeep@8views.com",
+    "phone": "7418529637",
+    "source": "Get In Touch",
+    "message": "jgvj",
+    "page": "/contact",
+    "submittedAt": "2026-02-19T11:00:11.569Z",
+    "scaledinoStatus": true
+  }
+}
+---
