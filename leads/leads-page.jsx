@@ -28,26 +28,106 @@ export default function LeadsPage() {
   const [dateTo, setDateTo] = useState("");
   const [viewLead, setViewLead] = useState(null);
 
+  // --- Auth State ---
+  const [authenticated, setAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [authError, setAuthError] = useState("");
+
+  // Check if already authenticated (sessionStorage)
   useEffect(() => {
-    if (!authed) return;
+    const saved = sessionStorage.getItem("leads_password");
+    if (saved) {
+      setPassword(saved);
+      setAuthenticated(true);
+    } else {
+      setLoading(false);
+    }
+  }, []);
+
+  // Fetch leads when authenticated
+  useEffect(() => {
+    if (!authenticated) return;
+
     setLoading(true);
-    fetch("/api/leads")
-      .then((r) => r.json())
+    fetch("/api/leads", {
+      headers: { "x-leads-password": password },
+    })
+      .then((r) => {
+        if (r.status === 401) {
+          sessionStorage.removeItem("leads_password");
+          setAuthenticated(false);
+          setAuthError("Incorrect password.");
+          setLoading(false);
+          return null;
+        }
+        return r.json();
+      })
       .then((data) => {
+        if (!data) return;
         setLeads(data.leads || []);
         setTotal(data.total || 0);
         setLoading(false);
       })
       .catch(() => setLoading(false));
-  }, [authed]);
+  }, [authenticated, password]);
 
   useEffect(() => {
-    document.body.style.overflow = viewLead ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
     };
-  }, [viewLead]);
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (!password.trim()) {
+      setAuthError("Please enter the password.");
+      return;
+    }
+    setAuthError("");
+    sessionStorage.setItem("leads_password", password);
+    setAuthenticated(true);
+  };
+
+  // --- Login Screen ---
+  if (!authenticated) {
+    return (
+      <div className="min-h-screen bg-[#FDF6F2] flex items-center justify-center p-6 font-sans">
+        <div className="w-full max-w-sm bg-white rounded-2xl shadow-sm border border-[#f0ddd5] p-8">
+          <h1 className="text-2xl font-semibold text-[#A03D13] mb-2 text-center">
+            Leads Dashboard
+          </h1>
+          <p className="text-sm text-gray-400 mb-6 text-center">
+            Enter password to access
+          </p>
+
+          {authError && (
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
+              <p className="text-sm text-red-600 text-center">{authError}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleLogin} className="space-y-4">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setAuthError("");
+              }}
+              placeholder="Password"
+              className="w-full rounded-lg border border-[#e0c9bf] bg-white px-4 py-3 text-sm text-gray-700 outline-none focus:border-[#A03D13]"
+              autoFocus
+            />
+            <button
+              type="submit"
+              className="w-full py-3 rounded-lg text-sm font-medium bg-[#A03D13] text-white hover:bg-[#7f3214] transition-colors"
+            >
+              Access Dashboard
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // --- Dashboard ---
   const filtered = leads.filter((lead) => {
     const q = search.toLowerCase();
     const matchesSearch =
@@ -135,9 +215,22 @@ export default function LeadsPage() {
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-semibold text-[#A03D13]">Leads Dashboard</h1>
-          <p className="text-sm text-gray-500 mt-1">VSR Vriksha Nature Cure Centre</p>
+        <div className="mb-8 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-semibold text-[#A03D13]">Leads Dashboard</h1>
+            <p className="text-sm text-gray-500 mt-1">VSR Vriksha Nature Cure Centre</p>
+          </div>
+          <button
+            onClick={() => {
+              sessionStorage.removeItem("leads_password");
+              setAuthenticated(false);
+              setPassword("");
+              setLeads([]);
+            }}
+            className="px-4 py-2 rounded-lg text-sm bg-white border border-[#e0c9bf] text-gray-600 hover:border-[#A03D13] transition-colors"
+          >
+            Logout
+          </button>
         </div>
 
         {/* Stats */}
@@ -209,8 +302,8 @@ export default function LeadsPage() {
                     <th className="px-4 py-3 font-medium">Name</th>
                     <th className="px-4 py-3 font-medium">Email</th>
                     <th className="px-4 py-3 font-medium">Phone</th>
-                    <th className="px-4 py-3 font-medium">Source</th>
-                    <th className="px-4 py-3 font-medium">Message</th>
+                    <th className="px-4 py-3 font-medium">Form</th>
+                    <th className="px-4 py-3 font-medium">Page</th>
                     <th className="px-4 py-3 font-medium">Date</th>
                     <th className="px-4 py-3 font-medium">Action</th>
                   </tr>
@@ -240,30 +333,8 @@ export default function LeadsPage() {
                       <td className="px-4 py-3 text-gray-800">{lead.formData?.name || "—"}</td>
                       <td className="px-4 py-3 text-gray-600">{lead.formData?.email || "—"}</td>
                       <td className="px-4 py-3 text-gray-600">{lead.formData?.phone || "—"}</td>
-                      <td className="px-4 py-3 text-gray-500">{lead.formData?.source || "—"}</td>
-                      <td
-                        className="px-4 py-3 text-gray-500 max-w-[180px] truncate"
-                        title={lead.formData?.message}
-                      >
-                        {lead.formData?.message || "—"}
-                      </td>
-                      <td className="px-4 py-3 text-gray-400 min-w-[180px]">
-                        {lead.scaledinoResponse ? (
-                          <details className="cursor-pointer">
-                            <summary className="text-xs text-[#A03D13] hover:opacity-70 list-none flex items-center gap-1">
-                              <span className={`inline-block w-2 h-2 rounded-full ${lead.scaledinoStatus < 300 ? "bg-green-400" : "bg-red-400"}`} />
-                              HTTP {lead.scaledinoStatus} — view
-                            </summary>
-                            <pre className="mt-2 text-[11px] bg-gray-50 border border-gray-200 rounded p-2 overflow-x-auto whitespace-pre-wrap break-all max-w-[260px]">
-                              {JSON.stringify(lead.scaledinoResponse, null, 2)}
-                            </pre>
-                          </details>
-                        ) : lead.errorMessage ? (
-                          <span className="text-xs text-orange-500">{lead.errorMessage}</span>
-                        ) : (
-                          "—"
-                        )}
-                      </td>
+                      <td className="px-4 py-3 text-gray-500">{lead.formData?.formName || lead.formData?.source || "—"}</td>
+                      <td className="px-4 py-3 text-gray-500">{lead.formData?.pageName || "—"}</td>
                       <td className="px-4 py-3 text-gray-400 whitespace-nowrap">
                         {lead.submittedAt
                           ? new Date(lead.submittedAt).toLocaleString("en-IN", {
@@ -353,8 +424,12 @@ export default function LeadsPage() {
                     <span className="ml-2 text-gray-800">{viewLead.formData?.phone}</span>
                   </div>
                   <div>
-                    <span className="text-gray-400">Source:</span>
-                    <span className="ml-2 text-gray-800">{viewLead.formData?.source}</span>
+                    <span className="text-gray-400">Form:</span>
+                    <span className="ml-2 text-gray-800">{viewLead.formData?.formName || viewLead.formData?.source}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Page:</span>
+                    <span className="ml-2 text-gray-800">{viewLead.formData?.pageName || "—"}</span>
                   </div>
                   {viewLead.formData?.message && (
                     <div className="col-span-1 sm:col-span-2">

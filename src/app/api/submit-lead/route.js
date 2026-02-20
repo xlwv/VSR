@@ -75,7 +75,7 @@ export async function POST(request) {
     }
 
     const body = await request.json();
-    const { name, email, phone, source, message, honeypot } = body;
+    const { name, email, phone, source, message, honeypot, pageName } = body;
 
     // --- Honeypot Check (bots fill this, humans don't) ---
     if (honeypot) {
@@ -105,9 +105,8 @@ export async function POST(request) {
       name,
       email,
       phone,
-      source: source || "Website",
+      source: "Website",
       additional_col1: message || "",
-      created_date: new Date().toISOString(),
     };
 
     let crmResponseBody = null;
@@ -146,7 +145,8 @@ export async function POST(request) {
           name,
           email,
           phone,
-          source: source || "Website",
+          formName: source || "Website",
+          pageName: pageName || "",
           message: message || "",
         },
         requestPayload: crmPayload,

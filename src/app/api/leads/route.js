@@ -2,7 +2,16 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-export async function GET() {
+export async function GET(request) {
+  // --- Password Check ---
+  const password = request.headers.get("x-leads-password");
+  if (!password || password !== process.env.LEADS_PASSWORD) {
+    return NextResponse.json(
+      { error: "Unauthorized" },
+      { status: 401 }
+    );
+  }
+
   try {
     const logFile = path.join(process.cwd(), "leads", "leads.json");
 

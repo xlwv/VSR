@@ -6,11 +6,14 @@ export const submitLead = async ({
   message = "",
   honeypot = "",
 }) => {
+  const pageName =
+    typeof window !== "undefined" ? window.location.pathname : "";
+
   try {
     const response = await fetch("/api/submit-lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, phone, source, message, honeypot }),
+      body: JSON.stringify({ name, email, phone, source, message, honeypot, pageName }),
     });
 
     const result = await response.json();
