@@ -2,46 +2,105 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-function logLead(entry) {
-  try {
-    const logDir = path.join(process.cwd(), "leads");
-    const logFile = path.join(logDir, "leads.log");
+// --- Rate Limiting (in-memory) ---
+const rateLimitMap = new Map();
+const RATE_LIMIT_WINDOW = 10 * 60 * 1000; // 10 minutes
+const RATE_LIMIT_MAX = 5;
 
-    if (!fs.existsSync(logDir)) {
-      fs.mkdirSync(logDir, { recursive: true });
+function checkRateLimit(ip) {
+  const now = Date.now();
+  for (const [key, entry] of rateLimitMap) {
+    if (now - entry.firstRequest > RATE_LIMIT_WINDOW) {
+      rateLimitMap.delete(key);
     }
-
-    const line = JSON.stringify({ ...entry, timestamp: new Date().toISOString() }) + "\n";
-    fs.appendFileSync(logFile, line, "utf8");
-  } catch (err) {
-    console.error("❌ Failed to write to leads.log:", err);
   }
+  const entry = rateLimitMap.get(ip);
+  if (!entry) {
+    rateLimitMap.set(ip, { count: 1, firstRequest: now });
+    return true;
+  }
+  if (entry.count >= RATE_LIMIT_MAX) return false;
+  entry.count++;
+  return true;
+}
+
+function saveLead(entry) {
+  const logDir = path.join(process.cwd(), "leads");
+  const logFile = path.join(logDir, "leads.json");
+  if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir, { recursive: true });
+  }
+  fs.appendFileSync(logFile, JSON.stringify(entry) + "\n", "utf8");
 }
 
 export async function POST(request) {
-  console.log("🔑 Submit Lead API Route Hit");
-
   try {
-    const body = await request.json();
-    const { name, email, phone, source, message } = body;
+    // --- Origin Check ---
+    const origin = request.headers.get("origin");
+    const host = request.headers.get("host");
 
-    // Validate required fields
+    if (!origin) {
+      return NextResponse.json(
+        { success: false, message: "Unauthorized request." },
+        { status: 403 }
+      );
+    }
+
+    try {
+      const originHost = new URL(origin).host;
+      if (originHost !== host) {
+        return NextResponse.json(
+          { success: false, message: "Unauthorized request." },
+          { status: 403 }
+        );
+      }
+    } catch {
+      return NextResponse.json(
+        { success: false, message: "Unauthorized request." },
+        { status: 403 }
+      );
+    }
+
+    // --- Rate Limiting ---
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
+
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { success: false, message: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
+    const body = await request.json();
+    const { name, email, phone, source, message, honeypot } = body;
+
+    // --- Honeypot Check (bots fill this, humans don't) ---
+    if (honeypot) {
+      return NextResponse.json({
+        success: true,
+        message: "Lead submitted successfully!",
+      });
+    }
+
+    // --- Validation ---
     if (!name || !email || !phone) {
       return NextResponse.json(
-        {
-          success: false,
-          message: "Name, email, and phone are required.",
-        },
+        { success: false, message: "Name, email, and phone are required." },
         { status: 400 }
       );
     }
 
-    // Server-side secrets (NOT exposed to client)
-    const ACCESS_CODE = process.env.SCALEDINO_ACCESS_CODE || "DB06-FCDB-E37D-1E18-0A07-E259";
-    const API_ENDPOINT = process.env.SCALEDINO_API_URL || "https://leadapi.scaledino.com/api/leads/web";
+    // --- CRM Submission ---
+    const ACCESS_CODE =
+      process.env.SCALEDINO_ACCESS_CODE || "DB06-FCDB-E37D-1E18-0A07-E259";
+    const API_ENDPOINT =
+      process.env.SCALEDINO_API_URL ||
+      "https://leadapi.scaledino.com/api/leads/web";
 
-    // Construct payload for Scaledino
-    const payload = {
+    const crmPayload = {
       access_code: ACCESS_CODE,
       name,
       email,
@@ -51,74 +110,74 @@ export async function POST(request) {
       created_date: new Date().toISOString(),
     };
 
-    console.log("📤 Sending to Scaledino:", { source, email });
+    let crmResponseBody = null;
+    let crmStatusCode = 0;
+    let crmSuccess = false;
 
-    // Send to Scaledino
-    const response = await fetch(API_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const responseText = await response.text();
-    console.log("📥 Scaledino Response:", response.status, responseText);
-
-    let result;
     try {
-      result = JSON.parse(responseText);
-    } catch (e) {
-      result = { message: responseText };
+      const crmRes = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(crmPayload),
+      });
+
+      crmStatusCode = crmRes.status;
+      const crmText = await crmRes.text();
+
+      try {
+        crmResponseBody = JSON.parse(crmText);
+      } catch {
+        crmResponseBody = { raw: crmText };
+      }
+
+      crmSuccess = crmRes.ok;
+    } catch (fetchError) {
+      crmResponseBody = { error: fetchError.message };
+      crmStatusCode = 0;
+      crmSuccess = false;
     }
 
-    // Return success/failure to client
-    if (response.ok) {
-      console.log("✅ Lead submitted successfully");
-
-      // Log successful lead to file
-      logLead({
-        status: "success",
-        name,
-        email,
-        phone,
-        source: source || "Website",
-        message: message || "",
+    // --- Save Lead (always, regardless of CRM result) ---
+    try {
+      saveLead({
+        id: `${Date.now()}-${Math.random().toString(36).substring(2, 8)}`,
+        submittedAt: new Date().toISOString(),
+        formData: {
+          name,
+          email,
+          phone,
+          source: source || "Website",
+          message: message || "",
+        },
+        requestPayload: crmPayload,
+        crmResponse: crmResponseBody,
+        crmStatusCode,
+        success: crmSuccess,
       });
+    } catch (writeError) {
+      console.error("Failed to write lead to file:", writeError);
+      return NextResponse.json(
+        { success: false, message: "Please try again later." },
+        { status: 500 }
+      );
+    }
 
+    // --- Return Response ---
+    if (crmSuccess) {
       return NextResponse.json({
         success: true,
-        message: result?.message || "Lead submitted successfully!",
+        message: "Lead submitted successfully!",
       });
     } else {
-      console.error("❌ Scaledino API Error:", response.status);
-
-      // Log failed lead to file
-      logLead({
-        status: "failed",
-        name,
-        email,
-        phone,
-        source: source || "Website",
-        message: message || "",
-        error: result?.message || `HTTP ${response.status}`,
-      });
-
       return NextResponse.json(
-        {
-          success: false,
-          message: result?.message || "Submission failed. Please try again.",
-        },
-        { status: response.status }
+        { success: false, message: "Please try again later." },
+        { status: 500 }
       );
     }
   } catch (error) {
-    console.error("❌ Lead submission error:", error);
+    console.error("Lead submission error:", error);
     return NextResponse.json(
-      {
-        success: false,
-        message: "An error occurred. Please try again.",
-      },
+      { success: false, message: "Please try again later." },
       { status: 500 }
     );
   }

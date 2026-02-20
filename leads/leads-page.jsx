@@ -24,11 +24,9 @@ export default function LeadsPage() {
 
   // Filters
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState("all");
-  const [selectedYear, setSelectedYear] = useState("all");
-  const [selectedMonth, setSelectedMonth] = useState("all");
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
+  const [viewLead, setViewLead] = useState(null);
 
   useEffect(() => {
     if (!authed) return;
@@ -43,54 +41,39 @@ export default function LeadsPage() {
       .catch(() => setLoading(false));
   }, [authed]);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (loginForm.username.trim() === VALID_USERNAME && loginForm.password === VALID_PASSWORD) {
-      setAuthed(true);
-      setLoginError("");
-    } else {
-      setLoginError("Invalid username or password.");
+  useEffect(() => {
+    document.body.style.overflow = viewLead ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [viewLead]);
+
+  const filtered = leads.filter((lead) => {
+    const q = search.toLowerCase();
+    const matchesSearch =
+      !q ||
+      (lead.formData?.name || "").toLowerCase().includes(q) ||
+      (lead.formData?.email || "").toLowerCase().includes(q) ||
+      (lead.formData?.phone || "").includes(q);
+
+    let matchesDate = true;
+    if (dateFrom) {
+      const from = new Date(dateFrom);
+      from.setHours(0, 0, 0, 0);
+      if (new Date(lead.submittedAt) < from) matchesDate = false;
     }
-  };
+    if (dateTo) {
+      const to = new Date(dateTo);
+      to.setHours(23, 59, 59, 999);
+      if (new Date(lead.submittedAt) > to) matchesDate = false;
+    }
 
-  const yearOptions = useMemo(() => {
-    const years = new Set(
-      leads.map((l) => l.timestamp && new Date(l.timestamp).getFullYear()).filter(Boolean)
-    );
-    return ["all", ...Array.from(years).sort((a, b) => b - a)];
-  }, [leads]);
+    return matchesSearch && matchesDate;
+  });
 
-  const filtered = useMemo(() => {
-    return leads.filter((lead) => {
-      if (statusFilter !== "all" && lead.status !== statusFilter) return false;
-
-      const q = search.toLowerCase();
-      if (
-        q &&
-        !(lead.name || "").toLowerCase().includes(q) &&
-        !(lead.email || "").toLowerCase().includes(q) &&
-        !(lead.phone || "").includes(q)
-      ) return false;
-
-      if (lead.timestamp) {
-        const d = new Date(lead.timestamp);
-        if (selectedYear !== "all" && d.getFullYear() !== Number(selectedYear)) return false;
-        if (selectedMonth !== "all" && d.getMonth() !== Number(selectedMonth)) return false;
-        if (dateFrom) {
-          const from = new Date(dateFrom); from.setHours(0, 0, 0, 0);
-          if (d < from) return false;
-        }
-        if (dateTo) {
-          const to = new Date(dateTo); to.setHours(23, 59, 59, 999);
-          if (d > to) return false;
-        }
-      }
-      return true;
-    });
-  }, [leads, statusFilter, search, selectedYear, selectedMonth, dateFrom, dateTo]);
-
-  const successCount = leads.filter((l) => l.status === "success").length;
-  const failedCount = leads.filter((l) => l.status === "failed").length;
+  const successCount = leads.filter((l) => l.success).length;
+  const failedCount = leads.filter((l) => !l.success).length;
+  const hasFilters = search || dateFrom || dateTo;
 
   const clearDateFilters = () => {
     setSelectedYear("all"); setSelectedMonth("all");
@@ -149,20 +132,12 @@ export default function LeadsPage() {
   // ── DASHBOARD ─────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-[#FDF6F2] p-6 font-sans">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h1 className="text-3xl font-semibold text-[#A03D13]">Leads Log</h1>
-            <p className="text-sm text-gray-500 mt-1">VSR Vriksha Nature Cure Centre</p>
-          </div>
-          <button
-            onClick={() => setAuthed(false)}
-            className="text-sm text-gray-400 hover:text-[#A03D13] underline underline-offset-2 transition-colors"
-          >
-            Sign out
-          </button>
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold text-[#A03D13]">Leads Dashboard</h1>
+          <p className="text-sm text-gray-500 mt-1">VSR Vriksha Nature Cure Centre</p>
         </div>
 
         {/* Stats */}
@@ -180,80 +155,39 @@ export default function LeadsPage() {
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-xl border border-[#f0ddd5] shadow-sm p-4 mb-5 space-y-3">
-          {/* Row 1: search + status */}
-          <div className="flex flex-col sm:flex-row gap-3">
+        <div className="flex flex-col sm:flex-row gap-3 mb-5">
+          <input
+            type="text"
+            placeholder="Search by name, email or phone..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="flex-1 rounded-lg border border-[#e0c9bf] bg-white px-4 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13]"
+          />
+          <div className="flex gap-2 items-center flex-wrap">
+            <label className="text-sm text-gray-500 whitespace-nowrap">From:</label>
             <input
-              type="text"
-              placeholder="Search by name, email or phone..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 rounded-lg border border-[#e0c9bf] bg-white px-4 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13] transition-colors"
+              type="date"
+              value={dateFrom}
+              onChange={(e) => setDateFrom(e.target.value)}
+              className="rounded-lg border border-[#e0c9bf] bg-white px-3 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13]"
             />
-            <div className="flex gap-2">
-              {["all", "success", "failed"].map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setStatusFilter(f)}
-                  className={`px-4 py-2 rounded-lg text-sm capitalize transition-colors ${
-                    statusFilter === f
-                      ? "bg-[#A03D13] text-white"
-                      : "bg-white border border-[#e0c9bf] text-gray-600 hover:border-[#A03D13]"
-                  }`}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Row 2: date filters */}
-          <div className="flex flex-wrap gap-3 items-center">
-            <select
-              value={selectedYear}
-              onChange={(e) => setSelectedYear(e.target.value)}
-              className="rounded-lg border border-[#e0c9bf] px-3 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13] bg-white"
-            >
-              <option value="all">All Years</option>
-              {yearOptions.filter((y) => y !== "all").map((y) => (
-                <option key={y} value={y}>{y}</option>
-              ))}
-            </select>
-
-            <select
-              value={selectedMonth}
-              onChange={(e) => setSelectedMonth(e.target.value)}
-              className="rounded-lg border border-[#e0c9bf] px-3 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13] bg-white"
-            >
-              <option value="all">All Months</option>
-              {MONTHS.map((m, i) => (
-                <option key={m} value={i}>{m}</option>
-              ))}
-            </select>
-
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-gray-400">From</span>
-              <input
-                type="date"
-                value={dateFrom}
-                onChange={(e) => setDateFrom(e.target.value)}
-                className="rounded-lg border border-[#e0c9bf] px-3 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13] bg-white"
-              />
-              <span className="text-xs text-gray-400">To</span>
-              <input
-                type="date"
-                value={dateTo}
-                onChange={(e) => setDateTo(e.target.value)}
-                className="rounded-lg border border-[#e0c9bf] px-3 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13] bg-white"
-              />
-            </div>
-
-            {(selectedYear !== "all" || selectedMonth !== "all" || dateFrom || dateTo) && (
+            <label className="text-sm text-gray-500 whitespace-nowrap">To:</label>
+            <input
+              type="date"
+              value={dateTo}
+              onChange={(e) => setDateTo(e.target.value)}
+              className="rounded-lg border border-[#e0c9bf] bg-white px-3 py-2 text-sm text-gray-700 outline-none focus:border-[#A03D13]"
+            />
+            {hasFilters && (
               <button
-                onClick={clearDateFilters}
-                className="text-xs text-[#A03D13] underline underline-offset-2 hover:opacity-70 transition-opacity"
+                onClick={() => {
+                  setSearch("");
+                  setDateFrom("");
+                  setDateTo("");
+                }}
+                className="px-3 py-2 rounded-lg text-sm bg-white border border-[#e0c9bf] text-gray-600 hover:border-[#A03D13] transition-colors whitespace-nowrap"
               >
-                Clear date filters
+                Clear
               </button>
             )}
           </div>
@@ -270,41 +204,48 @@ export default function LeadsPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-[#FBEEE8] text-[#A03D13] text-left">
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Status</th>
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Name</th>
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Email</th>
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Phone</th>
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Source</th>
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Message</th>
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Scaledino Response</th>
-                    <th className="px-4 py-3 font-medium whitespace-nowrap">Timestamp</th>
+                    <th className="px-4 py-3 font-medium">#</th>
+                    <th className="px-4 py-3 font-medium">Status</th>
+                    <th className="px-4 py-3 font-medium">Name</th>
+                    <th className="px-4 py-3 font-medium">Email</th>
+                    <th className="px-4 py-3 font-medium">Phone</th>
+                    <th className="px-4 py-3 font-medium">Source</th>
+                    <th className="px-4 py-3 font-medium">Message</th>
+                    <th className="px-4 py-3 font-medium">Date</th>
+                    <th className="px-4 py-3 font-medium">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filtered.map((lead, i) => (
                     <tr
-                      key={i}
-                      className={`border-t border-[#f5e8e2] ${i % 2 === 0 ? "bg-white" : "bg-[#fdf6f2]"}`}
+                      key={lead.id || i}
+                      className={`border-t border-[#f5e8e2] ${
+                        i % 2 === 0 ? "bg-white" : "bg-[#fdf6f2]"
+                      }`}
                     >
+                      <td className="px-4 py-3 text-gray-400">{i + 1}</td>
                       <td className="px-4 py-3">
                         <span
                           className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${
-                            lead.status === "success"
+                            lead.success
                               ? "bg-green-100 text-green-700"
                               : lead.status === "error"
                               ? "bg-orange-100 text-orange-600"
                               : "bg-red-100 text-red-600"
                           }`}
                         >
-                          {lead.status}
+                          {lead.success ? "Success" : "Failed"}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-gray-800 whitespace-nowrap">{lead.name || "—"}</td>
-                      <td className="px-4 py-3 text-gray-600">{lead.email || "—"}</td>
-                      <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{lead.phone || "—"}</td>
-                      <td className="px-4 py-3 text-gray-500 whitespace-nowrap">{lead.source || "—"}</td>
-                      <td className="px-4 py-3 text-gray-500 max-w-[160px] truncate" title={lead.message}>
-                        {lead.message || "—"}
+                      <td className="px-4 py-3 text-gray-800">{lead.formData?.name || "—"}</td>
+                      <td className="px-4 py-3 text-gray-600">{lead.formData?.email || "—"}</td>
+                      <td className="px-4 py-3 text-gray-600">{lead.formData?.phone || "—"}</td>
+                      <td className="px-4 py-3 text-gray-500">{lead.formData?.source || "—"}</td>
+                      <td
+                        className="px-4 py-3 text-gray-500 max-w-[180px] truncate"
+                        title={lead.formData?.message}
+                      >
+                        {lead.formData?.message || "—"}
                       </td>
                       <td className="px-4 py-3 text-gray-400 min-w-[180px]">
                         {lead.scaledinoResponse ? (
@@ -324,8 +265,8 @@ export default function LeadsPage() {
                         )}
                       </td>
                       <td className="px-4 py-3 text-gray-400 whitespace-nowrap">
-                        {lead.timestamp
-                          ? new Date(lead.timestamp).toLocaleString("en-IN", {
+                        {lead.submittedAt
+                          ? new Date(lead.submittedAt).toLocaleString("en-IN", {
                               day: "2-digit",
                               month: "short",
                               year: "numeric",
@@ -333,6 +274,14 @@ export default function LeadsPage() {
                               minute: "2-digit",
                             })
                           : "—"}
+                      </td>
+                      <td className="px-4 py-3">
+                        <button
+                          onClick={() => setViewLead(lead)}
+                          className="px-3 py-1 rounded-lg text-xs font-medium bg-[#A03D13] text-white hover:bg-[#7f3214] transition-colors"
+                        >
+                          View
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -345,6 +294,100 @@ export default function LeadsPage() {
           </div>
         )}
       </div>
+
+      {/* View Modal */}
+      {viewLead && (
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/50 p-4">
+          <div className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white rounded-2xl shadow-xl p-6">
+            <button
+              onClick={() => setViewLead(null)}
+              className="absolute right-4 top-4 text-2xl text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              ×
+            </button>
+
+            <h2 className="text-xl font-semibold text-[#A03D13] mb-1">Lead Details</h2>
+            <p className="text-sm text-gray-400 mb-6">
+              {viewLead.submittedAt
+                ? new Date(viewLead.submittedAt).toLocaleString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                  })
+                : ""}
+            </p>
+
+            {/* Status Badge */}
+            <div className="mb-6">
+              <span
+                className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+                  viewLead.success
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-600"
+                }`}
+              >
+                CRM Status: {viewLead.success ? "Success" : "Failed"} ({viewLead.crmStatusCode})
+              </span>
+            </div>
+
+            {/* Form Data */}
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">
+                Form Data Submitted
+              </h3>
+              <div className="bg-[#FDF6F2] rounded-lg p-4 border border-[#f0ddd5]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  <div>
+                    <span className="text-gray-400">Name:</span>
+                    <span className="ml-2 text-gray-800">{viewLead.formData?.name}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Email:</span>
+                    <span className="ml-2 text-gray-800">{viewLead.formData?.email}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Phone:</span>
+                    <span className="ml-2 text-gray-800">{viewLead.formData?.phone}</span>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Source:</span>
+                    <span className="ml-2 text-gray-800">{viewLead.formData?.source}</span>
+                  </div>
+                  {viewLead.formData?.message && (
+                    <div className="col-span-1 sm:col-span-2">
+                      <span className="text-gray-400">Message:</span>
+                      <span className="ml-2 text-gray-800">{viewLead.formData?.message}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Request Payload */}
+            <div className="mb-6">
+              <h3 className="text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">
+                Request Payload (Sent to CRM)
+              </h3>
+              <pre className="bg-gray-900 text-green-400 rounded-lg p-4 text-xs overflow-x-auto whitespace-pre-wrap">
+                {JSON.stringify(viewLead.requestPayload, null, 2)}
+              </pre>
+            </div>
+
+            {/* CRM Response */}
+            <div>
+              <h3 className="text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">
+                CRM Response
+              </h3>
+              <pre className="bg-gray-900 text-yellow-400 rounded-lg p-4 text-xs overflow-x-auto whitespace-pre-wrap">
+                {JSON.stringify(viewLead.crmResponse, null, 2)}
+              </pre>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
