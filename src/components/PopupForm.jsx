@@ -1,22 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { submitLead } from "@/lib/submitLead";
 import Button from "@/components/Button";
 
 export default function PopupForm({ isOpen, onClose }) {
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [errors, setErrors] = useState({});
   const [authorised, setAuthorised] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [apiFieldError, setApiFieldError] = useState("");
-
-  // Wait for client mount before using createPortal (SSR safety)
-  useEffect(() => { setMounted(true); }, []);
 
   // Lock body scroll when open
   useEffect(() => {
@@ -33,6 +28,8 @@ export default function PopupForm({ isOpen, onClose }) {
       setApiFieldError("");
     }
   }, [isOpen]);
+
+  if (!isOpen) return null;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -93,16 +90,7 @@ export default function PopupForm({ isOpen, onClose }) {
   const inputClass =
     "text-black w-full rounded-md border border-[#A03D13] bg-white px-4 py-3 text-sm outline-none focus:ring-1 focus:ring-[#A03D13] transition-colors";
 
-  // Don't render anything until client is mounted or popup is closed
-  if (!mounted || !isOpen) return null;
-
-  /*
-   * createPortal renders the popup as a DIRECT child of document.body.
-   * This completely escapes every stacking context on the page — no matter
-   * how many z-0, relative, overflow:hidden, or transform ancestors exist.
-   * z-index: 9999 is now fully effective because the parent is <body> itself.
-   */
-  return createPortal(
+  return (
     <div
       style={{
         position: "fixed",
@@ -131,7 +119,6 @@ export default function PopupForm({ isOpen, onClose }) {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           style={{
@@ -193,7 +180,6 @@ export default function PopupForm({ isOpen, onClose }) {
             className={inputClass}
           />
 
-          {/* Authorisation checkbox */}
           <div>
             <label className="flex cursor-pointer items-start gap-3 pt-1 select-none">
               <div className="relative mt-[2px] flex-shrink-0">
@@ -234,7 +220,6 @@ export default function PopupForm({ isOpen, onClose }) {
           </div>
         </form>
       </div>
-    </div>,
-    document.body  // ← teleports to <body>, escaping ALL stacking contexts
+    </div>
   );
 }
