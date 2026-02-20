@@ -17,7 +17,8 @@ export default function PopupForm({ isOpen, onClose }) {
   const [errors, setErrors] = useState({});
   const [authorised, setAuthorised] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [apiFieldError, setApiFieldError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
@@ -31,7 +32,7 @@ export default function PopupForm({ isOpen, onClose }) {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: "" });
-    setApiFieldError("");
+    setErrorMessage("");
   };
 
   const validate = () => {
@@ -59,28 +60,12 @@ export default function PopupForm({ isOpen, onClose }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Determines if the API response is a field-level validation rejection
-  // (not a duplicate, not a server/network error)
-  const isApiFieldValidationError = (result, status) => {
-    // Only treat 4xx responses as potential field errors
-    if (!status || status < 400 || status >= 500) return false;
-
-    const msg = (result?.message || "").toLowerCase();
-
-    // Exclude duplicate-related messages
-    const duplicateKeywords = ["duplicate", "already exists", "already registered", "already submitted"];
-    if (duplicateKeywords.some((kw) => msg.includes(kw))) return false;
-
-    // Must be a 4xx with a message to be a field validation error
-    return !!result?.message;
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setApiFieldError("");
+    setErrorMessage("");
 
     const result = await submitLead({
       name: form.name,
@@ -88,18 +73,17 @@ export default function PopupForm({ isOpen, onClose }) {
       phone: form.phone,
       source: "Website",
       message: form.message,
+      honeypot,
     });
 
-    if (result.success && result.message === "Lead submitted successfully!") {
+    if (result.success) {
       setForm({ name: "", email: "", phone: "", message: "" });
       setAuthorised(false);
       onClose();
       router.push("/thank-you");
-    } else if (isApiFieldValidationError(result, result.status)) {
-      // Only surface field-level API validation errors to the user
-      setApiFieldError(result.message);
+    } else {
+      setErrorMessage("Please try again later.");
     }
-    // All other failures (duplicates, 500s, network errors) are silent — user is not shown an error
 
     setIsSubmitting(false);
   };
@@ -119,14 +103,22 @@ export default function PopupForm({ isOpen, onClose }) {
           Book Your Stay
         </h3>
 
-        {/* Only shown for API field validation errors */}
-        {apiFieldError && (
+        {errorMessage && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-md">
-            <p className="text-sm text-red-600 text-center">{apiFieldError}</p>
+            <p className="text-sm text-red-600 text-center">{errorMessage}</p>
           </div>
         )}
 
         <form className="space-y-4" onSubmit={handleSubmit}>
+          <input
+            name="company"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
+          />
           <div>
             <input
               name="name"

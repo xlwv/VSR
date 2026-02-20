@@ -23,6 +23,7 @@ export default function ContactForm({
   const [authorised, setAuthorised] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -68,15 +69,16 @@ export default function ContactForm({
       phone: form.phone,
       source,
       message: form.message,
+      honeypot,
     });
 
-    if (result.success && result.message === "Lead submitted successfully!") {
+    if (result.success) {
       setForm({ name: "", email: "", phone: "", message: "" });
       setAuthorised(false);
       if (onSuccess) onSuccess();
       router.push("/thank-you");
     } else {
-      setErrorMessage(result.message || "Something went wrong. Please try again.");
+      setErrorMessage("Please try again later.");
     }
 
     setIsSubmitting(false);
@@ -94,7 +96,15 @@ export default function ContactForm({
       )}
 
       <form className="space-y-4" onSubmit={handleSubmit}>
-        {/* Error Message Display */}
+        <input
+          name="company"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
+        />
         {errorMessage && (
           <div className="p-3 bg-red-50 border border-red-200 rounded-md">
             <p className="text-sm text-red-600 text-center">{errorMessage}</p>
