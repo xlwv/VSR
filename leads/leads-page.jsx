@@ -1,21 +1,12 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
-
-// ── Change these credentials ───────────────────────────────────
-const VALID_USERNAME = "8views";
-const VALID_PASSWORD = "Pass@123";
-
-const MONTHS = [
-  "January","February","March","April","May","June",
-  "July","August","September","October","November","December",
-];
+import { useEffect, useState } from "react";
 
 export default function LeadsPage() {
   // Auth
-  const [authed, setAuthed] = useState(false);
-  const [loginForm, setLoginForm] = useState({ username: "", password: "" });
-  const [loginError, setLoginError] = useState("");
+  const [authenticated, setAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [authError, setAuthError] = useState("");
 
   // Data
   const [leads, setLeads] = useState([]);
@@ -28,19 +19,12 @@ export default function LeadsPage() {
   const [dateTo, setDateTo] = useState("");
   const [viewLead, setViewLead] = useState(null);
 
-  // --- Auth State ---
-  const [authenticated, setAuthenticated] = useState(false);
-  const [password, setPassword] = useState("");
-  const [authError, setAuthError] = useState("");
-
   // Check if already authenticated (sessionStorage)
   useEffect(() => {
     const saved = sessionStorage.getItem("leads_password");
     if (saved) {
       setPassword(saved);
       setAuthenticated(true);
-    } else {
-      setLoading(false);
     }
   }, []);
 
@@ -70,9 +54,6 @@ export default function LeadsPage() {
       })
       .catch(() => setLoading(false));
   }, [authenticated, password]);
-
-  useEffect(() => {
-    };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -155,61 +136,6 @@ export default function LeadsPage() {
   const failedCount = leads.filter((l) => !l.success).length;
   const hasFilters = search || dateFrom || dateTo;
 
-  const clearDateFilters = () => {
-    setSelectedYear("all"); setSelectedMonth("all");
-    setDateFrom(""); setDateTo("");
-  };
-
-  // ── LOGIN SCREEN ──────────────────────────────────────────────
-  if (!authed) {
-    return (
-      <div className="min-h-screen bg-[#FDF6F2] flex items-center justify-center p-6">
-        <div className="w-full max-w-sm bg-white rounded-2xl shadow-md border border-[#f0ddd5] p-8">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-semibold text-[#A03D13]">Leads Dashboard</h1>
-            <p className="text-sm text-gray-400 mt-1">VSR Vriksha Nature Cure Centre</p>
-          </div>
-          <form onSubmit={handleLogin} className="space-y-4">
-            {loginError && (
-              <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-600 text-center">
-                {loginError}
-              </div>
-            )}
-            <div>
-              <label className="block text-xs text-gray-500 mb-1 font-medium uppercase tracking-wide">Username</label>
-              <input
-                type="text"
-                value={loginForm.username}
-                onChange={(e) => setLoginForm({ ...loginForm, username: e.target.value })}
-                placeholder="Enter username"
-                className="w-full rounded-lg border border-[#e0c9bf] px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-[#A03D13] transition-colors"
-                autoComplete="username"
-              />
-            </div>
-            <div>
-              <label className="block text-xs text-gray-500 mb-1 font-medium uppercase tracking-wide">Password</label>
-              <input
-                type="password"
-                value={loginForm.password}
-                onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
-                placeholder="Enter password"
-                className="w-full rounded-lg border border-[#e0c9bf] px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-[#A03D13] transition-colors"
-                autoComplete="current-password"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#A03D13] hover:bg-[#7f3214] text-white rounded-lg py-2.5 text-sm font-medium transition-colors mt-2"
-            >
-              Sign In
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-
-  // ── DASHBOARD ─────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-[#FDF6F2] p-6 font-sans">
       <div className="max-w-6xl mx-auto">

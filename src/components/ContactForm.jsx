@@ -17,6 +17,7 @@ export default function ContactForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -57,6 +58,7 @@ export default function ContactForm({
       phone: form.phone,
       source,
       message: form.message,
+      honeypot,
     });
 
     if (result.success) {
@@ -65,7 +67,7 @@ export default function ContactForm({
       setSubmitted(true);
       if (onSuccess) onSuccess();
     } else {
-      setErrorMessage(result.message || "Something went wrong. Please try again.");
+      setErrorMessage("Please try again later.");
     }
 
     setIsSubmitting(false);
@@ -105,6 +107,15 @@ export default function ContactForm({
       )}
 
       <form className="space-y-4" onSubmit={handleSubmit}>
+        <input
+          name="company"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
+        />
         {errorMessage && (
           <div className="p-3 bg-red-50 border border-red-200 rounded-md">
             <p className="text-sm text-red-600 text-center">{errorMessage}</p>

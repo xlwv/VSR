@@ -12,6 +12,7 @@ export default function PopupForm({ isOpen, onClose }) {
   const [authorised, setAuthorised] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [apiFieldError, setApiFieldError] = useState("");
+  const [honeypot, setHoneypot] = useState("");
 
   // Lock body scroll when open
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function PopupForm({ isOpen, onClose }) {
       setErrors({});
       setAuthorised(false);
       setApiFieldError("");
+      setHoneypot("");
     }
   }, [isOpen]);
 
@@ -75,13 +77,14 @@ export default function PopupForm({ isOpen, onClose }) {
       phone: form.phone,
       source: "Website",
       message: form.message,
+      honeypot,
     });
 
     if (result.success) {
       onClose();
       router.push("/thank-you");
-    } else if (isApiFieldValidationError(result, result.status)) {
-      setApiFieldError(result.message);
+    } else {
+      setApiFieldError("Please try again later.");
     }
 
     setIsSubmitting(false);
@@ -148,6 +151,15 @@ export default function PopupForm({ isOpen, onClose }) {
         )}
 
         <form className="space-y-4" onSubmit={handleSubmit}>
+          <input
+            name="company"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0 }}
+          />
           <div>
             <input name="name" value={form.name} onChange={handleChange} placeholder="Name*" className={inputClass} />
             {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name}</p>}
