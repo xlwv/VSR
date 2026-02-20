@@ -9,7 +9,6 @@ import Rejuvenation from "@/components/Rejuvenation";
 import LocationHighlights from "./LocationHighlights";
 
 export default function Page() {
-  // Define your story slides data
   const aboutSlides = [
     {
       image: "/assets/g5.webp",
@@ -19,7 +18,7 @@ export default function Page() {
       paragraphs: [
         "Our story began with a quiet but powerful idea; that healing should feel natural, gentle, and deeply personal.",
         "After visiting several naturopathy centres across the country, our Chairperson, Mr. Vangala Sanjeeva Reddy, was moved by the transformative impact of nature-based healing. He envisioned creating a similar wellness retreat in Hyderabad.",
-        "Telangana’s first premium residential naturopathy retreat, a sanctuary to escape and restore wellbeing."
+        "Telangana's first premium residential naturopathy retreat, a sanctuary to escape and restore wellbeing."
       ]
     },
     {
@@ -45,12 +44,6 @@ export default function Page() {
     }
   ];
 
-  const handleCtaClick = () => {
-    // Your CTA logic here - navigate, open modal, etc.
-    console.log("CTA clicked");
-    // Example: router.push('/booking');
-  };
-
   return (
     <main>
       <div className="pt-[70px]">
@@ -70,7 +63,7 @@ export default function Page() {
         backgroundColor="#ffffff"
         heading="OUR STORY"
         imagePosition="left"
-        imageTransition="vertical" // Images slide vertically
+        imageTransition="vertical"
         decorativeImage="/assets/SVG/below-dark-half.svg"
         decorativeImageMobile="/assets/SVG/below-dark-half.svg"
         dotActiveColor="#a44a1f"
@@ -83,12 +76,18 @@ export default function Page() {
         ctaLink="/booking"
       />
 
-      {/* Added relative positioning and z-index */}
-      <section className="relative w-full overflow-hidden z-0">
+      {/*
+        FIX: Removed `z-0` from this section and its children.
+        Adding z-0 (or any z-index) to a non-static element creates a new stacking context,
+        which traps any fixed-position descendants (like PopupForm) beneath it —
+        even if the popup has a very high z-index. Removing z-0 lets the popup
+        escape to the root stacking context where its z-index works correctly.
+      */}
+      <section className="relative w-full overflow-hidden">
         <div className="flex flex-col md:flex-row w-full">
 
-          {/* IMAGE SIDE - Added z-0 to keep it below popup */}
-          <div className="relative w-full md:w-1/2 h-[320px] sm:h-[420px] md:h-auto md:min-h-[460px] z-0">
+          {/* Image side */}
+          <div className="relative w-full md:w-1/2 h-[320px] sm:h-[420px] md:h-auto md:min-h-[460px]">
             <Image
               src="/assets/mission_vision.webp"
               alt="Girl silhouette with nature"
@@ -98,18 +97,16 @@ export default function Page() {
             />
           </div>
 
-          {/* CONTENT SIDE - Added z-0 */}
+          {/* Content side */}
           <div
-            className="relative w-full md:w-1/2 flex items-center md:min-h-[460px] z-0"
+            className="relative w-full md:w-1/2 flex items-center md:min-h-[460px]"
             style={{
               background: "linear-gradient(180deg, #EAEDDA 0%, #E6E7D7 100%)",
             }}
           >
             <div className="px-6 sm:px-8 md:pl-20 py-10 md:py-14 max-w-[520px]">
 
-              <h3 className="sub-h2 font-serif text-[#2b2b2b]">
-                Mission
-              </h3>
+              <h3 className="sub-h2 font-serif text-[#2b2b2b]">Mission</h3>
               <Image
                 src="/assets/SVG/below-right.svg"
                 alt=""
@@ -117,14 +114,11 @@ export default function Page() {
                 height={20}
                 className="mt-2 mb-6"
               />
-
               <p className="para leading-[26px] sm:leading-[28px] text-[#555] mb-12 md:mb-14">
                 To deliver a transformative healing and rejuvenation experience through ancient knowledge, natural therapies and advanced technology.
               </p>
 
-              <h3 className="sub-h2 font-serif text-[#2b2b2b]">
-                Vision
-              </h3>
+              <h3 className="sub-h2 font-serif text-[#2b2b2b]">Vision</h3>
               <Image
                 src="/assets/SVG/below-right.svg"
                 alt=""
@@ -132,14 +126,12 @@ export default function Page() {
                 height={20}
                 className="mt-2 mb-6"
               />
-
               <p className="para leading-[26px] sm:leading-[28px] text-[#555]">
-                To be Telangana’s first-of-its-kind nature cure centre, providing exceptional holistic healing and care.
+                To be Telangana's first-of-its-kind nature cure centre, providing exceptional holistic healing and care.
               </p>
 
             </div>
           </div>
-
         </div>
       </section>
 

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-orange-800 to-orange-900 text-white">
       {/* Main Footer Content */}
-      <div className="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-12">
         
         {/* Left Column - Logo and Description */}
         <div className="space-y-4">
@@ -66,42 +66,42 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link href="/about" className="opacity-90 hover:text-orange-200 transition-colors">
-<p>
+<p className="para">
                 About Us
               </p>
 </Link>
             </li>
             <li>
               <Link href="/programs" className="opacity-90 hover:text-orange-200 transition-colors">
-<p>
+<p className="para">
                 Programs
               </p>
 </Link>
             </li>
             <li>
               <Link href="/services" className="opacity-90 hover:text-orange-200 transition-colors">
-<p>
+<p className="para">
                 Services
               </p>
 </Link>
             </li>
             <li>
               <Link href="/gallery" className="opacity-90 hover:text-orange-200 transition-colors">
-<p>
+<p className="para">
                 Gallery
               </p>
 </Link>
             </li>
             <li>
               <Link href="/blog" className="opacity-90 hover:text-orange-200 transition-colors">
-<p>
+<p className="para">
                 Blogs
               </p>
 </Link>
             </li>
             <li>
               <Link href="/contact" className="opacity-90 hover:text-orange-200 transition-colors">
-<p>
+<p className="para">
                 Contact Us
               </p>
 </Link>

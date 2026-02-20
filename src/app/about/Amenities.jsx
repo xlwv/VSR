@@ -14,7 +14,7 @@ const amenities = [
   { title: "Organic fruits and vegetables as part of your diet", icon: "/assets/organic.png" },
   { title: "Swimming pool", icon: "/assets/pool.png" },
   { title: "A unique reflexology walkway", icon: "/assets/feet.png" },
-  { title: "Well-equipped Gym", icon: "/assets/gym.png" },
+  { title: "Well-equipped Gym", icon: "/assets/gym.svg" },
   { title: "Wellness programs to rejuvenate, relax & improve health", icon: "/assets/meditation.png" },
   { title: "Rainwater harvesting, drip irrigation, natural light and ventilation", icon: "/assets/rainwater.png" },
 ];

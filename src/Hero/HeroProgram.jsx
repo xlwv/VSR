@@ -139,7 +139,7 @@ const HeroProgram = () => {
             modules={[Autoplay, Pagination]}
             spaceBetween={10}
             slidesPerView={1}
-            centreedSlides={false}
+            centredslides={false}
             loop={false}
             autoplay={{
               delay: 5000,
