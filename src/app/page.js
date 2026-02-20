@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import HeroBanner from "../Hero/HeroBanner";
 import HeroAbout from "../Hero/HeroAbout";
 import HeroProgram from "../Hero/HeroProgram";
@@ -5,7 +8,16 @@ import HeroTestimonial from "../Hero/HeroTestimonial";
 import HolisticTreatments from "@/components/HolisticTreatments";
 import Gallery from "@/components/Gallery";
 import ScrollStory from "@/components/ScrollStory";
+import PopupForm from "@/components/PopupForm";
+
 export default function Page() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOpen = () => setIsPopupOpen(true);
+    window.addEventListener("open-booking-popup", handleOpen);
+    return () => window.removeEventListener("open-booking-popup", handleOpen);
+  }, []);
   const galleryData = [
     { src: "/assets/g1.webp", alt: "Wellness centre Interior" },
     { src: "/assets/g2.webp", alt: "Therapy Session" },
@@ -90,6 +102,8 @@ export default function Page() {
     }
   ];
   return (
+    <>
+    <PopupForm isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
     <main>
       <HeroBanner />
       <HeroAbout />
@@ -190,5 +204,6 @@ export default function Page() {
         titleColor="#000"
       />
     </main>
+    </>
   );
 }

@@ -6,8 +6,18 @@ export const submitLead = async ({
   message = "",
   honeypot = "",
 }) => {
-  const pageName =
+  const pageNames = {
+    "/": "Home",
+    "/about": "About",
+    "/services": "Services",
+    "/programs": "Programs",
+    "/gallery": "Gallery",
+    "/blogs": "Blogs",
+    "/contact": "Contact Us",
+  };
+  const rawPath =
     typeof window !== "undefined" ? window.location.pathname : "";
+  const pageName = pageNames[rawPath] || rawPath;
 
   try {
     const response = await fetch("/api/submit-lead", {
