@@ -1034,30 +1034,30 @@ We at the <strong>VSR vriksha nature cure centre</strong> in Hyderabad seek to d
       {
         heading: "Therapies: ",
         paragraphs: [
-          "Diet therapy",
-          "Aromatherapy",
-          "Hydrotherapy",
-          "Massage therapy",
-          "Magnet and color therapy",
-          "Yoga",
-          "Heliotherapy",
-          "Acupuncture",
-          "Exercise therapy",
-          "Physiotherapy",
-          "Sound and music therapy",
+          "• Diet therapy",
+          "• Aromatherapy",
+          "• Hydrotherapy",
+          "• Massage therapy",
+          "• Magnet and color therapy",
+          "• Yoga",
+          "• Heliotherapy",
+          "• Acupuncture",
+          "• Exercise therapy",
+          "• Physiotherapy",
+          "• Sound and music therapy",
         ],
       },
       {
         heading: "Treatments:",
         paragraphs: [
-          "Respiratory",
-          "Gastrointestinal",
-          "Skin",
-          "Endocrinal",
-          "Musculoskeletal",
-          "PPH",
-          "Metabolic disorders",
-          "Cardiovascular",
+          "• Respiratory",
+          "• Gastrointestinal",
+          "• Skin",
+          "• Endocrinal",
+          "• Musculoskeletal",
+          "• PPH",
+          "• Metabolic disorders",
+          "• Cardiovascular",
         ],
       },
       {
@@ -1072,13 +1072,13 @@ We at the <strong>VSR vriksha nature cure centre</strong> in Hyderabad seek to d
       {
         heading: "Our Location",
         paragraphs: [
-          "We are situated at an optimal location near some of the major landmarks in the state of Telangana.",
-          "50 km from the International Airport.",
-          "22 km from Secunderabad Club.",
-          "30 km from Hyderabad.",
-          "2 km from BITS Pilani.",
-          "1.2 km from the Outer Ring Road.",
-          "Dharmaram Village, Keesara Mandal, Medchal Malkajgiri District.",
+          "• We are situated at an optimal location near some of the major landmarks in the state of Telangana.",
+          "• 50 km from the International Airport.",
+          "• 22 km from Secunderabad Club.",
+          "• 30 km from Hyderabad.",
+          "• 2 km from BITS Pilani.",
+          "• 1.2 km from the Outer Ring Road.",
+          "• Dharmaram Village, Keesara Mandal, Medchal Malkajgiri District.",
         ],
       },
       {
@@ -1102,59 +1102,47 @@ We at the <strong>VSR vriksha nature cure centre</strong> in Hyderabad seek to d
     metaDescription: "",
     canonical: "https://vsrvriksha.com/blog/faqs-about-wellness-and-nature-cure-centers-everything-you-need-to-know",
     intro: `What is a nature cure centre?
-
 A nature cure centre is a residential wellness centre providing various holistic health treatments and natural therapies to rejuvenate, relax, and heal your mind, body, and soul. Set amid nature, the centre offers a range of amenities and facilities, qualified doctors, accommodations, and customized treatment plans for improved health and well-being.
 
 How does naturopathy differ from conventional medicine?
-
 Naturopathy focuses on self-healing and promotes health and long-term wellness with the help of holistic natural treatments and therapies, dietary changes, lifestyle modifications, yoga, etc. Whereas conventional medicine is generally concerned with the diagnosis and treatment of the health conditions of patients with the assistance of medications and surgical interventions.
 
-What conditions can be treated at a nature cure centre?
 
+
+What conditions can be treated at a nature cure centre?
 Health conditions of various types — gastrointestinal, respiratory, musculoskeletal, endocrine, skin, metabolic, lifestyle disorders, etc., can be treated at a nature cure centre. This includes insomnia, sinusitis, asthma, bronchitis, hypertension, rheumatoid arthritis, high blood pressure, spondylitis, gastritis, anxiety, depression, migraine, heart disease, fatigue, obesity, diabetes, hormonal imbalances, digestive disorders, and more.
 
 Is naturopathy safe?
-
 Yes, naturopathy is safe. The holistic treatment plans and therapies of naturopathy focus on natural healing that supports the body’s ability to heal itself. The main aspects include a balanced and healthy diet, detoxification, lifestyle changes, natural therapies, yoga, acupuncture, and herbal remedies to restore balance and harmony in the body.
 
 What can I expect during my first visit to a nature cure centre?
-
 During your first visit to a nature cure centre, you will have a consultation with the naturopathic doctor to discuss your health history, medical records, test reports, prescription medications, diet, lifestyle habits, etc. At VSR Nature Cure centre, our naturopathic doctors aim to understand your health issues to create a comprehensive treatment plan.
 
 How long does it take to see results from naturopathic treatments?
-
 The amount of time it takes to see the results from naturopathic treatments differs for each individual. It depends on various factors, including your specific health conditions and so on. Generally, it would take anywhere between 4 and 12 weeks to experience the changes as a result of the treatment.
 
 Do I need a referral from my doctor to visit a nature cure centre?
-
 No, you don’t need a referral form from your doctor to visit a nature cure centre. Naturopathy is considered an independent form of healthcare with natural remedies that do not require referrals. However, you can discuss your neuropathic treatment plan with your healthcare provider to understand the potential risks and interactions.
 
 Can naturopathy be combined with conventional treatments?
-
 Yes, naturopathy can be effectively combined with conventional treatment methods to treat various illnesses and health conditions. It complements standard healthcare with a holistic approach, patient-centric care, etc. More people are willing to work with naturopathic doctors and their healthcare providers for a comprehensive treatment approach and better outcomes.
 
 What should I bring to my appointment at a nature cure centre?
-
 For your appointment at a nature cure centre, you can carry your medical reports, test results, and current prescription medications. Additionally, remember to bring comfortable clothes, footwear, personal identification, a water bottle, toiletries, etc. The nature cure centre can provide more details on the steps to take for your appointment.
 
 How do diet and nutrition play a role in naturopathy?
-
 Diet and nutrition play an important role in naturopathy. A proper diet with the essential nutrients helps maintain your health and contributes to your recovery. Food is considered medicine in the neuropathic healthcare plan. It is served closest to its natural form — raw and unprocessed without chemicals, preservatives, or additives.
 
 Are there any side effects to naturopathic treatments?
-
 As naturopathic treatments primarily include natural therapies, lifestyle modifications, dietary changes, etc., the chances of side effects are quite low. However, some naturopathic treatments may cause side effects due to interactions with other prescription medications you are taking. It’s best to consult your healthcare provider about your naturopathic treatments.
 
 What kind of professionals work at a nature cure centre?
-
 The professionals who work at a nature cure centre include a team of qualified naturopathic doctors, medical officers, wellness therapists, yoga teachers, physiotherapists, nutritionists, etc. The team strives to offer the best care and attention with personalized treatment to cater to individual needs for improved physical, mental, and emotional health.
 
 Can children and the elderly benefit from naturopathy?
-
 Yes, children and the elderly can benefit from the holistic approach of naturopathy. These natural healing treatments and therapies, dietary changes, lifestyle modifications, yoga, etc., aim to minimize the side effects and risks compared to medications. It can help cure their health conditions without any health complications in the future.
 
 How do I choose the right nature cure centre for my needs?
-
 You can choose the right nature cure centre for your needs based on certain factors — the experience of practitioners, amenities, facilities, accommodations, serene environment, etc., and testimonials and reviews. At VSR Nature Cure Centre, we strive to offer holistic treatment plans and natural therapies for your health and well-being.`,
     sections: [
     ],
@@ -1508,17 +1496,19 @@ The benefits of aromatherapy include pain relief, an improvement in mood, and pr
           "Aromatherapy treatments are known to possess a relatively low toxicity profile when administered by diluted topical application or inhalation.",
           "If you're wondering <a href=\"https://vsrvriksha.com/blog/holistic-approaches-to-stress-relief-how-naturopathy-can-help\" target=\"_blank\" rel=\"noopener noreferrer\"><b>how to get rid of anxiety</b></a>, human clinical trials have shown that aromatherapy treatments can also be employed to cure problems related to stress and depression.",
           "Aromatherapy works through the sense of smell and absorption by the skin. It makes use of products such as:",
-          "use of products such as:",
-          "Diffusers",
-          "Inhalers",
-          "Bathing salts",
-          "Facial steamers",
-          "Clay masks",
-          "Body oils",
-          "Creams",
-          "Lotions",
-          "Aromatic spritzers",
-          "Cold and hot compresses",
+          `<p class="mb-2">Use of products such as:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Diffusers</li>
+            <li>Inhalers</li>
+            <li>Bathing salts</li>
+            <li>Facial steamers</li>
+            <li>Clay masks</li>
+            <li>Body oils</li>
+            <li>Creams</li>
+            <li>Lotions</li>
+            <li>Aromatic spritzers</li>
+            <li>Cold and hot compresses</li>
+          </ul>`
         ],
       },
       {
@@ -1527,25 +1517,30 @@ The benefits of aromatherapy include pain relief, an improvement in mood, and pr
           "<b>Aromatherapy oil</b> has also been regularly employed in the treatment of ailments related to stress, anxiety, depression, and PTSD. Essential oils like lavender, chamomile, ylang-ylang, and Valerian possess soothing effects that help diminish stress and strain levels in human beings and finally deal with anxiety-related issues. Oils like rosemary, peppermint, lemon, and sweet orange are also used as they promote mood-lifting and stimulating properties. Two other oils, namely limonene and linalool, are known to consist of active compounds that help with mood regulation and upliftment.",
           "If you're wondering <a href=\"https://vsrvriksha.com/blog/holistic-approaches-to-stress-relief-how-naturopathy-can-help\" target=\"_blank\" rel=\"noopener noreferrer\"><b>how to get rid of anxiety</b></a> using the above-mentioned essential oils, remember that these oils can only be used in addition to the already prescribed anxiety treatments and therapy and should never be used to replace the existing treatments for anxiety management",
           "Some of the best ways in which you can get rid of anxiety by using aromatherapy treatments include:",
-          "Using the method of diffusion.",
-          "By topical application",
-          "By properly diluting with carrier oils like coconut or almond oil.",
-          "Targeting the pulse points like wrists, the back of your neck, and temples when applying these oils",
-          "Apply a few drops of these oils onto a cotton ball or nasal inhaler for better intake.",
-          "By combining these essential oils with other relaxation treatments like self-massaging, mindful meditation, and deep breathing exercises.",
-          "By inhaling these oils directly, you can keep your mind calm.",
+          `<p class="mb-2">Methods of application include:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Using the method of diffusion.</li>
+            <li>By topical application.</li>
+            <li>By properly diluting with carrier oils like coconut or almond oil.</li>
+            <li>Targeting the pulse points like wrists, the back of your neck, and temples when applying these oils.</li>
+            <li>Apply a few drops of these oils onto a cotton ball or nasal inhaler for better intake.</li>
+            <li>By combining these essential oils with other relaxation treatments like self-massaging, mindful meditation, and deep breathing exercises.</li>
+            <li>By inhaling these oils directly, you can keep your mind calm.</li>
+          </ul>`
         ],
       },
       {
         heading: "Some of the aromatherapy oils you should know about",
         paragraphs: [
           "Now that you know <b>what is aromatherapy,</b> you should also know about the various essential oils that make this complementary and alternative medicinal treatment worthwhile.",
-          "Some of the best aromatherapy oils include:",
-          "Bergamot oil",
-          "Neroli oil",
-          "Grapefruit oil",
-          "Lemongrass oil and",
-          "Peppermint oil",
+          `<p class="mb-2">Some of the best aromatherapy oils include:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Bergamot oil</li>
+            <li>Neroli oil</li>
+            <li>Grapefruit oil</li>
+            <li>Lemongrass oil</li>
+            <li>Peppermint oil</li>
+          </ul>`,
           "Bergamot oil can be used to improve your overall mood and lessen your levels of anxiety, thanks to its energising and uplifting scent. The sweet and citrusy aroma of Neroli oil is said to have anxiety-reducing properties and is derived from the flowers of the bitter orange tree.",
           "The peppermint oil awakens the senses, thereby potentially reducing feelings of anxiety and stress thanks to its fresh and minty fragrance. Like the scent of the other citrus fruits, the uplifting and energising aroma of grapefruit oil has been proven to help lessen anxiety levels and lift your overall mood in general.",
           "Lemongrass oil is also thought to have calming properties that might be helpful in the cure of anxiety, stress, and depression-related symptoms. It also has a refreshing, citrusy scent that people love!",
