@@ -1032,7 +1032,7 @@ We at the <strong>VSR vriksha nature cure centre</strong> in Hyderabad seek to d
         ],
       },
       {
-        heading: "<strong>Therapies: </strong>",
+        heading: "Therapies: ",
         paragraphs: [
           "Diet therapy",
           "Aromatherapy",
@@ -1048,7 +1048,7 @@ We at the <strong>VSR vriksha nature cure centre</strong> in Hyderabad seek to d
         ],
       },
       {
-        heading: "<strong>Treatments:</strong>",
+        heading: "Treatments:",
         paragraphs: [
           "Respiratory",
           "Gastrointestinal",
@@ -1182,31 +1182,31 @@ One more normal approach to upgrading sleep quality without taking medication is
         ],
       },
       {
-        heading: "<strong>•Hydrotherapy</strong>",
+        heading: "•Hydrotherapy",
         paragraphs: [
           "With regards to this, <strong><a href=\"https://vsrvriksha.com/therapies/hydrotherapy-hyderabad\" target=\"_blank\">hydrotherapy</a></strong> involves the use of water in different forms and at different temperatures as a means of treatment. Taking a warm bath is especially helpful when it comes to sleep, as it aids in the process of getting into the sleep cycle. The warm water reduces stress on muscles and helps in relaxation, thus facilitating much-needed sleep. You could use Epsom salts to improve the process, and for a more luxurious bubble bath, use essential oils such as lavender.",
         ],
       },
       {
-        heading: "<strong>• Massage Therapy </strong>",
+        heading: "• Massage Therapy",
         paragraphs: [
           "<strong><a href=\"https://vsrvriksha.com/therapies/massage-therapy-hyderabad\" target=\"_blank\">Massage therapy</a></strong> is an effective technique that targets the body's muscle tissues to induce relaxation. Dermal , such as Swedish massage or aromatic massage, could positively benefit individuals suffering from sleep disorders in that it helps to increase the general well-being of the body. Such massages, if taken consistently, can improve the quality of sleep over a period of time.",
         ],
       },
       {
-        heading: "<strong>• Acupuncture </strong>",
+        heading: "• Acupuncture",
         paragraphs: [
           "It should also be noted that <a href=\"https://vsrvriksha.com/therapies/acupuncture-hyderabad\" target=\"_blank\" rel=\"noopener noreferrer\">acupuncture</a> is a classical kind of traditional Chinese medicine based on stimulating various points of the human body with the help of thin needles. In cases where patients have sleep disorders, <a href=\"https://vsrvriksha.com/therapies/acupuncture-hyderabad\" target=\"_blank\" rel=\"noopener noreferrer\">acupuncture</a> can contribute to normalizing the circadian rhythms, reducing anxiety levels, and eradicating possible causes of insomnia.",
         ],
       },
       {
-        heading: "<strong>• Nutritional Counseling </strong>",
+        heading: "• Nutritional Counseling",
         paragraphs: [
           "Habits concerning food greatly affect the quality of sleep and even a person's whole health. Naturopaths engage their patients in individualized consultation to enhance dietary plans that may improve sleep. Some recommendations may include consuming foods with sleep-supportive nutrients like magnesium and tryptophan while avoiding sleep-disruptive nutrients like caffeine and sugar.",
         ],
       },
       {
-        heading: "<strong>• Mind-Body Techniques </strong>",
+        heading: "• Mind-Body Techniques",
         paragraphs: [
           "Other forms of treatment, such as meditation, yoga, and deep breathing, are also useful in cases where stress is considered one of the possible causes of poor sleep. When practicing such activities concerning the creation of the bedtime schedule, it assists in bringing the mind to a state of rest and the body to a state of preparing for a good night’s rest.",
         ],
@@ -1218,31 +1218,31 @@ One more normal approach to upgrading sleep quality without taking medication is
         ],
       },
       {
-        heading: "<strong>• Create a Sleep-Conducive Environment </strong>",
+        heading: "• Create a Sleep-Conducive Environment",
         paragraphs: [
           "Improve your bedroom environment and equipment so that they encourage comfort and sleep at night. You will wake up feeling fresh in the morning. It is important to assess conditions like brightness, loudness, and heat to provide the best sleeping conditions.",
         ],
       },
       {
-        heading: "<strong>• Practice Deep Breathing Exercises </strong>",
+        heading: "• Practice Deep Breathing Exercises",
         paragraphs: [
           "Learn to use deep breathing to help you clear your mind, let go of stress, and prepare your body for a good night’s sleep. By practicing these exercises before going to bed, the body is aware that it is time to sleep, which will help it adjust quickly to sleep.",
         ],
       },
       {
-        heading: "<strong>• Limit Daytime Naps </strong>",
+        heading: "• Limit Daytime Naps",
         paragraphs: [
           "Reduce evening naps by how often and for how long to ensure that the sleep-wake pattern is not distorted. Therefore, while a nap can rejuvenate you in several minutes in the daytime, it may impair your nighttime sleep and circadian rhythm.",
         ],
       },
       {
-        heading: "<strong>• Avoid Midnight Snacking </strong>",
+        heading: "• Avoid Midnight Snacking",
         paragraphs: [
           "It is also important to avoid foods that cause digestive upset and eating patterns that disrupt nighttime sleep. Eating a lot of spicy foods, especially at night, is known to lead to digestion issues and poor sleeping patterns. To avoid negatively impacting your sleep, avoid eating large meals, and if you are still hungry, try a small portion of fruits or a few nuts instead.",
         ],
       },
       {
-        heading: "<strong>• Invest in Quality Bedding </strong>",
+        heading: "• Invest in Quality Bedding",
         paragraphs: [
           "Select the best mattress and pillows to ensure you get the proper support surface while sleeping and that your body is well-aligned at night. When it comes to sleep products, one should ensure that one uses the best products when sleeping, particularly when it comes to bedding, so that one wakes up feeling fresh in the morning. Get a good night’s sleep on the mattress or something to that effect.",
         ],
@@ -2020,7 +2020,7 @@ Whether it is a bacterial infection or an injury - your body knows that everythi
         ],
       },
       {
-        heading: "<b>Defining Naturopathy</b>",
+        heading:  "Defining Naturopathy",
         paragraphs: [
           "Naturopathy is a form of complementary and alternative medicine founded on the principle that the body has the ability to heal itself. It employs a variety of natural therapies, including herbal remedies, dietary alterations, and lifestyle adjustments. Though some naturopathic remedies may be based on conventional practices,naturopathy is not a part of conventional medicine. Traditional medical practices meet modern medicine to treat different conditions.",
           "The focus of naturopathic practitioners may be on treating the symptoms of a condition, or they may attempt to determine the underlying cause. The approach chosen will differ depending on the practitioner and the patient. The whole idea is to treat the health problem and not just trying to stop the signs or symptoms.",
