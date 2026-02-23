@@ -31,7 +31,7 @@ export default function Page() {
       paragraphs: [
         "Our story began with a quiet but powerful idea; that healing should feel natural, gentle, and deeply personal.",
         "After visiting several naturopathy centres across the country, our Chairperson, Mr. Vangala Sanjeeva Reddy, was moved by the transformative impact of nature-based healing. He envisioned creating a similar wellness retreat in Hyderabad.",
-        "Telangana's first premium residential naturopathy retreat, a sanctuary to escape and restore wellbeing.",
+        "A place where people could step away from the noise and chaos of everyday life and rediscover their wellbeing. From that vision emerged Telangana’s first premium residential naturopathy retreat.",
       ],
     },
     {

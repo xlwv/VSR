@@ -198,7 +198,8 @@ const HeroTestimonial = ({
             {/* Previous Button */}
             <button
               onClick={prevSlide}
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer
+                ${
                 isFirstSlide
                   ? 'bg-gray-200 hover:bg-[#9c3f1a] group'
                   : 'bg-[#9c3f1a] hover:bg-[#7f3214]'
@@ -221,7 +222,7 @@ const HeroTestimonial = ({
                 <button
                   key={idx}
                   onClick={() => goToSlide(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                     idx === currentIndex 
                       ? 'w-8 bg-[#9c3f1a]' 
                       : 'w-2 bg-gray-300 hover:bg-[#9c3f1a]/50'
@@ -234,7 +235,8 @@ const HeroTestimonial = ({
             {/* Next Button */}
             <button
               onClick={nextSlide}
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer
+                ${
                 isLastSlide
                   ? 'bg-gray-200 hover:bg-[#9c3f1a] group'
                   : 'bg-[#9c3f1a] hover:bg-[#7f3214]'
