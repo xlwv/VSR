@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import MoreTreatments from "@/components/BlogComponents/MoreTreatments";
+import FAQAccordion from "@/components/BlogComponents/FAQAccordion";
 import Button from "@/components/Button";
 import { useEffect } from "react";
 import AOS from "aos";
@@ -71,6 +72,13 @@ const IndividualBlogStructure = ({ data }) => {
             </div>
           ))}
         </div>
+        {/* ===== FAQ SECTION ===== */}
+        {data.faqs && data.faqs.length > 0 && (
+          <div className="mt-10 md:mt-14">
+            <FAQAccordion faqs={data.faqs} />
+          </div>
+        )}
+
         <div className="mt-4 flex justify-end">
           <Button text="Back to Blogs" variant="primary" className="!text-white !no-underline  " href="/blog" size="md" />
         </div>

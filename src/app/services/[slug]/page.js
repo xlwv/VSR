@@ -7,54 +7,11 @@ import { useParams, useRouter } from "next/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ChevronDown, ChevronRight } from "lucide-react";
+import FAQAccordion from "@/components/BlogComponents/FAQAccordion";
 import therapiesData from "../therapies.json";
 import treatmentsData from "../treatments.json";
 import therapiesDetailData from "../therapiesData.json";
 import treatmentsDetailData from "../treatmentsData.json";
-
-// FAQ Accordion Component
-const FAQAccordion = ({ faqs }) => {
-  const [openIndex, setOpenIndex] = useState(null);
-
-  if (!faqs || faqs.length === 0) return null;
-
-  return (
-    <div className="space-y-4">
-      <h2 className="sub-h2 font-bold text-gray-800 mb-6">
-        Frequently Asked Questions
-      </h2>
-      <div className="space-y-3">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 rounded-xl overflow-hidden bg-white hover:shadow-md transition-shadow"
-          >
-            <button
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors"
-            >
-              <span className="font-medium text-gray-800 pr-4">
-                {faq.question}
-              </span>
-              <ChevronDown
-                className={`w-5 h-5 text-[var(--brand-brown)] flex-shrink-0 transition-transform duration-300 ${
-                  openIndex === index ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-            {openIndex === index && (
-              <div className="px-5 pb-5 pt-2">
-                <p className="para text-gray-700 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 // Content Section Renderer
 const ContentSection = ({ section, index }) => {
