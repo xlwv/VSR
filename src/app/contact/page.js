@@ -7,8 +7,8 @@ const CONTACTS = [
   {
     icon: "/assets/SVG/email.svg",
     title: "Email",
-    text: "contact@svvriksha.com",
-    href: "mailto:contact@svvriksha.com",
+    text: "contact@vsrvriksha.com",
+    href: "mailto:contact@vsrvriksha.com",
   },
   {
     icon: "/assets/SVG/phone.svg",
