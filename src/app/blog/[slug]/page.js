@@ -1098,7 +1098,7 @@ We at the <strong>VSR vriksha nature cure centre</strong> in Hyderabad seek to d
   "faqs-about-wellness-and-nature-cure-centers-everything-you-need-to-know": {
     title: "Frequently Asked Questions",
     heroImage: "/assets/blog-images/VSR-Blog-3.webp",
-    metaTitle: "fFAQs About Wellness & Nature Cure centres | VSR Vriksha Nature Cure centre",
+    metaTitle: "FAQs About Wellness & Nature Cure centres | VSR Vriksha Nature Cure centre",
     metaDescription: "",
     canonical: "https://vsrvriksha.com/blog/faqs-about-wellness-and-nature-cure-centers-everything-you-need-to-know",
     intro: `What is a nature cure centre?
@@ -1274,43 +1274,43 @@ One more normal approach to upgrading sleep quality without taking medication is
         ],
       },
       {
-        heading: "<strong>• Improved Digestive Health </strong>",
+        heading: "Improved Digestive Health",
         paragraphs: [
           "There are several <strong>colon therapy benefits,</strong> one of which is the enhancement of digestion in a human being. This advantage of colon cleansing is that it unblocks the bowels since it rids the colon of waste and toxins that cause constipation and bloating, among other signs. According to the findings, it is clear that colon cleansing is good for the body since it ensures that food nutrients are properly assimilated into the body.",
         ],
       },
       {
-        heading: "<strong>• Increased Energy Levels </strong>",
+        heading: "Increased Energy Levels",
         paragraphs: [
           "Some of the colon statements that people record include feeling more energetic. This is because the body achieves enhanced nutrient absorption and metabolism, and there is reduced energy waste from expelling unwanted substances. This elevation in energy levels, in most cases, results in a boost in productivity and general health.",
         ],
       },
       {
-        heading: "<strong>• Enhanced Mental Clarity </strong>",
+        heading: "Enhanced Mental Clarity",
         paragraphs: [
           "The ability to think is a benefit of colon therapy. Certain toxins in the body interfere with concentration; hence, their elimination will help enhance concentration levels. This improvement in the head is quite noticeable shortly after the surgery, helping to push away the foggy mind. Eradicating the toxins also assists in slowing down brain fog symptoms, thereby enhancing brain abilities for appropriate and efficient performance in activities.",
         ],
       },
       {
-        heading: "<strong>• Weight Loss </strong>",
+        heading: "Weight Loss",
         paragraphs: [
           "Colon cleansing is sometimes employed to kick-start <a href=\"https://vsrvriksha.com/blog/naturopathy-treatment-for-weight-loss\" target=\"_blank\" rel=\"noopener noreferrer\">weight loss</a>. Although rapid <a href=\"https://vsrvriksha.com/blog/naturopathy-treatment-for-weight-loss\" target=\"_blank\" rel=\"noopener noreferrer\">weight loss</a> could be attributed to the elimination of waste products, it also promotes the development of healthier dietary habits and proper digestion in the colon, which can ensure a lasting <a href=\"https://vsrvriksha.com/blog/naturopathy-treatment-for-weight-loss\" target=\"_blank\" rel=\"noopener noreferrer\">weight loss</a> transformation. It becomes apparent, and people tend to feel lighter and more comfortable in their bodies or their clothes.",
         ],
       },
       {
-        heading: "<a>• <strong href=\"https://vsrvriksha.com/blog/the-importance-of-detoxification-in-naturopathy\">detoxification</strong></a> </strong>",
+        heading: "Detoxification",
         paragraphs: [
           "Among the many advantages of colon hydrotherapy, one is quite important – <a href=\"https://vsrvriksha.com/blog/the-importance-of-detoxification-in-naturopathy\">detoxification</a>. The procedure assists in washing out the colon with some toxins and detrimental bacteria that could be harbored in the colon. It will help decrease the incidence of diseases and increase immunity. Therefore, better health is registered as the body operates efficiently since the organs that frequently get affected by such substances, such as the liver and kidney, are not overworked.",
         ],
       },
       {
-        heading: "<strong>Improved Skin Health </strong>",
+        heading: "Improved Skin Health",
         paragraphs: [
           "The health of one’s skin can also indicate a clean colon. Another advantage of colon hydrotherapy is clearing the skin, since it helps eliminate toxins in our system. People also experience significant changes in their skin tone after one session, and more so after several sessions.",
         ],
       },
       {
-        heading: "<strong>Better Hydration </strong>",
+        heading: "Better Hydration",
         paragraphs: [
           "Water is regarded as a solution, and during colon hydrotherapy, it is utilized in the process of rinsing the colon, which adds to the general hydration of the body. Most human body functions, such as digestion, blood circulation, and regulation of body temperature, require water consumption, and therefore, adequate hydration is necessary.",
         ],
