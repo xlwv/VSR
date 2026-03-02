@@ -1,91 +1,60 @@
 import fs from "fs";
 import path from "path";
 
-export const runtime = "nodejs"; // 🔥 REQUIRED FOR VPS
-// export const dynamic = "force-dynamic";
-export const revalidate = 604800;
+import blogs from "./blog/blogsData.json";
+import therapies from "./services/therapies.json";
+import treatments from "./services/treatments.json";
+
+export const revalidate = 604800; // once per week
 
 const baseUrl = "https://vsrvriksha.com";
 
-/* =========================
-   AUTO DETECT STATIC PAGES
-========================= */
+// 🔥 Auto detect static routes from src/app
+function getStaticRoutes() {
+  const appDir = path.join(process.cwd(), "src", "app");
 
-function getStaticRoutes(dir, basePath = "") {
-  if (!fs.existsSync(dir)) return [];
+  const entries = fs.readdirSync(appDir, { withFileTypes: true });
 
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  let routes = [];
-
-  for (const entry of entries) {
-    if (
-      entry.name.startsWith("(") ||
-      entry.name.startsWith("_") ||
-      entry.name === "api" ||
-      entry.name === "sitemap.js" ||
-      entry.name === "robots.js" ||
-      entry.name.includes("[")
-    ) {
-      continue;
-    }
-
-    const fullPath = path.join(dir, entry.name);
-
-    if (entry.isDirectory()) {
-      routes.push(
-        ...getStaticRoutes(fullPath, `${basePath}/${entry.name}`)
-      );
-    }
-
-    if (entry.name === "page.js") {
-      routes.push({
-        url: `${baseUrl}${basePath || ""}`,
-        lastModified: new Date(),
-      });
-    }
-  }
-
-  return routes;
-}
-
-/* =========================
-   FETCH BLOG POSTS
-========================= */
-
-async function getBlogRoutes() {
-  try {
-    const res = await fetch(`${baseUrl}/api/blog`, {
-      cache: "no-store",
-    });
-
-    if (!res.ok) return [];
-
-    const blogs = await res.json();
-
-    return blogs.map((blog) => ({
-      url: `${baseUrl}/blog/${blog.slug}`,
-      lastModified: new Date(blog.updatedAt || Date.now()),
+  return entries
+    .filter(
+      (entry) =>
+        entry.isDirectory() &&
+        !entry.name.startsWith("[") && // ignore dynamic folders
+        !entry.name.startsWith("_") &&
+        entry.name !== "api"
+    )
+    .map((entry) => ({
+      url: `${baseUrl}/${entry.name}`,
+      lastModified: new Date(),
     }));
-  } catch (error) {
-    console.error("Sitemap Blog Error:", error);
-    return [];
-  }
 }
-
-/* =========================
-   MAIN
-========================= */
 
 export default async function sitemap() {
-  try {
-    const appDir = path.join(process.cwd(),"src", "app");
+  const staticRoutes = getStaticRoutes();
 
-    const staticRoutes = getStaticRoutes(appDir);
-    const blogRoutes = await getBlogRoutes();
+  const blogRoutes = blogs.map((blog) => ({
+    url: `${baseUrl}/blog/${blog.slug}`,
+    lastModified: new Date(),
+  }));
 
-    return [...staticRoutes, ...blogRoutes];
-  } catch (err) {
-    console.error("Sitemap Error:", err);
-    return [];
-  }
+  const therapyRoutes = therapies.map((item) => ({
+    url: `${baseUrl}/services/${item.slug}`,
+    lastModified: new Date(),
+  }));
+
+  const treatmentRoutes = treatments.map((item) => ({
+    url: `${baseUrl}/services/${item.slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+    },
+    ...staticRoutes,
+    ...blogRoutes,
+    ...therapyRoutes,
+    ...treatmentRoutes,
+  ];
 }
