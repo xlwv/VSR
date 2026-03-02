@@ -1,8 +1,9 @@
 import fs from "fs";
 import path from "path";
 
-export const dynamic = "force-dynamic"; // Always generate fresh sitemap
-export const revalidate = 3600; // Regenerate every 1 hour
+export const runtime = "nodejs"; // 🔥 REQUIRED FOR VPS
+// export const dynamic = "force-dynamic";
+export const revalidate = 604800;
 
 const baseUrl = "https://vsrvriksha.com";
 
@@ -11,17 +12,22 @@ const baseUrl = "https://vsrvriksha.com";
 ========================= */
 
 function getStaticRoutes(dir, basePath = "") {
+  if (!fs.existsSync(dir)) return [];
+
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   let routes = [];
 
   for (const entry of entries) {
-    // Skip unnecessary folders
-    if (entry.name.startsWith("(")) continue; // route groups
-    if (entry.name.startsWith("_")) continue;
-    if (entry.name === "api") continue;
-    if (entry.name === "sitemap.js") continue;
-    if (entry.name === "robots.js") continue;
-    if (entry.name.includes("[")) continue; // skip dynamic routes
+    if (
+      entry.name.startsWith("(") ||
+      entry.name.startsWith("_") ||
+      entry.name === "api" ||
+      entry.name === "sitemap.js" ||
+      entry.name === "robots.js" ||
+      entry.name.includes("[")
+    ) {
+      continue;
+    }
 
     const fullPath = path.join(dir, entry.name);
 
@@ -35,8 +41,6 @@ function getStaticRoutes(dir, basePath = "") {
       routes.push({
         url: `${baseUrl}${basePath || ""}`,
         lastModified: new Date(),
-        changeFrequency: "weekly",
-        priority: basePath === "" ? 1 : 0.8,
       });
     }
   }
@@ -45,7 +49,7 @@ function getStaticRoutes(dir, basePath = "") {
 }
 
 /* =========================
-   FETCH DYNAMIC BLOG POSTS
+   FETCH BLOG POSTS
 ========================= */
 
 async function getBlogRoutes() {
@@ -61,8 +65,6 @@ async function getBlogRoutes() {
     return blogs.map((blog) => ({
       url: `${baseUrl}/blog/${blog.slug}`,
       lastModified: new Date(blog.updatedAt || Date.now()),
-      changeFrequency: "weekly",
-      priority: 0.7,
     }));
   } catch (error) {
     console.error("Sitemap Blog Error:", error);
@@ -71,14 +73,19 @@ async function getBlogRoutes() {
 }
 
 /* =========================
-   MAIN SITEMAP FUNCTION
+   MAIN
 ========================= */
 
 export default async function sitemap() {
-  const appDir = path.join(process.cwd(), "app");
+  try {
+    const appDir = path.join(process.cwd(), "app");
 
-  const staticRoutes = getStaticRoutes(appDir);
-  const blogRoutes = await getBlogRoutes();
+    const staticRoutes = getStaticRoutes(appDir);
+    const blogRoutes = await getBlogRoutes();
 
-  return [...staticRoutes, ...blogRoutes];
+    return [...staticRoutes, ...blogRoutes];
+  } catch (err) {
+    console.error("Sitemap Error:", err);
+    return [];
+  }
 }
