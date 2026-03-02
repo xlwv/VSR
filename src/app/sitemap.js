@@ -78,7 +78,7 @@ async function getBlogRoutes() {
 
 export default async function sitemap() {
   try {
-    const appDir = path.join(process.cwd(), "app");
+    const appDir = path.join(process.cwd(),"src", "app");
 
     const staticRoutes = getStaticRoutes(appDir);
     const blogRoutes = await getBlogRoutes();
