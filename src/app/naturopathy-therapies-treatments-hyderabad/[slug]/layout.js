@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
     title: `${title} | VSR Vriksha`,
     description: `Learn about our ${title.toLowerCase()} program for holistic healing and natural wellness.`,
     alternates: {
-      canonical: `https://vsrvriksha.com/services/${slug}`,
+      canonical: `https://vsrvriksha.com/naturopathy-therapies-treatments-hyderabad/${slug}`,
     },
   };
 }

@@ -49,8 +49,8 @@ function ServicesContent() {
           title="Services"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Services", href: "/services" },
-            { label: currentTab === "therapies" ? "Therapies" : "Treatments", href: "/services" },
+            { label: "Services", href: "/naturopathy-therapies-treatments-hyderabad" },
+            { label: currentTab === "therapies" ? "Therapies" : "Treatments", href: "/naturopathy-therapies-treatments-hyderabad" },
           ]}
           bgImage="/assets/banner.webp"
         />
@@ -117,7 +117,7 @@ function ServicesContent() {
                 <Button
                   text="VIEW MORE"
                   variant="outline"
-                  href={`/services/${card.slug}`}
+                  href={`/naturopathy-therapies-treatments-hyderabad/${card.slug}`}
                   size="sm"
                   className="!text-sm"
                 />

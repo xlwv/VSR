@@ -2,8 +2,8 @@ import fs from "fs";
 import path from "path";
 
 import blogs from "./blog/blogsData.json";
-import therapies from "./services/therapies.json";
-import treatments from "./services/treatments.json";
+import therapies from "./naturopathy-therapies-treatments-hyderabad/therapies.json";
+import treatments from "./naturopathy-therapies-treatments-hyderabad/treatments.json";
 
 export const revalidate = 604800; // once per week
 
@@ -38,12 +38,12 @@ export default async function sitemap() {
   }));
 
   const therapyRoutes = therapies.map((item) => ({
-    url: `${baseUrl}/services/${item.slug}`,
+    url: `${baseUrl}/naturopathy-therapies-treatments-hyderabad/${item.slug}`,
     lastModified: new Date(),
   }));
 
   const treatmentRoutes = treatments.map((item) => ({
-    url: `${baseUrl}/services/${item.slug}`,
+    url: `${baseUrl}/naturopathy-therapies-treatments-hyderabad/${item.slug}`,
     lastModified: new Date(),
   }));
 

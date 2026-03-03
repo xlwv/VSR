@@ -72,7 +72,7 @@ const Footer = () => {
 
           <ul className="space-y-3 text-base">
             <li>
-              <Link href="/about" className="hover:text-orange-200 transition">
+              <Link href="/about-us" className="hover:text-orange-200 transition">
                 About Us
               </Link>
             </li>
@@ -82,7 +82,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/services" className="hover:text-orange-200 transition">
+              <Link href="/naturopathy-therapies-treatments-hyderabad" className="hover:text-orange-200 transition">
                 Services
               </Link>
             </li>
@@ -97,7 +97,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="hover:text-orange-200 transition">
+              <Link href="/contact-us" className="hover:text-orange-200 transition">
                 Contact Us
               </Link>
             </li>
@@ -168,11 +168,9 @@ const Footer = () => {
     </p>
 
     {/* Privacy Policy */}
-    <p
-      
-      className="text-center md:text-left">
+    <Link href="/privacy-policy" className="text-center md:text-left hover:text-white transition">
       Privacy Policy
-    </p>
+    </Link>
 
   </div>
 </div>

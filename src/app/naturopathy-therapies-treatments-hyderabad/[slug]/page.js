@@ -141,7 +141,7 @@ export default function ServiceDetailPage() {
   const isLoading = false;
 
   const handleServiceClick = (service) => {
-    router.push(`/services/${service.slug}`);
+    router.push(`/naturopathy-therapies-treatments-hyderabad/${service.slug}`);
   };
 
   const getRelatedServices = () => {
@@ -173,7 +173,7 @@ export default function ServiceDetailPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h2 className="font-bold text-gray-800 mb-4">Service not found</h2>
-          <button onClick={() => router.push("/services")} className="call-btn">
+          <button onClick={() => router.push("/naturopathy-therapies-treatments-hyderabad")} className="call-btn">
             Back to Services
           </button>
         </div>
@@ -188,10 +188,10 @@ export default function ServiceDetailPage() {
           title="Services"
           breadcrumbs={[
             { label: "Home", href: "/" },
-            { label: "Services", href: "/services" },
+            { label: "Services", href: "/naturopathy-therapies-treatments-hyderabad" },
             {
               label: serviceType === "treatment" ? "Treatments" : "Therapies",
-              href: "/services",
+              href: "/naturopathy-therapies-treatments-hyderabad",
             },
             { label: currentService.name, href: "#" },
           ]}
@@ -356,7 +356,7 @@ export default function ServiceDetailPage() {
                 <MoreTreatments
                   blogs={transformServicesToBlogs(relatedServices)}
                   title={sectionTitle}
-                  linkPath="services"
+                  linkPath="naturopathy-therapies-treatments-hyderabad"
                 />
               </div>
             )}

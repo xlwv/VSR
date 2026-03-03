@@ -13,12 +13,12 @@ const Navbar = () => {
   const router = useRouter(); // Initialize router
 
   const navLinks = [
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/about-us" },
     { name: "Programs", href: "/programs" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/naturopathy-therapies-treatments-hyderabad" },
     { name: "Gallery", href: "/gallery" },
     { name: "Blogs", href: "/blog" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Contact Us", href: "/contact-us" },
   ];
 
   // Function to handle delayed navigation on mobile

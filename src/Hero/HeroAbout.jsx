@@ -115,7 +115,7 @@ const HeroAbout = () => {
               </div>
 
               <div>
-                <Button text="KNOW MORE" variant="primary" href="/about" />
+                <Button text="KNOW MORE" variant="primary" href="/about-us" />
               </div>
             </div>
 

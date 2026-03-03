@@ -8,12 +8,12 @@ export const submitLead = async ({
 }) => {
   const pageNames = {
     "/": "Home",
-    "/about": "About",
-    "/services": "Services",
+    "/about-us": "About",
+    "/naturopathy-therapies-treatments-hyderabad": "Services",
     "/programs": "Programs",
     "/gallery": "Gallery",
     "/blogs": "Blogs",
-    "/contact": "Contact Us",
+    "/contact-us": "Contact Us",
   };
   const rawPath =
     typeof window !== "undefined" ? window.location.pathname : "";

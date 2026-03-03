@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 
-const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "services" }) => {
+const MoreTreatments = ({ blogs = [], title = "More Treatments", linkPath = "naturopathy-therapies-treatments-hyderabad" }) => {
 
   useEffect(() => {
     console.log("MoreTreatments received blogs:", blogs);
